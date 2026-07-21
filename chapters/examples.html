@@ -461,7 +461,7 @@ ex:meetingDuration
   <h3>Alignment of PROV-O with OWL-Time</h3>
 
   <p>
-    <a href="https://www.w3.org/TR/prov-dm/">PROV</a> is a process-flow model.
+    <a href="https://www.w3.org/TR/prov-dm/">PROV</a> has a process-flow model.
     The base class <a href="https://www.w3.org/TR/prov-o/#Activity">Activity</a> denotes things that occur over a
     period of time, and act upon or with entities.
     Activities are ordered within a provenance trace.
@@ -482,14 +482,16 @@ prov:InstantaneousEvent rdfs:subClassOf    time:Instant .
     The <code><a href="https://www.w3.org/TR/prov-o/#atTime">prov:atTime</a></code> property of an
     <code><a href="https://www.w3.org/TR/prov-o/#InstantaneousEvent">prov:InstantaneousEvent</a></code> is directly
     related to <a>:inXSDDateTime</a>.
+    Informally this might be expressed: 
   </p>
 
   <pre>prov:atTime rdfs:subPropertyOf time:inXSDDateTime .</pre>
 
 
   <p>
-    However, the Activity start and end properties require a property chain axiom, because the beginning and end of
-    a <a>:TemporalEntity</a> are <a>:Instants</a> rather than compact <code>xsd:dateTimes</code>.
+    However, the Activity start and end properties imply a property chain, because the beginning and end of
+    a <a>:TemporalEntity</a> are <a>:Instants</a> rather than compact <code>xsd:dateTimes</code>. 
+    Informally these might be expressed: 
   </p>
 
 
@@ -506,6 +508,9 @@ prov:startedAtTime owl:propertyChainAxiom (
 .
 </pre>
 
+<p>
+  These alignments are <em>informal</em> because OWL does not permit a <code>owl:DatatypeProperty</code> in these structures [[owl2-mapping-to-rdf]] . 
+</p>
 </section>
 
 <!--

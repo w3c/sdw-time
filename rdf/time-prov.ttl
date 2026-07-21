@@ -29,17 +29,17 @@ prov:InstantaneousEvent
   rdfs:subClassOf time:Instant ;
 .
 prov:atTime
-  rdfs:subPropertyOf time:inXSDDateTime ;
+  prov:editorialNote """It is intended that this subproperty alignment holds: 
+    prov:endedAtTime rdfs:subPropertyOf time:inXSDDateTime.
+    """@en ;
 .
 prov:endedAtTime
-  owl:propertyChainAxiom (
-      time:hasEnd
-      time:inXSDDateTime
-    ) ;
+  prov:editorialNote """It is intended that this property chain holds: 
+  (time:hasEnd o time:inXSDDateTime) rdfs:subPropertyOf prov:endedAtTime.
+  """@en ;
 .
 prov:startedAtTime
-  owl:propertyChainAxiom (
-      time:hasBeginning
-      time:inXSDDateTime
-    ) ;
+  prov:editorialNote """It is intended that this property chain holds: 
+  (time:hasBeginning o time:inXSDDateTime) rdfs:subPropertyOf prov:startedAtTime.
+  """@en ;
 .
