@@ -6,6 +6,71 @@
   <title>Time Ontology in OWL</title>
   <script class="remove" src="https://www.w3.org/Tools/respec/respec-w3c"></script>
   <script class="remove" src="config.js"></script>
+  <script>
+    addEventListener('load', () => {
+      document.respec.ready.then(() => {
+
+        const sortLabels = {
+          asc: '↑',
+          desc: '↓',
+          no: '—',
+        };
+
+        const sort = (headerMetadata) => {
+          const sortDirection = headerMetadata.sorted === 'asc' ? 'desc' : 'asc';
+
+          const getSortValue = r => r.querySelector(`:scope > td:nth-child(${headerMetadata.idx + 1})`)
+            .textContent.trim().toLowerCase().replace(/[^A-Za-z0-9 :-]/g, '');
+
+          const rows = [...headerMetadata.table.querySelectorAll('tr')].slice(1); // skip header row
+          if (!rows.length) {
+            return;
+          }
+          const tbody = rows[0].parentElement;
+          rows.sort((a, b) => getSortValue(a).localeCompare(getSortValue(b)) * (sortDirection === 'asc' ? 1 : -1))
+            .map(e => e.remove() || e)
+            .forEach(e => tbody.append(e));
+
+          // update sort link labels
+          for (let header of headerMetadata.allHeaders) {
+            header.sorted = header.idx === headerMetadata.idx ? sortDirection : 'no';
+            header.sortLink.textContent = sortLabels[header.sorted];
+          }
+        };
+
+        document.querySelectorAll('table[data-sortable="true"]').forEach(table => {
+          const headers = [], allHeaders = [...table.querySelector('tr').querySelectorAll('th')];
+          for (const [idx, header] of allHeaders.entries()) {
+            if (header.dataset.sortable === 'true') {
+              const sortLink = document.createElement('a');
+
+              const headerMetadata = {
+                idx,
+                header,
+                allHeaders: headers,
+                table,
+                sorted: 'no',
+                sortLink,
+              };
+
+              sortLink.href = "#";
+              sortLink.style.marginLeft = '1em';
+              sortLink.style.textDecoration = 'none';
+              sortLink.classList.add('sort-link');
+              sortLink.textContent = sortLabels.no;
+              sortLink.title = 'Sort';
+              sortLink.addEventListener('click', e => {
+                e.preventDefault();
+                sort(headerMetadata);
+              });
+              header.append(sortLink);
+              headers.push(headerMetadata);
+            }
+          }
+        });
+      });
+    });
+  </script>
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="stylesheet" type="text/css" href="small.css" media="only all and (max-width: 649px)">
 </head>
@@ -61,7 +126,8 @@
     </p>
     <p>
       New elements are also provided to support a wider range of topological relationships between temporal entities.
-      While the core relations defined by Allen and Ferguson are in principle sufficient in combination to support all applications,
+      While the core relations defined by Allen and Ferguson are in principle sufficient in combination to support all
+      applications,
       limitations in OWL and RDFS require additional relations to cover some generalized relationships
       (disjoint, intervalIn) and relationships involving instants as well as intervals, and their complements.
     </p>
@@ -164,6 +230,25 @@
       The Ontology is derived from the one described in the 2006 Draft [[owl-time-20060927]] though the document has
       been completely re-written.
     </p>
+    <h3>2026 update</h3>
+    <ul>
+      <li>
+        Add temporal relations extensions <a>:hasInside</a>, <a>:intervalIn</a>, <a>:equals</a>, <a>:notDisjoint</a>,
+        <a>:intervalDisjoint</a>, <a>:disjoint</a>
+      </li>
+      <li>
+        Re-draft key diagrams using SVG
+      </li>
+      <li>
+        remove datatypes that do not conform to OWL-2
+      </li>
+      <li>
+        add Conformance clause
+      </li>
+      <li>
+        add test data to RDF resources in Github repository
+      </li>
+    </ul>
     <h3>2021 update</h3>
     <ul>
       <li>
