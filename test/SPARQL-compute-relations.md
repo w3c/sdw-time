@@ -261,7 +261,7 @@ WHERE
 }
 
 INSERT { 
-    ?i1 :intervalFinishedBy ?i2 ; :hasInside ?i2 ; :notDisjoint ?i2 . 
+    ?i1 :intervalFinishedBy ?i2 ; :intervalHasInside ?i2 ; :hasInside ?i2 ; :notDisjoint ?i2 . 
     ?i2 :intervalFinishes ?i1 ; :intervalIn ?i1 ; :notDisjoint ?i1 . 
 }
 WHERE 
@@ -280,7 +280,7 @@ WHERE
 }
 
 INSERT { 
-    ?i1 :intervalContains ?i2 ; :hasInside ?i2 ; :notDisjoint ?i2 . 
+    ?i1 :intervalContains ?i2 ; :intervalHasInside ?i2 ; :hasInside ?i2 ; :notDisjoint ?i2 . 
     ?i2 :intervalDuring ?i1 ; :intervalIn ?i1 ; :notDisjoint ?i1 . 
 }
 WHERE 
@@ -299,7 +299,7 @@ WHERE
 }
 
 INSERT { 
-    ?i1 :intervalStartedBy ?i2 ; :hasInside ?i2 ; :notDisjoint ?i2 . 
+    ?i1 :intervalStartedBy ?i2 ; :intervalHasInside ?i2 ; :hasInside ?i2 ; :notDisjoint ?i2 . 
     ?i2 :intervalStarts ?i1 ; :intervalIn ?i1 ; :notDisjoint ?i1 . 
 }
 WHERE 

@@ -32,6 +32,7 @@
   <a>:intervalEquals</a> |
   <a>:intervalFinishedBy</a> |
   <a>:intervalFinishes</a> |
+  <a>:intervalHasInside</a> |
   <a>:intervalIn</a> |
   <a>:intervalMeets</a> |
   <a>:intervalMetBy</a> |
@@ -222,10 +223,8 @@
     <dd><a>:TemporalEntity</a> </dd>
     <dt>Range: </dt>
     <dd><a>:TemporalEntity</a> </dd>
-    <dt>Additional axioms: </dt>
-    <dd>
-      <code>:disjoint owl:propertyDisjointWith :notDisjoint .</code>
-    </dd>
+    <dt>Disjoint with:</dt>
+    <dd><a>:notDisjoint</a></dd>
   </dl>
 </section>
 
@@ -381,10 +380,8 @@
     <dd><a>:TemporalEntity</a> </dd>
     <dt>Range: </dt>
     <dd><a>:TemporalEntity</a> </dd>
-    <dt>Additional axioms: </dt>
-    <dd>
-      <code>:hasInside owl:propertyDisjointWith :equals .</code>
-    </dd>
+    <dt>Disjoint with:</dt>
+    <dd><a>:equals</a></dd>
   </dl>
 </section>
 
@@ -781,6 +778,32 @@
     <dd><a>:ProperInterval</a></dd>
     <dt>Inverse of:</dt>
     <dd><a>:intervalFinishedBy</a></dd>
+  </dl>
+</section>
+
+<section id="intervalHasInside" class="specterm">
+  <h4>interval has inside</h4>
+  <dl>
+    <dt>Term:</dt>
+    <dd><dfn>:intervalHasInside</dfn></dd>
+    <dt>IRI:</dt>
+    <dd>http://www.w3.org/2006/time#intervalHasInside</dd>
+    <dt>Definition:</dt>
+    <dd>
+      If a proper interval T<sub>1</sub> intervalHasInside it another proper interval T<sub>2</sub>, then the beginning of T<sub>1</sub> is coincident with or before the beginning of T<sub>2</sub>, and the end of T<sub>1</sub> is concident with or after the end of T<sub>2</sub>, except that end of T<sub>1</sub> may not be coincident with the end of T<sub>2</sub> if the beginning of T<sub>1</sub> is coincident with the beginning of T<sub>2</sub>.
+    </dd>
+    <dt>Instance of:</dt>
+    <dd><code>owl:ObjectProperty</code></dd>
+    <dt>Subproperty of:</dt>
+    <dd><a>:hasInside</a></dd>
+    <dt>Domain:</dt>
+    <dd><a>:ProperInterval</a></dd>
+    <dt>Range:</dt>
+    <dd><a>:ProperInterval</a></dd>
+    <dt>Inverse of:</dt>
+    <dd><a>:intervalIn</a></dd>
+    <dt>Disjoint with:</dt>
+    <dd><a>:intervalEquals</a></dd>
   </dl>
 </section>
 
@@ -1247,11 +1270,9 @@
     <dt>Domain: </dt>
     <dd><a>:TemporalEntity</a> </dd>
     <dt>Range: </dt>
-    </dd>
-    <dt>Additional axioms: </dt>
-    <dd>
-      <code>:notDisjoint owl:propertyDisjointWith :disjoint .</code><br />
-    </dd>
+    <dd><a>:TemporalEntity</a> </dd>
+    <dt>Disjoint with:</dt>
+    <dd><a>:disjoint</a></dd>
   </dl>
 </section>
 
