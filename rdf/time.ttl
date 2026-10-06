@@ -19,7 +19,7 @@
   dct:creator <mailto:panfeng66@gmail.com> ;
   dct:isVersionOf <http://www.w3.org/TR/owl-time> ;
   dct:license <https://creativecommons.org/licenses/by/4.0/> ;
-  dct:modified "2026-10-05"^^xsd:date ;
+  dct:modified "2026-10-06"^^xsd:date ;
   dct:rights "Copyright © 2006-2026 W3C, OGC. W3C and OGC liability, trademark and document use rules apply."@en ;
   rdfs:label "OWL-Time"@en ;
   rdfs:seeAlso <http://dx.doi.org/10.3233/SW-150187> ;
@@ -35,6 +35,7 @@
   skos:changeNote "2021-01-27 - clarified definition and label for time:after and time:before" ;
   skos:changeNote "2024-02-29 - Fixed datatype on all cardinality restrictions" ;
   skos:changeNote "2025-08-27 - Added six entity-relations from https://www.w3.org/TR/vocab-owl-time-rel/" ;
+  skos:changeNote "2026-10-06 - Added intervalHasInside, and alignment axioms to BFO/CCO" ;
   skos:historyNote """Update of OWL-Time ontology, extended to support general temporal reference systems. 
 
 Ontology engineering by Simon J D Cox"""@en ;
