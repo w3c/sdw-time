@@ -26,10 +26,9 @@
   rdfs:seeAlso <http://www.semantic-web-journal.net/content/time-ontology-extended-non-gregorian-calendar-applications> ;
   rdfs:seeAlso <http://www.w3.org/TR/owl-time> ;
   owl:priorVersion <http://www.w3.org/2006/time#2006> ;
-  owl:versionIRI <http://www.w3.org/2006/time#2016> ;
+  owl:priorVersion <http://www.w3.org/2006/time#2016> ;
+  owl:versionIRI <http://www.w3.org/2006/time#2026> ;
   skos:changeNote "2016-06-15 - initial update of OWL-Time - modified to support arbitrary temporal reference systems. " ;
-  skos:changeNote "2016-12-20 - adjust range of time:timeZone to time:TimeZone, moved up from the tzont ontology.  " ;
-  skos:changeNote "2016-12-20 - restore time:Year and time:January which were present in the 2006 version of the ontology, but now marked \"deprecated\". " ;
   skos:changeNote "2017-02 - intervalIn, intervalDisjoint, monthOfYear added; TemporalUnit subclass of TemporalDuration" ;
   skos:changeNote "2017-04-06 - hasTime, hasXSDDuration added; Number removed; all duration elements changed to xsd:decimal" ;
   skos:changeNote "2021-01-27 - clarified definition and label for time:after and time:before" ;
