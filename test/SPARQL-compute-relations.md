@@ -135,6 +135,28 @@ WHERE
 }
 ```
 
+### 2.5 intervalMetBy intervalMeets 
+```
+INSERT { 
+    ?i1 :intervalMetBy ?i2 ; :intervalDisjoint ?i2 ; :disjoint ?i2 . 
+    ?i2 :intervalMeets ?i1 ; :intervalDisjoint ?i1 ; :disjoint ?i1 . 
+}
+WHERE 
+{
+	?i1 a :ProperInterval ; 
+		:hasBeginning ?i1b ;
+		:hasEnd ?i1e . 
+	?i1b :inXSDDateTime ?t1b .
+	?i1e :inXSDDateTime ?t1e .
+	?i2 a :ProperInterval ; 
+		:hasBeginning ?i2b ;
+		:hasEnd ?i2e . 
+	?i2b :inXSDDateTime ?t2b .
+	?i2e :inXSDDateTime ?t2e .
+	FILTER ( ?t1b  = ?t2e  )
+}
+```
+
 ## 3. notDisjoint
 ### 3.0 general
 ```
@@ -187,7 +209,7 @@ WHERE
 	FILTER ( ?t1b = ?t2b  &&  ?t1e = ?t2e  )
 }
 
-INSERT { ?i1 :intervalEquals ?i2 ; :equals ?i2 ; :notDisjoint ?i2 . }
+INSERT { ?i1 :intervalEquals ?i2 ; :intervalNotDisjoint ?i2 ; :equals ?i2 ; :notDisjoint ?i2 . }
 WHERE 
 {
 	?i1 a :ProperInterval ; 
@@ -261,8 +283,8 @@ WHERE
 }
 
 INSERT { 
-    ?i1 :intervalFinishedBy ?i2 ; :intervalHasInside ?i2 ; :hasInside ?i2 ; :notDisjoint ?i2 . 
-    ?i2 :intervalFinishes ?i1 ; :intervalIn ?i1 ; :notDisjoint ?i1 . 
+    ?i1 :intervalFinishedBy ?i2 ; :intervalHasInside ?i2 ; :intervalNotDisjoint ?i2 ; :hasInside ?i2 ; :notDisjoint ?i2 . 
+    ?i2 :intervalFinishes ?i1 ; :intervalIn ?i1 ; :intervalNotDisjoint ?i2 ; :notDisjoint ?i1 . 
 }
 WHERE 
 {
@@ -280,8 +302,8 @@ WHERE
 }
 
 INSERT { 
-    ?i1 :intervalContains ?i2 ; :intervalHasInside ?i2 ; :hasInside ?i2 ; :notDisjoint ?i2 . 
-    ?i2 :intervalDuring ?i1 ; :intervalIn ?i1 ; :notDisjoint ?i1 . 
+    ?i1 :intervalContains ?i2 ; :intervalHasInside ?i2 ; :intervalNotDisjoint ?i2 ; :hasInside ?i2 ; :notDisjoint ?i2 . 
+    ?i2 :intervalDuring ?i1 ; :intervalIn ?i1 ; :intervalNotDisjoint ?i2 ; :notDisjoint ?i1 . 
 }
 WHERE 
 {
@@ -299,8 +321,8 @@ WHERE
 }
 
 INSERT { 
-    ?i1 :intervalStartedBy ?i2 ; :intervalHasInside ?i2 ; :hasInside ?i2 ; :notDisjoint ?i2 . 
-    ?i2 :intervalStarts ?i1 ; :intervalIn ?i1 ; :notDisjoint ?i1 . 
+    ?i1 :intervalStartedBy ?i2 ; :intervalHasInside ?i2 ; :intervalNotDisjoint ?i2 ; :hasInside ?i2 ; :notDisjoint ?i2 . 
+    ?i2 :intervalStarts ?i1 ; :intervalIn ?i1 ; :intervalNotDisjoint ?i2 ; :notDisjoint ?i1 . 
 }
 WHERE 
 {
@@ -318,33 +340,11 @@ WHERE
 }
 ```
 
-### 3.4 intervalMetBy intervalMeets 
+### 3.4 intervalOverlappedBy intervalOverlaps
 ```
 INSERT { 
-    ?i1 :intervalMetBy ?i2 ; :notDisjoint ?i2 . 
-    ?i2 :intervalMeets ?i1 ; :notDisjoint ?i1 . 
-}
-WHERE 
-{
-	?i1 a :ProperInterval ; 
-		:hasBeginning ?i1b ;
-		:hasEnd ?i1e . 
-	?i1b :inXSDDateTime ?t1b .
-	?i1e :inXSDDateTime ?t1e .
-	?i2 a :ProperInterval ; 
-		:hasBeginning ?i2b ;
-		:hasEnd ?i2e . 
-	?i2b :inXSDDateTime ?t2b .
-	?i2e :inXSDDateTime ?t2e .
-	FILTER ( ?t1b  = ?t2e  )
-}
-```
-
-### 3.5 intervalOverlappedBy intervalOverlaps
-```
-INSERT { 
-    ?i1 :intervalOverlappedBy ?i2 ; :notDisjoint ?i2 . 
-    ?i2 :intervalOverlaps ?i1 ; :notDisjoint ?i1 . 
+    ?i1 :intervalOverlappedBy ?i2 ; :intervalNotDisjoint ?i2 ; :notDisjoint ?i2 . 
+    ?i2 :intervalOverlaps ?i1 ; :intervalNotDisjoint ?i2 ; :notDisjoint ?i1 . 
 }
 WHERE 
 {

@@ -611,9 +611,6 @@ cco:ont00001990
   rdfs:range :TemporalEntity ;
   owl:propertyDisjointWith :notDisjoint ;
   skos:definition "If a temporal entity T1 is disjoint with another temporal entity T2, then the beginning of T1 is after the end of T2, or the end of T1 is before the beginning of T2, i.e. the two entities do not overlap or coincide in any way, but their ordering relationship is not known."@en ;
-  skos:example """
-ex:LunchTime :disjoint ex:NapTime .
-""" ;
 .
 :equals
   a owl:ObjectProperty ;
@@ -623,7 +620,7 @@ ex:LunchTime :disjoint ex:NapTime .
   rdfs:range :TemporalEntity ;
   skos:definition "If a temporal entity T1 equals another temporal entity T2, then the beginning of T1 is coincident with the beginning of T2, and the end of T1 is coincident with the end of T2, and the beginning of T1 may be coincident with the end of T1."@en ;
   skos:example """
-ex:JackWeddingDay :equals ex:AbbyBirthday2020 .
+ex:SimonWeddingDay :equals ex:RichardWeddingAnniversary1999 .
 """ ;
 .
 :hasBeginning
@@ -633,7 +630,7 @@ ex:JackWeddingDay :equals ex:AbbyBirthday2020 .
   rdfs:domain :TemporalEntity ;
   rdfs:label "has beginning"@en ;
   rdfs:range :Instant ;
-  skos:definition "Beginning of a temporal entity."@en ;
+  skos:definition "First instant of a temporal entity."@en ;
 .
 :hasEnd
   a owl:ObjectProperty ;
@@ -642,7 +639,7 @@ ex:JackWeddingDay :equals ex:AbbyBirthday2020 .
   rdfs:domain :TemporalEntity ;
   rdfs:label "has end"@en ;
   rdfs:range :Instant ;
-  skos:definition "End of a temporal entity."@en ;
+  skos:definition "Last instant of a temporal entity."@en ;
 .
 :hasInside
   a owl:ObjectProperty ;
@@ -652,6 +649,7 @@ ex:JackWeddingDay :equals ex:AbbyBirthday2020 .
   rdfs:range :TemporalEntity ;
   owl:propertyDisjointWith :equals ;
   skos:definition "If a temporal entity T1 hasInside it another temporal entity T2, then the beginning of T1 is coincident with or before the beginning of T2, and the end of T1 is concident with or after the end of T2, except that end of T1 may not be coincident with the end of T2 if the beginning of T1 is coincident with the beginning of T2."@en ;
+  skos:note "This relation is the disjoint union of inside, intervalHasInside. However, that is outside OWL2 expressivity, so is implemented as an explicit property, with inside, intervalHasInside as sub-properties"@en ;
   skos:example """
 ex:Class :hasInside ex:Quiz .
 """ ;
@@ -663,7 +661,7 @@ ex:Class :hasInside ex:Quiz .
   rdfs:domain :Interval ;
   rdfs:label "has time instant inside"@en ;
   rdfs:range :Instant ;
-  skos:definition "An instant that falls inside the interval. It is not intended to include beginnings and ends of intervals."@en ;
+  skos:definition "If an instant T1 is inside an interval T2, then T1 is after the beginning of T2 and before the end of T2."@en ;
 .
 :intervalAfter
   a owl:ObjectProperty ;
@@ -687,7 +685,7 @@ ex:Class :hasInside ex:Quiz .
 .
 :intervalContains
   a owl:ObjectProperty ;
-  rdfs:subPropertyOf :hasInside ;
+  rdfs:subPropertyOf :intervalHasInside ;
   owl:equivalentProperty cco:ont00001795 ; # has inside interval
   rdfs:domain :ProperInterval ;
   rdfs:label "interval contains"@en ;
@@ -703,7 +701,10 @@ ex:Class :hasInside ex:Quiz .
   rdfs:label "interval disjoint"@en ;
   rdfs:range :ProperInterval ;
   skos:definition "If a proper interval T1 is intervalDisjoint another proper interval T2, then the beginning of T1 is after the end of T2, or the end of T1 is before the beginning of T2, i.e., the intervals do not overlap in any way, but their ordering relationship is not known."@en ;
-  skos:note "This interval relation is not included in the 13 basic relationships defined in Allen (1984), but is defined in (T.3) as the union of :intervalBefore v :intervalAfter . However, that is outside OWL2 expressivity, so is implemented as an explicit property, with :intervalBefore , :intervalAfter as sub-properties"@en ;
+  skos:note "This interval relation is not included in the 13 basic relationships defined in Allen (1984), but is defined as the union of :intervalBefore, :intervalAfter, :intervalMeets, intervalMetBy . However, that is outside OWL2 expressivity, so is implemented as an explicit property, with :intervalBefore, :intervalAfter, :intervalMeets, intervalMetBy as sub-properties"@en ;
+  skos:example """
+ex:LunchTime :intervalDisjoint ex:NapTime .
+""" ;
 .
 :intervalDuring
   a owl:ObjectProperty ;
@@ -717,7 +718,7 @@ ex:Class :hasInside ex:Quiz .
 .
 :intervalEquals
   a owl:ObjectProperty ;
-  rdfs:subPropertyOf :equals ;
+  rdfs:subPropertyOf :equals, :intervalNotDisjoint ;
   owl:equivalentProperty cco:ont00001822 ; # interval equals
   rdfs:domain :ProperInterval ;
   rdfs:label "interval equals"@en ;
@@ -727,7 +728,7 @@ ex:Class :hasInside ex:Quiz .
 .
 :intervalFinishedBy
   a owl:ObjectProperty ;
-  rdfs:subPropertyOf :hasInside ;
+  rdfs:subPropertyOf :intervalHasInside ;
   owl:equivalentProperty cco:ont00001821 ; # interval finished by
   rdfs:domain :ProperInterval ;
   rdfs:label "interval finished by"@en ;
@@ -747,7 +748,7 @@ ex:Class :hasInside ex:Quiz .
 .
 :intervalHasInside
   a owl:ObjectProperty ;
-  rdfs:subPropertyOf :hasInside ;
+  rdfs:subPropertyOf :hasInside, :intervalNotDisjoint ;
   owl:equivalentProperty cco:ont00001924 ; # interval contains
   rdfs:domain :ProperInterval ;
   rdfs:label "interval has interval inside" ;
@@ -755,10 +756,11 @@ ex:Class :hasInside ex:Quiz .
   owl:inverseOf :intervalIn ;
   owl:propertyDisjointWith :intervalEquals ;
   skos:definition "If a proper interval T1 intervalHasInside it another proper interval T2, then the beginning of T1 is coincident with or before the beginning of T2, and the end of T1 is concident with or after the end of T2, except that end of T1 may not be coincident with the end of T2 if the beginning of T1 is coincident with the beginning of T2."@en ;
+  skos:note "This relation is the disjoint union of startedBy, contains, finshedBy. However, that is outside OWL2 expressivity, so is implemented as an explicit property, with startedBy, contains, finshedBy as sub-properties"@en ;
 .
 :intervalIn
   a owl:ObjectProperty ;
-  rdfs:subPropertyOf :notDisjoint ;
+  rdfs:subPropertyOf :intervalNotDisjoint ;
   owl:equivalentProperty cco:ont00001971 ; # interval contained by
   rdfs:domain :ProperInterval ;
   rdfs:label "interval in"@en ;
@@ -770,7 +772,7 @@ ex:Class :hasInside ex:Quiz .
 .
 :intervalMeets
   a owl:ObjectProperty ;
-  rdfs:subPropertyOf :notDisjoint ;
+  rdfs:subPropertyOf :intervalDisjoint ;
   rdfs:domain :ProperInterval ;
   rdfs:label "interval meets"@en ;
   rdfs:range :ProperInterval ;
@@ -779,16 +781,26 @@ ex:Class :hasInside ex:Quiz .
 .
 :intervalMetBy
   a owl:ObjectProperty ;
-  rdfs:subPropertyOf :notDisjoint ;
+  rdfs:subPropertyOf :intervalDisjoint ;
   rdfs:domain :ProperInterval ;
   rdfs:label "interval met by"@en ;
   rdfs:range :ProperInterval ;
   owl:inverseOf :intervalMeets ;
   skos:definition "If a proper interval T1 is intervalMetBy another proper interval T2, then the beginning of T1 is coincident with the end of T2."@en ;
 .
-:intervalOverlappedBy
+:intervalNotDisjoint
   a owl:ObjectProperty ;
   rdfs:subPropertyOf :notDisjoint ;
+  rdfs:domain :ProperInterval ;
+  rdfs:label "interval not disjoint with interval" ;
+  rdfs:range :ProperInterval ;
+  owl:propertyDisjointWith :intervalDisjoint ;
+  skos:definition "If a proper interval T1 is intervalNotDisjoint with another proper interval T2, then the two entities  overlap or coincide in some way, but their ordering relationship is not known."@en ;
+  skos:note "This relation is the complement of intervalDisjoint and is the disjoint union of intervalEquals, intervalHasInside, intervalIn, intervalOverlaps, intervalOverlappedBy. However, that is outside OWL2 expressivity, so is implemented as an explicit property, with intervalEquals, intervalHasInside, intervalIn, intervalOverlaps, intervalOverlappedBy as sub-properties"@en ;
+.
+:intervalOverlappedBy
+  a owl:ObjectProperty ;
+  rdfs:subPropertyOf :intervalNotDisjoint ;
   owl:equivalentProperty cco:ont00001870 ; # interval overlapped by
   rdfs:domain :ProperInterval ;
   rdfs:label "interval overlapped by"@en ;
@@ -798,7 +810,7 @@ ex:Class :hasInside ex:Quiz .
 .
 :intervalOverlaps
   a owl:ObjectProperty ;
-  rdfs:subPropertyOf :notDisjoint ;
+  rdfs:subPropertyOf :intervalNotDisjoint ;
   owl:equivalentProperty cco:ont00001825 ; # interval overlaps
   rdfs:domain :ProperInterval ;
   rdfs:label "interval overlaps"@en ;
@@ -808,7 +820,7 @@ ex:Class :hasInside ex:Quiz .
 .
 :intervalStartedBy
   a owl:ObjectProperty ;
-  rdfs:subPropertyOf :hasInside ;
+  rdfs:subPropertyOf :intervalHasInside ;
   owl:equivalentProperty cco:ont00001875 ; # interval started by
   rdfs:domain :ProperInterval ;
   rdfs:label "interval started by"@en ;
@@ -832,7 +844,8 @@ ex:Class :hasInside ex:Quiz .
   rdfs:label "not disjoint with time entity" ;
   rdfs:range :TemporalEntity ;
   owl:propertyDisjointWith :disjoint ;
-  skos:definition "If a temporal entity T1 is notDisjoint with another temporal entity T2, then the the two entities not overlap or coincide in some way, but their ordering relationship is not known. This relation is the complement of disjoint and the union of equals, hasInside, in, meets, metBy, overlaps, overlappedBy."@en ;
+  skos:definition "If a temporal entity T1 is notDisjoint with another temporal entity T2, then the two entities overlap or coincide in some way, but their ordering relationship is not known."@en ;
+  skos:note "This relation is the complement of :disjoint and is the disjoint union of equals, hasInside, intervalNotDisjoint. However, that is outside OWL2 expressivity, so is implemented as an explicit property, with equals, hasInside, intervalNotDisjoint as sub-properties"@en ;
 .
 
 ## temporal properties
