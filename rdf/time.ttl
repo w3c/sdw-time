@@ -1022,20 +1022,10 @@ The range of this property is not specified, so can be replaced by any specific 
 .
 :inXSDDateTime
   a owl:DatatypeProperty ;
-  a owl:DeprecatedProperty ;
   rdfs:domain :Instant ;
   rdfs:label "in XSD Date-Time"@en ;
   rdfs:range xsd:dateTime ;
-  owl:deprecated "true"^^xsd:boolean ;
   skos:definition "Position of an instant, expressed using xsd:dateTime"@en ;
-  skos:note "The property :inXSDDateTime is replaced by :inXSDDateTimeStamp which makes the time-zone field mandatory."@en ;
-.
-:inXSDDateTimeStamp
-  a owl:DatatypeProperty ;
-  rdfs:domain :Instant ;
-  rdfs:label "in XSD Date-Time-Stamp"@en ;
-  rdfs:range xsd:dateTimeStamp ;
-  skos:definition "Position of an instant, expressed using xsd:dateTimeStamp"@en ;
 .
 :inXSDgYear
   a owl:DatatypeProperty ;
@@ -1750,9 +1740,9 @@ El rango de esta propiedad no está especificado, por tanto, se puede reemplazar
 :weeks  skos:definition  "Longitud de, o elemento de la longitud de, una extensión temporal expresada en semanas."@es ;
         rdfs:label    "duración en semanas"@es .
 
-:inXSDDateTimeStamp 
+:inXSDDateTime 
         rdfs:label       "en fecha-sello de tiempo XSD"@es ;
-        skos:definition  "Posición de un instante, expresado utilizando xsd:dateTimeStamp."@es .
+        skos:definition  "Posición de un instante, expresado utilizando xsd:dateTime."@es .
 
 :intervalContains 
         rdfs:label       "intervalo contiene"@es ;
@@ -1854,7 +1844,7 @@ l rango de esta propiedad no está especificado, por tanto, se puede reemplazar 
         rdfs:label       "posición temporal"@es ;
         skos:definition  "Posición de un instante de tiempo."@es .
 
-xsd:dateTimeStamp  rdfs:label  "sello de tiempo"@es .
+xsd:dateTime  rdfs:label  "sello de tiempo"@es .
 
 :months 
         rdfs:label       "duración en meses"@es ;

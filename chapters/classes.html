@@ -313,7 +313,7 @@
         <dd><a>:TemporalEntity</a></dd>
     </dl>
     <p>
-        Seven properties, <a>:inXSDDate</a>, <a>:inXSDDateTime</a> (deprecated), <a>:inXSDDateTimeStamp</a>,
+        Seven properties, <a>:inXSDDate</a>, <a>:inXSDDateTime</a>,
         <a>:inXSDgYear</a>, <a>:inXSDgYearMonth</a>, <a>:inTimePosition</a>, and <a>:inDateTime</a> provide alternative
         ways to describe the temporal position of an <a>:Instant</a>.
     </p>
@@ -410,11 +410,11 @@
         <dd><a>:Instant</a></dd>
     </dl>
     <p>
-        Fifteen properties:
+        Seventeen properties:
         <a>:intervalBefore</a>, <a>:intervalAfter</a>, <a>:intervalMeets</a>, <a>:intervalMetBy</a>,
         <a>:intervalOverlaps</a>, <a>:intervalOverlappedBy</a>, <a>:intervalStarts</a>, <a>:intervalStartedBy</a>,
         <a>:intervalDuring</a>, <a>:intervalContains</a>, <a>:intervalFinishes</a>, <a>:intervalFinishedBy</a>,
-        <a>:intervalEquals</a>, <a>:intervalDisjoint</a>, and <a>:intervalIn</a>
+        <a>:intervalEquals</a>, <a>:intervalHasInside</a>, <a>:intervalIn</a>,         <a>:intervalDisjoint</a>, and <a>:intervalNotDisjoint</a>, 
         support the set of interval relations defined by Allen [[?ak-83]], [[?al-84]], [[?af-97]].
     </p>
 </section>
@@ -446,8 +446,7 @@
         </dd>
     </dl>
     <p>
-        Two properties: <a>:before</a>, and <a>:after</a>, support ordering relationships between two
-        <a>:TemporalEntity</a>s.
+        Two properties: <a>:before</a>, and <a>:after</a>, support ordering relationships between two        <a>:TemporalEntity</a>s.
     </p>
     <p>
         The properties <a>:hasBeginning</a>, <a>:hasEnd</a> and <a>:hasTemporalDuration</a> (or its sub-properties),
