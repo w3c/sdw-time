@@ -86,7 +86,13 @@ var respecConfig = {
       authors: ["J.F. Allen", "G. Ferguson"],
       date: "1997",
       href: "http://dx.doi.org/10.1007/978-0-585-28322-7_7",
-      title: "Actions and events in interval temporal logic In: Spatial and Temporal Reasoning. O. Stock, ed., Kluwer, Dordrecht, Netherlands, pp. 205-245."
+      title: "Actions and events in interval temporal logic. In: Spatial and Temporal Reasoning. O. Stock, ed., Kluwer, Dordrecht, Netherlands, pp. 205-245."
+    },
+    "ak-83": {
+      authors: ["J.F. Allen", "J.A. Koomen"],
+      date: "1983",
+      href: "https://www.ijcai.org/Proceedings/83-2/Papers/036.pdf",
+      title: "Planning Using a Temporal World Model. In: Proceedings of the 8th International Joint Conference on Artificial Intelligence (IJCAI-1983)  pages 741–747. "
     },
     "al-84": {
       authors: ["J.F. Allen"],
