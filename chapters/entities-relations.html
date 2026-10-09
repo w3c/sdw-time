@@ -1,7 +1,6 @@
 <h3>Temporal entities and relations</h3>
 <p>
-    The basic structure of the ontology is based on a calculus of binary relations on intervals developed by Allen ([[ak-83]], [[al-84]], [[af-97]]) for representing qualitative temporal information, and to address the problem of
-    reasoning about such information.
+    The basic structure of the ontology is based on a calculus of binary relations on intervals developed by Allen for representing qualitative temporal information, and to address the problem of reasoning about such information ([al-83]], [[ak-83]], [[al-84]], [[af-97]]).
     The relationships between temporal entities can be defined in terms of <code>before</code> and identity on the beginning and end points.
 </p>
 
@@ -13,8 +12,6 @@
 <p>
     Intervals are things with temporal extent.
     Instants are point-like in that they have no interior points, but it is generally safe to think of an instant as an interval with zero length, where the beginning and end are the same.
-    This idea &mdash; that time intervals are the more general case and time instants are just a limited specialization
-    &mdash; is the first key contribution of Allen's analysis ([[al-84]]).
 </p>
 <p>
     The class <a>:Interval</a> has one subclass <a>:ProperInterval</a>, which corresponds with the common understanding of intervals, in that the beginning and end are distinct, and whose membership is therefore disjoint from <a>:Instant</a>.
@@ -25,7 +22,10 @@
         Temporal Entity and sub-classes, with basic relations.
     </figcaption>
 </figure>
-<p>Five basic relations between temporal entities are shown, which are implemented in OWL-Time as:</p>
+
+<p>
+    Five basic relations between temporal entities and instants are shown, which are implemented in OWL-Time as:
+</p>
 <ul>
     <li>
         <a>:hasBeginning</a> , <a>:hasEnd</a>
@@ -38,10 +38,14 @@
     </li>
 </ul>
 
+<p>
+    The arrangement linking intervals and instants into a class hierarchy, and the corresponding relations, were introduced by Hobbs & Pan ([[hp-04]]) to supplement the Allen's work which dealt solely with proper intervals.  
+</p>
+
 <h4>Allen's interval relations</h4>
 <p>
-    Relationships between intervals are the primary focus of Allen's analysis ([[ak-83]], [[al-84]], [[af-97]]).
-    Thirteen elementary relations shown below are the second key contribution (<a href="#Fig-interval-relations"></a>).
+    Relationships between intervals are the primary focus of Allen's analysis ([[al-83]], [[ak-83]], [[al-84]], [[af-97]]).
+    Thirteen elementary relations are the key contribution (<a href="#Fig-interval-relations"></a>).
     These relations support unambiguous expression of all possible relationships between temporal entities, which allows the computation of any relative position or sequence.
 </p>
 <figure id="Fig-interval-relations">
@@ -83,19 +87,16 @@
 
 <h4>Additional relations between temporal entities</h4>
 <p>
-    In principle, any relationship between temporal entities can be built up through logical combination of members of the primitive relations.
-    In practice, there are limitations in the expressivity of the RDF implementation of OWL2, particularly around unions and complements of properties [[owl2-direct-semantics]][[owl2-rdf-based-semantics]].
+    In principle, any relationship between temporal entities can be built up through <a href="https://ics.uci.edu/~alspaugh/cls/shr/allen.html">logical combination of members of the primitive relations</a>.
+    In practice, there are limitations in the expressivity OWL2, particularly around unions and complements of properties [[owl2-direct-semantics]][[owl2-rdf-based-semantics]].
     In OWL2 the union of properties can only be <a href="https://stackoverflow.com/questions/26128430/owl-union-of-object-property">approximated through a set of sub-property axioms,</a> which link the members up to the union, but does not exclude the possibility of other sub-properties being added to the union.
-</p>
-<p>
-    Furthermore most of the relationships in OWL-Time were for proper-intervals, i.e. temporal entities of non-zero duration, do not apply to relationships involving time instants.
 </p>
 <p>
     Due to these considerations it is convenient to introduce some additional topological relations between temporal entities explicitly.
     This supports some applications more efficiently, and is useful for interoperability purposes.
 </p>
 <p>
-    The additional relations are implemented in OWL-Time as:
+    Four additional relations between proper intervals are implemented in OWL-Time:
 </p>
 <ul>
     <li>
@@ -107,6 +108,29 @@
         &rarr; union of <a>:intervalContains</a>, <a>:intervalStartedBy</a>, <a>:intervalFinishedBy</a>
     </li>
     <li>
+        <a>:intervalDisjoint</a>
+        &rarr; union of <a>:intervalBefore</a>, <a>:intervalAfter</a>, <a>:intervalMeets</a>, <a>:intervalMetBy</a>
+    </li>
+    <li>
+        <a>:intervalNotDisjoint</a>
+        &rarr; union of <a>:intervalEquals</a>, <a>:intervalHasInside</a>, <a>:intervalIn</a>, <a>:intervalOverlaps</a>, <a>:intervalOverlappedBy</a>
+    </li>
+</ul>
+<p>
+    <a>:intervalHasInside</a> (and its inverse <a>:intervalIn</a>) is implied by the following mention in [[ak-83]]: "a relationship that will be useful later is the notion that one interval A <i>wholly contains</i> another interval B. We shall assert A [wholly] contains B as an abbreviation for A (contains|startedBy|finishedBy) B.".
+</p>
+<p>
+    <a>:intervalDisjoint</a> is implied by the following mention in [[ak-83]]: "the fact that intervals A and B are disjoint can be expressed by asserting that A is before, meets, is met by, or is after B". 
+    <a>:intervalNotDisjoint</a> is the complement of <a>:intervalDisjoint</a>. 
+</p>
+<p class="note">
+    The fact that `meets` is disjoint implies that Allen does not consider the instants at the end and beginning of an interval to be part of the interval - i.e., Allen intervals are 'open'. 
+</p>
+<p>
+    Finally, four additional relations between general temporal entities support the description of all possible relationships between temporal entities, which allows the computation of any relative position or sequence.
+</p>
+<ul>
+    <li>
         <a>:hasInside</a>
         &rarr; union of <a>:inside</a>, <a>:intervalHasInside</a>
     </li>
@@ -116,18 +140,9 @@
         <br><em>but not restricted to relations between proper intervals</em>
     </li>
     <li>
-        <a>:intervalNotDisjoint</a>
-        &rarr; union of <a>:intervalEquals</a>, <a>:intervalHasInside</a>, <a>:intervalIn</a>, <a>:intervalOverlaps</a>, <a>:intervalOverlappedBy</a>
-        <br><em>complement of <a>:intervalDisjoint</a></em>
-    </li>
-    <li>
         <a>:notDisjoint</a>
         &rarr; union of <a>:equals</a>, <a>:hasBeginning</a>, <a>:hasEnd</a>, <a>:hasInside</a>, <a>:intervalNotDisjoint</a>,
         <br><em>complement of <a>:disjoint</a></em>
-    </li>
-    <li>
-        <a>:intervalDisjoint</a>
-        &rarr; union of <a>:intervalBefore</a>, <a>:intervalAfter</a>, <a>:intervalMeets</a>, <a>:intervalMetBy</a>
     </li>
     <li>
         <a>:disjoint</a>
@@ -151,6 +166,6 @@
 
 <h4>Relating temporal information with any entity</h4>
 <p>
-    The properties <a>:hasTemporalDuration</a>, <a>:hasBeginning</a> and <a>:hasEnd</a>, together with a fourth generic property <a>:hasTime</a>, support the association of temporal information with any temporal entity, such as an activity or event, or other entity.
-    These provide a standard way to attach time information to things, which may be used directly in applications if suitable, or specialized if needed.
+    The properties <a>:hasTemporalDuration</a>, <a>:hasBeginning</a> and <a>:hasEnd</a>, together with a fourth generic property <a>:hasTime</a>, support the association of temporal information with any entity, such as an activity or event.
+    These may be used directly in applications if suitable, or specialized if needed.
 </p>

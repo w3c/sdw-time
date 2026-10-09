@@ -66,19 +66,60 @@ Ontology engineering by Simon J D Cox"""@en ;
       owl:hasValue <http://www.opengis.net/def/uom/ISO-8601/0/Gregorian> ;
       owl:onProperty :hasTRS ;
     ] ;
-  skos:definition "Description of date and time structured with separate values for the various elements of a calendar-clock system. The temporal reference system is fixed to Gregorian Calendar, and the range of year, month, day properties restricted to corresponding XML Schema types xsd:gYear, xsd:gMonth and xsd:gDay, respectively."@en ;
+  skos:definition "date and time expressed as a structure with separate values for the various elements of a calendar-clock system. The temporal reference system is fixed to Gregorian Calendar, and the range of year, month, day properties are restricted to the corresponding XML Schema types xsd:gYear, xsd:gMonth and xsd:gDay, respectively."@en ;
+  skos:note "An individual :DateTimeDescription is a description of an interval whose duration is its :unitType."@en ;
 .
 :DateTimeInterval
   a owl:Class ;
   rdfs:label "Date-time interval"@en ;
   rdfs:subClassOf :ProperInterval ;
-  skos:definition "DateTimeInterval is a subclass of ProperInterval, defined using the multi-element DateTimeDescription."@en ;
+  skos:definition "ProperInterval expressed using the multi-element DateTimeDescription."@en ;
   skos:note ":DateTimeInterval can only be used for an interval whose limits coincide with a date-time element aligned to the calendar and timezone indicated. For example, while both have a duration of one day, the 24-hour interval beginning at midnight at the beginning of 8 May in Central Europe can be expressed as a :DateTimeInterval, but the 24-hour interval starting at 1:30pm cannot."@en ;
 .
 :DayOfWeek
   a owl:Class ;
   rdfs:label "Day of week"@en ;
-  rdfs:subClassOf owl:Thing ;
+  rdfs:subClassOf :DateTimeDescription ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty :day ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:cardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty :hour ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:cardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty :minute ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:cardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty :month ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:cardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty :second ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:cardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty :week ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:cardinality "0"^^xsd:nonNegativeInteger ;
+      owl:onProperty :year ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:hasValue :unitDay ;
+      owl:onProperty :unitType ;
+    ] ;
   skos:changeNote """Remove enumeration from definition, in order to allow other days to be used when required in other calendars. 
 NOTE: existing days are still present as members of the class, but the class membership is now open. 
 
@@ -92,7 +133,7 @@ In the original OWL-Time the following constraint appeared:
       time:Saturday
       time:Sunday
     ) ;"""@en ;
-  skos:definition "The day of week"@en ;
+  skos:definition "date-time description specifying a day of a week"@en ;
   skos:note "Membership of the class :DayOfWeek is open, to allow for alternative week lengths and different day names."@en ;
 .
 :Duration
@@ -109,7 +150,7 @@ In the original OWL-Time the following constraint appeared:
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
       owl:onProperty :unitType ;
     ] ;
-  skos:definition "Duration of a temporal extent expressed as a number scaled by a temporal unit"@en ;
+  skos:definition "temporal duration expressed as a number scaled by a temporal unit"@en ;
   skos:note "Alternative to time:DurationDescription to support description of a temporal duration other than using a calendar/clock system."@en ;
 .
 :DurationDescription
@@ -156,7 +197,7 @@ In the original OWL-Time the following constraint appeared:
       owl:hasValue <http://www.opengis.net/def/uom/ISO-8601/0/Gregorian> ;
       owl:onProperty :hasTRS ;
     ] ;
-  skos:definition "Description of temporal extent structured with separate values for the various elements of a calendar-clock system. The temporal reference system is fixed to Gregorian Calendar, and the range of each of the numeric properties is restricted to xsd:decimal"@en ;
+  skos:definition "temporal duration expressed as a structure with separate values for the various elements of a calendar-clock system. The temporal reference system is fixed to Gregorian Calendar, and the range of each of the numeric properties is restricted to xsd:decimal"@en ;
   skos:note "In the Gregorian calendar the length of the month is not fixed. Therefore, a value like \"2.5 months\" cannot be exactly compared with a similar duration expressed in terms of weeks or days."@en ;
 .
 :GeneralDateTimeDescription
@@ -223,7 +264,7 @@ In the original OWL-Time the following constraint appeared:
       owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onProperty :year ;
     ] ;
-  skos:definition "Description of date and time structured with separate values for the various elements of a calendar-clock system"@en ;
+  skos:definition "temporal position expressed as a structure with separate values for the various elements of a calendar-clock system. An individual :GeneralDateTimeDescription defines an interval whose duration is its :unitType"@en ;
   skos:note "Some combinations of properties are redundant - for example, within a specified :year if :dayOfYear is provided then :day and :month can be computed, and vice versa. Individual values should be consistent with each other and the calendar, indicated through the value of the :hasTRS property." ;
 .
 :GeneralDurationDescription
@@ -270,7 +311,7 @@ In the original OWL-Time the following constraint appeared:
       owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onProperty :years ;
     ] ;
-  skos:definition "Description of temporal extent structured with separate values for the various elements of a calendar-clock system."@en ;
+  skos:definition "temporal duration expressed as a structure with separate values for the various elements of a calendar-clock system."@en ;
   skos:note "The extent of a time duration expressed as a GeneralDurationDescription depends on the Temporal Reference System. In some calendars the length of the week or month is not constant within the year. Therefore, a value like \"2.5 months\" may not necessarily be exactly compared with a similar duration expressed in terms of weeks or days. When non-earth-based calendars are considered even more care must be taken in comparing durations."@en ;
 .
 :Instant
@@ -278,14 +319,13 @@ In the original OWL-Time the following constraint appeared:
   rdfs:label "Time instant"@en ;
   rdfs:subClassOf :TemporalEntity ;
   owl:equivalentClass obo:BFO_0000203 ; # temporal instant
-  skos:definition "A temporal entity with zero extent or duration"@en ;
+  skos:definition "temporal entity with zero extent or duration"@en ;
 .
 :Interval
   a owl:Class ;
   rdfs:label "Time interval"@en ;
   rdfs:subClassOf :TemporalEntity ;
-  owl:equivalentClass obo:BFO_0000202 ; # temporal interval
-  skos:definition "A temporal entity with an extent or duration"@en ;
+  skos:definition "temporal entity with a non-zero extent or duration"@en ;
 .
 :January
   a owl:Class ;
@@ -349,7 +389,7 @@ In the original OWL-Time the following constraint appeared:
       owl:hasValue :unitMonth ;
       owl:onProperty :unitType ;
     ] ;
-  skos:definition "The month of the year"@en ;
+  skos:definition "date-time description specifying a month of a year"@en ;
   skos:editorialNote "Feature at risk - added in 2017 revision, and not yet widely used. "@en ;
   skos:note "Membership of the class :MonthOfYear is open, to allow for alternative annual calendars and different month names."@en ;
 .
@@ -357,8 +397,9 @@ In the original OWL-Time the following constraint appeared:
   a owl:Class ;
   rdfs:label "Proper interval"@en ;
   rdfs:subClassOf :Interval ;
+  owl:equivalentClass obo:BFO_0000202 ; # temporal interval
   owl:disjointWith :Instant ;
-  skos:definition "A temporal entity with non-zero extent or duration, i.e., for which the value of the beginning and end are different"@en ;
+  skos:definition "interval for which the position of the beginning and end are different"@en ;
 .
 :TRS
   a owl:Class ;
@@ -371,13 +412,13 @@ This is a stub class, representing the set of all temporal reference systems."""
 :TemporalDuration
   a owl:Class ;
   rdfs:label "Temporal duration"@en ;
-  skos:definition "Time extent; duration of a time interval separate from its particular start position"@en ;
+  skos:definition "Extent of a time interval"@en ;
+  skos:note "Duration may be computed as the difference between the end and beginning of an interval"@en ;
 .
 :TemporalEntity
   a owl:Class ;
   rdfs:label "Temporal entity"@en ;
   rdfs:subClassOf owl:Thing ;
-  owl:equivalentClass obo:BFO_0000008 ; # temporal region
   owl:unionOf (
       :Instant
       :Interval
@@ -392,7 +433,7 @@ This is a stub class, representing the set of all temporal reference systems."""
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
       owl:onProperty :hasTRS ;
     ] ;
-  skos:definition "A position on a time-line"@en ;
+  skos:definition "a position on a time-line"@en ;
 .
 :TemporalUnit
   a owl:Class ;
@@ -411,7 +452,7 @@ In the original OWL-Time the following constraint appeared:
       time:unitMonth
       time:unitYear
     ) ;"""@en ;
-  skos:definition "A standard duration, which provides a scale factor for a time extent, or the granularity or precision for a time position."@en ;
+  skos:definition "a standard temporal duration, which provides a scale factor for a time extent, or the granularity or precision for a time position."@en ;
   skos:note "Membership of the class TemporalUnit is open, to allow for other temporal units used in some technical applications (e.g., millions of years, Baha'i month)."@en ;
 .
 :TimePosition
@@ -433,16 +474,18 @@ In the original OWL-Time the following constraint appeared:
           ]
         ) ;
     ] ;
-  skos:definition "A temporal position described using either a (nominal) value from an ordinal reference system, or a (numeric) value in a temporal coordinate system. "@en ;
+  skos:definition "temporal position described using either a (nominal) value from an ordinal reference system, or a (numeric) value in a temporal coordinate system. "@en ;
 .
 :TimeZone
   a owl:Class ;
   rdfs:label "Time Zone"@en ;
   skos:definition """
-  A Time Zone specifies the amount by which the local time is offset from UTC. 
+  the amount by which the local time is offset from UTC. 
+  """@en ;
+  skos:note """
 	A time zone is usually denoted geographically (e.g., Australian Eastern Daylight Time), with a constant value in a given region. 
-The region where it applies and the offset from UTC are specified by a locally recognised governing authority.
-"""@en ;
+  The region where it applies and the offset from UTC are specified by a locally recognised governing authority.
+  """@en ;
   skos:historyNote """In the original 2006 version of OWL-Time, the TimeZone class, with several properties corresponding to a specific model of time-zones, was defined in a separate namespace \"http://www.w3.org/2006/timezone#\". 
 
 In the current version a class with same local name is put into the main OWL-Time namespace, removing the dependency on the external namespace. 
@@ -531,8 +574,10 @@ It is deprecated in this edition of OWL-Time. """ ;
   ] ;
   skos:definition """
   Day of month - formulated as a text string with a pattern constraint to reproduce the same lexical form as gDay, except that values up to 99 are permitted, in order to support calendars with more than 31 days in a month. 
-Note that the value-space is not defined, so a generic OWL2 processor cannot compute ordering relationships of values of this type.
-"""@en ;
+  """@en ;
+  skos:note """
+  the value-space is not defined, so a generic OWL2 processor cannot compute ordering relationships of values of this type.
+  """@en ;
 .
 :generalMonth
   a rdfs:Datatype ;
@@ -548,8 +593,10 @@ Note that the value-space is not defined, so a generic OWL2 processor cannot com
   ] ;
   skos:definition """
   Month of year - formulated as a text string with a pattern constraint to reproduce the same lexical form as gMonth, except that values up to 20 are permitted, in order to support calendars with more than 12 months in the year. 
-Note that the value-space is not defined, so a generic OWL2 processor cannot compute ordering relationships of values of this type.
-"""@en ;
+  """@en ;
+  skos:note """
+  the value-space is not defined, so a generic OWL2 processor cannot compute ordering relationships of values of this type.
+  """@en ;
 .
 :generalYear
   a rdfs:Datatype ;
@@ -565,6 +612,8 @@ Note that the value-space is not defined, so a generic OWL2 processor cannot com
   ] ;
   skos:definition """
   Year number - formulated as a text string with a pattern constraint to reproduce the same lexical form as gYear, but not restricted to values from the Gregorian calendar. 
+  """@en ;
+  skos:note """
 Note that the value-space is not defined, so a generic OWL2 processor cannot compute ordering relationships of values of this type.
 """@en ;
 .
@@ -625,7 +674,7 @@ ex:SimonWeddingDay :equals ex:RichardWeddingAnniversary1999 .
 .
 :hasBeginning
   a owl:ObjectProperty ;
-  rdfs:subPropertyOf :notDisjoint , :hasTime ;
+  rdfs:subPropertyOf :disjoint , :hasTime ;
   owl:equivalentProperty obo:BFO_0000222 ; # has first instant
   rdfs:domain :TemporalEntity ;
   rdfs:label "has beginning"@en ;
@@ -634,7 +683,7 @@ ex:SimonWeddingDay :equals ex:RichardWeddingAnniversary1999 .
 .
 :hasEnd
   a owl:ObjectProperty ;
-  rdfs:subPropertyOf :notDisjoint , :hasTime ;
+  rdfs:subPropertyOf :disjoint , :hasTime ;
   owl:equivalentProperty obo:BFO_0000224 ; # has last instant
   rdfs:domain :TemporalEntity ;
   rdfs:label "has end"@en ;
@@ -773,6 +822,7 @@ ex:LunchTime :intervalDisjoint ex:NapTime .
 :intervalMeets
   a owl:ObjectProperty ;
   rdfs:subPropertyOf :intervalDisjoint ;
+  owl:equivalentProperty cco:ont00001896 ; # interval meets
   rdfs:domain :ProperInterval ;
   rdfs:label "interval meets"@en ;
   rdfs:range :ProperInterval ;
@@ -782,6 +832,7 @@ ex:LunchTime :intervalDisjoint ex:NapTime .
 :intervalMetBy
   a owl:ObjectProperty ;
   rdfs:subPropertyOf :intervalDisjoint ;
+  owl:equivalentProperty cco:ont00001915 ; # interval met by
   rdfs:domain :ProperInterval ;
   rdfs:label "interval met by"@en ;
   rdfs:range :ProperInterval ;

@@ -91,8 +91,14 @@ var respecConfig = {
     "ak-83": {
       authors: ["J.F. Allen", "J.A. Koomen"],
       date: "1983",
-      href: "https://www.ijcai.org/Proceedings/83-2/Papers/036.pdf",
+      href: "https://dx.doi.org/10.1145/182.358434",
       title: "Planning Using a Temporal World Model. In: Proceedings of the 8th International Joint Conference on Artificial Intelligence (IJCAI-1983)  pages 741–747. "
+    },
+    "al-83": {
+      authors: ["J.F. Allen"],
+      date: "1983",
+      href: "http://dx.doi.org/10.1016/0004-3702%2884%2990008-0",
+      title: "Maintaining knowledge about temporal intervals.  Communications of the ACM 26(11) pp.832-843"
     },
     "al-84": {
       authors: ["J.F. Allen"],
