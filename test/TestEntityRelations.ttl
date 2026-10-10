@@ -48,6 +48,7 @@ ex:I11
   :disjoint ex:I55 ;
   :disjoint ex:I56 ;
   :disjoint ex:I66 ;
+  :disjoint ex:T1 ;
   :disjoint ex:T2 ;
   :disjoint ex:T3 ;
   :disjoint ex:T4 ;
@@ -63,7 +64,6 @@ ex:I11
   :notDisjoint ex:I14 ;
   :notDisjoint ex:I15 ;
   :notDisjoint ex:I16 ;
-  :notDisjoint ex:T1 ;
 .
 ex:I12
   a :Interval ;
@@ -98,6 +98,8 @@ ex:I12
   :disjoint ex:I55 ;
   :disjoint ex:I56 ;
   :disjoint ex:I66 ;
+  :disjoint ex:T1 ;
+  :disjoint ex:T2 ;
   :disjoint ex:T3 ;
   :disjoint ex:T4 ;
   :disjoint ex:T5 ;
@@ -146,8 +148,6 @@ ex:I12
   :notDisjoint ex:I14 ;
   :notDisjoint ex:I15 ;
   :notDisjoint ex:I16 ;
-  :notDisjoint ex:T1 ;
-  :notDisjoint ex:T2 ;
 .
 ex:I13
   a :Interval ;
@@ -171,6 +171,8 @@ ex:I13
   :disjoint ex:I55 ;
   :disjoint ex:I56 ;
   :disjoint ex:I66 ;
+  :disjoint ex:T1 ;
+  :disjoint ex:T3 ;
   :disjoint ex:T4 ;
   :disjoint ex:T5 ;
   :disjoint ex:T6 ;
@@ -230,9 +232,7 @@ ex:I13
   :notDisjoint ex:I25 ;
   :notDisjoint ex:I26 ;
   :notDisjoint ex:I33 ;
-  :notDisjoint ex:T1 ;
   :notDisjoint ex:T2 ;
-  :notDisjoint ex:T3 ;
 .
 ex:I14
   a :Interval ;
@@ -248,6 +248,8 @@ ex:I14
   :disjoint ex:I55 ;
   :disjoint ex:I56 ;
   :disjoint ex:I66 ;
+  :disjoint ex:T1 ;
+  :disjoint ex:T4 ;
   :disjoint ex:T5 ;
   :disjoint ex:T6 ;
   :equals ex:I14 ;
@@ -318,10 +320,8 @@ ex:I14
   :notDisjoint ex:I35 ;
   :notDisjoint ex:I36 ;
   :notDisjoint ex:I44 ;
-  :notDisjoint ex:T1 ;
   :notDisjoint ex:T2 ;
   :notDisjoint ex:T3 ;
-  :notDisjoint ex:T4 ;
 .
 ex:I15
   a :Interval ;
@@ -331,6 +331,8 @@ ex:I15
   :before ex:T6 ;
   :disjoint ex:I56 ;
   :disjoint ex:I66 ;
+  :disjoint ex:T1 ;
+  :disjoint ex:T5 ;
   :disjoint ex:T6 ;
   :equals ex:I15 ;
   :hasBeginning ex:T1 ;
@@ -413,17 +415,17 @@ ex:I15
   :notDisjoint ex:I45 ;
   :notDisjoint ex:I46 ;
   :notDisjoint ex:I55 ;
-  :notDisjoint ex:T1 ;
   :notDisjoint ex:T2 ;
   :notDisjoint ex:T3 ;
   :notDisjoint ex:T4 ;
-  :notDisjoint ex:T5 ;
 .
 ex:I16
   a :Interval ;
   a :ProperInterval ;
   a :TemporalEntity ;
   :equals ex:I16 ;
+  :disjoint ex:T1 ;
+  :disjoint ex:T6 ;
   :hasBeginning ex:T1 ;
   :hasEnd ex:T6 ;
   :hasInside ex:I12 ;
@@ -518,12 +520,10 @@ ex:I16
   :notDisjoint ex:I55 ;
   :notDisjoint ex:I56 ;
   :notDisjoint ex:I66 ;
-  :notDisjoint ex:T1 ;
   :notDisjoint ex:T2 ;
   :notDisjoint ex:T3 ;
   :notDisjoint ex:T4 ;
   :notDisjoint ex:T5 ;
-  :notDisjoint ex:T6 ;
 .
 ex:I22
   a :Interval ;
@@ -556,6 +556,7 @@ ex:I22
   :disjoint ex:I56 ;
   :disjoint ex:I66 ;
   :disjoint ex:T1 ;
+  :disjoint ex:T2 ;
   :disjoint ex:T3 ;
   :disjoint ex:T4 ;
   :disjoint ex:T5 ;
@@ -574,7 +575,6 @@ ex:I22
   :notDisjoint ex:I24 ;
   :notDisjoint ex:I25 ;
   :notDisjoint ex:I26 ;
-  :notDisjoint ex:T2 ;
 .
 ex:I23
   a :Interval ;
@@ -603,6 +603,8 @@ ex:I23
   :disjoint ex:I56 ;
   :disjoint ex:I66 ;
   :disjoint ex:T1 ;
+  :disjoint ex:T2 ;
+  :disjoint ex:T3 ;
   :disjoint ex:T4 ;
   :disjoint ex:T5 ;
   :disjoint ex:T6 ;
@@ -657,8 +659,6 @@ ex:I23
   :notDisjoint ex:I25 ;
   :notDisjoint ex:I26 ;
   :notDisjoint ex:I33 ;
-  :notDisjoint ex:T2 ;
-  :notDisjoint ex:T3 ;
 .
 ex:I24
   a :Interval ;
@@ -679,6 +679,8 @@ ex:I24
   :disjoint ex:I56 ;
   :disjoint ex:I66 ;
   :disjoint ex:T1 ;
+  :disjoint ex:T2 ;
+  :disjoint ex:T4 ;
   :disjoint ex:T5 ;
   :disjoint ex:T6 ;
   :equals ex:I24 ;
@@ -741,9 +743,7 @@ ex:I24
   :notDisjoint ex:I35 ;
   :notDisjoint ex:I36 ;
   :notDisjoint ex:I44 ;
-  :notDisjoint ex:T2 ;
   :notDisjoint ex:T3 ;
-  :notDisjoint ex:T4 ;
 .
 ex:I25
   a :Interval ;
@@ -758,6 +758,8 @@ ex:I25
   :disjoint ex:I56 ;
   :disjoint ex:I66 ;
   :disjoint ex:T1 ;
+  :disjoint ex:T2 ;
+  :disjoint ex:T5 ;
   :disjoint ex:T6 ;
   :equals ex:I25 ;
   :hasBeginning ex:T2 ;
@@ -829,10 +831,8 @@ ex:I25
   :notDisjoint ex:I45 ;
   :notDisjoint ex:I46 ;
   :notDisjoint ex:I55 ;
-  :notDisjoint ex:T2 ;
   :notDisjoint ex:T3 ;
   :notDisjoint ex:T4 ;
-  :notDisjoint ex:T5 ;
 .
 ex:I26
   a :Interval ;
@@ -843,6 +843,8 @@ ex:I26
   :disjoint ex:I11 ;
   :disjoint ex:I12 ;
   :disjoint ex:T1 ;
+  :disjoint ex:T2 ;
+  :disjoint ex:T6 ;
   :equals ex:I26 ;
   :hasBeginning ex:T2 ;
   :hasEnd ex:T6 ;
@@ -924,11 +926,9 @@ ex:I26
   :notDisjoint ex:I55 ;
   :notDisjoint ex:I56 ;
   :notDisjoint ex:I66 ;
-  :notDisjoint ex:T2 ;
   :notDisjoint ex:T3 ;
   :notDisjoint ex:T4 ;
   :notDisjoint ex:T5 ;
-  :notDisjoint ex:T6 ;
 .
 ex:I33
   a :Interval ;
@@ -958,6 +958,7 @@ ex:I33
   :disjoint ex:I66 ;
   :disjoint ex:T1 ;
   :disjoint ex:T2 ;
+  :disjoint ex:T3 ;
   :disjoint ex:T4 ;
   :disjoint ex:T5 ;
   :disjoint ex:T6 ;
@@ -977,7 +978,6 @@ ex:I33
   :notDisjoint ex:I34 ;
   :notDisjoint ex:I35 ;
   :notDisjoint ex:I36 ;
-  :notDisjoint ex:T3 ;
 .
 ex:I34
   a :Interval ;
@@ -1005,6 +1005,8 @@ ex:I34
   :disjoint ex:I66 ;
   :disjoint ex:T1 ;
   :disjoint ex:T2 ;
+  :disjoint ex:T3 ;
+  :disjoint ex:T4 ;
   :disjoint ex:T5 ;
   :disjoint ex:T6 ;
   :equals ex:I34 ;
@@ -1060,8 +1062,6 @@ ex:I34
   :notDisjoint ex:I35 ;
   :notDisjoint ex:I36 ;
   :notDisjoint ex:I44 ;
-  :notDisjoint ex:T3 ;
-  :notDisjoint ex:T4 ;
 .
 ex:I35
   a :Interval ;
@@ -1083,6 +1083,8 @@ ex:I35
   :disjoint ex:I66 ;
   :disjoint ex:T1 ;
   :disjoint ex:T2 ;
+  :disjoint ex:T3 ;
+  :disjoint ex:T5 ;
   :disjoint ex:T6 ;
   :equals ex:I35 ;
   :hasBeginning ex:T3 ;
@@ -1144,9 +1146,7 @@ ex:I35
   :notDisjoint ex:I45 ;
   :notDisjoint ex:I46 ;
   :notDisjoint ex:I55 ;
-  :notDisjoint ex:T3 ;
   :notDisjoint ex:T4 ;
-  :notDisjoint ex:T5 ;
 .
 ex:I36
   a :Interval ;
@@ -1164,6 +1164,8 @@ ex:I36
   :disjoint ex:I23 ;
   :disjoint ex:T1 ;
   :disjoint ex:T2 ;
+  :disjoint ex:T3 ;
+  :disjoint ex:T6 ;
   :equals ex:I36 ;
   :hasBeginning ex:T3 ;
   :hasEnd ex:T6 ;
@@ -1232,10 +1234,8 @@ ex:I36
   :notDisjoint ex:I55 ;
   :notDisjoint ex:I56 ;
   :notDisjoint ex:I66 ;
-  :notDisjoint ex:T3 ;
   :notDisjoint ex:T4 ;
   :notDisjoint ex:T5 ;
-  :notDisjoint ex:T6 ;
 .
 ex:I44
   a :Interval ;
@@ -1266,6 +1266,7 @@ ex:I44
   :disjoint ex:T1 ;
   :disjoint ex:T2 ;
   :disjoint ex:T3 ;
+  :disjoint ex:T4 ;
   :disjoint ex:T5 ;
   :disjoint ex:T6 ;
   :equals ex:I44 ;
@@ -1284,7 +1285,6 @@ ex:I44
   :notDisjoint ex:I44 ;
   :notDisjoint ex:I45 ;
   :notDisjoint ex:I46 ;
-  :notDisjoint ex:T4 ;
 .
 ex:I45
   a :Interval ;
@@ -1315,6 +1315,8 @@ ex:I45
   :disjoint ex:T1 ;
   :disjoint ex:T2 ;
   :disjoint ex:T3 ;
+  :disjoint ex:T4 ;
+  :disjoint ex:T5 ;
   :disjoint ex:T6 ;
   :equals ex:I45 ;
   :hasBeginning ex:T4 ;
@@ -1367,8 +1369,6 @@ ex:I45
   :notDisjoint ex:I45 ;
   :notDisjoint ex:I46 ;
   :notDisjoint ex:I55 ;
-  :notDisjoint ex:T4 ;
-  :notDisjoint ex:T5 ;
 .
 ex:I46
   a :Interval ;
@@ -1395,6 +1395,8 @@ ex:I46
   :disjoint ex:T1 ;
   :disjoint ex:T2 ;
   :disjoint ex:T3 ;
+  :disjoint ex:T4 ;
+  :disjoint ex:T6 ;
   :equals ex:I46 ;
   :hasBeginning ex:T4 ;
   :hasEnd ex:T6 ;
@@ -1451,9 +1453,7 @@ ex:I46
   :notDisjoint ex:I55 ;
   :notDisjoint ex:I56 ;
   :notDisjoint ex:I66 ;
-  :notDisjoint ex:T4 ;
   :notDisjoint ex:T5 ;
-  :notDisjoint ex:T6 ;
 .
 ex:I55
   a :Interval ;
@@ -1489,6 +1489,7 @@ ex:I55
   :disjoint ex:T2 ;
   :disjoint ex:T3 ;
   :disjoint ex:T4 ;
+  :disjoint ex:T5 ;
   :disjoint ex:T6 ;
   :equals ex:I55 ;
   :hasBeginning ex:T5 ;
@@ -1504,7 +1505,6 @@ ex:I55
   :notDisjoint ex:I46 ;
   :notDisjoint ex:I55 ;
   :notDisjoint ex:I56 ;
-  :notDisjoint ex:T5 ;
 .
 ex:I56
   a :Interval ;
@@ -1542,6 +1542,8 @@ ex:I56
   :disjoint ex:T2 ;
   :disjoint ex:T3 ;
   :disjoint ex:T4 ;
+  :disjoint ex:T5 ;
+  :disjoint ex:T6 ;
   :equals ex:I56 ;
   :hasBeginning ex:T5 ;
   :hasEnd ex:T6 ;
@@ -1587,8 +1589,6 @@ ex:I56
   :notDisjoint ex:I55 ;
   :notDisjoint ex:I56 ;
   :notDisjoint ex:I66 ;
-  :notDisjoint ex:T5 ;
-  :notDisjoint ex:T6 ;
 .
 ex:I66
   a :Interval ;
@@ -1633,6 +1633,7 @@ ex:I66
   :disjoint ex:T3 ;
   :disjoint ex:T4 ;
   :disjoint ex:T5 ;
+  :disjoint ex:T6 ;
   :equals ex:I66 ;
   :hasBeginning ex:T6 ;
   :hasEnd ex:T6 ;
@@ -1643,7 +1644,6 @@ ex:I66
   :notDisjoint ex:I46 ;
   :notDisjoint ex:I56 ;
   :notDisjoint ex:I66 ;
-  :notDisjoint ex:T6 ;
 .
 ex:T1
   a :Instant ;

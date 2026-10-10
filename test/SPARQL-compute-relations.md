@@ -36,6 +36,28 @@ WHERE
 ```
 
 ## 2. disjoint
+### 2.0 general
+```
+INSERT 
+{ 
+	?i2 :disjoint ?i1 .
+	?i1 :disjoint ?i2 .
+}
+WHERE 
+{
+	?i1 a :Interval ; 
+		:hasBeginning ?i1b ;
+		:hasEnd ?i1e . 
+	?i1b :inXSDDateTime ?t1b .
+	?i1e :inXSDDateTime ?t1e .
+	?i2 a :Interval ; 
+		:hasBeginning ?i2b ;
+		:hasEnd ?i2e . 
+	?i2b :inXSDDateTime ?t2b .
+	?i2e :inXSDDateTime ?t2e .
+	FILTER(  ( ?t1b <= ?t2b  &&   ?t1e >= ?t2b ) || ( ?t1b <= ?t2e  &&   ?t1e >= ?t2e ) ) 
+}
+```
 
 ### 2.1 Instant before/after/disjoint instants
 ```
@@ -158,29 +180,6 @@ WHERE
 ```
 
 ## 3. notDisjoint
-### 3.0 general
-```
-INSERT 
-{ 
-	?i2 :notDisjoint ?i1 .
-	?i1 :notDisjoint ?i2 .
-}
-WHERE 
-{
-	?i1 a :Interval ; 
-		:hasBeginning ?i1b ;
-		:hasEnd ?i1e . 
-	?i1b :inXSDDateTime ?t1b .
-	?i1e :inXSDDateTime ?t1e .
-	?i2 a :Interval ; 
-		:hasBeginning ?i2b ;
-		:hasEnd ?i2e . 
-	?i2b :inXSDDateTime ?t2b .
-	?i2e :inXSDDateTime ?t2e .
-	FILTER(  ( ?t1b <= ?t2b  &&   ?t1e >= ?t2b ) || ( ?t1b <= ?t2e  &&   ?t1e >= ?t2e ) ) 
-}
-```
-
 ### 3.1 equals
 ```
 INSERT { ?t1 :equals ?t2 ; :notDisjoint ?t2 . }
