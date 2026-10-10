@@ -6,13 +6,13 @@
     The following example illustrates the difference between using <a>:DateTimeDescription</a> and using the XML
     datatype <code><a href="https://www.w3.org/TR/xmlschema11-2/#dateTimeStamp">xsd:dateTimeStamp</a></code>.
     An instant that represents the start of a meeting, called <code>ex:meetingStart</code>, happens at 10:30am AEST
-    on 12 Apr 2017 can be expressed using both <a>:inXSDDateTimeStamp</a> and <a>:inDateTime</a> in OWL as:
+    on 12 Apr 2017 can be expressed using both <a>:inXSDDateTime</a> and <a>:inDateTime</a> in OWL as:
   </p>
   <pre>
 ex:meetingStart
   a                    :Instant ;
   :inDateTime          ex:meetingStartDescription ;
-  :inXSDDateTimeStamp  2017-04-12T10:30:00+10:00 .
+  :inXSDDateTime       "2017-04-12T10:30:00+10:00"^^xsd:dateTimeStamp .
 
 ex:meetingStartDescription
   a             :DateTimeDescription ;
@@ -60,7 +60,7 @@ ex:AbbyBirthday
   :inTimePosition ex:AbbyBirthdayUnix ;
   rdfs:label      "Abby's birthdate"^^xsd:string ;
   :inDateTime     ex:AbbyBirthdayGregorian ;
-  :inXSDDateTimeStamp  "2001-05-23T08:20:00+08:00"^^xsd:dateTimeStamp ;
+  :inXSDDateTime  "2001-05-23T08:20:00+08:00"^^xsd:dateTimeStamp ;
 .
 </pre>
   <p>
@@ -160,7 +160,7 @@ geol:Present
     :hasTRS &lt;<a href="http://www.opengis.net/def/crs/OGC/0/ChronometricGeologicTime">http://www.opengis.net/def/crs/OGC/0/ChronometricGeologicTime</a>&gt; ;
     :numericPosition 0.0 ;
   ] ;
-  :inXSDDateTimeStamp "1950-01-01T00:00:00Z"^^xsd:dateTimeStamp ;
+  :inXSDDateTime "1950-01-01T00:00:00Z"^^xsd:dateTimeStamp ;
   rdfs:label "The present"^^xsd:string ;
 .
 </pre>
@@ -188,7 +188,7 @@ geol:Present
   <pre>
 ex:DatabaseTimeStamp
   a :Instant ;
-  :inXSDDateTimeStamp "2015-11-01T17:58:16.102Z"^^xsd:dateTimeStamp ;
+  :inXSDDateTime "2015-11-01T17:58:16.102Z"^^xsd:dateTimeStamp ;
   :inDateTime [
       a :DateTimeDescription ;
       :day "---01"^^xsd:gDay ;
@@ -439,11 +439,11 @@ ex:meeting
 
 ex:teleconStart
   a               :Instant ;
-  :inXSDDateTimeStamp  "2006-11-05T18:00:00-5:00"^^xsd:dateTimeStamp .
+  :inXSDDateTime  "2006-11-05T18:00:00-5:00"^^xsd:dateTimeStamp .
 
 ex:meetingStart
   a               :Instant ;
-  :inXSDDateTimeStamp  "2006-11-05T14:00:00-8:00"^^xsd:dateTimeStamp .
+  :inXSDDateTime  "2006-11-05T14:00:00-8:00"^^xsd:dateTimeStamp .
 
 ex:meetingDuration
   a         :DurationDescription ;
@@ -452,7 +452,7 @@ ex:meetingDuration
   <p>
     The telecon and the meeting are defined as intervals.
     <a>:hasBeginning</a> is used for specifying the start times of the meetings.
-    The datetimes are specified using <a>:inXSDDateTimeStamp</a>.
+    The datetimes are specified using <a>:inXSDDateTime</a>.
     The duration of the meeting is specified using the <a>:DurationDescription</a> class.
   </p>
 </section>
