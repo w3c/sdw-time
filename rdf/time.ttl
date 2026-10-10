@@ -399,7 +399,7 @@ In the original OWL-Time the following constraint appeared:
   rdfs:subClassOf :Interval ;
   owl:equivalentClass obo:BFO_0000202 ; # temporal interval
   owl:disjointWith :Instant ;
-  skos:definition "interval for which the position of the beginning and end are different"@en ;
+  skos:definition "interval whose beginning and end are not identical"@en ;
 .
 :TRS
   a owl:Class ;

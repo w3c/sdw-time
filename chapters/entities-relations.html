@@ -100,12 +100,12 @@
 </p>
 <ul>
     <li>
-        <a>:intervalIn</a>
-        &rarr; union of <a>:intervalDuring</a>, <a>:intervalStarts</a>, <a>:intervalFinishes</a>
-    </li>
-    <li>
         <a>:intervalHasInside</a>
         &rarr; union of <a>:intervalContains</a>, <a>:intervalStartedBy</a>, <a>:intervalFinishedBy</a>
+    </li>
+    <li>
+        <a>:intervalIn</a>
+        &rarr; union of <a>:intervalDuring</a>, <a>:intervalStarts</a>, <a>:intervalFinishes</a>
     </li>
     <li>
         <a>:intervalDisjoint</a>
@@ -117,14 +117,15 @@
     </li>
 </ul>
 <p>
-    <a>:intervalHasInside</a> (and its inverse <a>:intervalIn</a>) is implied by the following mention in [[ak-83]]: "a relationship that will be useful later is the notion that one interval A <i>wholly contains</i> another interval B. We shall assert A [wholly] contains B as an abbreviation for A (contains|startedBy|finishedBy) B.".
+    <a>:intervalHasInside</a> is implied by the following mention in [[ak-83]]: "a relationship that will be useful later is the notion that one interval A <i>wholly contains</i> another interval B. We shall assert A [wholly] contains B as an abbreviation for A (contains|startedBy|finishedBy) B.".
+    <a>:intervalIn</a> is the inverse of <a>:intervalHasInside</a>.
 </p>
 <p>
     <a>:intervalDisjoint</a> is implied by the following mention in [[ak-83]]: "the fact that intervals A and B are disjoint can be expressed by asserting that A is before, meets, is met by, or is after B". 
     <a>:intervalNotDisjoint</a> is the complement of <a>:intervalDisjoint</a>. 
 </p>
 <p class="note">
-    The fact that `meets` is disjoint implies that Allen does not consider the instants at the end and beginning of an interval to be part of the interval - i.e., Allen intervals are 'open'. 
+    The fact that `meets` and `metby` are disjoint implies that Allen does not consider the instants at the end and beginning of an interval to be part of the interval - i.e., Allen intervals are 'open'. 
 </p>
 <p>
     Finally, four additional relations between general temporal entities support the description of all possible relationships between temporal entities, which allows the computation of any relative position or sequence.
@@ -141,12 +142,11 @@
     </li>
     <li>
         <a>:disjoint</a>
-        &rarr; union of <a>:before</a>, <a>:after</a>, <a>:intervalDisjoint</a>
+        &rarr; union of <a>:before</a>, <a>:after</a>, <a>:hasBeginning</a>, <a>:hasEnd</a>, <a>:intervalDisjoint</a>
     </li>
     <li>
         <a>:notDisjoint</a>
-        &rarr; union of <a>:equals</a>, <a>:hasBeginning</a>, <a>:hasEnd</a>, <a>:hasInside</a>, <a>:intervalNotDisjoint</a>,
-        <br><em>complement of <a>:disjoint</a></em>
+        &rarr; union of <a>:equals</a>, <a>:hasInside</a>, <a>:intervalNotDisjoint</a>,
     </li>
 </ul>
 
