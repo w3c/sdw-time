@@ -325,7 +325,7 @@
     "seeAlso" : [ "http://www.w3.org/TR/owl-time", "http://dx.doi.org/10.3233/SW-150187", "http://www.semantic-web-journal.net/content/time-ontology-extended-non-gregorian-calendar-applications" ],
     "priorVersion" : "http://www.w3.org/2006/time#2006",
     "versionIRI" : "http://www.w3.org/2006/time#2016",
-    "changeNote" : [ "2016-12-20 - adjust range of time:timeZone to time:TimeZone, moved up from the tzont ontology.  ", "2016-06-15 - initial update of OWL-Time - modified to support arbitrary temporal reference systems. ", "2017-02 - intervalIn, intervalDisjoint, monthOfYear added; TemporalUnit subclass of TemporalDuration", "2016-12-20 - restore time:Year and time:January which were present in the 2006 version of the ontology, but now marked \"deprecated\". ", "2017-04-06 - hasTime, hasXSDDuration added; Number removed; all duration elements changed to xsd:decimal" ],
+    "changeNote" : [ "2016-12-20 - adjust range of time:timeZone to time:TimeZone, moved up from the tzont ontology.  ", "2016-06-15 - initial update of OWL-Time - modified to support arbitrary temporal reference systems. ", "2017-02 - intervalWhollyContainedBy, intervalDisjoint, monthOfYear added; TemporalUnit subclass of TemporalDuration", "2016-12-20 - restore time:Year and time:January which were present in the 2006 version of the ontology, but now marked \"deprecated\". ", "2017-04-06 - hasTime, hasXSDDuration added; Number removed; all duration elements changed to xsd:decimal" ],
     "historyNote" : {
       "@language" : "en",
       "@value" : "Update of OWL-Time ontology, extended to support general temporal reference systems. \n\nOntology engineering by Simon J D Cox"
@@ -2147,7 +2147,7 @@
       "@value" : "interval during"
     } ],
     "range" : "http://www.w3.org/2006/time#ProperInterval",
-    "subPropertyOf" : "http://www.w3.org/2006/time#intervalIn",
+    "subPropertyOf" : "http://www.w3.org/2006/time#intervalWhollyContainedBy",
     "inverseOf" : "http://www.w3.org/2006/time#intervalContains",
     "definition" : [ {
       "@language" : "es",
@@ -2175,7 +2175,7 @@
       "@value" : "interval equals"
     } ],
     "range" : "http://www.w3.org/2006/time#ProperInterval",
-    "propertyDisjointWith" : "http://www.w3.org/2006/time#intervalIn",
+    "propertyDisjointWith" : "http://www.w3.org/2006/time#intervalWhollyContainedBy",
     "definition" : [ {
       "@language" : "en",
       "@value" : "If a proper interval T1 is intervalEquals another proper interval T2, then the beginning of T1 is coincident with the beginning of T2, and the end of T1 is coincident with the end of T2."
@@ -2229,7 +2229,7 @@
       "@value" : "interval finishes"
     } ],
     "range" : "http://www.w3.org/2006/time#ProperInterval",
-    "subPropertyOf" : "http://www.w3.org/2006/time#intervalIn",
+    "subPropertyOf" : "http://www.w3.org/2006/time#intervalWhollyContainedBy",
     "inverseOf" : "http://www.w3.org/2006/time#intervalFinishedBy",
     "definition" : [ {
       "@language" : "en",
@@ -2239,14 +2239,14 @@
       "@value" : "Si un intervalo propio T1 termina otro intervalo propio T2, entonces del principio de T1 está después del principio de T2, y el final de T1 coincide con el final de T2."
     } ]
   }, {
-    "@id" : "http://www.w3.org/2006/time#intervalIn",
+    "@id" : "http://www.w3.org/2006/time#intervalWhollyContainedBy",
     "@type" : "owl:ObjectProperty",
     "comment" : [ {
       "@language" : "es",
       "@value" : "Si un intervalo propio T1 es un intervalo interior a otro intervalo propio T2, entonces el principio de T1 está después del principio de T2 o coincide con el principio de T2, y el final de T1 está antes que el final de T2, o coincide con el final de T2, excepto que el final de T1 puede no coincidir con el final de T2 si el principio de T1 coincide con el principio de T2."
     }, {
       "@language" : "en",
-      "@value" : "If a proper interval T1 is intervalIn another proper interval T2, then the beginning of T1 is after the beginning of T2 or is coincident with the beginning of T2, and the end of T1 is before the end of T2, or is coincident with the end of T2, except that end of T1 may not be coincident with the end of T2 if the beginning of T1 is coincident with the beginning of T2."
+      "@value" : "If a proper interval T1 is intervalWhollyContainedBy another proper interval T2, then the beginning of T1 is after the beginning of T2 or is coincident with the beginning of T2, and the end of T1 is before the end of T2, or is coincident with the end of T2, except that end of T1 may not be coincident with the end of T2 if the beginning of T1 is coincident with the beginning of T2."
     } ],
     "domain" : "http://www.w3.org/2006/time#ProperInterval",
     "label" : [ {
@@ -2260,7 +2260,7 @@
     "propertyDisjointWith" : "http://www.w3.org/2006/time#intervalEquals",
     "definition" : [ {
       "@language" : "en",
-      "@value" : "If a proper interval T1 is intervalIn another proper interval T2, then the beginning of T1 is after the beginning of T2 or is coincident with the beginning of T2, and the end of T1 is before the end of T2, or is coincident with the end of T2, except that end of T1 may not be coincident with the end of T2 if the beginning of T1 is coincident with the beginning of T2."
+      "@value" : "If a proper interval T1 is intervalWhollyContainedBy another proper interval T2, then the beginning of T1 is after the beginning of T2 or is coincident with the beginning of T2, and the end of T1 is before the end of T2, or is coincident with the end of T2, except that end of T1 may not be coincident with the end of T2 if the beginning of T1 is coincident with the beginning of T2."
     }, {
       "@language" : "es",
       "@value" : "Si un intervalo propio T1 es un intervalo interior a otro intervalo propio T2, entonces el principio de T1 está después del principio de T2 o coincide con el principio de T2, y el final de T1 está antes que el final de T2, o coincide con el final de T2, excepto que el final de T1 puede no coincidir con el final de T2 si el principio de T1 coincide con el principio de T2."
@@ -2426,7 +2426,7 @@
       "@value" : "intervalo empieza"
     } ],
     "range" : "http://www.w3.org/2006/time#ProperInterval",
-    "subPropertyOf" : "http://www.w3.org/2006/time#intervalIn",
+    "subPropertyOf" : "http://www.w3.org/2006/time#intervalWhollyContainedBy",
     "inverseOf" : "http://www.w3.org/2006/time#intervalStartedBy",
     "definition" : [ {
       "@language" : "en",

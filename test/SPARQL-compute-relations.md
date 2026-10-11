@@ -230,7 +230,7 @@ WHERE
 ```
 INSERT 
 { 
-	?i2 :inside ?t1 ; :hasInside ?t1 ; :notDisjoint ?t1 .
+	?i2 :inside ?t1 ; :whollyContains ?t1 ; :notDisjoint ?t1 .
 	?t1 :notDisjoint ?i2 .
 }
 WHERE 
@@ -260,10 +260,10 @@ WHERE
 }
 ```
 
-### 3.3 hasInside / intervalIn
+### 3.3 whollyContains / intervalWhollyContainedBy
 ```
 INSERT { 
-    ?i1 :hasInside ?i2 ; :notDisjoint ?i2 . 
+    ?i1 :whollyContains ?i2 ; :notDisjoint ?i2 . 
     ?i2 :notDisjoint ?i1 . 
 }
 WHERE 
@@ -282,8 +282,8 @@ WHERE
 }
 
 INSERT { 
-    ?i1 :intervalFinishedBy ?i2 ; :intervalHasInside ?i2 ; :intervalNotDisjoint ?i2 ; :hasInside ?i2 ; :notDisjoint ?i2 . 
-    ?i2 :intervalFinishes ?i1 ; :intervalIn ?i1 ; :intervalNotDisjoint ?i2 ; :notDisjoint ?i1 . 
+    ?i1 :intervalFinishedBy ?i2 ; :intervalWhollyContains ?i2 ; :intervalNotDisjoint ?i2 ; :whollyContains ?i2 ; :notDisjoint ?i2 . 
+    ?i2 :intervalFinishes ?i1 ; :intervalWhollyContainedBy ?i1 ; :intervalNotDisjoint ?i2 ; :notDisjoint ?i1 . 
 }
 WHERE 
 {
@@ -301,8 +301,8 @@ WHERE
 }
 
 INSERT { 
-    ?i1 :intervalContains ?i2 ; :intervalHasInside ?i2 ; :intervalNotDisjoint ?i2 ; :hasInside ?i2 ; :notDisjoint ?i2 . 
-    ?i2 :intervalDuring ?i1 ; :intervalIn ?i1 ; :intervalNotDisjoint ?i2 ; :notDisjoint ?i1 . 
+    ?i1 :intervalContains ?i2 ; :intervalWhollyContains ?i2 ; :intervalNotDisjoint ?i2 ; :whollyContains ?i2 ; :notDisjoint ?i2 . 
+    ?i2 :intervalDuring ?i1 ; :intervalWhollyContainedBy ?i1 ; :intervalNotDisjoint ?i2 ; :notDisjoint ?i1 . 
 }
 WHERE 
 {
@@ -320,8 +320,8 @@ WHERE
 }
 
 INSERT { 
-    ?i1 :intervalStartedBy ?i2 ; :intervalHasInside ?i2 ; :intervalNotDisjoint ?i2 ; :hasInside ?i2 ; :notDisjoint ?i2 . 
-    ?i2 :intervalStarts ?i1 ; :intervalIn ?i1 ; :intervalNotDisjoint ?i2 ; :notDisjoint ?i1 . 
+    ?i1 :intervalStartedBy ?i2 ; :intervalWhollyContains ?i2 ; :intervalNotDisjoint ?i2 ; :whollyContains ?i2 ; :notDisjoint ?i2 . 
+    ?i2 :intervalStarts ?i1 ; :intervalWhollyContainedBy ?i1 ; :intervalNotDisjoint ?i2 ; :notDisjoint ?i1 . 
 }
 WHERE 
 {

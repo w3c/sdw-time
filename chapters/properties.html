@@ -14,7 +14,7 @@
   <a>:hasDuration</a> |
   <a>:hasDurationDescription</a> |
   <a>:hasEnd</a> |
-  <a>:hasInside</a> |
+  <a>:whollyContains</a> |
   <a>:hasTemporalDuration</a> |
   <a>:hasTime</a> |
   <a>:hasTRS</a> |
@@ -32,8 +32,8 @@
   <a>:intervalEquals</a> |
   <a>:intervalFinishedBy</a> |
   <a>:intervalFinishes</a> |
-  <a>:intervalHasInside</a> |
-  <a>:intervalIn</a> |
+  <a>:intervalWhollyContains</a> |
+  <a>:intervalWhollyContainedBy</a> |
   <a>:intervalMeets</a> |
   <a>:intervalMetBy</a> |
   <a>:intervalNotDisjoint</a> |
@@ -360,16 +360,16 @@
   </dl>
 </section>
 
-<section id="hasInside" class="specterm">
+<section id="whollyContains" class="specterm">
   <h4>has time entity inside</h4>
   <dl>
     <dt>Term:</dt>
-    <dd><dfn>:hasInside</dfn></dd>
+    <dd><dfn>:whollyContains</dfn></dd>
     <dt>IRI:</dt>
-    <dd>http://www.w3.org/2006/time#hasInside</dd>
+    <dd>http://www.w3.org/2006/time#whollyContains</dd>
     <dt>Definition:</dt>
     <dd>
-      If a temporal entity T<sub>1</sub> hasInside it another temporal entity T<sub>2</sub>,
+      If a temporal entity T<sub>1</sub> whollyContains it another temporal entity T<sub>2</sub>,
       then the beginning of T<sub>1</sub> is coincident with or before the beginning of T<sub>2</sub>,
       and the end of T<sub>1</sub> is concident with or after the end of T<sub>2</sub>,
       except that end of T<sub>1</sub> may not be coincident with the end of T<sub>2</sub>
@@ -555,7 +555,7 @@
     <dt>Instance of:</dt>
     <dd><code>owl:ObjectProperty</code></dd>
     <dt>Sub-property of: </dt>
-    <dd><a>:hasInside</a></dd>
+    <dd><a>:whollyContains</a></dd>
     <dt>Domain:</dt>
     <dd><a>:Interval</a></dd>
     <dt>Range:</dt>
@@ -649,7 +649,7 @@
     <dt>Instance of:</dt>
     <dd><code>owl:ObjectProperty</code></dd>
     <dt>Subproperty of:</dt>
-    <dd><a>:intervalHasInside</a></dd>
+    <dd><a>:intervalWhollyContains</a></dd>
     <dt>Domain:</dt>
     <dd><a>:ProperInterval</a></dd>
     <dt>Range:</dt>
@@ -704,7 +704,7 @@
     <dt>Instance of:</dt>
     <dd><code>owl:ObjectProperty</code></dd>
     <dt>Subproperty of:</dt>
-    <dd><a>:intervalIn</a></dd>
+    <dd><a>:intervalWhollyContainedBy</a></dd>
     <dt>Domain:</dt>
     <dd><a>:ProperInterval</a></dd>
     <dt>Range:</dt>
@@ -736,7 +736,7 @@
     <dt>Range:</dt>
     <dd><a>:ProperInterval</a></dd>
     <dt>Disjoint with:</dt>
-    <dd><a>:intervalIn</a></dd>
+    <dd><a>:intervalWhollyContainedBy</a></dd>
   </dl>
 </section>
 
@@ -756,7 +756,7 @@
     <dt>Instance of:</dt>
     <dd><code>owl:ObjectProperty</code></dd>
     <dt>Subproperty of:</dt>
-    <dd><a>:intervalHasInside</a></dd>
+    <dd><a>:intervalWhollyContains</a></dd>
     <dt>Domain:</dt>
     <dd><a>:ProperInterval</a></dd>
     <dt>Range:</dt>
@@ -782,7 +782,7 @@
     <dt>Instance of:</dt>
     <dd><code>owl:ObjectProperty</code></dd>
     <dt>Subproperty of:</dt>
-    <dd><a>:intervalIn</a></dd>
+    <dd><a>:intervalWhollyContainedBy</a></dd>
     <dt>Domain:</dt>
     <dd><a>:ProperInterval</a></dd>
     <dt>Range:</dt>
@@ -792,16 +792,16 @@
   </dl>
 </section>
 
-<section id="intervalHasInside" class="specterm">
+<section id="intervalWhollyContains" class="specterm">
   <h4>interval has inside</h4>
   <dl>
     <dt>Term:</dt>
-    <dd><dfn>:intervalHasInside</dfn></dd>
+    <dd><dfn>:intervalWhollyContains</dfn></dd>
     <dt>IRI:</dt>
-    <dd>http://www.w3.org/2006/time#intervalHasInside</dd>
+    <dd>http://www.w3.org/2006/time#intervalWhollyContains</dd>
     <dt>Definition:</dt>
     <dd>
-      If a proper interval T<sub>1</sub> intervalHasInside it another proper interval T<sub>2</sub>,
+      If a proper interval T<sub>1</sub> intervalWhollyContains it another proper interval T<sub>2</sub>,
       then the beginning of T<sub>1</sub> is coincident with or before the beginning of T<sub>2</sub>,
       and the end of T<sub>1</sub> is concident with or after the end of T<sub>2</sub>,
       except that end of T<sub>1</sub> may not be coincident with the end of T<sub>2</sub>
@@ -814,28 +814,28 @@
     <dt>Instance of:</dt>
     <dd><code>owl:ObjectProperty</code></dd>
     <dt>Subproperty of:</dt>
-    <dd><a>:hasInside</a>, <a>:intervalNotDisjoint</a></dd>
+    <dd><a>:whollyContains</a>, <a>:intervalNotDisjoint</a></dd>
     <dt>Domain:</dt>
     <dd><a>:ProperInterval</a></dd>
     <dt>Range:</dt>
     <dd><a>:ProperInterval</a></dd>
     <dt>Inverse of:</dt>
-    <dd><a>:intervalIn</a></dd>
+    <dd><a>:intervalWhollyContainedBy</a></dd>
     <dt>Disjoint with:</dt>
     <dd><a>:intervalEquals</a></dd>
   </dl>
 </section>
 
-<section id="intervalIn" class="specterm">
+<section id="intervalWhollyContainedBy" class="specterm">
   <h4>interval in</h4>
   <dl>
     <dt>Term:</dt>
-    <dd><dfn>:intervalIn</dfn></dd>
+    <dd><dfn>:intervalWhollyContainedBy</dfn></dd>
     <dt>IRI:</dt>
-    <dd>http://www.w3.org/2006/time#intervalIn</dd>
+    <dd>http://www.w3.org/2006/time#intervalWhollyContainedBy</dd>
     <dt>Definition:</dt>
     <dd>
-      If a proper interval T<sub>1</sub> is <em>intervalIn</em> another proper interval T<sub>2</sub>,
+      If a proper interval T<sub>1</sub> is <em>intervalWhollyContainedBy</em> another proper interval T<sub>2</sub>,
       then the beginning of T<sub>1</sub> is after the beginning of T<sub>2</sub>
       or is coincident with the beginning of T<sub>2</sub>,
       and the end of T<sub>1</sub> is before the end of T<sub>2</sub>
@@ -925,7 +925,7 @@
     <dt>Note:</dt>
     <dd>
       This relation is the disjoint union of
-      <code>intervalEquals, intervalHasInside, intervalIn, overlaps, overlappedBy</code>.
+      <code>intervalEquals, intervalWhollyContains, intervalWhollyContainedBy, overlaps, overlappedBy</code>.
     </dd>
     <dt>Instance of:</dt>
     <dd><code>owl:ObjectProperty</code> </dd>
@@ -1009,7 +1009,7 @@
     <dt>Instance of:</dt>
     <dd><code>owl:ObjectProperty</code></dd>
     <dt>Subproperty of:</dt>
-    <dd><a>:intervalHasInside</a></dd>
+    <dd><a>:intervalWhollyContains</a></dd>
     <dt>Domain:</dt>
     <dd><a>:ProperInterval</a></dd>
     <dt>Range:</dt>
@@ -1035,7 +1035,7 @@
     <dt>Instance of:</dt>
     <dd><code>owl:ObjectProperty</code></dd>
     <dt>Subproperty of:</dt>
-    <dd><a>:intervalIn</a></dd>
+    <dd><a>:intervalWhollyContainedBy</a></dd>
     <dt>Domain:</dt>
     <dd><a>:ProperInterval</a></dd>
     <dt>Range:</dt>
@@ -1289,7 +1289,7 @@
     <dt>Note:</dt>
     <dd>
       This relation is the disjoint union of
-      <code>equals, hasEnd, hasBeginning, hasInside, intervalNotDisjoint</code>.
+      <code>equals, hasEnd, hasBeginning, whollyContains, intervalNotDisjoint</code>.
     </dd>
     <dt>Instance of:</dt>
     <dd><code>owl:ObjectProperty</code> </dd>

@@ -100,11 +100,11 @@
 </p>
 <ul>
     <li>
-        <a>:intervalHasInside</a>
+        <a>:intervalWhollyContains</a>
         &rarr; union of <a>:intervalContains</a>, <a>:intervalStartedBy</a>, <a>:intervalFinishedBy</a>
     </li>
     <li>
-        <a>:intervalIn</a>
+        <a>:intervalWhollyContainedBy</a>
         &rarr; union of <a>:intervalDuring</a>, <a>:intervalStarts</a>, <a>:intervalFinishes</a>
     </li>
     <li>
@@ -113,12 +113,12 @@
     </li>
     <li>
         <a>:intervalNotDisjoint</a>
-        &rarr; union of <a>:intervalEquals</a>, <a>:intervalHasInside</a>, <a>:intervalIn</a>, <a>:intervalOverlaps</a>, <a>:intervalOverlappedBy</a>
+        &rarr; union of <a>:intervalEquals</a>, <a>:intervalWhollyContains</a>, <a>:intervalWhollyContainedBy</a>, <a>:intervalOverlaps</a>, <a>:intervalOverlappedBy</a>
     </li>
 </ul>
 <p>
-    <a>:intervalHasInside</a> is implied by the following mention in [[ak-83]]: "a relationship that will be useful later is the notion that one interval A <i>wholly contains</i> another interval B. We shall assert A [wholly] contains B as an abbreviation for A (contains|startedBy|finishedBy) B.".
-    <a>:intervalIn</a> is the inverse of <a>:intervalHasInside</a>.
+    <a>:intervalWhollyContains</a> is implied by the following mention in [[ak-83]]: "a relationship that will be useful later is the notion that one interval A <i>wholly contains</i> another interval B. We shall assert A [wholly] contains B as an abbreviation for A (contains|startedBy|finishedBy) B.".
+    <a>:intervalWhollyContainedBy</a> is the inverse of <a>:intervalWhollyContains</a>.
 </p>
 <p>
     <a>:intervalDisjoint</a> is implied by the following mention in [[ak-83]]: "the fact that intervals A and B are disjoint can be expressed by asserting that A is before, meets, is met by, or is after B". 
@@ -129,8 +129,8 @@
 </p>
 <ul>
     <li>
-        <a>:hasInside</a>
-        &rarr; union of <a>:inside</a>, <a>:intervalHasInside</a>
+        <a>:whollyContains</a>
+        &rarr; union of <a>:inside</a>, <a>:intervalWhollyContains</a>
     </li>
     <li>
         <a>:equals</a>
@@ -143,7 +143,7 @@
     </li>
     <li>
         <a>:notDisjoint</a>
-        &rarr; union of <a>:equals</a>, <a>:hasInside</a>, <a>:intervalNotDisjoint</a>,
+        &rarr; union of <a>:equals</a>, <a>:whollyContains</a>, <a>:intervalNotDisjoint</a>,
     </li>
 </ul>
 
@@ -161,7 +161,7 @@
 </figure>
 
 <p class="note">
-    The fact that `meets` and `metby` are disjoint implies that Allen does not consider the instants at the end and beginning of an interval to be part of the interval - i.e., Allen intervals are open. 
+    The fact that `meets` is disjoint implies that Allen does not consider the instants at the end and beginning of an interval to be part of the interval - i.e., Allen intervals are _open_. 
 </p>
 
 <h4>Relating temporal information with any entity</h4>

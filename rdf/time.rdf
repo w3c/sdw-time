@@ -26,7 +26,7 @@
     <dct:rights xml:lang="en">Copyright © 2006-2017 W3C, OGC. W3C and OGC liability, trademark and document use rules apply.</dct:rights>
     <dct:creator rdf:resource="mailto:panfeng66@gmail.com"/>
     <dct:creator rdf:resource="https://en.wikipedia.org/wiki/Jerry_Hobbs"/>
-    <skos:changeNote>2017-02 - intervalIn, intervalDisjoint, monthOfYear added; TemporalUnit subclass of TemporalDuration</skos:changeNote>
+    <skos:changeNote>2017-02 - intervalWhollyContainedBy, intervalDisjoint, monthOfYear added; TemporalUnit subclass of TemporalDuration</skos:changeNote>
     <skos:historyNote xml:lang="en">Update of OWL-Time ontology, extended to support general temporal reference systems.
 
 Ontology engineering by Simon J D Cox</skos:historyNote>
@@ -837,7 +837,7 @@ In the original OWL-Time the following constraint appeared:
     </owl:inverseOf>
     <skos:definition xml:lang="es">Si un intervalo propio T1 está durante otro intervalo propio T2, entonces del principio de T1 está después del principio de T2, y el final de T1 está antes que el final de T2.</skos:definition>
     <rdfs:subPropertyOf>
-      <owl:ObjectProperty rdf:ID="intervalIn"/>
+      <owl:ObjectProperty rdf:ID="intervalWhollyContainedBy"/>
     </rdfs:subPropertyOf>
     <rdfs:label xml:lang="en">interval during</rdfs:label>
     <rdfs:comment xml:lang="es">Si un intervalo propio T1 está durante otro intervalo propio T2, entonces del principio de T1 está después del principio de T2, y el final de T1 está antes que el final de T2.</rdfs:comment>
@@ -851,7 +851,7 @@ In the original OWL-Time the following constraint appeared:
     <skos:definition xml:lang="en">If a proper interval T1 is intervalEquals another proper interval T2, then the beginning of T1 is coincident with the beginning of T2, and the end of T1 is coincident with the end of T2.</skos:definition>
     <rdfs:range rdf:resource="#ProperInterval"/>
     <owl:propertyDisjointWith>
-      <owl:ObjectProperty rdf:about="#intervalIn"/>
+      <owl:ObjectProperty rdf:about="#intervalWhollyContainedBy"/>
     </owl:propertyDisjointWith>
     <rdfs:comment xml:lang="en">If a proper interval T1 is intervalEquals another proper interval T2, then the beginning of T1 is coincident with the beginning of T2, and the end of T1 is coincident with the end of T2.</rdfs:comment>
     <rdfs:comment xml:lang="es">Si un intervalo propio T1 es igual a otro intervalo propio T2, entonces el principio de T1 coincide con el principio de T2, y el final de T1 coincide con el final de T2.</rdfs:comment>
@@ -1039,7 +1039,7 @@ allows data encoded according to the previous version to be consistent with the 
     <skos:definition xml:lang="es">Si un intervalo propio T1 empieza otro intervalo propio T2, entonces del principio de T1 con el final de T2, y el final de T1 es anterior al final de T2.</skos:definition>
     <owl:inverseOf rdf:resource="#intervalStartedBy"/>
     <rdfs:subPropertyOf>
-      <owl:ObjectProperty rdf:about="#intervalIn"/>
+      <owl:ObjectProperty rdf:about="#intervalWhollyContainedBy"/>
     </rdfs:subPropertyOf>
     <rdfs:comment xml:lang="en">If a proper interval T1 is intervalStarts another proper interval T2, then the beginning of T1 is coincident with the beginning of T2, and the end of T1 is before the end of T2.</rdfs:comment>
     <rdfs:label xml:lang="es">intervalo empieza</rdfs:label>
@@ -1069,7 +1069,7 @@ allows data encoded according to the previous version to be consistent with the 
     <skos:definition xml:lang="es">Si un intervalo propio T1 se solapa con otro intervalo propio T2, entonces el principio de T1 es anterior al principio de T2, el final de T1 es posterior al principio de T2, y el final de T1 es anterior al final de T2.</skos:definition>
     <rdfs:domain rdf:resource="#ProperInterval"/>
   </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="#intervalIn">
+  <owl:ObjectProperty rdf:about="#intervalWhollyContainedBy">
     <rdfs:comment xml:lang="es">Si un intervalo propio T1 es un intervalo interior a otro intervalo propio T2, entonces el principio de T1 está después del principio de T2 o coincide con el principio de T2, y el final de T1 está antes que el final de T2, o coincide con el final de T2, excepto que el final de T1 puede no coincidir con el final de T2 si el principio de T1 coincide con el principio de T2.</rdfs:comment>
     <skos:note xml:lang="en">This interval relation is not included in the 13 basic relationships defined in Allen (1984), but is referred to as 'an important relationship' in Allen and Ferguson (1997). It is the disjoint union of :intervalStarts v :intervalDuring v :intervalFinishes . However, that is outside OWL2 expressivity, so is implemented as an explicit property, with :intervalStarts , :intervalDuring , :intervalFinishes as sub-properties</skos:note>
     <owl:propertyDisjointWith rdf:resource="#intervalEquals"/>
@@ -1077,8 +1077,8 @@ allows data encoded according to the previous version to be consistent with the 
     <rdfs:range rdf:resource="#ProperInterval"/>
     <skos:note xml:lang="es">Esta relación entre intervalos no estaba incluida en las 13 relaciones básicas definidas por Allen (1984), pero se hace referencia a ella como "una relación importante" en Allen y Ferguson (1997). Es la unión disjunta de 'intervalo empieza', 'intervalo durante' y con 'intervalo termina'. Sin embargo, esto está fuera de la expresividad de OWL2, por tanto, se implementa como una propiedad explícita, con 'intervalo empieza', 'intervalo durante' e 'intervalo termina' como sub-propiedades.</skos:note>
     <rdfs:label xml:lang="en">interval in</rdfs:label>
-    <skos:definition xml:lang="en">If a proper interval T1 is intervalIn another proper interval T2, then the beginning of T1 is after the beginning of T2 or is coincident with the beginning of T2, and the end of T1 is before the end of T2, or is coincident with the end of T2, except that end of T1 may not be coincident with the end of T2 if the beginning of T1 is coincident with the beginning of T2.</skos:definition>
-    <rdfs:comment xml:lang="en">If a proper interval T1 is intervalIn another proper interval T2, then the beginning of T1 is after the beginning of T2 or is coincident with the beginning of T2, and the end of T1 is before the end of T2, or is coincident with the end of T2, except that end of T1 may not be coincident with the end of T2 if the beginning of T1 is coincident with the beginning of T2.</rdfs:comment>
+    <skos:definition xml:lang="en">If a proper interval T1 is intervalWhollyContainedBy another proper interval T2, then the beginning of T1 is after the beginning of T2 or is coincident with the beginning of T2, and the end of T1 is before the end of T2, or is coincident with the end of T2, except that end of T1 may not be coincident with the end of T2 if the beginning of T1 is coincident with the beginning of T2.</skos:definition>
+    <rdfs:comment xml:lang="en">If a proper interval T1 is intervalWhollyContainedBy another proper interval T2, then the beginning of T1 is after the beginning of T2 or is coincident with the beginning of T2, and the end of T1 is before the end of T2, or is coincident with the end of T2, except that end of T1 may not be coincident with the end of T2 if the beginning of T1 is coincident with the beginning of T2.</rdfs:comment>
     <rdfs:label xml:lang="es">intervalo interior</rdfs:label>
     <skos:definition xml:lang="es">Si un intervalo propio T1 es un intervalo interior a otro intervalo propio T2, entonces el principio de T1 está después del principio de T2 o coincide con el principio de T2, y el final de T1 está antes que el final de T2, o coincide con el final de T2, excepto que el final de T1 puede no coincidir con el final de T2 si el principio de T1 coincide con el principio de T2.</skos:definition>
   </owl:ObjectProperty>
@@ -1131,7 +1131,7 @@ allows data encoded according to the previous version to be consistent with the 
   <owl:ObjectProperty rdf:about="#intervalFinishes">
     <rdfs:label xml:lang="es">intervalo termina</rdfs:label>
     <skos:definition xml:lang="en">If a proper interval T1 is intervalFinishes another proper interval T2, then the beginning of T1 is after the beginning of T2, and the end of T1 is coincident with the end of T2.</skos:definition>
-    <rdfs:subPropertyOf rdf:resource="#intervalIn"/>
+    <rdfs:subPropertyOf rdf:resource="#intervalWhollyContainedBy"/>
     <rdfs:label xml:lang="en">interval finishes</rdfs:label>
     <rdfs:comment xml:lang="es">Si un intervalo propio T1 termina otro intervalo propio T2, entonces del principio de T1 está después del principio de T2, y el final de T1 coincide con el final de T2.</rdfs:comment>
     <rdfs:comment xml:lang="en">If a proper interval T1 is intervalFinishes another proper interval T2, then the beginning of T1 is after the beginning of T2, and the end of T1 is coincident with the end of T2.</rdfs:comment>
