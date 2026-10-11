@@ -124,9 +124,6 @@
     <a>:intervalDisjoint</a> is implied by the following mention in [[ak-83]]: "the fact that intervals A and B are disjoint can be expressed by asserting that A is before, meets, is met by, or is after B". 
     <a>:intervalNotDisjoint</a> is the complement of <a>:intervalDisjoint</a>. 
 </p>
-<p class="note">
-    The fact that `meets` and `metby` are disjoint implies that Allen does not consider the instants at the end and beginning of an interval to be part of the interval - i.e., Allen intervals are 'open'. 
-</p>
 <p>
     Finally, four additional relations between general temporal entities support the description of all possible relationships between temporal entities, which allows the computation of any relative position or sequence.
 </p>
@@ -154,7 +151,6 @@
     The additional properties are related to the union members through `rdfs:subPropertyOf` axioms.
     The complete hierarchy of relations is shown in <a href="#Fig-topology-properties"></a>.
 </p>
-
 <figure id="Fig-topology-properties">
     <embed style="width:90%" title="Hierarchy of Temporal Relations" alt="Hierarchy of Temporal Relations" src="./images/topology-properties.svg">
     <figcaption>
@@ -163,6 +159,10 @@
         Allen's elementary relations are in <b>bold</b>.
     </figcaption>
 </figure>
+
+<p class="note">
+    The fact that `meets` and `metby` are disjoint implies that Allen does not consider the instants at the end and beginning of an interval to be part of the interval - i.e., Allen intervals are open. 
+</p>
 
 <h4>Relating temporal information with any entity</h4>
 <p>
