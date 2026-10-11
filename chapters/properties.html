@@ -32,9 +32,11 @@
   <a>:intervalEquals</a> |
   <a>:intervalFinishedBy</a> |
   <a>:intervalFinishes</a> |
+  <a>:intervalHasInside</a> |
   <a>:intervalIn</a> |
   <a>:intervalMeets</a> |
   <a>:intervalMetBy</a> |
+  <a>:intervalNotDisjoint</a> |
   <a>:intervalOverlappedBy</a> |
   <a>:intervalOverlaps</a> |
   <a>:intervalStartedBy</a> |
@@ -42,7 +44,6 @@
   <a>:inTimePosition</a> |
   <a>:inXSDDate</a> |
   <a>:inXSDDateTime</a> |
-  <a>:inXSDDateTimeStamp</a> |
   <a>:inXSDgYear</a> |
   <a>:inXSDgYearMonth</a> |
   <a>:minute</a> |
@@ -129,8 +130,7 @@
     <dd>
       Day position in a calendar-clock system.
 
-      The range of this property is not specified, so can be replaced by any specific representation of a
-      calendar day from any calendar.
+      The range of this property is not specified, so can be replaced by any specific representation of a calendar day from any calendar.
     </dd>
     <dt>Instance of:</dt>
     <dd><code>owl:DatatypeProperty</code></dd>
@@ -148,8 +148,7 @@
     <dd>http://www.w3.org/2006/time#dayOfWeek</dd>
     <dt>Definition:</dt>
     <dd>
-      The day of week, whose value is a member of the class
-      <a>:DayOfWeek (class)</a>
+      The day of week, whose value is a member of the class <a>:DayOfWeek (class)</a>
     </dd>
     <dt>Instance of:</dt>
     <dd><code>owl:ObjectProperty</code></dd>
@@ -216,16 +215,19 @@
       or the end of T<sub>1</sub> is before the beginning of T<sub>2</sub>,
       i.e., the two entities do not overlap or coincide in any way, but their ordering relationship is not known.
     </dd>
+    <dt>Note:</dt>
+    <dd>
+      This relation is the disjoint union of
+      <code>before, after, intervalDisjoint</code>.
+    </dd>
     <dt>Instance of:</dt>
     <dd><code>owl:ObjectProperty</code> </dd>
     <dt>Domain: </dt>
     <dd><a>:TemporalEntity</a> </dd>
     <dt>Range: </dt>
     <dd><a>:TemporalEntity</a> </dd>
-    <dt>Additional axioms: </dt>
-    <dd>
-      <code>:disjoint owl:propertyDisjointWith :notDisjoint .</code>
-    </dd>
+    <dt>Disjoint with:</dt>
+    <dd><a>:notDisjoint</a></dd>
   </dl>
 </section>
 
@@ -267,7 +269,7 @@
     <dt>Instance of:</dt>
     <dd><code>owl:ObjectProperty</code></dd>
     <dt>Subproperty of:</dt>
-    <dd><a>:notDisjoint</a></dd>
+    <dd><a>:disjoint</a></dd>
     <dt>Domain:</dt>
     <dd><a>:TemporalEntity</a></dd>
     <dt>Range:</dt>
@@ -350,7 +352,7 @@
     <dt>Instance of:</dt>
     <dd><code>owl:ObjectProperty</code></dd>
     <dt>Sub-property of: </dt>
-    <dd><a>:notDisjoint</a></dd>
+    <dd><a>:disjoint</a></dd>
     <dt>Domain:</dt>
     <dd><a>:TemporalEntity</a></dd>
     <dt>Range:</dt>
@@ -373,6 +375,11 @@
       except that end of T<sub>1</sub> may not be coincident with the end of T<sub>2</sub>
       if the beginning of T<sub>1</sub> is coincident with the beginning of T<sub>2</sub>.
     </dd>
+    <dt>Note:</dt>
+    <dd>
+      This relation is the disjoint union of
+      <code>intervalStartedBy, intervalFinishedBy, intervalContains</code>.
+    </dd>
     <dt>Instance of:</dt>
     <dd><code>owl:ObjectProperty</code> </dd>
     <dt>Sub-property of: </dt>
@@ -381,10 +388,8 @@
     <dd><a>:TemporalEntity</a> </dd>
     <dt>Range: </dt>
     <dd><a>:TemporalEntity</a> </dd>
-    <dt>Additional axioms: </dt>
-    <dd>
-      <code>:hasInside owl:propertyDisjointWith :equals .</code>
-    </dd>
+    <dt>Disjoint with:</dt>
+    <dd><a>:equals</a></dd>
   </dl>
 </section>
 
@@ -644,7 +649,7 @@
     <dt>Instance of:</dt>
     <dd><code>owl:ObjectProperty</code></dd>
     <dt>Subproperty of:</dt>
-    <dd><a>:hasInside</a></dd>
+    <dd><a>:intervalHasInside</a></dd>
     <dt>Domain:</dt>
     <dd><a>:ProperInterval</a></dd>
     <dt>Range:</dt>
@@ -667,6 +672,10 @@
       then the beginning of T<sub>1</sub> is after the end of T<sub>2</sub>,
       or the end of T<sub>1</sub> is before the beginning of T<sub>2</sub>,
       i.e., the intervals do not overlap in any way, but their ordering relationship is not known.
+    </dd>
+    <dd>
+      This relation is the disjoint union of
+      <code>intervalBefore, intervalMeets, intervalMetBy, intervalAfter</code>.
     </dd>
     <dt>Instance of:</dt>
     <dd><code>owl:ObjectProperty</code></dd>
@@ -721,7 +730,7 @@
     <dt>Instance of:</dt>
     <dd><code>owl:ObjectProperty</code></dd>
     <dt>Subproperty of:</dt>
-    <dd><a>:equals</a></dd>
+    <dd><a>:equals</a>, <a>:intervalNotDisjoint</a></dd>
     <dt>Domain:</dt>
     <dd><a>:ProperInterval</a></dd>
     <dt>Range:</dt>
@@ -740,15 +749,14 @@
     <dd>http://www.w3.org/2006/time#intervalFinishedBy</dd>
     <dt>Definition:</dt>
     <dd>
-      If a proper interval T<sub>1</sub> is <em>intervalFinishedBy</em> another proper interval
-      T<sub>2</sub>,
+      If a proper interval T<sub>1</sub> is <em>intervalFinishedBy</em> another proper interval T<sub>2</sub>,
       then the beginning of T<sub>1</sub> is before the beginning of T<sub>2</sub>,
       and the end of T<sub>1</sub> is coincident with the end of T<sub>2</sub>.
     </dd>
     <dt>Instance of:</dt>
     <dd><code>owl:ObjectProperty</code></dd>
     <dt>Subproperty of:</dt>
-    <dd><a>:hasInside</a></dd>
+    <dd><a>:intervalHasInside</a></dd>
     <dt>Domain:</dt>
     <dd><a>:ProperInterval</a></dd>
     <dt>Range:</dt>
@@ -784,6 +792,40 @@
   </dl>
 </section>
 
+<section id="intervalHasInside" class="specterm">
+  <h4>interval has inside</h4>
+  <dl>
+    <dt>Term:</dt>
+    <dd><dfn>:intervalHasInside</dfn></dd>
+    <dt>IRI:</dt>
+    <dd>http://www.w3.org/2006/time#intervalHasInside</dd>
+    <dt>Definition:</dt>
+    <dd>
+      If a proper interval T<sub>1</sub> intervalHasInside it another proper interval T<sub>2</sub>,
+      then the beginning of T<sub>1</sub> is coincident with or before the beginning of T<sub>2</sub>,
+      and the end of T<sub>1</sub> is concident with or after the end of T<sub>2</sub>,
+      except that end of T<sub>1</sub> may not be coincident with the end of T<sub>2</sub>
+      if the beginning of T<sub>1</sub> is coincident with the beginning of T<sub>2</sub>.
+    </dd>
+    <dd>
+      This relation is the disjoint union of
+      <code>intervalStartedBy, intervalFinishedBy, intervalContains</code>.
+    </dd>
+    <dt>Instance of:</dt>
+    <dd><code>owl:ObjectProperty</code></dd>
+    <dt>Subproperty of:</dt>
+    <dd><a>:hasInside</a>, <a>:intervalNotDisjoint</a></dd>
+    <dt>Domain:</dt>
+    <dd><a>:ProperInterval</a></dd>
+    <dt>Range:</dt>
+    <dd><a>:ProperInterval</a></dd>
+    <dt>Inverse of:</dt>
+    <dd><a>:intervalIn</a></dd>
+    <dt>Disjoint with:</dt>
+    <dd><a>:intervalEquals</a></dd>
+  </dl>
+</section>
+
 <section id="intervalIn" class="specterm">
   <h4>interval in</h4>
   <dl>
@@ -801,10 +843,14 @@
       except that end of T<sub>1</sub> may not be coincident with the end of T<sub>2</sub>
       if the beginning of T<sub>1</sub> is coincident with the beginning of T<sub>2</sub>.
     </dd>
+    <dd>
+      This relation is the disjoint union of
+      <code>intervalStarts, intervalFinishes, intervalDuring</code>.
+    </dd>
     <dt>Instance of:</dt>
     <dd><code>owl:ObjectProperty</code></dd>
     <dt>Subproperty of:</dt>
-    <dd><a>:notDisjoint</a></dd>
+    <dd><a>:notDisjoint</a>, <a>:intervalNotDisjoint</a></dd>
     <dt>Domain:</dt>
     <dd><a>:ProperInterval</a></dd>
     <dt>Range:</dt>
@@ -829,7 +875,7 @@
     <dt>Instance of:</dt>
     <dd><code>owl:ObjectProperty</code></dd>
     <dt>Subproperty of:</dt>
-    <dd><a>:notDisjoint</a></dd>
+    <dd><a>:intervalDisjoint</a></dd>
     <dt>Domain:</dt>
     <dd><a>:ProperInterval</a></dd>
     <dt>Range:</dt>
@@ -854,13 +900,43 @@
     <dt>Instance of:</dt>
     <dd><code>owl:ObjectProperty</code></dd>
     <dt>Subproperty of:</dt>
-    <dd><a>:notDisjoint</a></dd>
+    <dd><a>:intervalDisjoint</a></dd>
     <dt>Domain:</dt>
     <dd><a>:ProperInterval</a></dd>
     <dt>Range:</dt>
     <dd><a>:ProperInterval</a></dd>
     <dt>Inverse of:</dt>
     <dd><a>:intervalMeets</a></dd>
+  </dl>
+</section>
+
+<section id="intervalNotDisjoint" class="specterm">
+  <h4>interval not disjoint </h4>
+  <dl>
+    <dt>Term:</dt>
+    <dd><dfn>:intervalNotDisjoint</dfn></dd>
+    <dt>IRI:</dt>
+    <dd>http://www.w3.org/2006/time#intervalNotDisjoint</dd>
+    <dt>Definition:</dt>
+    <dd>
+      If a proper interval T<sub>1</sub> is intervalNotDisjoint with another proper interval T<sub>2</sub>,
+      then the the two intervals overlap or coincide in some way, but their ordering relationship is not known.
+    </dd>
+    <dt>Note:</dt>
+    <dd>
+      This relation is the disjoint union of
+      <code>intervalEquals, intervalHasInside, intervalIn, overlaps, overlappedBy</code>.
+    </dd>
+    <dt>Instance of:</dt>
+    <dd><code>owl:ObjectProperty</code> </dd>
+    <dt>Subproperty of:</dt>
+    <dd><a>:notDisjoint</a></dd>
+    <dt>Domain: </dt>
+    <dd><a>:ProperInterval</a> </dd>
+    <dt>Range: </dt>
+    <dd><a>:ProperInterval</a> </dd>
+    <dt>Disjoint with:</dt>
+    <dd><a>:intervalDisjoint</a></dd>
   </dl>
 </section>
 
@@ -873,8 +949,7 @@
     <dd>http://www.w3.org/2006/time#intervalOverlappedBy</dd>
     <dt>Definition:</dt>
     <dd>
-      If a proper interval T<sub>1</sub> is <em>intervalOverlappedBy</em> another proper interval
-      T<sub>2</sub>,
+      If a proper interval T<sub>1</sub> is <em>intervalOverlappedBy</em> another proper interval T<sub>2</sub>,
       then the beginning of T<sub>1</sub> is after the beginning of T<sub>2</sub>,
       the beginning of T<sub>1</sub> is before the end of T<sub>2</sub>,
       and the end of T<sub>1</sub> is after the end of T<sub>2</sub>.
@@ -882,7 +957,7 @@
     <dt>Instance of:</dt>
     <dd><code>owl:ObjectProperty</code></dd>
     <dt>Subproperty of:</dt>
-    <dd><a>:notDisjoint</a></dd>
+    <dd><a>:intervalNotDisjoint</a></dd>
     <dt>Domain:</dt>
     <dd><a>:ProperInterval</a></dd>
     <dt>Range:</dt>
@@ -903,13 +978,12 @@
     <dd>
       If a proper interval T<sub>1</sub> is <em>intervalOverlaps</em> another proper interval T<sub>2</sub>,
       then the beginning of T<sub>1</sub> is before the beginning of T<sub>2</sub>, the end of T<sub>1</sub>
-      is after the beginning of T<sub>2</sub>, and the end of T<sub>1</sub> is before the end of
-      T<sub>2</sub>.
+      is after the beginning of T<sub>2</sub>, and the end of T<sub>1</sub> is before the end of T<sub>2</sub>.
     </dd>
     <dt>Instance of:</dt>
     <dd><code>owl:ObjectProperty</code></dd>
     <dt>Subproperty of:</dt>
-    <dd><a>:notDisjoint</a></dd>
+    <dd><a>:intervalNotDisjoint</a></dd>
     <dt>Domain:</dt>
     <dd><a>:ProperInterval</a></dd>
     <dt>Range:</dt>
@@ -928,15 +1002,14 @@
     <dd>http://www.w3.org/2006/time#intervalStartedBy</dd>
     <dt>Definition:</dt>
     <dd>
-      If a proper interval T<sub>1</sub> is <em>intervalStartedBy</em> another proper interval
-      T<sub>2</sub>,
+      If a proper interval T<sub>1</sub> is <em>intervalStartedBy</em> another proper interval T<sub>2</sub>,
       then the beginning of T<sub>1</sub> is coincident with the beginning of T<sub>2</sub>,
       and the end of T<sub>1</sub> is after the end of T<sub>2</sub>.
     </dd>
     <dt>Instance of:</dt>
     <dd><code>owl:ObjectProperty</code></dd>
     <dt>Subproperty of:</dt>
-    <dd><a>:hasInside</a></dd>
+    <dd><a>:intervalHasInside</a></dd>
     <dt>Domain:</dt>
     <dd><a>:ProperInterval</a></dd>
     <dt>Range:</dt>
@@ -1036,33 +1109,6 @@
     <dd><a href="https://www.w3.org/TR/xmlschema11-2/#dateTime">xsd:dateTime</a></dd>
     <dt>Deprecated:</dt>
     <dd><code>true</code></dd>
-  </dl>
-
-  <p class="note">
-    The property <a>:inXSDDateTime</a> is replaced by <a>:inXSDDateTimeStamp</a> which makes the time-zone field
-    mandatory.
-  </p>
-</section>
-
-<section id="inXSDDateTimeStamp" class="specterm">
-  <h4>in XSD date-time-stamp</h4>
-  <dl>
-    <dt>Term:</dt>
-    <dd><dfn>:inXSDDateTimeStamp</dfn></dd>
-    <dt>IRI:</dt>
-    <dd>http://www.w3.org/2006/time#inXSDDateTimeStamp</dd>
-    <dt>Definition:</dt>
-    <dd>
-      Position of an instant, expressed using
-      <a href="https://www.w3.org/TR/xmlschema11-2/#dateTimeStamp">xsd:dateTimeStamp</a>, in
-      which the time-zone field is mandatory
-    </dd>
-    <dt>Instance of:</dt>
-    <dd><code>owl:DatatypeProperty</code></dd>
-    <dt>Domain:</dt>
-    <dd><a>:Instant</a></dd>
-    <dt>Range:</dt>
-    <dd><a href="https://www.w3.org/TR/xmlschema11-2/#dateTimeStamp">xsd:dateTimeStamp</a></dd>
   </dl>
 </section>
 
@@ -1239,19 +1285,20 @@
     <dd>
       If a temporal entity T<sub>1</sub> is notDisjoint with another temporal entity T<sub>2</sub>,
       then the the two entities overlap or coincide in some way, but their ordering relationship is not known.
-      This relation is the complement of <code>disjoint</code> and is the union of
-      <code>equals, hasEnd, hasBeginning, hasInside, in, meets, metBy, overlaps, overlappedBy</code>.
+    </dd>
+    <dt>Note:</dt>
+    <dd>
+      This relation is the disjoint union of
+      <code>equals, hasEnd, hasBeginning, hasInside, intervalNotDisjoint</code>.
     </dd>
     <dt>Instance of:</dt>
     <dd><code>owl:ObjectProperty</code> </dd>
     <dt>Domain: </dt>
     <dd><a>:TemporalEntity</a> </dd>
     <dt>Range: </dt>
-    </dd>
-    <dt>Additional axioms: </dt>
-    <dd>
-      <code>:notDisjoint owl:propertyDisjointWith :disjoint .</code><br />
-    </dd>
+    <dd><a>:TemporalEntity</a> </dd>
+    <dt>Disjoint with:</dt>
+    <dd><a>:disjoint</a></dd>
   </dl>
 </section>
 
@@ -1355,20 +1402,16 @@
   </dl>
   <div class="note">
     <p>
-      IANA maintains a <a href="http://www.iana.org/time-zones">database of timezones</a>. These are well
-      maintained and generally considered authoritative, but individual items are not available at individual
-      URIs, so cannot be used directly within data expressed using OWL-Time.
+      IANA maintains a <a href="http://www.iana.org/time-zones">database of timezones</a>.
+      These are well maintained and generally considered authoritative, but individual items are not available at individual URIs, so cannot be used directly within data expressed using OWL-Time.
     </p>
     <p>
-      DBPedia provides a
-      <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">set of resources corresponding to the IANA timezones</a>,
-      with a URI for each (e.g.
-      <a href="http://dbpedia.org/resource/Australia/Eucla">http://dbpedia.org/resource/Australia/Eucla</a>). The
-      World Clock service also provides a <a href="https://www.timeanddate.com/time/zones/">list of time zones</a>
-      with the description of each available as an individual webpage with a convenient individual URI (e.g.
-      <a href="https://www.timeanddate.com/time/zones/acwst">https://www.timeanddate.com/time/zones/acwst</a>).
-      These or other, similar, resources might be used as a value of the
-      <a>:timeZone</a> property.
+      DBPedia provides a <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">set of resources corresponding to the IANA timezones</a>,
+      with a URI for each (e.g. <a href="http://dbpedia.org/resource/Australia/Eucla">http://dbpedia.org/resource/Australia/Eucla</a>).
+      The World Clock service also provides a <a href="https://www.timeanddate.com/time/zones/">list of time zones</a>
+      with the description of each available as an individual webpage with a convenient individual URI
+      (e.g. <a href="https://www.timeanddate.com/time/zones/acwst">https://www.timeanddate.com/time/zones/acwst</a>).
+      These or other, similar, resources might be used as a value of the <a>:timeZone</a> property.
     </p>
   </div>
 </section>
@@ -1418,10 +1461,8 @@
 
   <div class="note">
     <p>
-      Weeks are numbered differently depending on the calendar in use and the local language or cultural conventions
-      (locale).
-      ISO-8601 specifies that the first week of the year includes at least four days, and that Monday is the first day
-      of the week.
+      Weeks are numbered differently depending on the calendar in use and the local language or cultural conventions (locale).
+      ISO-8601 specifies that the first week of the year includes at least four days, and that Monday is the first day of the week.
       In that system, week 1 is the week that contains the first Thursday in the year.
     </p>
   </div>
@@ -1470,8 +1511,7 @@
     <dd><code>true</code></dd>
   </dl>
   <p class="note">
-    Using <a href="https://www.w3.org/TR/xmlschema11-2/#dateTime">xsd:dateTime</a> in this place means that
-    the duration of the interval is implicit:
+    Using <a href="https://www.w3.org/TR/xmlschema11-2/#dateTime">xsd:dateTime</a> in this place means that the duration of the interval is implicit:
     it corresponds to the length of the smallest non-zero element of the date-time literal.
     However, this rule cannot be used for intervals whose duration is more than one rank smaller than the starting time
     - e.g., the first minute or second of a day, the first hour of a month, or the first day of a year.
@@ -1490,7 +1530,9 @@
     <dt>Definition:</dt>
     <dd>
       Year position in a calendar-clock system.
-
+    </dd>
+    <dt>Note:</dt>
+    <dd>
       The range of this property is not specified, so can be replaced by any specific representation of a
       calendar year from any calendar.
     </dd>

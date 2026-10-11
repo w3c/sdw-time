@@ -126,7 +126,7 @@
     </p>
     <p>
       New elements are also provided to support a wider range of topological relationships between temporal entities.
-      While the core relations defined by Allen and Ferguson are in principle sufficient in combination to support all
+      While the core relations defined by Allen are in principle sufficient in combination to support all
       applications,
       limitations in OWL and RDFS require additional relations to cover some generalized relationships
       (disjoint, intervalIn) and relationships involving instants as well as intervals, and their complements.
@@ -233,7 +233,7 @@
     <h3>2026 update</h3>
     <ul>
       <li>
-        Add temporal relations extensions <a>:hasInside</a>, <a>:intervalIn</a>, <a>:equals</a>, <a>:notDisjoint</a>,
+        Add temporal relations extensions <a>:hasInside</a>, <a>:intervalHasInside</a>, <a>:intervalIn</a>, <a>:equals</a>, <a>:intervalNotDisjoint</a>, <a>:notDisjoint</a>,
         <a>:intervalDisjoint</a>, <a>:disjoint</a>
       </li>
       <li>
@@ -286,7 +286,7 @@
         <a>:TemporalUnit</a> is a subclass of <a>:TemporalDuration</a>
       </li>
       <li>
-        <a>:inXSDDateTimeStamp</a> added, and <a>:inXSDDateTime</a> deprecated
+        `:inXSDDateTimeStamp` added, and <a>:inXSDDateTime</a> deprecated
       </li>
       <li>
         <a>:intervalIn</a> and <a>:intervalDisjoint</a> relations added
@@ -344,7 +344,7 @@
       </li>
       <li>
         <a href="https://www.w3.org/TR/sdw-ucr/#UpdateDatatypes">5.53 Update datatypes in OWL Time</a>: see
-        <a>:inXSDDateTimeStamp</a> and <a href="#datatypes">Datatypes</a>
+        `:inXSDDateTimeStamp` and <a href="#datatypes">Datatypes</a>
       </li>
       <li>
         <a href="https://www.w3.org/TR/sdw-ucr/#DifferentTimeModels">5.9 Different time models</a>: see
