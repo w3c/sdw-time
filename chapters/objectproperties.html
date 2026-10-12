@@ -3,10 +3,7 @@
 <p class="azlist">
   <a>:after</a> |
   <a>:before</a> |
-  <a>:day</a> |
   <a>:dayOfWeek</a> |
-  <a>:dayOfYear</a> |
-  <a>:days</a> |
   <a>:disjoint</a> |
   <a>:equals</a> |
   <a>:hasBeginning</a> |
@@ -18,9 +15,6 @@
   <a>:hasTemporalDuration</a> |
   <a>:hasTime</a> |
   <a>:hasTRS</a> |
-  <a>:hasXSDDuration</a> |
-  <a>:hour</a> |
-  <a>:hours</a> |
   <a>:inDateTime</a> |
   <a>:inside</a> |
   <a>:inTemporalPosition</a> |
@@ -42,28 +36,10 @@
   <a>:intervalStartedBy</a> |
   <a>:intervalStarts</a> |
   <a>:inTimePosition</a> |
-  <a>:inXSDDate</a> |
-  <a>:inXSDDateTime</a> |
-  <a>:inXSDgYear</a> |
-  <a>:inXSDgYearMonth</a> |
-  <a>:minute</a> |
-  <a>:minutes</a> |
-  <a>:month</a> |
   <a>:monthOfYear</a> |
-  <a>:months</a> |
-  <a>:nominalPosition</a> |
   <a>:notDisjoint</a> |
-  <a>:numericDuration</a> |
-  <a>:numericPosition</a> |
-  <a>:second</a> |
-  <a>:seconds</a> |
   <a>:timeZone</a> |
   <a>:unitType</a> |
-  <a>:week</a> |
-  <a>:weeks</a> |
-  <a>:xsdDateTime</a> |
-  <a>:year</a> |
-  <a>:years</a>
 </p>
 
 <section id="after" class="specterm">
@@ -119,26 +95,6 @@
   </dl>
 </section>
 
-<section id="day" class="specterm">
-  <h4>day</h4>
-  <dl>
-    <dt>Term:</dt>
-    <dd><dfn>:day</dfn></dd>
-    <dt>IRI:</dt>
-    <dd>http://www.w3.org/2006/time#day</dd>
-    <dt>Definition:</dt>
-    <dd>
-      Day position in a calendar-clock system.
-
-      The range of this property is not specified, so can be replaced by any specific representation of a calendar day from any calendar.
-    </dd>
-    <dt>Instance of:</dt>
-    <dd><code>owl:DatatypeProperty</code></dd>
-    <dt>Domain:</dt>
-    <dd><a>:GeneralDateTimeDescription</a></dd>
-  </dl>
-</section>
-
 <section id="dayOfWeek" class="specterm">
   <h4>day of week</h4>
   <dl>
@@ -156,48 +112,6 @@
     <dd><a>:GeneralDateTimeDescription</a></dd>
     <dt>Range:</dt>
     <dd><a>:DayOfWeek (class)</a></dd>
-  </dl>
-</section>
-
-<section id="dayOfYear" class="specterm">
-  <h4>day of year</h4>
-  <dl>
-    <dt>Term:</dt>
-    <dd><dfn>:dayOfYear</dfn></dd>
-    <dt>IRI:</dt>
-    <dd>http://www.w3.org/2006/time#dayOfYear</dd>
-    <dt>Definition:</dt>
-    <dd>
-      The number of the day within the year
-    </dd>
-    <dt>Instance of:</dt>
-    <dd><code>owl:DatatypeProperty</code></dd>
-    <dt>Domain:</dt>
-    <dd><a>:GeneralDateTimeDescription</a></dd>
-    <dt>Range:</dt>
-    <dd>
-      <a href="https://www.w3.org/TR/xmlschema11-2/#nonNegativeInteger">xsd:nonNegativeInteger</a>
-    </dd>
-  </dl>
-</section>
-
-<section id="days" class="specterm">
-  <h4>days duration</h4>
-  <dl>
-    <dt>Term:</dt>
-    <dd><dfn>:days</dfn></dd>
-    <dt>IRI:</dt>
-    <dd>http://www.w3.org/2006/time#days</dd>
-    <dt>Definition:</dt>
-    <dd>
-      length of, or element of the length of, a temporal extent expressed in days
-    </dd>
-    <dt>Instance of:</dt>
-    <dd><code>owl:DatatypeProperty</code></dd>
-    <dt>Domain:</dt>
-    <dd><a>:GeneralDurationDescription</a></dd>
-    <dt>Range:</dt>
-    <dd><a href="https://www.w3.org/TR/xmlschema11-2/#decimal">xsd:decimal</a></dd>
   </dl>
 </section>
 
@@ -360,39 +274,6 @@
   </dl>
 </section>
 
-<section id="whollyContains" class="specterm">
-  <h4>has time entity inside</h4>
-  <dl>
-    <dt>Term:</dt>
-    <dd><dfn>:whollyContains</dfn></dd>
-    <dt>IRI:</dt>
-    <dd>http://www.w3.org/2006/time#whollyContains</dd>
-    <dt>Definition:</dt>
-    <dd>
-      If a temporal entity T<sub>1</sub> whollyContains it another temporal entity T<sub>2</sub>,
-      then the beginning of T<sub>1</sub> is coincident with or before the beginning of T<sub>2</sub>,
-      and the end of T<sub>1</sub> is concident with or after the end of T<sub>2</sub>,
-      except that end of T<sub>1</sub> may not be coincident with the end of T<sub>2</sub>
-      if the beginning of T<sub>1</sub> is coincident with the beginning of T<sub>2</sub>.
-    </dd>
-    <dt>Note:</dt>
-    <dd>
-      This relation is the disjoint union of
-      <code>intervalStartedBy, intervalFinishedBy, intervalContains</code>.
-    </dd>
-    <dt>Instance of:</dt>
-    <dd><code>owl:ObjectProperty</code> </dd>
-    <dt>Sub-property of: </dt>
-    <dd><a>:notDisjoint</a> </dd>
-    <dt>Domain: </dt>
-    <dd><a>:TemporalEntity</a> </dd>
-    <dt>Range: </dt>
-    <dd><a>:TemporalEntity</a> </dd>
-    <dt>Disjoint with:</dt>
-    <dd><a>:equals</a></dd>
-  </dl>
-</section>
-
 <section id="hasTemporalDuration" class="specterm">
   <h4>has temporal duration</h4>
   <dl>
@@ -452,69 +333,6 @@
     </dd>
     <dt>Range:</dt>
     <dd><a>:TRS</a></dd>
-  </dl>
-</section>
-
-<section id="hasXSDDuration" class="specterm">
-  <h4>has XSD duration</h4>
-  <dl>
-    <dt>Term:</dt>
-    <dd><dfn>:hasXSDDuration</dfn></dd>
-    <dt>IRI:</dt>
-    <dd>http://www.w3.org/2006/time#hasXSDDuration</dd>
-    <dt>Definition:</dt>
-    <dd>
-      extent of a temporal entity, expressed using
-      <a href="https://www.w3.org/TR/xmlschema11-2/#duration">xsd:duration</a>
-    </dd>
-    <dt>Instance of:</dt>
-    <dd><code>owl:DatatypeProperty</code></dd>
-    <dt>Domain:</dt>
-    <dd><a>:TemporalEntity</a></dd>
-    <dt>Range:</dt>
-    <dd><a href="https://www.w3.org/TR/xmlschema11-2/#duration">xsd:duration</a></dd>
-  </dl>
-</section>
-
-<section id="hour" class="specterm">
-  <h4>hour</h4>
-  <dl>
-    <dt>Term:</dt>
-    <dd><dfn>:hour</dfn></dd>
-    <dt>IRI:</dt>
-    <dd>http://www.w3.org/2006/time#hour</dd>
-    <dt>Definition:</dt>
-    <dd>
-      Hour position in a calendar-clock system
-    </dd>
-    <dt>Instance of:</dt>
-    <dd><code>owl:DatatypeProperty</code></dd>
-    <dt>Domain:</dt>
-    <dd><a>:GeneralDateTimeDescription</a></dd>
-    <dt>Range:</dt>
-    <dd>
-      <a href="https://www.w3.org/TR/xmlschema11-2/#nonNegativeInteger">xsd:nonNegativeInteger</a>
-    </dd>
-  </dl>
-</section>
-
-<section id="hours" class="specterm">
-  <h4>hours duration</h4>
-  <dl>
-    <dt>Term:</dt>
-    <dd><dfn>:hours</dfn></dd>
-    <dt>IRI:</dt>
-    <dd>http://www.w3.org/2006/time#hours</dd>
-    <dt>Definition:</dt>
-    <dd>
-      length of, or element of the length of, a temporal extent expressed in hours
-    </dd>
-    <dt>Instance of:</dt>
-    <dd><code>owl:DatatypeProperty</code></dd>
-    <dt>Domain:</dt>
-    <dd><a>:GeneralDurationDescription</a></dd>
-    <dt>Range:</dt>
-    <dd><a href="https://www.w3.org/TR/xmlschema11-2/#decimal">xsd:decimal</a></dd>
   </dl>
 </section>
 
@@ -792,74 +610,6 @@
   </dl>
 </section>
 
-<section id="intervalWhollyContains" class="specterm">
-  <h4>interval has inside</h4>
-  <dl>
-    <dt>Term:</dt>
-    <dd><dfn>:intervalWhollyContains</dfn></dd>
-    <dt>IRI:</dt>
-    <dd>http://www.w3.org/2006/time#intervalWhollyContains</dd>
-    <dt>Definition:</dt>
-    <dd>
-      If a proper interval T<sub>1</sub> intervalWhollyContains it another proper interval T<sub>2</sub>,
-      then the beginning of T<sub>1</sub> is coincident with or before the beginning of T<sub>2</sub>,
-      and the end of T<sub>1</sub> is concident with or after the end of T<sub>2</sub>,
-      except that end of T<sub>1</sub> may not be coincident with the end of T<sub>2</sub>
-      if the beginning of T<sub>1</sub> is coincident with the beginning of T<sub>2</sub>.
-    </dd>
-    <dd>
-      This relation is the disjoint union of
-      <code>intervalStartedBy, intervalFinishedBy, intervalContains</code>.
-    </dd>
-    <dt>Instance of:</dt>
-    <dd><code>owl:ObjectProperty</code></dd>
-    <dt>Subproperty of:</dt>
-    <dd><a>:whollyContains</a>, <a>:intervalNotDisjoint</a></dd>
-    <dt>Domain:</dt>
-    <dd><a>:ProperInterval</a></dd>
-    <dt>Range:</dt>
-    <dd><a>:ProperInterval</a></dd>
-    <dt>Inverse of:</dt>
-    <dd><a>:intervalWhollyContainedBy</a></dd>
-    <dt>Disjoint with:</dt>
-    <dd><a>:intervalEquals</a></dd>
-  </dl>
-</section>
-
-<section id="intervalWhollyContainedBy" class="specterm">
-  <h4>interval in</h4>
-  <dl>
-    <dt>Term:</dt>
-    <dd><dfn>:intervalWhollyContainedBy</dfn></dd>
-    <dt>IRI:</dt>
-    <dd>http://www.w3.org/2006/time#intervalWhollyContainedBy</dd>
-    <dt>Definition:</dt>
-    <dd>
-      If a proper interval T<sub>1</sub> is <em>intervalWhollyContainedBy</em> another proper interval T<sub>2</sub>,
-      then the beginning of T<sub>1</sub> is after the beginning of T<sub>2</sub>
-      or is coincident with the beginning of T<sub>2</sub>,
-      and the end of T<sub>1</sub> is before the end of T<sub>2</sub>
-      or is coincident with the end of T<sub>2</sub>,
-      except that end of T<sub>1</sub> may not be coincident with the end of T<sub>2</sub>
-      if the beginning of T<sub>1</sub> is coincident with the beginning of T<sub>2</sub>.
-    </dd>
-    <dd>
-      This relation is the disjoint union of
-      <code>intervalStarts, intervalFinishes, intervalDuring</code>.
-    </dd>
-    <dt>Instance of:</dt>
-    <dd><code>owl:ObjectProperty</code></dd>
-    <dt>Subproperty of:</dt>
-    <dd><a>:notDisjoint</a>, <a>:intervalNotDisjoint</a></dd>
-    <dt>Domain:</dt>
-    <dd><a>:ProperInterval</a></dd>
-    <dt>Range:</dt>
-    <dd><a>:ProperInterval</a></dd>
-    <dt>Disjoint with:</dt>
-    <dd><a>:intervalEquals</a></dd>
-  </dl>
-</section>
-
 <section id="intervalMeets" class="specterm">
   <h4>interval meets</h4>
   <dl>
@@ -1045,6 +795,74 @@
   </dl>
 </section>
 
+<section id="intervalWhollyContainedBy" class="specterm">
+  <h4>interval in</h4>
+  <dl>
+    <dt>Term:</dt>
+    <dd><dfn>:intervalWhollyContainedBy</dfn></dd>
+    <dt>IRI:</dt>
+    <dd>http://www.w3.org/2006/time#intervalWhollyContainedBy</dd>
+    <dt>Definition:</dt>
+    <dd>
+      If a proper interval T<sub>1</sub> is <em>intervalWhollyContainedBy</em> another proper interval T<sub>2</sub>,
+      then the beginning of T<sub>1</sub> is after the beginning of T<sub>2</sub>
+      or is coincident with the beginning of T<sub>2</sub>,
+      and the end of T<sub>1</sub> is before the end of T<sub>2</sub>
+      or is coincident with the end of T<sub>2</sub>,
+      except that end of T<sub>1</sub> may not be coincident with the end of T<sub>2</sub>
+      if the beginning of T<sub>1</sub> is coincident with the beginning of T<sub>2</sub>.
+    </dd>
+    <dd>
+      This relation is the disjoint union of
+      <code>intervalStarts, intervalFinishes, intervalDuring</code>.
+    </dd>
+    <dt>Instance of:</dt>
+    <dd><code>owl:ObjectProperty</code></dd>
+    <dt>Subproperty of:</dt>
+    <dd><a>:notDisjoint</a>, <a>:intervalNotDisjoint</a></dd>
+    <dt>Domain:</dt>
+    <dd><a>:ProperInterval</a></dd>
+    <dt>Range:</dt>
+    <dd><a>:ProperInterval</a></dd>
+    <dt>Disjoint with:</dt>
+    <dd><a>:intervalEquals</a></dd>
+  </dl>
+</section>
+
+<section id="intervalWhollyContains" class="specterm">
+  <h4>interval has inside</h4>
+  <dl>
+    <dt>Term:</dt>
+    <dd><dfn>:intervalWhollyContains</dfn></dd>
+    <dt>IRI:</dt>
+    <dd>http://www.w3.org/2006/time#intervalWhollyContains</dd>
+    <dt>Definition:</dt>
+    <dd>
+      If a proper interval T<sub>1</sub> intervalWhollyContains it another proper interval T<sub>2</sub>,
+      then the beginning of T<sub>1</sub> is coincident with or before the beginning of T<sub>2</sub>,
+      and the end of T<sub>1</sub> is concident with or after the end of T<sub>2</sub>,
+      except that end of T<sub>1</sub> may not be coincident with the end of T<sub>2</sub>
+      if the beginning of T<sub>1</sub> is coincident with the beginning of T<sub>2</sub>.
+    </dd>
+    <dd>
+      This relation is the disjoint union of
+      <code>intervalStartedBy, intervalFinishedBy, intervalContains</code>.
+    </dd>
+    <dt>Instance of:</dt>
+    <dd><code>owl:ObjectProperty</code></dd>
+    <dt>Subproperty of:</dt>
+    <dd><a>:whollyContains</a>, <a>:intervalNotDisjoint</a></dd>
+    <dt>Domain:</dt>
+    <dd><a>:ProperInterval</a></dd>
+    <dt>Range:</dt>
+    <dd><a>:ProperInterval</a></dd>
+    <dt>Inverse of:</dt>
+    <dd><a>:intervalWhollyContainedBy</a></dd>
+    <dt>Disjoint with:</dt>
+    <dd><a>:intervalEquals</a></dd>
+  </dl>
+</section>
+
 <section id="inTimePosition" class="specterm">
   <h4>time position</h4>
   <dl>
@@ -1067,153 +885,6 @@
   </dl>
 </section>
 
-<section id="inXSDDate" class="specterm">
-  <h4>in XSD date</h4>
-  <dl>
-    <dt>Term:</dt>
-    <dd><dfn>:inXSDDate</dfn></dd>
-    <dt>IRI:</dt>
-    <dd>http://www.w3.org/2006/time#inXSDDate</dd>
-    <dt>Definition:</dt>
-    <dd>
-      Position of an instant, expressed using xsd:date
-    </dd>
-    <dt>Instance of:</dt>
-    <dd><code>owl:DatatypeProperty</code></dd>
-    <dt>Domain:</dt>
-    <dd><a>:Instant</a></dd>
-    <dt>Range:</dt>
-    <dd><a href="https://www.w3.org/TR/xmlschema11-2/#date">xsd:date</a></dd>
-  </dl>
-</section>
-
-<section id="inXSDDateTime" class="specterm">
-  <h4>in XSD date-time</h4>
-  <dl>
-    <dt>Term:</dt>
-    <dd><dfn>:inXSDDateTime</dfn></dd>
-    <dt>IRI:</dt>
-    <dd>http://www.w3.org/2006/time#inXSDDateTime</dd>
-    <dt>Definition:</dt>
-    <dd>
-      Position of an instant, expressed using
-      <a href="https://www.w3.org/TR/xmlschema11-2/#dateTime">xsd:dateTime</a>
-    </dd>
-    <dt>Instance of:</dt>
-    <dd><code>owl:DatatypeProperty</code></dd>
-    <dt>Instance of:</dt>
-    <dd><code>owl:DeprecatedProperty</code></dd>
-    <dt>Domain:</dt>
-    <dd><a>:Instant</a></dd>
-    <dt>Range:</dt>
-    <dd><a href="https://www.w3.org/TR/xmlschema11-2/#dateTime">xsd:dateTime</a></dd>
-    <dt>Deprecated:</dt>
-    <dd><code>true</code></dd>
-  </dl>
-</section>
-
-<section id="inXSDgYear" class="specterm">
-  <h4>in XSD gYear</h4>
-  <dl>
-    <dt>Term:</dt>
-    <dd><dfn>:inXSDgYear</dfn></dd>
-    <dt>IRI:</dt>
-    <dd>http://www.w3.org/2006/time#inXSDgYear</dd>
-    <dt>Definition:</dt>
-    <dd>
-      Position of an instant, expressed using xsd:gYear
-    </dd>
-    <dt>Instance of:</dt>
-    <dd><code>owl:DatatypeProperty</code></dd>
-    <dt>Domain:</dt>
-    <dd><a>:Instant</a></dd>
-    <dt>Range:</dt>
-    <dd><a href="https://www.w3.org/TR/xmlschema11-2/#gYear">xsd:gYear</a></dd>
-  </dl>
-</section>
-
-<section id="inXSDgYearMonth" class="specterm">
-  <h4>in XSD gYearMonth</h4>
-  <dl>
-    <dt>Term:</dt>
-    <dd><dfn>:inXSDgYearMonth</dfn></dd>
-    <dt>IRI:</dt>
-    <dd>http://www.w3.org/2006/time#inXSDgYearMonth</dd>
-    <dt>Definition:</dt>
-    <dd>
-      Position of an instant, expressed using xsd:gYearMonth
-    </dd>
-    <dt>Instance of:</dt>
-    <dd><code>owl:DatatypeProperty</code></dd>
-    <dt>Domain:</dt>
-    <dd><a>:Instant</a></dd>
-    <dt>Range:</dt>
-    <dd><a href="https://www.w3.org/TR/xmlschema11-2/#gYearMonth">xsd:gYearMonth</a></dd>
-  </dl>
-</section>
-
-<section id="minute" class="specterm">
-  <h4>minute</h4>
-  <dl>
-    <dt>Term:</dt>
-    <dd><dfn>:minute</dfn></dd>
-    <dt>IRI:</dt>
-    <dd>http://www.w3.org/2006/time#minute</dd>
-    <dt>Definition:</dt>
-    <dd>
-      Minute position in a calendar-clock system </dd>
-    <dt>Instance of:</dt>
-    <dd><code>owl:DatatypeProperty</code></dd>
-    <dt>Domain:</dt>
-    <dd><a>:GeneralDateTimeDescription</a></dd>
-    <dt>Range:</dt>
-    <dd>
-      <a href="https://www.w3.org/TR/xmlschema11-2/#nonNegativeInteger">xsd:nonNegativeInteger</a>
-    </dd>
-  </dl>
-</section>
-
-<section id="minutes" class="specterm">
-  <h4>minutes duration</h4>
-  <dl>
-    <dt>Term:</dt>
-    <dd><dfn>:minutes</dfn></dd>
-    <dt>IRI:</dt>
-    <dd>http://www.w3.org/2006/time#minutes</dd>
-    <dt>Definition:</dt>
-    <dd>
-      length of, or element of the length of, a temporal extent expressed in minutes
-    </dd>
-    <dt>Instance of:</dt>
-    <dd><code>owl:DatatypeProperty</code></dd>
-    <dt>Domain:</dt>
-    <dd><a>:GeneralDurationDescription</a></dd>
-    <dt>Range:</dt>
-    <dd><a href="https://www.w3.org/TR/xmlschema11-2/#decimal">xsd:decimal</a></dd>
-  </dl>
-</section>
-
-<section id="month" class="specterm">
-  <h4>month</h4>
-  <dl>
-    <dt>Term:</dt>
-    <dd><dfn>:month</dfn></dd>
-    <dt>IRI:</dt>
-    <dd>http://www.w3.org/2006/time#month</dd>
-    <dt>Definition:</dt>
-    <dd>
-      Month position in a calendar-clock system.
-
-      The range of this property is not specified, so can be replaced by any specific representation of a
-      calendar month from any calendar.
-    </dd>
-    <dt>Instance of:</dt>
-    <dd><code>owl:DatatypeProperty</code></dd>
-    <dt>Domain:</dt>
-    <dd><a>:GeneralDateTimeDescription</a></dd>
-  </dl>
-</section>
-
 <section id="monthOfYear" class="specterm">
   <h4>month of year</h4>
   <dl>
@@ -1231,46 +902,6 @@
     <dd><a>:GeneralDateTimeDescription</a></dd>
     <dt>Range:</dt>
     <dd><a>:MonthOfYear (class)</a></dd>
-  </dl>
-</section>
-
-<section id="months" class="specterm">
-  <h4>months duration</h4>
-  <dl>
-    <dt>Term:</dt>
-    <dd><dfn>:months</dfn></dd>
-    <dt>IRI:</dt>
-    <dd>http://www.w3.org/2006/time#months</dd>
-    <dt>Definition:</dt>
-    <dd>
-      length of, or element of the length of, a temporal extent expressed in months
-    </dd>
-    <dt>Instance of:</dt>
-    <dd><code>owl:DatatypeProperty</code></dd>
-    <dt>Domain:</dt>
-    <dd><a>:GeneralDurationDescription</a></dd>
-    <dt>Range:</dt>
-    <dd><a href="https://www.w3.org/TR/xmlschema11-2/#decimal">xsd:decimal</a></dd>
-  </dl>
-</section>
-
-<section id="nominalPosition" class="specterm">
-  <h4>name of temporal position</h4>
-  <dl>
-    <dt>Term:</dt>
-    <dd><dfn>:nominalPosition</dfn></dd>
-    <dt>IRI:</dt>
-    <dd>http://www.w3.org/2006/time#nominalPosition</dd>
-    <dt>Definition:</dt>
-    <dd>
-      The (nominal) value indicating temporal position in an ordinal reference system
-    </dd>
-    <dt>Instance of:</dt>
-    <dd><code>owl:DatatypeProperty</code></dd>
-    <dt>Domain:</dt>
-    <dd><a>:TimePosition</a></dd>
-    <dt>Range:</dt>
-    <dd><a href="https://www.w3.org/TR/xmlschema11-2/#string">xsd:string</a></dd>
   </dl>
 </section>
 
@@ -1299,86 +930,6 @@
     <dd><a>:TemporalEntity</a> </dd>
     <dt>Disjoint with:</dt>
     <dd><a>:disjoint</a></dd>
-  </dl>
-</section>
-
-<section id="numericDuration" class="specterm">
-  <h4>numeric value of temporal duration</h4>
-  <dl>
-    <dt>Term:</dt>
-    <dd><dfn>:numericDuration</dfn></dd>
-    <dt>IRI:</dt>
-    <dd>http://www.w3.org/2006/time#numericDuration</dd>
-    <dt>Definition:</dt>
-    <dd>
-      Value of a temporal extent expressed as a number scaled by a temporal unit
-    </dd>
-    <dt>Instance of:</dt>
-    <dd><code>owl:DatatypeProperty</code></dd>
-    <dt>Domain:</dt>
-    <dd><a>:Duration</a></dd>
-    <dt>Range:</dt>
-    <dd><a href="https://www.w3.org/TR/xmlschema11-2/#decimal">xsd:decimal</a></dd>
-  </dl>
-</section>
-
-<section id="numericPosition" class="specterm">
-  <h4>numeric value of temporal position</h4>
-  <dl>
-    <dt>Term:</dt>
-    <dd><dfn>:numericPosition</dfn></dd>
-    <dt>IRI:</dt>
-    <dd>http://www.w3.org/2006/time#numericPosition</dd>
-    <dt>Definition:</dt>
-    <dd>
-      The (numeric) value indicating position within a temporal coordinate system
-    </dd>
-    <dt>Instance of:</dt>
-    <dd><code>owl:DatatypeProperty</code></dd>
-    <dt>Domain:</dt>
-    <dd><a>:TimePosition</a></dd>
-    <dt>Range:</dt>
-    <dd><a href="https://www.w3.org/TR/xmlschema11-2/#decimal">xsd:decimal</a></dd>
-  </dl>
-</section>
-
-<section id="second" class="specterm">
-  <h4>second</h4>
-  <dl>
-    <dt>Term:</dt>
-    <dd><dfn>:second</dfn></dd>
-    <dt>IRI:</dt>
-    <dd>http://www.w3.org/2006/time#second</dd>
-    <dt>Definition:</dt>
-    <dd>
-      Second position in a calendar-clock system.
-    </dd>
-    <dt>Instance of:</dt>
-    <dd><code>owl:DatatypeProperty</code></dd>
-    <dt>Domain:</dt>
-    <dd><a>:GeneralDateTimeDescription</a></dd>
-    <dt>Range:</dt>
-    <dd><a href="https://www.w3.org/TR/xmlschema11-2/#decimal">xsd:decimal</a></dd>
-  </dl>
-</section>
-
-<section id="seconds" class="specterm">
-  <h4>seconds duration</h4>
-  <dl>
-    <dt>Term:</dt>
-    <dd><dfn>:seconds</dfn></dd>
-    <dt>IRI:</dt>
-    <dd>http://www.w3.org/2006/time#seconds</dd>
-    <dt>Definition:</dt>
-    <dd>
-      length of, or element of the length of, a temporal extent expressed in seconds
-    </dd>
-    <dt>Instance of:</dt>
-    <dd><code>owl:DatatypeProperty</code></dd>
-    <dt>Domain:</dt>
-    <dd><a>:GeneralDurationDescription</a></dd>
-    <dt>Range:</dt>
-    <dd><a href="https://www.w3.org/TR/xmlschema11-2/#decimal">xsd:decimal</a></dd>
   </dl>
 </section>
 
@@ -1438,127 +989,35 @@
   </dl>
 </section>
 
-<section id="week" class="specterm">
-  <h4>week</h4>
+<section id="whollyContains" class="specterm">
+  <h4>wholly contains temporal entity</h4>
   <dl>
     <dt>Term:</dt>
-    <dd><dfn>:week</dfn></dd>
+    <dd><dfn>:whollyContains</dfn></dd>
     <dt>IRI:</dt>
-    <dd>http://www.w3.org/2006/time#week</dd>
+    <dd>http://www.w3.org/2006/time#whollyContains</dd>
     <dt>Definition:</dt>
     <dd>
-      Week number within the year.
-    </dd>
-    <dt>Instance of:</dt>
-    <dd><code>owl:DatatypeProperty</code></dd>
-    <dt>Domain:</dt>
-    <dd><a>:GeneralDateTimeDescription</a></dd>
-    <dt>Range:</dt>
-    <dd>
-      <a href="https://www.w3.org/TR/xmlschema11-2/#nonNegativeInteger">xsd:nonNegativeInteger</a>
-    </dd>
-  </dl>
-
-  <div class="note">
-    <p>
-      Weeks are numbered differently depending on the calendar in use and the local language or cultural conventions (locale).
-      ISO-8601 specifies that the first week of the year includes at least four days, and that Monday is the first day of the week.
-      In that system, week 1 is the week that contains the first Thursday in the year.
-    </p>
-  </div>
-
-</section>
-
-<section id="weeks" class="specterm">
-  <h4>weeks duration</h4>
-  <dl>
-    <dt>Term:</dt>
-    <dd><a>:weeks</a></dd>
-    <dt>Definition:</dt>
-    <dd>
-      length of, or element of the length of, a temporal extent expressed in weeks
-    </dd>
-    <dt>Instance of:</dt>
-    <dd><code>owl:DatatypeProperty</code></dd>
-    <dt>Domain:</dt>
-    <dd><a>:GeneralDurationDescription</a></dd>
-    <dt>Range:</dt>
-    <dd><a href="https://www.w3.org/TR/xmlschema11-2/#decimal">xsd:decimal</a></dd>
-  </dl>
-</section>
-
-<section id="xsdDateTime" class="specterm">
-  <h4>has XSD date-time</h4>
-  <dl>
-    <dt>Term:</dt>
-    <dd><dfn>:xsdDateTime</dfn></dd>
-    <dt>IRI:</dt>
-    <dd>http://www.w3.org/2006/time#xsdDateTime</dd>
-    <dt>Definition:</dt>
-    <dd>
-      Value of <a>:DateTimeInterval</a> expressed as a compact value.
-      The beginning and end of the interval coincide with the limits of the smallest non-zero element of the value.
-    </dd>
-    <dt>Instance of:</dt>
-    <dd><code>owl:DatatypeProperty</code></dd>
-    <dt>Instance of:</dt>
-    <dd><code>owl:DeprecatedProperty</code></dd>
-    <dt>Domain:</dt>
-    <dd><a>:DateTimeInterval</a></dd>
-    <dt>Range:</dt>
-    <dd><a href="https://www.w3.org/TR/xmlschema11-2/#dateTime">xsd:dateTime</a></dd>
-    <dt>Deprecated:</dt>
-    <dd><code>true</code></dd>
-  </dl>
-  <p class="note">
-    Using <a href="https://www.w3.org/TR/xmlschema11-2/#dateTime">xsd:dateTime</a> in this place means that the duration of the interval is implicit:
-    it corresponds to the length of the smallest non-zero element of the date-time literal.
-    However, this rule cannot be used for intervals whose duration is more than one rank smaller than the starting time
-    - e.g., the first minute or second of a day, the first hour of a month, or the first day of a year.
-    In these cases the desired interval cannot be distinguished from the interval corresponding to the next rank up.
-    Because of this essential ambiguity, use of this property is not recommended and it is deprecated.
-  </p>
-</section>
-
-<section id="year" class="specterm">
-  <h4>year</h4>
-  <dl>
-    <dt>Term:</dt>
-    <dd><dfn>:year</dfn></dd>
-    <dt>IRI:</dt>
-    <dd>http://www.w3.org/2006/time#year</dd>
-    <dt>Definition:</dt>
-    <dd>
-      Year position in a calendar-clock system.
+      If a temporal entity T<sub>1</sub> whollyContains it another temporal entity T<sub>2</sub>,
+      then the beginning of T<sub>1</sub> is coincident with or before the beginning of T<sub>2</sub>,
+      and the end of T<sub>1</sub> is concident with or after the end of T<sub>2</sub>,
+      except that end of T<sub>1</sub> may not be coincident with the end of T<sub>2</sub>
+      if the beginning of T<sub>1</sub> is coincident with the beginning of T<sub>2</sub>.
     </dd>
     <dt>Note:</dt>
     <dd>
-      The range of this property is not specified, so can be replaced by any specific representation of a
-      calendar year from any calendar.
+      This relation is the disjoint union of
+      <code>intervalStartedBy, intervalFinishedBy, intervalContains</code>.
     </dd>
     <dt>Instance of:</dt>
-    <dd><code>owl:DatatypeProperty</code></dd>
-    <dt>Domain:</dt>
-    <dd><a>:GeneralDateTimeDescription</a></dd>
-  </dl>
-</section>
-
-<section id="years" class="specterm">
-  <h4>years duration</h4>
-  <dl>
-    <dt>Term:</dt>
-    <dd><dfn>:years</dfn></dd>
-    <dt>IRI:</dt>
-    <dd>http://www.w3.org/2006/time#years</dd>
-    <dt>Definition:</dt>
-    <dd>
-      length of, or element of the length of, a temporal extent expressed in years
-    </dd>
-    <dt>Instance of:</dt>
-    <dd><code>owl:DatatypeProperty</code></dd>
-    <dt>Domain:</dt>
-    <dd><a>:GeneralDurationDescription</a></dd>
-    <dt>Range:</dt>
-    <dd><a href="https://www.w3.org/TR/xmlschema11-2/#decimal">xsd:decimal</a></dd>
+    <dd><code>owl:ObjectProperty</code> </dd>
+    <dt>Sub-property of: </dt>
+    <dd><a>:notDisjoint</a> </dd>
+    <dt>Domain: </dt>
+    <dd><a>:TemporalEntity</a> </dd>
+    <dt>Range: </dt>
+    <dd><a>:TemporalEntity</a> </dd>
+    <dt>Disjoint with:</dt>
+    <dd><a>:equals</a></dd>
   </dl>
 </section>

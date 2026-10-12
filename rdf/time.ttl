@@ -29,12 +29,12 @@
   owl:priorVersion <http://www.w3.org/2006/time#2016> ;
   owl:versionIRI <http://www.w3.org/2006/time#2026> ;
   skos:changeNote "2016-06-15 - initial update of OWL-Time - modified to support arbitrary temporal reference systems. " ;
-  skos:changeNote "2017-02 - intervalWhollyContainedBy, intervalDisjoint, monthOfYear added; TemporalUnit subclass of TemporalDuration" ;
+  skos:changeNote "2017-02 - intervalIn, intervalDisjoint, monthOfYear added; TemporalUnit subclass of TemporalDuration" ;
   skos:changeNote "2017-04-06 - hasTime, hasXSDDuration added; Number removed; all duration elements changed to xsd:decimal" ;
   skos:changeNote "2021-01-27 - clarified definition and label for time:after and time:before" ;
   skos:changeNote "2024-02-29 - Fixed datatype on all cardinality restrictions" ;
   skos:changeNote "2025-08-27 - Added six entity-relations from https://www.w3.org/TR/vocab-owl-time-rel/" ;
-  skos:changeNote "2026-10-06 - Added intervalWhollyContains, and alignment axioms to BFO/CCO" ;
+  skos:changeNote "2026-10-12 - Renamed intervalIn --> intervalWhollyContainedBy, hasInside --> whollyContains, added intervalNotDisjoint, intervalWhollyContains, and alignment axioms to BFO/CCO" ;
   skos:historyNote """Update of OWL-Time ontology, extended to support general temporal reference systems. 
 
 Ontology engineering by Simon J D Cox"""@en ;
@@ -690,19 +690,6 @@ ex:SimonWeddingDay :equals ex:RichardWeddingAnniversary1999 .
   rdfs:range :Instant ;
   skos:definition "Last instant of a temporal entity."@en ;
 .
-:whollyContains
-  a owl:ObjectProperty ;
-  rdfs:subPropertyOf :notDisjoint ;
-  rdfs:domain :TemporalEntity ;
-  rdfs:label "has time entity inside" ;
-  rdfs:range :TemporalEntity ;
-  owl:propertyDisjointWith :equals ;
-  skos:definition "If a temporal entity T1 whollyContains it another temporal entity T2, then the beginning of T1 is coincident with or before the beginning of T2, and the end of T1 is concident with or after the end of T2, except that end of T1 may not be coincident with the end of T2 if the beginning of T1 is coincident with the beginning of T2."@en ;
-  skos:note "This relation is the disjoint union of inside, intervalWhollyContains. However, that is outside OWL2 expressivity, so is implemented as an explicit property, with inside, intervalWhollyContains as sub-properties"@en ;
-  skos:example """
-ex:Class :whollyContains ex:Quiz .
-""" ;
-.
 :inside
   a owl:ObjectProperty ;
   rdfs:subPropertyOf :whollyContains ;
@@ -795,29 +782,12 @@ ex:LunchTime :intervalDisjoint ex:NapTime .
   owl:inverseOf :intervalFinishedBy ;
   skos:definition "If a proper interval T1 is intervalFinishes another proper interval T2, then the beginning of T1 is after the beginning of T2, and the end of T1 is coincident with the end of T2."@en ;
 .
-:intervalWhollyContains
+:intervalIn 
   a owl:ObjectProperty ;
-  rdfs:subPropertyOf :whollyContains, :intervalNotDisjoint ;
-  owl:equivalentProperty cco:ont00001924 ; # interval contains
-  rdfs:domain :ProperInterval ;
-  rdfs:label "interval has interval inside" ;
-  rdfs:range :ProperInterval ;
-  owl:inverseOf :intervalWhollyContainedBy ;
-  owl:propertyDisjointWith :intervalEquals ;
-  skos:definition "If a proper interval T1 intervalWhollyContains it another proper interval T2, then the beginning of T1 is coincident with or before the beginning of T2, and the end of T1 is concident with or after the end of T2, except that end of T1 may not be coincident with the end of T2 if the beginning of T1 is coincident with the beginning of T2."@en ;
-  skos:note "This relation is the disjoint union of startedBy, contains, finshedBy. However, that is outside OWL2 expressivity, so is implemented as an explicit property, with startedBy, contains, finshedBy as sub-properties"@en ;
-.
-:intervalWhollyContainedBy
-  a owl:ObjectProperty ;
-  rdfs:subPropertyOf :intervalNotDisjoint ;
-  owl:equivalentProperty cco:ont00001971 ; # interval contained by
-  rdfs:domain :ProperInterval ;
-  rdfs:label "interval in"@en ;
-  rdfs:range :ProperInterval ;
-  owl:inverseOf :intervalWhollyContains ;
-  owl:propertyDisjointWith :intervalEquals ;
-  skos:definition "If a proper interval T1 is intervalWhollyContainedBy another proper interval T2, then the beginning of T1 is after the beginning of T2 or is coincident with the beginning of T2, and the end of T1 is before the end of T2, or is coincident with the end of T2, except that end of T1 may not be coincident with the end of T2 if the beginning of T1 is coincident with the beginning of T2."@en ;
-  skos:note "This interval relation is not included in the 13 basic relationships defined in Allen (1984), but is referred to as 'an important relationship' in Allen and Ferguson (1997). It is the disjoint union of :intervalStarts v :intervalDuring v :intervalFinishes . However, that is outside OWL2 expressivity, so is implemented as an explicit property, with :intervalStarts , :intervalDuring , :intervalFinishes as sub-properties"@en ;
+  a owl:DeprecatedProperty ;
+  owl:equivalentProperty :intervalWhollyContainedBy ; # deprecated
+  owl:deprecated "true"^^xsd:boolean ;
+  skos:changeNote "2026-10-12 - Renamed to intervalWhollyContainedBy"@en ;
 .
 :intervalMeets
   a owl:ObjectProperty ;
@@ -843,7 +813,7 @@ ex:LunchTime :intervalDisjoint ex:NapTime .
   a owl:ObjectProperty ;
   rdfs:subPropertyOf :notDisjoint ;
   rdfs:domain :ProperInterval ;
-  rdfs:label "interval not disjoint with interval" ;
+  rdfs:label "interval not disjoint" ;
   rdfs:range :ProperInterval ;
   owl:propertyDisjointWith :intervalDisjoint ;
   skos:definition "If a proper interval T1 is intervalNotDisjoint with another proper interval T2, then the two entities  overlap or coincide in some way, but their ordering relationship is not known."@en ;
@@ -889,14 +859,50 @@ ex:LunchTime :intervalDisjoint ex:NapTime .
   owl:inverseOf :intervalStartedBy ;
   skos:definition "If a proper interval T1 is intervalStarts another proper interval T2, then the beginning of T1 is coincident with the beginning of T2, and the end of T1 is before the end of T2."@en ;
 .
+:intervalWhollyContainedBy
+  rdfs:subPropertyOf :intervalNotDisjoint ;
+  owl:equivalentProperty cco:ont00001971 ; # interval contained by
+  rdfs:domain :ProperInterval ;
+  rdfs:label "interval wholly contained by"@en ;
+  rdfs:range :ProperInterval ;
+  owl:inverseOf :intervalWhollyContains ;
+  owl:propertyDisjointWith :intervalEquals ;
+  skos:definition "If a proper interval T1 is intervalWhollyContainedBy another proper interval T2, then the beginning of T1 is after the beginning of T2 or is coincident with the beginning of T2, and the end of T1 is before the end of T2, or is coincident with the end of T2, except that end of T1 may not be coincident with the end of T2 if the beginning of T1 is coincident with the beginning of T2."@en ;
+  skos:note "This interval relation is not included in the 13 basic relationships defined in Allen (1984), but is referred to as 'an important relationship' in Allen and Ferguson (1997). It is the disjoint union of :intervalStarts v :intervalDuring v :intervalFinishes . However, that is outside OWL2 expressivity, so is implemented as an explicit property, with :intervalStarts , :intervalDuring , :intervalFinishes as sub-properties"@en ;
+.
+:intervalWhollyContains
+  a owl:ObjectProperty ;
+  rdfs:subPropertyOf :whollyContains, :intervalNotDisjoint ;
+  owl:equivalentProperty cco:ont00001924 ; # interval contains
+  rdfs:domain :ProperInterval ;
+  rdfs:label "interval wholly contains" ;
+  rdfs:range :ProperInterval ;
+  owl:inverseOf :intervalWhollyContainedBy ;
+  owl:propertyDisjointWith :intervalEquals ;
+  skos:definition "If a proper interval T1 intervalWhollyContains it another proper interval T2, then the beginning of T1 is coincident with or before the beginning of T2, and the end of T1 is concident with or after the end of T2, except that end of T1 may not be coincident with the end of T2 if the beginning of T1 is coincident with the beginning of T2."@en ;
+  skos:note "This relation is the disjoint union of startedBy, contains, finshedBy. However, that is outside OWL2 expressivity, so is implemented as an explicit property, with startedBy, contains, finshedBy as sub-properties"@en ;
+.
 :notDisjoint
   a owl:ObjectProperty ;
   rdfs:domain :TemporalEntity ;
-  rdfs:label "not disjoint with time entity" ;
+  rdfs:label "not disjoint with temporal entity" ;
   rdfs:range :TemporalEntity ;
   owl:propertyDisjointWith :disjoint ;
   skos:definition "If a temporal entity T1 is notDisjoint with another temporal entity T2, then the two entities overlap or coincide in some way, but their ordering relationship is not known."@en ;
   skos:note "This relation is the complement of :disjoint and is the disjoint union of equals, whollyContains, intervalNotDisjoint. However, that is outside OWL2 expressivity, so is implemented as an explicit property, with equals, whollyContains, intervalNotDisjoint as sub-properties"@en ;
+.
+:whollyContains
+  a owl:ObjectProperty ;
+  rdfs:subPropertyOf :notDisjoint ;
+  rdfs:domain :TemporalEntity ;
+  rdfs:label "wholly contains temporal entity" ;
+  rdfs:range :TemporalEntity ;
+  owl:propertyDisjointWith :equals ;
+  skos:definition "If a temporal entity T1 whollyContains it another temporal entity T2, then the beginning of T1 is coincident with or before the beginning of T2, and the end of T1 is concident with or after the end of T2, except that end of T1 may not be coincident with the end of T2 if the beginning of T1 is coincident with the beginning of T2."@en ;
+  skos:note "This relation is the disjoint union of inside, intervalWhollyContains. However, that is outside OWL2 expressivity, so is implemented as an explicit property, with inside, intervalWhollyContains as sub-properties"@en ;
+  skos:example """
+ex:Class :whollyContains ex:Quiz .
+""" ;
 .
 
 ## temporal properties
