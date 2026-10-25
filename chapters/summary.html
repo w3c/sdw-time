@@ -66,22 +66,24 @@
     <h3>Properties (organized by domain value)</h3>
     <h4>Domain <a>:TemporalEntity</a></h4>
     <ul>
+        <li><a>:after</a> rdfs:range <a>:TemporalEntity</a> . </li>
+        <li><a>:before</a> rdfs:range <a>:TemporalEntity</a> . </li>
+        <li><a>:disjoint</a> rdfs:range <a>:TemporalEntity</a> . </li>
+        <li><a>:equals</a> rdfs:range <a>:TemporalEntity</a> . </li>
         <li><a>:hasBeginning</a> rdfs:range <a>:Instant</a> . </li>
         <li><a>:hasEnd</a> rdfs:range <a>:Instant</a> . </li>
         <li><a>:hasTemporalDuration</a> rdfs:range <a>:TemporalDuration</a> . </li>
-        <li><a>:hasDuration</a> rdfs:range <a>:Duration</a> . </li>
-        <li><a>:hasDurationDescription</a> rdfs:range <a>:GeneralDurationDescription</a> . </li>
         <li><a>:hasXSDDuration</a> rdfs:range
             <a href="https://www.w3.org/TR/xmlschema11-2/#duration">xsd:duration</a> .
         </li>
-        <li><a>:before</a> rdfs:range <a>:TemporalEntity</a> . </li>
-        <li><a>:after</a> rdfs:range <a>:TemporalEntity</a> . </li>
+        <li><a>:notDisjoint</a> rdfs:range <a>:TemporalEntity</a> . </li>
+        <li><a>:whollyContains</a> rdfs:range <a>:TemporalEntity</a> . </li>
     </ul>
     <h4>Domain <a>:Instant</a></h4>
     <ul>
+        <li><a>:inDateTime</a> rdfs:range <a>:GeneralDateTimeDescription</a> . </li>
         <li><a>:inTemporalPosition</a> rdfs:range <a>:TemporalPosition</a> . </li>
         <li><a>:inTimePosition</a> rdfs:range <a>:TimePosition</a> . </li>
-        <li><a>:inDateTime</a> rdfs:range <a>:GeneralDateTimeDescription</a> . </li>
         <li><a>:inXSDDate</a> rdfs:range <a href="https://www.w3.org/TR/xmlschema11-2/#date">xsd:date</a> . </li>
         <li><a>:inXSDDateTime</a> rdfs:range
             <a href="https://www.w3.org/TR/xmlschema11-2/#dateTime">xsd:dateTime</a> .
@@ -97,21 +99,23 @@
     </ul>
     <h4>Domain <a>:ProperInterval</a></h4>
     <ul>
-        <li><a>:intervalEquals</a> rdfs:range <a>:ProperInterval</a> . </li>
-        <li><a>:intervalDisjoint</a> rdfs:range <a>:ProperInterval</a> . </li>
         <li><a>:intervalAfter</a> rdfs:range <a>:ProperInterval</a> . </li>
         <li><a>:intervalBefore</a> rdfs:range <a>:ProperInterval</a> . </li>
-        <li><a>:intervalMeets</a> rdfs:range <a>:ProperInterval</a> . </li>
-        <li><a>:intervalMetBy</a> rdfs:range <a>:ProperInterval</a> . </li>
-        <li><a>:intervalOverlaps</a> rdfs:range <a>:ProperInterval</a> . </li>
-        <li><a>:intervalOverlappedBy</a> rdfs:range <a>:ProperInterval</a> . </li>
-        <li><a>:intervalStarts</a> rdfs:range <a>:ProperInterval</a> . </li>
-        <li><a>:intervalStartedBy</a> rdfs:range <a>:ProperInterval</a> . </li>
-        <li><a>:intervalFinishes</a> rdfs:range <a>:ProperInterval</a> . </li>
-        <li><a>:intervalFinishedBy</a> rdfs:range <a>:ProperInterval</a> . </li>
         <li><a>:intervalContains</a> rdfs:range <a>:ProperInterval</a> . </li>
+        <li><a>:intervalDisjoint</a> rdfs:range <a>:ProperInterval</a> . </li>
         <li><a>:intervalDuring</a> rdfs:range <a>:ProperInterval</a> . </li>
+        <li><a>:intervalEquals</a> rdfs:range <a>:ProperInterval</a> . </li>
+        <li><a>:intervalFinishedBy</a> rdfs:range <a>:ProperInterval</a> . </li>
+        <li><a>:intervalFinishes</a> rdfs:range <a>:ProperInterval</a> . </li>
+        <li><a>:intervalMetBy</a> rdfs:range <a>:ProperInterval</a> . </li>
+        <li><a>:intervalMeets</a> rdfs:range <a>:ProperInterval</a> . </li>
+        <li><a>:intervalNotDisjoint</a> rdfs:range <a>:ProperInterval</a> . </li>
+        <li><a>:intervalOverlappedBy</a> rdfs:range <a>:ProperInterval</a> . </li>
+        <li><a>:intervalOverlaps</a> rdfs:range <a>:ProperInterval</a> . </li>
+        <li><a>:intervalStartedBy</a> rdfs:range <a>:ProperInterval</a> . </li>
+        <li><a>:intervalStarts</a> rdfs:range <a>:ProperInterval</a> . </li>
         <li><a>:intervalWhollyContainedBy</a> rdfs:range <a>:ProperInterval</a> . </li>
+        <li><a>:intervalWhollyContains</a> rdfs:range <a>:ProperInterval</a> . </li>
     </ul>
     <h4>Domain <a>:DateTimeInterval</a></h4>
     <ul>
