@@ -106,6 +106,11 @@ var respecConfig = {
       href: "http://dx.doi.org/10.1016/0004-3702%2884%2990008-0",
       title: "Towards a general theory of action and time. Artificial Intelligence 23, pp. 123-154."
     },
+    "CCO": {
+      title: "The Common Core Ontologies (CCO)",
+      href: "https://github.com/CommonCoreOntology/CommonCoreOntologies",
+      rawDate: "2022"
+    },
     "co-15": {
       authors: ["S.J.D. Cox"],
       date: "2015",
