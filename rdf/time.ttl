@@ -1,9 +1,7 @@
 # baseURI: http://www.w3.org/2006/time
 
 @prefix : <http://www.w3.org/2006/time#> .
-@prefix cco: <https://www.commoncoreontologies.org/> .
 @prefix dct: <http://purl.org/dc/terms/> .
-@prefix obo: <http://purl.obolibrary.org/obo/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -318,7 +316,6 @@ In the original OWL-Time the following constraint appeared:
   a owl:Class ;
   rdfs:label "Time instant"@en ;
   rdfs:subClassOf :TemporalEntity ;
-  owl:equivalentClass obo:BFO_0000203 ; # temporal instant
   skos:definition "temporal entity with zero extent or duration"@en ;
 .
 :Interval
@@ -397,7 +394,6 @@ In the original OWL-Time the following constraint appeared:
   a owl:Class ;
   rdfs:label "Proper interval"@en ;
   rdfs:subClassOf :Interval ;
-  owl:equivalentClass obo:BFO_0000202 ; # temporal interval
   owl:disjointWith :Instant ;
   skos:definition "interval whose beginning and end are not identical"@en ;
 .
@@ -633,11 +629,6 @@ Note that the value-space is not defined, so a generic OWL2 processor cannot com
   skos:definition "Asume una dirección en el tiempo. Si una entidad temporal T1 está después de otra entidad temporal T2, entonces el principio de T1 está después del final de T2."@es ;
   skos:definition "Gives directionality to time. If a temporal entity T1 is after another temporal entity T2, then the beginning of T1 is after the end of T2."@en ;
 .
-cco:ont00001893 
-  a owl:ObjectProperty ;
-  rdfs:subPropertyOf :after ;
-  rdfs:label "instant is after"@en ;
-.
 :before
   a owl:ObjectProperty ;
   a owl:TransitiveProperty ;
@@ -647,11 +638,6 @@ cco:ont00001893
   rdfs:range :TemporalEntity ;
   owl:inverseOf :after ;
   skos:definition "Gives directionality to time. If a temporal entity T1 is before another temporal entity T2, then the end of T1 is before the beginning of T2. Thus, \"before\" can be considered to be basic to instants and derived for intervals."@en ;
-.
-cco:ont00001990 
-  a owl:ObjectProperty ;
-  rdfs:subPropertyOf :before ;
-  rdfs:label "instant is before"@en ;
 .
 :disjoint
   a owl:ObjectProperty ;
@@ -675,7 +661,6 @@ ex:SimonWeddingDay :equals ex:RichardWeddingAnniversary1999 .
 :hasBeginning
   a owl:ObjectProperty ;
   rdfs:subPropertyOf :disjoint , :hasTime ;
-  owl:equivalentProperty obo:BFO_0000222 ; # has first instant
   rdfs:domain :TemporalEntity ;
   rdfs:label "has beginning"@en ;
   rdfs:range :Instant ;
@@ -684,7 +669,6 @@ ex:SimonWeddingDay :equals ex:RichardWeddingAnniversary1999 .
 :hasEnd
   a owl:ObjectProperty ;
   rdfs:subPropertyOf :disjoint , :hasTime ;
-  owl:equivalentProperty obo:BFO_0000224 ; # has last instant
   rdfs:domain :TemporalEntity ;
   rdfs:label "has end"@en ;
   rdfs:range :Instant ;
@@ -693,7 +677,6 @@ ex:SimonWeddingDay :equals ex:RichardWeddingAnniversary1999 .
 :inside
   a owl:ObjectProperty ;
   rdfs:subPropertyOf :whollyContains ;
-  owl:equivalentProperty cco:ont00001779 ; # has inside instant
   rdfs:domain :Interval ;
   rdfs:label "has time instant inside"@en ;
   rdfs:range :Instant ;
@@ -702,7 +685,6 @@ ex:SimonWeddingDay :equals ex:RichardWeddingAnniversary1999 .
 :intervalAfter
   a owl:ObjectProperty ;
   rdfs:subPropertyOf :after , :intervalDisjoint ;
-  owl:equivalentProperty cco:ont00001847 ; # interval is after
   rdfs:domain :ProperInterval ;
   rdfs:label "interval after"@en ;
   rdfs:range :ProperInterval ;
@@ -712,7 +694,6 @@ ex:SimonWeddingDay :equals ex:RichardWeddingAnniversary1999 .
 :intervalBefore
   a owl:ObjectProperty ;
   rdfs:subPropertyOf :before , :intervalDisjoint ;
-  owl:equivalentProperty cco:ont00001940 ; # interval is before
   rdfs:domain :ProperInterval ;
   rdfs:label "interval before"@en ;
   rdfs:range :ProperInterval ;
@@ -722,7 +703,6 @@ ex:SimonWeddingDay :equals ex:RichardWeddingAnniversary1999 .
 :intervalContains
   a owl:ObjectProperty ;
   rdfs:subPropertyOf :intervalWhollyContains ;
-  owl:equivalentProperty cco:ont00001795 ; # has inside interval
   rdfs:domain :ProperInterval ;
   rdfs:label "interval contains"@en ;
   rdfs:range :ProperInterval ;
@@ -732,7 +712,6 @@ ex:SimonWeddingDay :equals ex:RichardWeddingAnniversary1999 .
 :intervalDisjoint
   a owl:ObjectProperty ;
   rdfs:subPropertyOf :disjoint ;
-  owl:equivalentProperty cco:ont00001862 ; # interval disjoint
   rdfs:domain :ProperInterval ;
   rdfs:label "interval disjoint"@en ;
   rdfs:range :ProperInterval ;
@@ -745,7 +724,6 @@ ex:LunchTime :intervalDisjoint ex:NapTime .
 :intervalDuring
   a owl:ObjectProperty ;
   rdfs:subPropertyOf :intervalWhollyContainedBy ;
-  owl:equivalentProperty cco:ont00001869 ; # interval during
   rdfs:domain :ProperInterval ;
   rdfs:label "interval during"@en ;
   rdfs:range :ProperInterval ;
@@ -755,7 +733,6 @@ ex:LunchTime :intervalDisjoint ex:NapTime .
 :intervalEquals
   a owl:ObjectProperty ;
   rdfs:subPropertyOf :equals, :intervalNotDisjoint ;
-  owl:equivalentProperty cco:ont00001822 ; # interval equals
   rdfs:domain :ProperInterval ;
   rdfs:label "interval equals"@en ;
   rdfs:range :ProperInterval ;
@@ -765,7 +742,6 @@ ex:LunchTime :intervalDisjoint ex:NapTime .
 :intervalFinishedBy
   a owl:ObjectProperty ;
   rdfs:subPropertyOf :intervalWhollyContains ;
-  owl:equivalentProperty cco:ont00001821 ; # interval finished by
   rdfs:domain :ProperInterval ;
   rdfs:label "interval finished by"@en ;
   rdfs:range :ProperInterval ;
@@ -775,7 +751,6 @@ ex:LunchTime :intervalDisjoint ex:NapTime .
 :intervalFinishes
   a owl:ObjectProperty ;
   rdfs:subPropertyOf :intervalWhollyContainedBy ;
-  owl:equivalentProperty cco:ont00001814 ; # interval finishes
   rdfs:domain :ProperInterval ;
   rdfs:label "interval finishes"@en ;
   rdfs:range :ProperInterval ;
@@ -792,7 +767,6 @@ ex:LunchTime :intervalDisjoint ex:NapTime .
 :intervalMeets
   a owl:ObjectProperty ;
   rdfs:subPropertyOf :intervalDisjoint ;
-  owl:equivalentProperty cco:ont00001896 ; # interval meets
   rdfs:domain :ProperInterval ;
   rdfs:label "interval meets"@en ;
   rdfs:range :ProperInterval ;
@@ -802,7 +776,6 @@ ex:LunchTime :intervalDisjoint ex:NapTime .
 :intervalMetBy
   a owl:ObjectProperty ;
   rdfs:subPropertyOf :intervalDisjoint ;
-  owl:equivalentProperty cco:ont00001915 ; # interval met by
   rdfs:domain :ProperInterval ;
   rdfs:label "interval met by"@en ;
   rdfs:range :ProperInterval ;
@@ -822,7 +795,6 @@ ex:LunchTime :intervalDisjoint ex:NapTime .
 :intervalOverlappedBy
   a owl:ObjectProperty ;
   rdfs:subPropertyOf :intervalNotDisjoint ;
-  owl:equivalentProperty cco:ont00001870 ; # interval overlapped by
   rdfs:domain :ProperInterval ;
   rdfs:label "interval overlapped by"@en ;
   rdfs:range :ProperInterval ;
@@ -832,7 +804,6 @@ ex:LunchTime :intervalDisjoint ex:NapTime .
 :intervalOverlaps
   a owl:ObjectProperty ;
   rdfs:subPropertyOf :intervalNotDisjoint ;
-  owl:equivalentProperty cco:ont00001825 ; # interval overlaps
   rdfs:domain :ProperInterval ;
   rdfs:label "interval overlaps"@en ;
   rdfs:range :ProperInterval ;
@@ -842,7 +813,6 @@ ex:LunchTime :intervalDisjoint ex:NapTime .
 :intervalStartedBy
   a owl:ObjectProperty ;
   rdfs:subPropertyOf :intervalWhollyContains ;
-  owl:equivalentProperty cco:ont00001875 ; # interval started by
   rdfs:domain :ProperInterval ;
   rdfs:label "interval started by"@en ;
   rdfs:range :ProperInterval ;
@@ -852,7 +822,6 @@ ex:LunchTime :intervalDisjoint ex:NapTime .
 :intervalStarts
   a owl:ObjectProperty ;
   rdfs:subPropertyOf :intervalWhollyContainedBy ;
-  owl:equivalentProperty cco:ont00001923 ; # interval starts
   rdfs:domain :ProperInterval ;
   rdfs:label "interval starts"@en ;
   rdfs:range :ProperInterval ;
@@ -860,8 +829,8 @@ ex:LunchTime :intervalDisjoint ex:NapTime .
   skos:definition "If a proper interval T1 is intervalStarts another proper interval T2, then the beginning of T1 is coincident with the beginning of T2, and the end of T1 is before the end of T2."@en ;
 .
 :intervalWhollyContainedBy
+  a owl:ObjectProperty ;
   rdfs:subPropertyOf :intervalNotDisjoint ;
-  owl:equivalentProperty cco:ont00001971 ; # interval contained by
   rdfs:domain :ProperInterval ;
   rdfs:label "interval wholly contained by"@en ;
   rdfs:range :ProperInterval ;
@@ -873,7 +842,6 @@ ex:LunchTime :intervalDisjoint ex:NapTime .
 :intervalWhollyContains
   a owl:ObjectProperty ;
   rdfs:subPropertyOf :whollyContains, :intervalNotDisjoint ;
-  owl:equivalentProperty cco:ont00001924 ; # interval contains
   rdfs:domain :ProperInterval ;
   rdfs:label "interval wholly contains" ;
   rdfs:range :ProperInterval ;

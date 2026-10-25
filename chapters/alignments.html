@@ -1,0 +1,268 @@
+<h2>Alignments</h2>
+<h3>ALignment with BFO/CCO</h3>
+<p>
+  This section introduces the alignment of OWL-Time with the Basic Formal Ontology ([[BFO]]) and Common Core Ontologies
+  ([[CCO]]).
+</p>
+<p style="text-align: center;">
+  The ontology IRI of the BFO/CCO Alignment module is
+  <a href="http://www.w3.org/2006/time/bfo">http://www.w3.org/2006/time/bfo</a><br>
+  The version IRI of the BFO/CCO Alignment module 2023 edition is
+  <a href="http://www.w3.org/2006/time/bfo">http://www.w3.org/2006/time/2026/bfo</a>
+</p>
+
+<section id="BFO_Alignment_ns">
+  <h5>Namespaces</h5>
+  <p>
+    The following namespace prefixes are used in the alignment of SSN with BFO and CCO.
+  </p>
+  <dl>
+    <dt>: (default)</dt>
+    <dd>
+      <a href="http://www.w3.org/2006/time#">http://www.w3.org/2006/time#</a>
+    </dd>
+    <dt>obo:</dt>
+    <dd>
+      <a href="http://purl.obolibrary.org/obo/">http://purl.obolibrary.org/obo/</a>
+    </dd>
+    <dt>cco:</dt>
+    <dd>
+      <a href="https://www.commoncoreontologies.org/">https://www.commoncoreontologies.org/</a>
+    </dd>
+  </dl>
+</section>
+
+<section id="BFO_Alignment_class">
+  <h5>Class Alignments</h5>
+  <p>
+    The primary classes from OWL-Time are aligned with the BFO classes as follows.
+  </p>
+  <p class="note">
+    The definition of each BFO concept is displayed as a tooltip when hovering over the concept.
+  </p>
+
+  <ul class="align-on-symbol">
+    <li>
+      <span class="lhs"
+        title="A temporal instant is a zero-dimensional temporal region that has no proper temporal part ">
+        obo:BFO_0000203
+        <br><i>"temporal instant"</i>
+      </span>
+      <span class="symbol logic">≡</span>
+      <span class="rhs"><a>:Instant</a></span>
+    </li>
+    <li>
+      <span class="lhs"
+        title="A temporal interval is a one-dimensional temporal region that is continuous, thus without gaps or breaks ">
+        obo:BFO_0000202
+        <br><i>"temporal interval"</i>
+      </span>
+      <span class="symbol logic">≡</span>
+      <span class="rhs"><a>:ProperInterval</a></span>
+    </li>
+  </ul>
+</section>
+
+<section id="BFO_Alignment_property">
+  <h5>Property Alignments</h5>
+  <p>
+    The following properties from OWL-Time have simple alignments with BFO or CCO properties:
+  </p>
+  <p class="note">
+    The definition of each BFO or CCO concept is displayed as a tooltip when hovering over the concept.
+  </p>
+
+
+  <ul class="align-on-symbol">
+    <li>
+      <span class="lhs"
+        title="x instant_is_after y iff x and y are both instances of Temporal Instant and there exists some instance of Temporal Interval z such that y is the starting instant of z and x is the ending instant of z.">
+        cco:ont00001893
+        <br><i>"instant is after"</i>
+      </span>
+      <span class="symbol logic">⊑</span>
+      <span class="rhs"><a>:after</a></span>
+    </li>
+    <li>
+      <span class="lhs"
+        title="x instant_is_before y iff x and y are both instances of Zero Dimensional Temporal Region and there exists some instance of Temporal Interval z such that x is the starting instant of z and y is the ending instant of z.">
+        cco:ont00001990
+        <br><i>"instant is before"</i>
+      </span>
+      <span class="symbol logic">⊑</span>
+      <span class="rhs"><a>:before</a></span>
+    </li>
+    <li>
+      <span class="lhs"><a>:hasBeginning</a></span>
+      <span class="symbol logic">≡</span>
+      <span class="rhs"
+        title="t has first instant t' =Def t' first instant of t">
+        obo:BFO_0000222
+        <br><i>has first instant</i>
+      </span>
+    </li>
+    <li>
+      <span class="lhs"><a>:hasEnd</a></span>
+      <span class="symbol logic">≡</span>
+      <span class="rhs"
+        title="t has last instant t' =Def t' last instant of t ">
+        obo:BFO_0000224
+        <br><i>has last instant</i>
+      </span>
+    </li>
+    <li>
+      <span class="lhs"><a>:inside</a></span>
+      <span class="symbol logic">≡</span>
+      <span class="rhs" 
+        title="x has_inside_instant y iff x is an instance of One Dimensional Temporal Region and y is an instance of Temporal Instant and y is_inside_instant_of x">
+        cco:ont00001779
+        <br><i>has inside instant</i>
+      </span>
+    </li>
+    <li>
+      <span class="lhs"><a>:intervalAfter</a></span>
+      <span class="symbol logic">≡</span>
+      <span class="rhs"
+        title="x interval is after y =Def y interval is before x">
+        cco:ont00001847
+        <br><i>interval is after</i>
+      </span>
+    </li>
+    <li>
+      <span class="lhs"><a>:intervalBefore</a></span>
+      <span class="symbol logic">≡</span>
+      <span class="rhs" 
+        title="x interval_is_before y iff x and y are both instances of Temporal Interval and there exist instances of Temporal Instant w, z such that w is the ending instant of x and z is the starting instant of y and w is before z">
+        cco:ont00001940
+        <br><i>interval is before</i>
+      </span>
+    </li>
+    <li>
+      <span class="lhs"><a>:intervalContains</a></span>
+      <span class="symbol logic">≡</span>
+      <span class="rhs" 
+        title="x has inside interval y =Def y interval during x">
+        cco:ont00001795
+        <br><i>has inside interval</i>
+      </span>
+    </li>
+    <li>
+      <span class="lhs"><a>:intervalDisjoint</a></span>
+      <span class="symbol logic">≡</span>
+      <span class="rhs" 
+        title="x interval_disjoint y iff x and y are both instances of Temporal Interval and have no parts in common">
+        cco:ont00001862
+        <br><i>interval disjoint</i>
+      </span>
+    </li>
+    <li>
+      <span class="lhs"><a>:intervalDuring</a></span>
+      <span class="symbol logic">≡</span>
+      <span class="rhs" 
+        title="x interval_during y iff x and y are both instances of Temporal Interval and there exist instances of Temporal Instant u, v, w, and z such that u is the starting instant of x, v is the ending instant of x, w is the starting instant of y, z is the ending instant of y, w is before u, and v is before z">
+        cco:ont00001869
+        <br><i>interval during</i>
+      </span>
+    </li>
+    <li>
+      <span class="lhs"><a>:intervalEquals</a></span>
+      <span class="symbol logic">≡</span>
+      <span class="rhs" 
+        title="x interval_equals y iff x and y are both instances of Temporal Interval and there exist instances of Temporal Instant w and z such that w is the starting instant of both x and y and z is the ending instant of both x and y">
+        cco:ont00001822
+        <br><i>interval equals</i>
+      </span>
+    </li>
+    <li>
+      <span class="lhs"><a>:intervalFinishedBy</a></span>
+      <span class="symbol logic">≡</span>
+      <span class="rhs" 
+      title="x interval finished by y =Def y interval finishes x">
+        cco:ont00001821
+        <br><i>interval finished by</i>
+      </span>
+    </li>
+    <li>
+      <span class="lhs"><a>:intervalFinishes</a></span>
+      <span class="symbol logic">≡</span>
+      <span class="rhs" 
+      title="x interval_finishes y iff x and y are both instances of Temporal Interval and there exist instances of Temporal Instant v, w, and z such that v is the starting instant of x, w is the ending instant of both x and y, z is the starting instant of y, and z is before v">
+        cco:ont00001814
+        <br><i>interval finishes</i>
+      </span>
+    </li>
+    <li>
+      <span class="lhs"><a>:intervalMeets</a></span>
+      <span class="symbol logic">≡</span>
+      <span class="rhs" 
+        title="x interval meets y =Def y interval met by x">
+        cco:ont00001896
+        <br><i>interval meets</i>
+      </span>
+    </li>
+    <li>
+      <span class="lhs"><a>:intervalMetBy</a></span>
+      <span class="symbol logic">≡</span>
+      <span class="rhs" 
+        title="x interval_met_by y iff x and y are both instances of Temporal Interval and y interval_meets x">
+        cco:ont00001915
+        <br><i>interval met by</i>
+      </span>
+    </li>
+    <li>
+      <span class="lhs"><a>:intervalOverlappedBy</a></span>
+      <span class="symbol logic">≡</span>
+      <span class="rhs" 
+        title="x is_overlapped_by y iff x and y are both instances of Temporal Interval and y interval_overlaps x">
+        cco:ont00001870
+        <br><i>interval overlapped by</i>
+      </span>
+    </li>
+    <li>
+      <span class="lhs"><a>:intervalOverlaps</a></span>
+      <span class="symbol logic">≡</span>
+      <span class="rhs" 
+        title="x interval overlaps y =Def y interval overlapped by x">
+        cco:ont00001825
+        <br><i>interval overlaps</i>
+      </span>
+    </li>
+    <li>
+      <span class="lhs"><a>:intervalStartedBy</a></span>
+      <span class="symbol logic">≡</span>
+      <span class="rhs" 
+        title="x interval started by y =Def y interval starts x">
+        cco:ont00001875
+        <br><i>interval started by</i>
+      </span>
+    </li>
+    <li>
+      <span class="lhs"><a>:intervalStarts</a></span>
+      <span class="symbol logic">≡</span>
+      <span class="rhs" 
+        title="x interval_starts y iff x and y are both instances of Temporal Interval and there exist instances of Temporal Instant v, w, and z such that v is the starting instant of both x and y, w is the ending instant of x, z is the ending instant of y and w is before z">
+        cco:ont00001923
+        <br><i>interval starts</i>
+      </span>
+    </li>
+    <li>
+      <span class="lhs"><a>:intervalWhollyContainedBy</a></span>
+      <span class="symbol logic">≡</span>
+      <span class="rhs" 
+        title="x interval_contained_by y iff x and y are both instances of Temporal Interval and y interval_contains x">
+        cco:ont00001971
+        <br><i>interval contained by</i>
+      </span>
+    </li>
+    <li>
+      <span class="lhs"><a>::intervalWhollyContains</a></span>
+      <span class="symbol logic">≡</span>
+      <span class="rhs" 
+        title="x interval contains y =Def y interval contained by x">
+        cco:ont00001924
+        <br><i>interval contains</i>
+      </span>
+    </li>
+  </ul>
+
+</section>

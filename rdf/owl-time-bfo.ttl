@@ -1,0 +1,148 @@
+# baseURI: http://www.w3.org/2006/time/bfo
+
+@prefix : <http://www.w3.org/2006/time#> .
+@prefix cco: <https://www.commoncoreontologies.org/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.w3.org/2006/time/bfo>
+  a owl:Ontology ;
+  owl:imports <http://www.w3.org/2006/time> , obo:bfo , cco:TimeOntology;
+  dct:created "2026-10-25"^^xsd:date ;
+  dct:creator <https://orcid.org/0000-0002-3884-3420> ;
+  dct:license <https://creativecommons.org/licenses/by/4.0/> ;
+  dct:modified "2026-10-25"^^xsd:date ;
+  dct:rights "Copyright © 2006-2026 W3C, OGC. W3C and OGC liability, trademark and document use rules apply."@en ;
+  rdfs:label "OWL-Time"@en ;
+  rdfs:seeAlso <http://www.w3.org/TR/owl-time> ;
+  owl:versionIRI <http://www.w3.org/2006/time/2026/bfo> ;
+  skos:historyNote """Alignment of OWL-Time ontology with BFO/CCO 
+
+Ontology engineering by Simon J D Cox"""@en ;
+.
+
+## Classes 
+
+:Instant
+  a owl:Class ;
+  rdfs:label "Time instant"@en ;
+  owl:equivalentClass obo:BFO_0000203 ; # temporal instant
+.
+:ProperInterval
+  a owl:Class ;
+  rdfs:label "Proper interval"@en ;
+  owl:equivalentClass obo:BFO_0000202 ; # temporal interval
+.
+
+## topological relations
+
+cco:ont00001893 
+  a owl:ObjectProperty ;
+  rdfs:subPropertyOf :after ;
+  rdfs:label "instant is after"@en ;
+.
+cco:ont00001990 
+  a owl:ObjectProperty ;
+  rdfs:subPropertyOf :before ;
+  rdfs:label "instant is before"@en ;
+.
+:hasBeginning
+  a owl:ObjectProperty ;
+  owl:equivalentProperty obo:BFO_0000222 ; # has first instant
+  rdfs:label "has beginning"@en ;
+.
+:hasEnd
+  a owl:ObjectProperty ;
+  owl:equivalentProperty obo:BFO_0000224 ; # has last instant
+  rdfs:label "has end"@en ;
+.
+:inside
+  a owl:ObjectProperty ;
+  owl:equivalentProperty cco:ont00001779 ; # has inside instant
+  rdfs:label "has time instant inside"@en ;
+.
+:intervalAfter
+  a owl:ObjectProperty ;
+  owl:equivalentProperty cco:ont00001847 ; # interval is after
+  rdfs:label "interval after"@en ;
+.
+:intervalBefore
+  a owl:ObjectProperty ;
+  owl:equivalentProperty cco:ont00001940 ; # interval is before
+  rdfs:label "interval before"@en ;
+.
+:intervalContains
+  a owl:ObjectProperty ;
+  owl:equivalentProperty cco:ont00001795 ; # has inside interval
+  rdfs:label "interval contains"@en ;
+.
+:intervalDisjoint
+  a owl:ObjectProperty ;
+  owl:equivalentProperty cco:ont00001862 ; # interval disjoint
+  rdfs:label "interval disjoint"@en ;
+.
+:intervalDuring
+  a owl:ObjectProperty ;
+  owl:equivalentProperty cco:ont00001869 ; # interval during
+  rdfs:label "interval during"@en ;
+.
+:intervalEquals
+  a owl:ObjectProperty ;
+  owl:equivalentProperty cco:ont00001822 ; # interval equals
+  rdfs:label "interval equals"@en ;
+.
+:intervalFinishedBy
+  a owl:ObjectProperty ;
+  owl:equivalentProperty cco:ont00001821 ; # interval finished by
+  rdfs:label "interval finished by"@en ;
+.
+:intervalFinishes
+  a owl:ObjectProperty ;
+  owl:equivalentProperty cco:ont00001814 ; # interval finishes
+  rdfs:label "interval finishes"@en ;
+.
+:intervalMeets
+  a owl:ObjectProperty ;
+  owl:equivalentProperty cco:ont00001896 ; # interval meets
+  rdfs:label "interval meets"@en ;
+.
+:intervalMetBy
+  a owl:ObjectProperty ;
+  owl:equivalentProperty cco:ont00001915 ; # interval met by
+  rdfs:label "interval met by"@en ;
+.
+:intervalOverlappedBy
+  a owl:ObjectProperty ;
+  owl:equivalentProperty cco:ont00001870 ; # interval overlapped by
+  rdfs:label "interval overlapped by"@en ;
+.
+:intervalOverlaps
+  a owl:ObjectProperty ;
+  owl:equivalentProperty cco:ont00001825 ; # interval overlaps
+  rdfs:label "interval overlaps"@en ;
+.
+:intervalStartedBy
+  a owl:ObjectProperty ;
+  owl:equivalentProperty cco:ont00001875 ; # interval started by
+  rdfs:label "interval started by"@en ;
+.
+:intervalStarts
+  a owl:ObjectProperty ;
+  owl:equivalentProperty cco:ont00001923 ; # interval starts
+  rdfs:label "interval starts"@en ;
+.
+:intervalWhollyContainedBy
+  a owl:ObjectProperty ;
+  owl:equivalentProperty cco:ont00001971 ; # interval contained by
+  rdfs:label "interval wholly contained by"@en ;
+.
+:intervalWhollyContains
+  a owl:ObjectProperty ;
+  owl:equivalentProperty cco:ont00001924 ; # interval contains
+  rdfs:label "interval wholly contains" ;
+.
