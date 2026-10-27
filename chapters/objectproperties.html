@@ -37,6 +37,7 @@
   <a>:inTimePosition</a> |
   <a>:monthOfYear</a> |
   <a>:notDisjoint</a> |
+  <a>:timePertainsTo</a> |
   <a>:timeZone</a> |
   <a>:unitType</a> |
   <a>:whollyContains</a> 
@@ -301,12 +302,14 @@
     <dd>http://www.w3.org/2006/time#hasTime</dd>
     <dt>Definition:</dt>
     <dd>
-      links a temporal entity (instant or interval) to any thing.
+      links anything to a temporal entity (instant or interval)
     </dd>
     <dt>Instance of:</dt>
     <dd><code>owl:ObjectProperty</code></dd>
     <dt>Range:</dt>
     <dd><a>:TemporalEntity</a></dd>
+    <dt>Inverse of:</dt>
+    <dd><a>:timePertainsTo</a></dd>
   </dl>
 </section>
 
@@ -918,6 +921,26 @@
     <dd><a>:TemporalEntity</a> </dd>
     <dt>Range: </dt>
     <dd><a>:TemporalEntity</a> </dd>
+  </dl>
+</section>
+
+<section id="timePertainsTo" class="specterm">
+  <h4>time pertains to</h4>
+  <dl>
+    <dt>Term:</dt>
+    <dd><dfn>:timePertainsTo</dfn></dd>
+    <dt>IRI:</dt>
+    <dd>http://www.w3.org/2006/time#timePertainsTo</dd>
+    <dt>Definition:</dt>
+    <dd>
+      links a temporal entity (instant or interval) to anything.
+    </dd>
+    <dt>Instance of:</dt>
+    <dd><code>owl:ObjectProperty</code></dd>
+    <dt>Domain:</dt>
+    <dd><a>:TemporalEntity</a></dd>
+    <dt>Inverse of:</dt>
+    <dd><a>:hasTime</a></dd>
   </dl>
 </section>
 
