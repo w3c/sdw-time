@@ -680,6 +680,10 @@ ex:SimonWeddingDay :equals ex:RichardWeddingAnniversary1999 .
   rdfs:label "has time instant inside"@en ;
   rdfs:range :Instant ;
   skos:definition "If an instant T1 is inside an interval T2, then T1 is after the beginning of T2 and before the end of T2."@en ;
+  owl:propertyDisjointWith
+    :hasBeginning ,
+    :hasEnd
+    ;
 .
 :intervalAfter
   a owl:ObjectProperty ;
