@@ -1,29 +1,28 @@
 {
   "@graph" : [ {
     "@id" : "_:b0",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "xsd:decimal",
+    "onProperty" : "http://www.w3.org/2006/time#months"
+  }, {
+    "@id" : "_:b1",
     "@type" : "rdfs:Datatype",
     "onDatatype" : "xsd:string",
     "withRestrictions" : {
-      "@list" : [ "_:b62" ]
+      "@list" : [ "_:b57" ]
     }
   }, {
     "@id" : "_:b10",
-    "@type" : "owl:Class",
-    "unionOf" : {
-      "@list" : [ "_:b28", "_:b81" ]
+    "@type" : "rdfs:Datatype",
+    "onDatatype" : "xsd:string",
+    "withRestrictions" : {
+      "@list" : [ "_:b71" ]
     }
   }, {
     "@id" : "_:b12",
-    "@type" : "owl:Restriction",
-    "cardinality" : "1",
-    "onProperty" : "http://www.w3.org/2006/time#month"
+    "pattern" : "-?([1-9][0-9]{3,}|0[0-9]{3})(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?"
   }, {
     "@id" : "_:b13",
-    "@type" : "owl:Restriction",
-    "allValuesFrom" : "xsd:decimal",
-    "onProperty" : "http://www.w3.org/2006/time#years"
-  }, {
-    "@id" : "_:b14",
     "@type" : "owl:Restriction",
     "cardinality" : "1",
     "onProperty" : "http://www.w3.org/2006/time#hasTRS"
@@ -33,330 +32,331 @@
     "maxCardinality" : "1",
     "onProperty" : "http://www.w3.org/2006/time#timeZone"
   }, {
-    "@id" : "_:b17",
-    "pattern" : "-?([1-9][0-9]{3,}|0[0-9]{3})(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?"
-  }, {
-    "@id" : "_:b18",
-    "@type" : "owl:Restriction",
-    "cardinality" : "0",
-    "onProperty" : "http://www.w3.org/2006/time#week"
-  }, {
-    "@id" : "_:b19",
-    "@type" : "owl:Restriction",
-    "cardinality" : "0",
-    "onProperty" : "http://www.w3.org/2006/time#month"
-  }, {
-    "@id" : "_:b2",
-    "@type" : "owl:Restriction",
-    "cardinality" : "0",
-    "onProperty" : "http://www.w3.org/2006/time#months"
-  }, {
-    "@id" : "_:b20",
-    "@type" : "owl:Restriction",
-    "cardinality" : "1",
-    "onProperty" : "http://www.w3.org/2006/time#day"
-  }, {
-    "@id" : "_:b21",
-    "@type" : "owl:Restriction",
-    "hasValue" : "http://www.w3.org/2006/time#unitDay",
-    "onProperty" : "http://www.w3.org/2006/time#unitType"
-  }, {
-    "@id" : "_:b22",
+    "@id" : "_:b16",
     "@type" : "owl:Restriction",
     "cardinality" : "0",
     "onProperty" : "http://www.w3.org/2006/time#second"
   }, {
-    "@id" : "_:b23",
+    "@id" : "_:b19",
+    "@type" : "owl:Restriction",
+    "cardinality" : "1",
+    "onProperty" : "http://www.w3.org/2006/time#hasTRS"
+  }, {
+    "@id" : "_:b20",
     "@type" : "owl:Restriction",
     "cardinality" : "0",
-    "onProperty" : "http://www.w3.org/2006/time#minute"
+    "onProperty" : "http://www.w3.org/2006/time#month"
   }, {
-    "@id" : "_:b24",
-    "@type" : "owl:Restriction",
-    "cardinality" : "0",
-    "onProperty" : "http://www.w3.org/2006/time#hour"
-  }, {
-    "@id" : "_:b25",
-    "@type" : "owl:Restriction",
-    "cardinality" : "0",
-    "onProperty" : "http://www.w3.org/2006/time#year"
-  }, {
-    "@id" : "_:b26",
-    "@type" : "owl:Restriction",
-    "hasValue" : "http://www.w3.org/2006/time#unitMonth",
-    "onProperty" : "http://www.w3.org/2006/time#unitType"
-  }, {
-    "@id" : "_:b27",
-    "@type" : "owl:Restriction",
-    "maxCardinality" : "1",
-    "onProperty" : "http://www.w3.org/2006/time#week"
-  }, {
-    "@id" : "_:b28",
+    "@id" : "_:b21",
     "@type" : "owl:Restriction",
     "cardinality" : "1",
     "onProperty" : "http://www.w3.org/2006/time#numericPosition"
   }, {
-    "@id" : "_:b29",
-    "@type" : "owl:Restriction",
-    "allValuesFrom" : "xsd:gDay",
-    "onProperty" : "http://www.w3.org/2006/time#day"
-  }, {
-    "@id" : "_:b3",
-    "@type" : "owl:Restriction",
-    "cardinality" : "0",
-    "onProperty" : "http://www.w3.org/2006/time#weeks"
-  }, {
-    "@id" : "_:b31",
-    "@type" : "owl:Restriction",
-    "cardinality" : "0",
-    "onProperty" : "http://www.w3.org/2006/time#year"
-  }, {
-    "@id" : "_:b33",
-    "pattern" : "--(0[1-9]|1[0-9]|20)(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?"
-  }, {
-    "@id" : "_:b34",
-    "@type" : "owl:Restriction",
-    "cardinality" : "1",
-    "onProperty" : "http://www.w3.org/2006/time#unitType"
-  }, {
-    "@id" : "_:b35",
-    "@type" : "owl:Restriction",
-    "maxCardinality" : "1",
-    "onProperty" : "http://www.w3.org/2006/time#month"
-  }, {
-    "@id" : "_:b36",
-    "@type" : "owl:Restriction",
-    "maxCardinality" : "1",
-    "onProperty" : "http://www.w3.org/2006/time#hour"
-  }, {
-    "@id" : "_:b37",
-    "@type" : "owl:Restriction",
-    "maxCardinality" : "1",
-    "onProperty" : "http://www.w3.org/2006/time#second"
-  }, {
-    "@id" : "_:b38",
-    "@type" : "owl:Restriction",
-    "maxCardinality" : "1",
-    "onProperty" : "http://www.w3.org/2006/time#dayOfYear"
-  }, {
-    "@id" : "_:b39",
-    "@type" : "owl:Restriction",
-    "maxCardinality" : "1",
-    "onProperty" : "http://www.w3.org/2006/time#year"
-  }, {
-    "@id" : "_:b4",
-    "@type" : "owl:Restriction",
-    "cardinality" : "0",
-    "onProperty" : "http://www.w3.org/2006/time#days"
-  }, {
-    "@id" : "_:b40",
-    "@type" : "owl:Restriction",
-    "maxCardinality" : "1",
-    "onProperty" : "http://www.w3.org/2006/time#monthOfYear"
-  }, {
-    "@id" : "_:b41",
-    "@type" : "owl:Restriction",
-    "maxCardinality" : "1",
-    "onProperty" : "http://www.w3.org/2006/time#dayOfWeek"
-  }, {
-    "@id" : "_:b42",
-    "@type" : "owl:Restriction",
-    "maxCardinality" : "1",
-    "onProperty" : "http://www.w3.org/2006/time#day"
-  }, {
-    "@id" : "_:b43",
-    "@type" : "owl:Restriction",
-    "maxCardinality" : "1",
-    "onProperty" : "http://www.w3.org/2006/time#minute"
-  }, {
-    "@id" : "_:b44",
-    "@type" : "owl:Restriction",
-    "allValuesFrom" : "xsd:gMonth",
-    "onProperty" : "http://www.w3.org/2006/time#month"
-  }, {
-    "@id" : "_:b45",
-    "@type" : "owl:Restriction",
-    "allValuesFrom" : "xsd:decimal",
-    "onProperty" : "http://www.w3.org/2006/time#months"
-  }, {
-    "@id" : "_:b46",
-    "@type" : "owl:Restriction",
-    "cardinality" : "0",
-    "onProperty" : "http://www.w3.org/2006/time#minute"
-  }, {
-    "@id" : "_:b47",
-    "@type" : "owl:Restriction",
-    "hasValue" : "http://www.w3.org/2006/time#unitMonth",
-    "onProperty" : "http://www.w3.org/2006/time#unitType"
-  }, {
-    "@id" : "_:b48",
-    "@type" : "owl:Restriction",
-    "cardinality" : "0",
-    "onProperty" : "http://www.w3.org/2006/time#hour"
-  }, {
-    "@id" : "_:b49",
-    "@type" : "owl:Restriction",
-    "cardinality" : "0",
-    "onProperty" : "http://www.w3.org/2006/time#second"
-  }, {
-    "@id" : "_:b5",
-    "@type" : "owl:Restriction",
-    "cardinality" : "1",
-    "onProperty" : "http://www.w3.org/2006/time#years"
-  }, {
-    "@id" : "_:b50",
-    "@type" : "owl:Restriction",
-    "cardinality" : "0",
-    "onProperty" : "http://www.w3.org/2006/time#day"
-  }, {
-    "@id" : "_:b51",
-    "@type" : "rdfs:Datatype",
-    "onDatatype" : "xsd:string",
-    "withRestrictions" : {
-      "@list" : [ "_:b17" ]
-    }
-  }, {
-    "@id" : "_:b52",
-    "@type" : "owl:Restriction",
-    "allValuesFrom" : "xsd:decimal",
-    "onProperty" : "http://www.w3.org/2006/time#days"
-  }, {
-    "@id" : "_:b53",
+    "@id" : "_:b22",
     "@type" : "owl:Restriction",
     "hasValue" : "http://www.opengis.net/def/uom/ISO-8601/0/Gregorian",
     "onProperty" : "http://www.w3.org/2006/time#hasTRS"
   }, {
-    "@id" : "_:b55",
+    "@id" : "_:b23",
+    "@type" : "owl:Restriction",
+    "maxCardinality" : "1",
+    "onProperty" : "http://www.w3.org/2006/time#week"
+  }, {
+    "@id" : "_:b24",
+    "@type" : "owl:Restriction",
+    "cardinality" : "0",
+    "onProperty" : "http://www.w3.org/2006/time#year"
+  }, {
+    "@id" : "_:b25",
+    "@type" : "owl:Restriction",
+    "cardinality" : "0",
+    "onProperty" : "http://www.w3.org/2006/time#minute"
+  }, {
+    "@id" : "_:b26",
+    "@type" : "owl:Restriction",
+    "cardinality" : "1",
+    "onProperty" : "http://www.w3.org/2006/time#day"
+  }, {
+    "@id" : "_:b27",
+    "@type" : "owl:Restriction",
+    "cardinality" : "0",
+    "onProperty" : "http://www.w3.org/2006/time#hour"
+  }, {
+    "@id" : "_:b28",
+    "@type" : "owl:Restriction",
+    "cardinality" : "0",
+    "onProperty" : "http://www.w3.org/2006/time#week"
+  }, {
+    "@id" : "_:b29",
+    "@type" : "owl:Restriction",
+    "hasValue" : "http://www.w3.org/2006/time#unitDay",
+    "onProperty" : "http://www.w3.org/2006/time#unitType"
+  }, {
+    "@id" : "_:b3",
+    "@type" : "owl:Restriction",
+    "cardinality" : "1",
+    "onProperty" : "http://www.w3.org/2006/time#years"
+  }, {
+    "@id" : "_:b30",
+    "@type" : "owl:Restriction",
+    "cardinality" : "0",
+    "onProperty" : "http://www.w3.org/2006/time#week"
+  }, {
+    "@id" : "_:b31",
+    "@type" : "owl:Restriction",
+    "maxCardinality" : "1",
+    "onProperty" : "http://www.w3.org/2006/time#minute"
+  }, {
+    "@id" : "_:b32",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "xsd:gMonth",
+    "onProperty" : "http://www.w3.org/2006/time#month"
+  }, {
+    "@id" : "_:b33",
+    "@type" : "owl:Restriction",
+    "maxCardinality" : "1",
+    "onProperty" : "http://www.w3.org/2006/time#minutes"
+  }, {
+    "@id" : "_:b34",
+    "@type" : "owl:Restriction",
+    "hasValue" : "http://www.opengis.net/def/uom/ISO-8601/0/Gregorian",
+    "onProperty" : "http://www.w3.org/2006/time#hasTRS"
+  }, {
+    "@id" : "_:b35",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "xsd:gYear",
+    "onProperty" : "http://www.w3.org/2006/time#year"
+  }, {
+    "@id" : "_:b36",
+    "@type" : "owl:Restriction",
+    "cardinality" : "0",
+    "onProperty" : "http://www.w3.org/2006/time#hour"
+  }, {
+    "@id" : "_:b37",
+    "@type" : "owl:Restriction",
+    "cardinality" : "0",
+    "onProperty" : "http://www.w3.org/2006/time#minute"
+  }, {
+    "@id" : "_:b38",
+    "@type" : "owl:Restriction",
+    "maxCardinality" : "1",
+    "onProperty" : "http://www.w3.org/2006/time#dayOfWeek"
+  }, {
+    "@id" : "_:b39",
     "@type" : "owl:Restriction",
     "allValuesFrom" : "xsd:decimal",
-    "onProperty" : "http://www.w3.org/2006/time#hours"
+    "onProperty" : "http://www.w3.org/2006/time#seconds"
+  }, {
+    "@id" : "_:b4",
+    "@type" : "owl:Restriction",
+    "cardinality" : "0",
+    "onProperty" : "http://www.w3.org/2006/time#months"
+  }, {
+    "@id" : "_:b40",
+    "@type" : "owl:Restriction",
+    "maxCardinality" : "1",
+    "onProperty" : "http://www.w3.org/2006/time#month"
+  }, {
+    "@id" : "_:b41",
+    "@type" : "owl:Restriction",
+    "maxCardinality" : "1",
+    "onProperty" : "http://www.w3.org/2006/time#monthOfYear"
+  }, {
+    "@id" : "_:b42",
+    "@type" : "owl:Restriction",
+    "maxCardinality" : "1",
+    "onProperty" : "http://www.w3.org/2006/time#second"
+  }, {
+    "@id" : "_:b43",
+    "@type" : "owl:Restriction",
+    "maxCardinality" : "1",
+    "onProperty" : "http://www.w3.org/2006/time#dayOfYear"
+  }, {
+    "@id" : "_:b44",
+    "@type" : "owl:Restriction",
+    "maxCardinality" : "1",
+    "onProperty" : "http://www.w3.org/2006/time#year"
+  }, {
+    "@id" : "_:b45",
+    "@type" : "owl:Restriction",
+    "maxCardinality" : "1",
+    "onProperty" : "http://www.w3.org/2006/time#day"
+  }, {
+    "@id" : "_:b46",
+    "@type" : "owl:Restriction",
+    "maxCardinality" : "1",
+    "onProperty" : "http://www.w3.org/2006/time#hour"
+  }, {
+    "@id" : "_:b47",
+    "@type" : "owl:Restriction",
+    "cardinality" : "1",
+    "onProperty" : "http://www.w3.org/2006/time#unitType"
+  }, {
+    "@id" : "_:b48",
+    "@type" : "owl:Restriction",
+    "hasValue" : "http://www.w3.org/2006/time#unitMonth",
+    "onProperty" : "http://www.w3.org/2006/time#unitType"
+  }, {
+    "@id" : "_:b5",
+    "@type" : "owl:Restriction",
+    "cardinality" : "0",
+    "onProperty" : "http://www.w3.org/2006/time#weeks"
+  }, {
+    "@id" : "_:b51",
+    "@type" : "owl:Restriction",
+    "cardinality" : "0",
+    "onProperty" : "http://www.w3.org/2006/time#day"
+  }, {
+    "@id" : "_:b52",
+    "@type" : "owl:Restriction",
+    "hasValue" : "http://www.w3.org/2006/time#unitMonth",
+    "onProperty" : "http://www.w3.org/2006/time#unitType"
+  }, {
+    "@id" : "_:b53",
+    "@type" : "owl:Restriction",
+    "cardinality" : "0",
+    "onProperty" : "http://www.w3.org/2006/time#year"
+  }, {
+    "@id" : "_:b54",
+    "@type" : "owl:Restriction",
+    "cardinality" : "1",
+    "onProperty" : "http://www.w3.org/2006/time#month"
+  }, {
+    "@id" : "_:b55",
+    "@type" : "owl:Restriction",
+    "cardinality" : "0",
+    "onProperty" : "http://www.w3.org/2006/time#second"
   }, {
     "@id" : "_:b56",
+    "@type" : "rdfs:Datatype",
+    "onDatatype" : "xsd:string",
+    "withRestrictions" : {
+      "@list" : [ "_:b12" ]
+    }
+  }, {
+    "@id" : "_:b57",
+    "pattern" : "---(0[1-9]|[1-9][0-9])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?"
+  }, {
+    "@id" : "_:b58",
     "@type" : "owl:Class",
     "unionOf" : {
       "@list" : [ "http://www.w3.org/2006/time#TemporalPosition", "http://www.w3.org/2006/time#GeneralDurationDescription" ]
     }
   }, {
     "@id" : "_:b59",
+    "@type" : "owl:Restriction",
+    "maxCardinality" : "1",
+    "onProperty" : "http://www.w3.org/2006/time#months"
+  }, {
+    "@id" : "_:b6",
+    "@type" : "owl:Restriction",
+    "cardinality" : "0",
+    "onProperty" : "http://www.w3.org/2006/time#minutes"
+  }, {
+    "@id" : "_:b60",
     "@type" : "owl:Class",
     "unionOf" : {
       "@list" : [ "http://www.w3.org/2006/time#GeneralDateTimeDescription", "http://www.w3.org/2006/time#Duration" ]
     }
   }, {
-    "@id" : "_:b6",
-    "@type" : "owl:Restriction",
-    "cardinality" : "0",
-    "onProperty" : "http://www.w3.org/2006/time#seconds"
-  }, {
-    "@id" : "_:b60",
-    "@type" : "owl:Restriction",
-    "hasValue" : "http://www.opengis.net/def/uom/ISO-8601/0/Gregorian",
-    "onProperty" : "http://www.w3.org/2006/time#hasTRS"
-  }, {
     "@id" : "_:b61",
-    "@type" : "owl:Restriction",
-    "allValuesFrom" : "xsd:gYear",
-    "onProperty" : "http://www.w3.org/2006/time#year"
-  }, {
-    "@id" : "_:b62",
-    "pattern" : "---(0[1-9]|[1-9][0-9])(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?"
-  }, {
-    "@id" : "_:b63",
-    "@type" : "owl:Restriction",
-    "maxCardinality" : "1",
-    "onProperty" : "http://www.w3.org/2006/time#minutes"
-  }, {
-    "@id" : "_:b64",
-    "@type" : "owl:Restriction",
-    "allValuesFrom" : "xsd:decimal",
-    "onProperty" : "http://www.w3.org/2006/time#weeks"
-  }, {
-    "@id" : "_:b65",
-    "@type" : "rdfs:Datatype",
-    "onDatatype" : "xsd:string",
-    "withRestrictions" : {
-      "@list" : [ "_:b33" ]
-    }
-  }, {
-    "@id" : "_:b66",
-    "@type" : "owl:Restriction",
-    "maxCardinality" : "1",
-    "onProperty" : "http://www.w3.org/2006/time#years"
-  }, {
-    "@id" : "_:b68",
-    "@type" : "owl:Restriction",
-    "cardinality" : "1",
-    "onProperty" : "http://www.w3.org/2006/time#hasTRS"
-  }, {
-    "@id" : "_:b69",
-    "@type" : "owl:Restriction",
-    "allValuesFrom" : "xsd:decimal",
-    "onProperty" : "http://www.w3.org/2006/time#minutes"
-  }, {
-    "@id" : "_:b7",
-    "@type" : "owl:Restriction",
-    "cardinality" : "0",
-    "onProperty" : "http://www.w3.org/2006/time#minutes"
-  }, {
-    "@id" : "_:b70",
-    "@type" : "owl:Restriction",
-    "maxCardinality" : "1",
-    "onProperty" : "http://www.w3.org/2006/time#months"
-  }, {
-    "@id" : "_:b71",
-    "@type" : "owl:Restriction",
-    "maxCardinality" : "1",
-    "onProperty" : "http://www.w3.org/2006/time#days"
-  }, {
-    "@id" : "_:b72",
-    "@type" : "owl:Restriction",
-    "maxCardinality" : "1",
-    "onProperty" : "http://www.w3.org/2006/time#hours"
-  }, {
-    "@id" : "_:b73",
-    "@type" : "owl:Restriction",
-    "maxCardinality" : "1",
-    "onProperty" : "http://www.w3.org/2006/time#weeks"
-  }, {
-    "@id" : "_:b74",
-    "@type" : "owl:Restriction",
-    "maxCardinality" : "1",
-    "onProperty" : "http://www.w3.org/2006/time#seconds"
-  }, {
-    "@id" : "_:b77",
-    "@type" : "owl:Restriction",
-    "allValuesFrom" : "xsd:decimal",
-    "onProperty" : "http://www.w3.org/2006/time#seconds"
-  }, {
-    "@id" : "_:b78",
-    "@type" : "owl:Restriction",
-    "owl:hasValue" : "--01",
-    "onProperty" : "http://www.w3.org/2006/time#month"
-  }, {
-    "@id" : "_:b79",
-    "@type" : "owl:Restriction",
-    "cardinality" : "1",
-    "onProperty" : "http://www.w3.org/2006/time#numericDuration"
-  }, {
-    "@id" : "_:b8",
-    "@type" : "owl:Restriction",
-    "cardinality" : "0",
-    "onProperty" : "http://www.w3.org/2006/time#hours"
-  }, {
-    "@id" : "_:b80",
-    "@type" : "owl:Restriction",
-    "cardinality" : "1",
-    "onProperty" : "http://www.w3.org/2006/time#unitType"
-  }, {
-    "@id" : "_:b81",
     "@type" : "owl:Restriction",
     "cardinality" : "1",
     "onProperty" : "http://www.w3.org/2006/time#nominalPosition"
   }, {
+    "@id" : "_:b62",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "xsd:decimal",
+    "onProperty" : "http://www.w3.org/2006/time#hours"
+  }, {
+    "@id" : "_:b63",
+    "@type" : "owl:Restriction",
+    "cardinality" : "1",
+    "onProperty" : "http://www.w3.org/2006/time#numericDuration"
+  }, {
+    "@id" : "_:b64",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "xsd:gDay",
+    "onProperty" : "http://www.w3.org/2006/time#day"
+  }, {
+    "@id" : "_:b65",
+    "@type" : "owl:Restriction",
+    "owl:hasValue" : "--01",
+    "onProperty" : "http://www.w3.org/2006/time#month"
+  }, {
+    "@id" : "_:b66",
+    "@type" : "owl:Restriction",
+    "maxCardinality" : "1",
+    "onProperty" : "http://www.w3.org/2006/time#weeks"
+  }, {
+    "@id" : "_:b67",
+    "@type" : "owl:Restriction",
+    "maxCardinality" : "1",
+    "onProperty" : "http://www.w3.org/2006/time#days"
+  }, {
+    "@id" : "_:b68",
+    "@type" : "owl:Restriction",
+    "maxCardinality" : "1",
+    "onProperty" : "http://www.w3.org/2006/time#years"
+  }, {
+    "@id" : "_:b69",
+    "@type" : "owl:Restriction",
+    "maxCardinality" : "1",
+    "onProperty" : "http://www.w3.org/2006/time#hours"
+  }, {
+    "@id" : "_:b7",
+    "@type" : "owl:Restriction",
+    "cardinality" : "0",
+    "onProperty" : "http://www.w3.org/2006/time#hours"
+  }, {
+    "@id" : "_:b70",
+    "@type" : "owl:Restriction",
+    "maxCardinality" : "1",
+    "onProperty" : "http://www.w3.org/2006/time#seconds"
+  }, {
+    "@id" : "_:b71",
+    "pattern" : "--(0[1-9]|1[0-9]|20)(Z|(\\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?"
+  }, {
+    "@id" : "_:b73",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "xsd:decimal",
+    "onProperty" : "http://www.w3.org/2006/time#minutes"
+  }, {
+    "@id" : "_:b74",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "xsd:decimal",
+    "onProperty" : "http://www.w3.org/2006/time#weeks"
+  }, {
+    "@id" : "_:b75",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "xsd:decimal",
+    "onProperty" : "http://www.w3.org/2006/time#years"
+  }, {
+    "@id" : "_:b76",
+    "@type" : "owl:Restriction",
+    "allValuesFrom" : "xsd:decimal",
+    "onProperty" : "http://www.w3.org/2006/time#days"
+  }, {
+    "@id" : "_:b79",
+    "@type" : "owl:Restriction",
+    "cardinality" : "1",
+    "onProperty" : "http://www.w3.org/2006/time#unitType"
+  }, {
+    "@id" : "_:b8",
+    "@type" : "owl:Restriction",
+    "cardinality" : "0",
+    "onProperty" : "http://www.w3.org/2006/time#seconds"
+  }, {
+    "@id" : "_:b80",
+    "@type" : "owl:Class",
+    "unionOf" : {
+      "@list" : [ "_:b21", "_:b61" ]
+    }
+  }, {
     "@id" : "_:b9",
     "@type" : "owl:Restriction",
     "cardinality" : "0",
-    "onProperty" : "http://www.w3.org/2006/time#week"
+    "onProperty" : "http://www.w3.org/2006/time#days"
   }, {
     "@id" : "xsd:dateTimeStamp",
     "label" : {
@@ -401,7 +401,7 @@
       "@language" : "en",
       "@value" : "Date-Time description"
     } ],
-    "subClassOf" : [ "_:b60", "_:b61", "_:b44", "http://www.w3.org/2006/time#GeneralDateTimeDescription", "_:b29" ],
+    "subClassOf" : [ "_:b64", "_:b34", "_:b35", "_:b32", "http://www.w3.org/2006/time#GeneralDateTimeDescription" ],
     "definition" : [ {
       "@language" : "en",
       "@value" : "date and time expressed as a structure with separate values for the various elements of a calendar-clock system. The temporal reference system is fixed to Gregorian Calendar, and the range of year, month, day properties are restricted to the corresponding XML Schema types xsd:gYear, xsd:gMonth and xsd:gDay, respectively."
@@ -448,7 +448,7 @@
       "@language" : "en",
       "@value" : "Day of week"
     } ],
-    "subClassOf" : [ "_:b18", "_:b19", "_:b20", "_:b21", "_:b22", "_:b23", "http://www.w3.org/2006/time#DateTimeDescription", "_:b24", "_:b25" ],
+    "subClassOf" : [ "_:b20", "_:b24", "_:b16", "_:b25", "_:b26", "_:b27", "_:b28", "http://www.w3.org/2006/time#DateTimeDescription", "_:b29" ],
     "changeNote" : {
       "@language" : "en",
       "@value" : "Remove enumeration from definition, in order to allow other days to be used when required in other calendars. \r\nNOTE: existing days are still present as members of the class, but the class membership is now open. \r\n\r\nIn the original OWL-Time the following constraint appeared: \r\n  owl:oneOf (\r\n      time:Monday\r\n      time:Tuesday\r\n      time:Wednesday\r\n      time:Thursday\r\n      time:Friday\r\n      time:Saturday\r\n      time:Sunday\r\n    ) ;"
@@ -474,7 +474,7 @@
       "@language" : "en",
       "@value" : "Time duration"
     } ],
-    "subClassOf" : [ "http://www.w3.org/2006/time#TemporalDuration", "_:b79", "_:b80" ],
+    "subClassOf" : [ "http://www.w3.org/2006/time#TemporalDuration", "_:b79", "_:b63" ],
     "definition" : [ {
       "@language" : "en",
       "@value" : "temporal duration expressed as a number scaled by a temporal unit"
@@ -499,7 +499,7 @@
       "@language" : "en",
       "@value" : "Duration description"
     } ],
-    "subClassOf" : [ "_:b45", "http://www.w3.org/2006/time#GeneralDurationDescription", "_:b52", "_:b77", "_:b53", "_:b13", "_:b69", "_:b64", "_:b55" ],
+    "subClassOf" : [ "_:b73", "_:b74", "_:b0", "_:b62", "http://www.w3.org/2006/time#GeneralDurationDescription", "_:b75", "_:b76", "_:b22", "_:b39" ],
     "definition" : [ {
       "@language" : "en",
       "@value" : "temporal duration expressed as a structure with separate values for the various elements of a calendar-clock system. The temporal reference system is fixed to Gregorian Calendar, and the range of each of the numeric properties is restricted to xsd:decimal"
@@ -570,7 +570,7 @@
       "@language" : "en",
       "@value" : "Generalized date-time description"
     } ],
-    "subClassOf" : [ "_:b34", "_:b35", "_:b36", "_:b37", "http://www.w3.org/2006/time#TemporalPosition", "_:b38", "_:b39", "_:b40", "_:b41", "_:b42", "_:b27", "_:b43", "_:b15" ],
+    "subClassOf" : [ "_:b40", "_:b41", "_:b15", "_:b38", "_:b42", "_:b43", "_:b23", "_:b44", "http://www.w3.org/2006/time#TemporalPosition", "_:b45", "_:b46", "_:b47", "_:b31" ],
     "definition" : [ "Descripción de fecha y hora estructurada con valores separados para los distintos elementos de un sistema calendario-reloj.", {
       "@language" : "en",
       "@value" : "temporal position expressed as a structure with separate values for the various elements of a calendar-clock system. An individual :GeneralDateTimeDescription defines an interval whose duration is its :unitType"
@@ -589,7 +589,7 @@
       "@language" : "en",
       "@value" : "Generalized duration description"
     } ],
-    "subClassOf" : [ "_:b70", "_:b68", "_:b71", "_:b72", "http://www.w3.org/2006/time#TemporalDuration", "_:b73", "_:b66", "_:b74", "_:b63" ],
+    "subClassOf" : [ "_:b69", "_:b33", "_:b68", "_:b70", "_:b59", "http://www.w3.org/2006/time#TemporalDuration", "_:b13", "_:b66", "_:b67" ],
     "definition" : [ {
       "@language" : "es",
       "@value" : "Descripción de extensión temporal estructurada con valores separados para los distintos elementos de un sistema de horario-calendario."
@@ -617,7 +617,7 @@
     "subClassOf" : "http://www.w3.org/2006/time#TemporalEntity",
     "definition" : [ {
       "@language" : "en",
-      "@value" : "temporal entity with zero extent or duration"
+      "@value" : "temporal entity with zero extent (duration)"
     }, {
       "@language" : "es",
       "@value" : "Una entidad temporal con una extensión o duración cero."
@@ -634,17 +634,17 @@
     } ],
     "subClassOf" : "http://www.w3.org/2006/time#TemporalEntity",
     "definition" : [ {
+      "@language" : "en",
+      "@value" : "temporal entity with a non-zero extent (duration)"
+    }, {
       "@language" : "es",
       "@value" : "Una entidad temporal con una extensión o duración."
-    }, {
-      "@language" : "en",
-      "@value" : "temporal entity with a non-zero extent or duration"
     } ]
   }, {
     "@id" : "http://www.w3.org/2006/time#January",
     "@type" : [ "owl:DeprecatedClass", "owl:Class" ],
     "label" : "January",
-    "subClassOf" : [ "_:b78", "_:b26", "http://www.w3.org/2006/time#DateTimeDescription" ],
+    "subClassOf" : [ "_:b65", "_:b48", "http://www.w3.org/2006/time#DateTimeDescription" ],
     "owl:deprecated" : true,
     "historyNote" : "This class was present in the 2006 version of OWL-Time. It was presented as an example of how DateTimeDescription could be specialized, but does not belong in the revised ontology. "
   }, {
@@ -703,7 +703,7 @@
       "@language" : "es",
       "@value" : "mes del año"
     } ],
-    "subClassOf" : [ "_:b46", "_:b9", "_:b12", "_:b47", "_:b48", "_:b49", "_:b50", "http://www.w3.org/2006/time#DateTimeDescription", "_:b31" ],
+    "subClassOf" : [ "_:b51", "_:b52", "_:b53", "_:b37", "_:b30", "_:b54", "_:b36", "_:b55", "http://www.w3.org/2006/time#DateTimeDescription" ],
     "definition" : [ {
       "@language" : "es",
       "@value" : "El mes del año."
@@ -739,7 +739,7 @@
     "disjointWith" : "http://www.w3.org/2006/time#Instant",
     "definition" : [ {
       "@language" : "en",
-      "@value" : "interval whose beginning and end are not identical"
+      "@value" : "interval whose beginning and end are not coincident"
     }, {
       "@language" : "es",
       "@value" : "Una entidad temporal con extensión o duración distinta de cero, es decir, para la cual los valores de principio y fin del intervalo son diferentes."
@@ -912,7 +912,7 @@
       "@language" : "en",
       "@value" : "Temporal position"
     } ],
-    "subClassOf" : "_:b14",
+    "subClassOf" : "_:b19",
     "definition" : [ {
       "@language" : "en",
       "@value" : "a position on a time-line"
@@ -1005,7 +1005,7 @@
       "@language" : "en",
       "@value" : "Time position"
     } ],
-    "subClassOf" : [ "_:b10", "http://www.w3.org/2006/time#TemporalPosition" ],
+    "subClassOf" : [ "_:b80", "http://www.w3.org/2006/time#TemporalPosition" ],
     "definition" : [ {
       "@language" : "en",
       "@value" : "temporal position described using either a (nominal) value from an ordinal reference system, or a (numeric) value in a temporal coordinate system. "
@@ -1150,7 +1150,7 @@
       "@language" : "en",
       "@value" : "Year"
     },
-    "subClassOf" : [ "_:b2", "_:b3", "_:b4", "_:b5", "_:b6", "http://www.w3.org/2006/time#DurationDescription", "_:b7", "_:b8" ],
+    "subClassOf" : [ "_:b3", "_:b4", "http://www.w3.org/2006/time#DurationDescription", "_:b5", "_:b6", "_:b7", "_:b8", "_:b9" ],
     "owl:deprecated" : true,
     "definition" : "Year duration",
     "historyNote" : "Year was proposed in the 2006 version of OWL-Time as an example of how DurationDescription could be specialized to allow for a duration to be restricted to a number of years. \r\n\r\nIt is deprecated in this edition of OWL-Time. ",
@@ -1206,11 +1206,14 @@
     "subPropertyOf" : "http://www.w3.org/2006/time#disjoint",
     "inverseOf" : "http://www.w3.org/2006/time#before",
     "definition" : [ {
+      "@language" : "en",
+      "@value" : "The subject is a temporal entity that occurs after the object. If T1 :after T2, then the beginning of T1 is after the end of T2."
+    }, {
       "@language" : "es",
       "@value" : "Asume una dirección en el tiempo. Si una entidad temporal T1 está después de otra entidad temporal T2, entonces el principio de T1 está después del final de T2."
     }, {
-      "@language" : "en",
-      "@value" : "Gives directionality to time. If a temporal entity T1 is after another temporal entity T2, then the beginning of T1 is after the end of T2."
+      "@language" : "es",
+      "@value" : "Asume una dirección en el tiempo. Si T1 :after T2, entonces el principio de T1 está después del final de T2."
     } ]
   }, {
     "@id" : "http://www.w3.org/2006/time#before",
@@ -1227,12 +1230,13 @@
     "subPropertyOf" : "http://www.w3.org/2006/time#disjoint",
     "inverseOf" : "http://www.w3.org/2006/time#after",
     "definition" : [ {
-      "@language" : "en",
-      "@value" : "Gives directionality to time. If a temporal entity T1 is before another temporal entity T2, then the end of T1 is before the beginning of T2. Thus, \"before\" can be considered to be basic to instants and derived for intervals."
-    }, {
       "@language" : "es",
       "@value" : "Asume una dirección en el tiempo. Si una entidad temporal T1 está antes que otra entidad temporal T2, entonces el final de T1 está antes que el principio de T2. Así, \"antes\" se puede considerar básica para instantes y derivada para intervalos."
-    } ]
+    }, {
+      "@language" : "en",
+      "@value" : "The subject is a temporal entity that occurs before the object. If T1 :before T2, then the end of T1 is before the beginning of T2."
+    } ],
+    "note" : "\"before\" can be considered to be basic to instants and derived for intervals."
   }, {
     "@id" : "http://www.w3.org/2006/time#day",
     "@type" : "owl:DatatypeProperty",
@@ -1316,7 +1320,7 @@
     "range" : "http://www.w3.org/2006/time#TemporalEntity",
     "definition" : {
       "@language" : "en",
-      "@value" : "If a temporal entity T1 is disjoint with another temporal entity T2, then the beginning of T1 is after the end of T2, or the end of T1 is before the beginning of T2, i.e. the two entities do not overlap or coincide in any way, but their ordering relationship is not known."
+      "@value" : "If a T1 :disjoint T2, then the beginning of T1 is after the end of T2, or the end of T1 is before the beginning of T2. The temporal entities do not overlap or coincide in any way, but their ordering relationship is not known."
     }
   }, {
     "@id" : "http://www.w3.org/2006/time#equals",
@@ -1327,7 +1331,7 @@
     "subPropertyOf" : "http://www.w3.org/2006/time#notDisjoint",
     "definition" : {
       "@language" : "en",
-      "@value" : "If a temporal entity T1 equals another temporal entity T2, then the beginning of T1 is coincident with the beginning of T2, and the end of T1 is coincident with the end of T2, and the beginning of T1 may be coincident with the end of T1."
+      "@value" : "If T1 :equals T2, then the beginning of T1 is coincident with the beginning of T2, and the end of T1 is coincident with the end of T2, and the beginning of T1 may be coincident with the end of T1."
     },
     "example" : "\r\nex:SimonWeddingDay :equals ex:RichardWeddingAnniversary1999 .\r\n"
   }, {
@@ -1340,17 +1344,17 @@
       "@language" : "en",
       "@value" : "Generalized day"
     } ],
-    "equivalentClass" : "_:b0",
+    "equivalentClass" : "_:b1",
     "definition" : [ {
+      "@language" : "es",
+      "@value" : "Día del mes - formulado como una cadena de texto con una restricción patrón para reproducir la misma forma léxica que gDay, excepto que se permiten valores hasta el 99, con el propósito de proporcionar soporte a calendarios con meses con más de 31 días.\r\n            Nótese que el espacio de valores no está definido, por tanto, un procesador genérico de OWL-2 no puede computar relaciones de orden de valores de este tipo."
+    }, {
       "@language" : "en",
       "@value" : "\r\n  Day of month - formulated as a text string with a pattern constraint to reproduce the same lexical form as gDay, except that values up to 99 are permitted, in order to support calendars with more than 31 days in a month. \r\n  "
-    }, {
-      "@language" : "es",
-      "@value" : "Día del mes - formulado como una cadena de texto con una restricción patrón para reproducir la misma forma léxica que gDay, excepto que se permiten valores hasta el 99, con el propósito de proporcionar soporte a calendarios con meses con más de 31 días.\r\n            Nótese que el espacio de valores no está definido, por tanto, un procesador genérico de OWL2 no puede computar relaciones de orden de valores de este tipo."
     } ],
     "note" : {
       "@language" : "en",
-      "@value" : "\r\n  the value-space is not defined, so a generic OWL2 processor cannot compute ordering relationships of values of this type.\r\n  "
+      "@value" : "\r\n  the value-space is not defined, so a generic OWL-2 processor cannot compute ordering relationships of values of this type.\r\n  "
     }
   }, {
     "@id" : "http://www.w3.org/2006/time#generalMonth",
@@ -1362,17 +1366,17 @@
       "@language" : "en",
       "@value" : "Generalized month"
     } ],
-    "equivalentClass" : "_:b65",
+    "equivalentClass" : "_:b10",
     "definition" : [ {
+      "@language" : "es",
+      "@value" : "Mes del año - formulado como una cadena de texto con una restricción patrón para reproducir la misma forma léxica que gMonth, excepto que se permiten valores hasta el 20, con el propósito de proporcionar soporte a calendarios con años con más de 12 meses.\r\n            Nótese que el espacio de valores no está definido, por tanto, un procesador genérico de OWL-2 no puede computar relaciones de orden de valores de este tipo."
+    }, {
       "@language" : "en",
       "@value" : "\r\n  Month of year - formulated as a text string with a pattern constraint to reproduce the same lexical form as gMonth, except that values up to 20 are permitted, in order to support calendars with more than 12 months in the year. \r\n  "
-    }, {
-      "@language" : "es",
-      "@value" : "Mes del año - formulado como una cadena de texto con una restricción patrón para reproducir la misma forma léxica que gMonth, excepto que se permiten valores hasta el 20, con el propósito de proporcionar soporte a calendarios con años con más de 12 meses.\r\n            Nótese que el espacio de valores no está definido, por tanto, un procesador genérico de OWL2 no puede computar relaciones de orden de valores de este tipo."
     } ],
     "note" : {
       "@language" : "en",
-      "@value" : "\r\n  the value-space is not defined, so a generic OWL2 processor cannot compute ordering relationships of values of this type.\r\n  "
+      "@value" : "\r\n  the value-space is not defined, so a generic OWL-2 processor cannot compute ordering relationships of values of this type.\r\n  "
     }
   }, {
     "@id" : "http://www.w3.org/2006/time#generalYear",
@@ -1384,28 +1388,28 @@
       "@language" : "en",
       "@value" : "Generalized year"
     } ],
-    "equivalentClass" : "_:b51",
+    "equivalentClass" : "_:b56",
     "definition" : [ {
+      "@language" : "es",
+      "@value" : "Número de año - formulado como una cadena de texto con una restricción patrón para reproducir la misma forma léxica que gYear, aunque no está restringido a valores del calendario gregoriano.\r\n            Nótese que el espacio de valores no está definido, por tanto, un procesador genérico de OWL-2 no puede computar relaciones de orden de valores de este tipo."
+    }, {
       "@language" : "en",
       "@value" : "\r\n  Year number - formulated as a text string with a pattern constraint to reproduce the same lexical form as gYear, but not restricted to values from the Gregorian calendar. \r\n  "
-    }, {
-      "@language" : "es",
-      "@value" : "Número de año - formulado como una cadena de texto con una restricción patrón para reproducir la misma forma léxica que gYear, aunque no está restringido a valores del calendario gregoriano.\r\n            Nótese que el espacio de valores no está definido, por tanto, un procesador genérico de OWL2 no puede computar relaciones de orden de valores de este tipo."
     } ],
     "note" : {
       "@language" : "en",
-      "@value" : "\r\nNote that the value-space is not defined, so a generic OWL2 processor cannot compute ordering relationships of values of this type.\r\n"
+      "@value" : "\r\nNote that the value-space is not defined, so a generic OWL-2 processor cannot compute ordering relationships of values of this type.\r\n"
     }
   }, {
     "@id" : "http://www.w3.org/2006/time#hasBeginning",
     "@type" : "owl:ObjectProperty",
     "domain" : "http://www.w3.org/2006/time#TemporalEntity",
     "label" : [ {
-      "@language" : "en",
-      "@value" : "has beginning"
-    }, {
       "@language" : "es",
       "@value" : "tiene principio"
+    }, {
+      "@language" : "en",
+      "@value" : "has beginning"
     } ],
     "range" : "http://www.w3.org/2006/time#Instant",
     "subPropertyOf" : [ "http://www.w3.org/2006/time#hasTime", "http://www.w3.org/2006/time#disjoint" ],
@@ -1485,7 +1489,7 @@
       "@value" : "has end"
     } ],
     "range" : "http://www.w3.org/2006/time#Instant",
-    "subPropertyOf" : [ "http://www.w3.org/2006/time#disjoint", "http://www.w3.org/2006/time#hasTime" ],
+    "subPropertyOf" : [ "http://www.w3.org/2006/time#hasTime", "http://www.w3.org/2006/time#disjoint" ],
     "definition" : [ {
       "@language" : "es",
       "@value" : "Final de una entidad temporal."
@@ -1496,7 +1500,7 @@
   }, {
     "@id" : "http://www.w3.org/2006/time#hasTRS",
     "@type" : [ "owl:ObjectProperty", "owl:FunctionalProperty" ],
-    "domain" : "_:b56",
+    "domain" : "_:b58",
     "label" : [ {
       "@language" : "es",
       "@value" : "sistema de referencia temporal utilizado"
@@ -1542,9 +1546,10 @@
       "@value" : "has time"
     } ],
     "range" : "http://www.w3.org/2006/time#TemporalEntity",
+    "inverseOf" : "http://www.w3.org/2006/time#timePertainsTo",
     "definition" : [ {
       "@language" : "en",
-      "@value" : "Supports the association of a temporal entity (instant or interval) to any thing"
+      "@value" : "links anything to a temporal entity (instant or interval)"
     }, {
       "@language" : "es",
       "@value" : "Proporciona soporte a la asociación de una entidad temporal (instante o intervalo) a cualquier cosa."
@@ -1795,9 +1800,10 @@
     } ],
     "range" : "http://www.w3.org/2006/time#Instant",
     "subPropertyOf" : "http://www.w3.org/2006/time#whollyContains",
+    "propertyDisjointWith" : [ "http://www.w3.org/2006/time#hasEnd", "http://www.w3.org/2006/time#hasBeginning" ],
     "definition" : [ {
       "@language" : "en",
-      "@value" : "If an instant T1 is inside an interval T2, then T1 is after the beginning of T2 and before the end of T2."
+      "@value" : "If T1 :inside T2, then T1 is after the beginning of T2 and before the end of T2."
     }, {
       "@language" : "es",
       "@value" : "Un instante que cae dentro del intervalo. Se asume que no es ni el principio ni el final de ningún intervalo."
@@ -1818,7 +1824,7 @@
     "inverseOf" : "http://www.w3.org/2006/time#intervalBefore",
     "definition" : [ {
       "@language" : "en",
-      "@value" : "If a proper interval T1 is intervalAfter another proper interval T2, then the beginning of T1 is after the end of T2."
+      "@value" : "If T1 :intervalAfter another proper interval T2, then the beginning of T1 is after the end of T2."
     }, {
       "@language" : "es",
       "@value" : "Si un intervalo propio T1 es posterior a otro intervalo propio T2, entonces el principio de T1 está después que el final de T2."
@@ -1838,11 +1844,11 @@
     "subPropertyOf" : [ "http://www.w3.org/2006/time#intervalDisjoint", "http://www.w3.org/2006/time#before" ],
     "inverseOf" : "http://www.w3.org/2006/time#intervalAfter",
     "definition" : [ {
+      "@language" : "en",
+      "@value" : "If T1 :intervalBefore T2, then the end of T1 is before the beginning of T2."
+    }, {
       "@language" : "es",
       "@value" : "Si un intervalo propio T1 está antes que otro intervalo propio T2, entonces el final de T1 está antes que el principio de T2."
-    }, {
-      "@language" : "en",
-      "@value" : "If a proper interval T1 is intervalBefore another proper interval T2, then the end of T1 is before the beginning of T2."
     } ]
   }, {
     "@id" : "http://www.w3.org/2006/time#intervalContains",
@@ -1859,11 +1865,11 @@
     "subPropertyOf" : "http://www.w3.org/2006/time#intervalWhollyContains",
     "inverseOf" : "http://www.w3.org/2006/time#intervalDuring",
     "definition" : [ {
+      "@language" : "en",
+      "@value" : "If T1 :intervalContains T2, then the beginning of T1 is before the beginning of T2, and the end of T1 is after the end of T2."
+    }, {
       "@language" : "es",
       "@value" : "Si un intervalo propio T1 contiene otro intervalo propio T2, entonces el principio de T1 está antes que el principio de T2, y el final de T1 está después del final de T2."
-    }, {
-      "@language" : "en",
-      "@value" : "If a proper interval T1 is intervalContains another proper interval T2, then the beginning of T1 is before the beginning of T2, and the end of T1 is after the end of T2."
     } ]
   }, {
     "@id" : "http://www.w3.org/2006/time#intervalDisjoint",
@@ -1880,7 +1886,7 @@
     "subPropertyOf" : "http://www.w3.org/2006/time#disjoint",
     "definition" : [ {
       "@language" : "en",
-      "@value" : "If a proper interval T1 is intervalDisjoint another proper interval T2, then the beginning of T1 is after the end of T2, or the end of T1 is before the beginning of T2, i.e., the intervals do not overlap in any way, but their ordering relationship is not known."
+      "@value" : "If T1 :intervalDisjoint T2, then the beginning of T1 is after the end of T2, or the end of T1 is before the beginning of T2. The intervals do not overlap in any way, but their ordering relationship is not known."
     }, {
       "@language" : "es",
       "@value" : "Si un intervalo propio T1 es disjunto con otro intervalo propio T2, entonces el principio de T1 está después del final de T2, o el final de T1 está antes que el principio de T2, es decir, los intervalos no se solapan de ninguna forma, aunque su relación de orden no se conozca."
@@ -1888,10 +1894,10 @@
     "example" : "\r\nex:LunchTime :intervalDisjoint ex:NapTime .\r\n",
     "note" : [ {
       "@language" : "en",
-      "@value" : "This interval relation is not included in the 13 basic relationships defined in Allen (1984), but is defined as the union of :intervalBefore, :intervalAfter, :intervalMeets, intervalMetBy . However, that is outside OWL2 expressivity, so is implemented as an explicit property, with :intervalBefore, :intervalAfter, :intervalMeets, intervalMetBy as sub-properties"
+      "@value" : "This interval relation is not included in the 13 basic relationships defined in Allen (1984), but is defined as the union of :intervalBefore, :intervalAfter, :intervalMeets, intervalMetBy . However, that is outside OWL-2 expressivity, so is implemented as an explicit property, with :intervalBefore, :intervalAfter, :intervalMeets, intervalMetBy as sub-properties"
     }, {
       "@language" : "es",
-      "@value" : "Esta relación entre intervalos no estaba incluida en las 13 relaciones básicas definidas por Allen (1984), pero está definida en T.3 como la unión de 'intervalo anterior' con 'intervalo posterior'. Sin embargo, esto está fuera de la expresividad de OWL2, por tanto, está implementado como una propiedad explícita, con 'intervalo anterior' e 'intervalo posterior' como sub-propiedades."
+      "@value" : "Esta relación entre intervalos no estaba incluida en las 13 relaciones básicas definidas por Allen (1984), pero está definida en T.3 como la unión de 'intervalo anterior' con 'intervalo posterior'. Sin embargo, esto está fuera de la expresividad de OWL-2, por tanto, está implementado como una propiedad explícita, con 'intervalo anterior' e 'intervalo posterior' como sub-propiedades."
     } ]
   }, {
     "@id" : "http://www.w3.org/2006/time#intervalDuring",
@@ -1908,11 +1914,11 @@
     "subPropertyOf" : "http://www.w3.org/2006/time#intervalWhollyContainedBy",
     "inverseOf" : "http://www.w3.org/2006/time#intervalContains",
     "definition" : [ {
+      "@language" : "en",
+      "@value" : "If T1 :intervalDuring T2, then the beginning of T1 is after the beginning of T2, and the end of T1 is before the end of T2."
+    }, {
       "@language" : "es",
       "@value" : "Si un intervalo propio T1 está durante otro intervalo propio T2, entonces del principio de T1 está después del principio de T2, y el final de T1 está antes que el final de T2."
-    }, {
-      "@language" : "en",
-      "@value" : "If a proper interval T1 is intervalDuring another proper interval T2, then the beginning of T1 is after the beginning of T2, and the end of T1 is before the end of T2."
     } ]
   }, {
     "@id" : "http://www.w3.org/2006/time#intervalEquals",
@@ -1929,7 +1935,7 @@
     "subPropertyOf" : [ "http://www.w3.org/2006/time#intervalNotDisjoint", "http://www.w3.org/2006/time#equals" ],
     "definition" : [ {
       "@language" : "en",
-      "@value" : "If a proper interval T1 is intervalEquals another proper interval T2, then the beginning of T1 is coincident with the beginning of T2, and the end of T1 is coincident with the end of T2."
+      "@value" : "If T1 :intervalEquals T2, then the beginning of T1 is coincident with the beginning of T2, and the end of T1 is coincident with the end of T2, and the beginning of T1 is not concident with the end of T1."
     }, {
       "@language" : "es",
       "@value" : "Si un intervalo propio T1 es igual a otro intervalo propio T2, entonces el principio de T1 coincide con el principio de T2, y el final de T1 coincide con el final de T2."
@@ -1949,11 +1955,11 @@
     "subPropertyOf" : "http://www.w3.org/2006/time#intervalWhollyContains",
     "inverseOf" : "http://www.w3.org/2006/time#intervalFinishes",
     "definition" : [ {
+      "@language" : "en",
+      "@value" : "If T1 :intervalFinishedBy T2, then the beginning of T1 is before the beginning of T2, and the end of T1 is coincident with the end of T2."
+    }, {
       "@language" : "es",
       "@value" : "Si un intervalo propio T1 está terminado por otro intervalo propio T2, entonces el principio de T1 está antes que el principio de T2, y el final de T1 coincide con el final de T2."
-    }, {
-      "@language" : "en",
-      "@value" : "If a proper interval T1 is intervalFinishedBy another proper interval T2, then the beginning of T1 is before the beginning of T2, and the end of T1 is coincident with the end of T2."
     } ]
   }, {
     "@id" : "http://www.w3.org/2006/time#intervalFinishes",
@@ -1971,7 +1977,7 @@
     "inverseOf" : "http://www.w3.org/2006/time#intervalFinishedBy",
     "definition" : [ {
       "@language" : "en",
-      "@value" : "If a proper interval T1 is intervalFinishes another proper interval T2, then the beginning of T1 is after the beginning of T2, and the end of T1 is coincident with the end of T2."
+      "@value" : "If T1 :intervalFinishes T2, then the beginning of T1 is after the beginning of T2, and the end of T1 is coincident with the end of T2."
     }, {
       "@language" : "es",
       "@value" : "Si un intervalo propio T1 termina otro intervalo propio T2, entonces del principio de T1 está después del principio de T2, y el final de T1 coincide con el final de T2."
@@ -2001,7 +2007,7 @@
     "inverseOf" : "http://www.w3.org/2006/time#intervalMetBy",
     "definition" : [ {
       "@language" : "en",
-      "@value" : "If a proper interval T1 is intervalMeets another proper interval T2, then the end of T1 is coincident with the beginning of T2."
+      "@value" : "If T1 :intervalMeets T2, then the end of T1 is coincident with the beginning of T2."
     }, {
       "@language" : "es",
       "@value" : "Si un intervalo propio T1 se encuentra con otro intervalo propio T2, entonces el final de T1 coincide con el principio de T2."
@@ -2022,7 +2028,7 @@
     "inverseOf" : "http://www.w3.org/2006/time#intervalMeets",
     "definition" : [ {
       "@language" : "en",
-      "@value" : "If a proper interval T1 is intervalMetBy another proper interval T2, then the beginning of T1 is coincident with the end of T2."
+      "@value" : "If T1 :intervalMetBy T2, then the beginning of T1 is coincident with the end of T2."
     }, {
       "@language" : "es",
       "@value" : "Si un intervalo propio T1 es 'intervalo encontrado por' otro intervalo propio T2, entonces el principio de T1 coincide con el final de T2."
@@ -2036,11 +2042,11 @@
     "subPropertyOf" : "http://www.w3.org/2006/time#notDisjoint",
     "definition" : {
       "@language" : "en",
-      "@value" : "If a proper interval T1 is intervalNotDisjoint with another proper interval T2, then the two entities  overlap or coincide in some way, but their ordering relationship is not known."
+      "@value" : "If T1 :intervalNotDisjoint T2, then the two entities overlap or coincide in some way, but their ordering relationship is not known."
     },
     "note" : {
       "@language" : "en",
-      "@value" : "This relation is the complement of intervalDisjoint and is the disjoint union of intervalEquals, intervalWhollyContains, intervalWhollyContainedBy, intervalOverlaps, intervalOverlappedBy. However, that is outside OWL2 expressivity, so is implemented as an explicit property, with intervalEquals, intervalWhollyContains, intervalWhollyContainedBy, intervalOverlaps, intervalOverlappedBy as sub-properties"
+      "@value" : "This relation is the complement of intervalDisjoint and is the disjoint union of intervalEquals, intervalWhollyContains, intervalWhollyContainedBy, intervalOverlaps, intervalOverlappedBy. However, that is outside OWL-2 expressivity, so is implemented as an explicit property, with intervalEquals, intervalWhollyContains, intervalWhollyContainedBy, intervalOverlaps, intervalOverlappedBy as sub-properties"
     }
   }, {
     "@id" : "http://www.w3.org/2006/time#intervalOverlappedBy",
@@ -2058,7 +2064,7 @@
     "inverseOf" : "http://www.w3.org/2006/time#intervalOverlaps",
     "definition" : [ {
       "@language" : "en",
-      "@value" : "If a proper interval T1 is intervalOverlappedBy another proper interval T2, then the beginning of T1 is after the beginning of T2, the beginning of T1 is before the end of T2, and the end of T1 is after the end of T2."
+      "@value" : "If T1 :intervalOverlappedBy T2, then the beginning of T1 is after the beginning of T2, the beginning of T1 is before the end of T2, and the end of T1 is after the end of T2."
     }, {
       "@language" : "es",
       "@value" : "Si un intervalo propio T1 es 'intervalo solapado por' otro intervalo propio T2, entonces el principio de T1 es posterior al principio de T2, y el principio de T1 es anterior al final de T2, y el final de T1 es posterior al final de T2."
@@ -2068,18 +2074,18 @@
     "@type" : "owl:ObjectProperty",
     "domain" : "http://www.w3.org/2006/time#ProperInterval",
     "label" : [ {
-      "@language" : "en",
-      "@value" : "interval overlaps"
-    }, {
       "@language" : "es",
       "@value" : "intervalo se solapa"
+    }, {
+      "@language" : "en",
+      "@value" : "interval overlaps"
     } ],
     "range" : "http://www.w3.org/2006/time#ProperInterval",
     "subPropertyOf" : "http://www.w3.org/2006/time#intervalNotDisjoint",
     "inverseOf" : "http://www.w3.org/2006/time#intervalOverlappedBy",
     "definition" : [ {
       "@language" : "en",
-      "@value" : "If a proper interval T1 is intervalOverlaps another proper interval T2, then the beginning of T1 is before the beginning of T2, the end of T1 is after the beginning of T2, and the end of T1 is before the end of T2."
+      "@value" : "If T1 :intervalOverlaps T2, then the beginning of T1 is before the beginning of T2, the end of T1 is after the beginning of T2, and the end of T1 is before the end of T2."
     }, {
       "@language" : "es",
       "@value" : "Si un intervalo propio T1 se solapa con otro intervalo propio T2, entonces el principio de T1 es anterior al principio de T2, el final de T1 es posterior al principio de T2, y el final de T1 es anterior al final de T2."
@@ -2097,7 +2103,7 @@
     "inverseOf" : "http://www.w3.org/2006/time#intervalStarts",
     "definition" : [ {
       "@language" : "en",
-      "@value" : "If a proper interval T1 is intervalStarted another proper interval T2, then the beginning of T1 is coincident with the beginning of T2, and the end of T1 is after the end of T2."
+      "@value" : "If T1 :intervalStarted T2, then the beginning of T1 is coincident with the beginning of T2, and the end of T1 is after the end of T2."
     }, {
       "@language" : "es",
       "@value" : "Si un intervalo propio T1 es empezado por otro intervalo propio T2, entonces el principio de T1 coincide con el principio de T2, y el final de T1 es posterior al final de T2."
@@ -2107,18 +2113,18 @@
     "@type" : "owl:ObjectProperty",
     "domain" : "http://www.w3.org/2006/time#ProperInterval",
     "label" : [ {
-      "@language" : "en",
-      "@value" : "interval starts"
-    }, {
       "@language" : "es",
       "@value" : "intervalo empieza"
+    }, {
+      "@language" : "en",
+      "@value" : "interval starts"
     } ],
     "range" : "http://www.w3.org/2006/time#ProperInterval",
     "subPropertyOf" : "http://www.w3.org/2006/time#intervalWhollyContainedBy",
     "inverseOf" : "http://www.w3.org/2006/time#intervalStartedBy",
     "definition" : [ {
       "@language" : "en",
-      "@value" : "If a proper interval T1 is intervalStarts another proper interval T2, then the beginning of T1 is coincident with the beginning of T2, and the end of T1 is before the end of T2."
+      "@value" : "If T1 :intervalStarts T2, then the beginning of T1 is coincident with the beginning of T2, and the end of T1 is before the end of T2."
     }, {
       "@language" : "es",
       "@value" : "Si un intervalo propio T1 empieza otro intervalo propio T2, entonces del principio de T1 con el final de T2, y el final de T1 es anterior al final de T2."
@@ -2142,14 +2148,14 @@
       "@value" : "Si un intervalo propio T1 es un intervalo interior a otro intervalo propio T2, entonces el principio de T1 está después del principio de T2 o coincide con el principio de T2, y el final de T1 está antes que el final de T2, o coincide con el final de T2, excepto que el final de T1 puede no coincidir con el final de T2 si el principio de T1 coincide con el principio de T2."
     }, {
       "@language" : "en",
-      "@value" : "If a proper interval T1 is intervalWhollyContainedBy another proper interval T2, then the beginning of T1 is after the beginning of T2 or is coincident with the beginning of T2, and the end of T1 is before the end of T2, or is coincident with the end of T2, except that end of T1 may not be coincident with the end of T2 if the beginning of T1 is coincident with the beginning of T2."
+      "@value" : "If T1 :intervalWhollyContainedBy T2, then the beginning of T1 is after the beginning of T2 or is coincident with the beginning of T2, and the end of T1 is before the end of T2, or is coincident with the end of T2, except that end of T1 may not be coincident with the end of T2 if the beginning of T1 is coincident with the beginning of T2."
     } ],
     "note" : [ {
       "@language" : "en",
-      "@value" : "This interval relation is not included in the 13 basic relationships defined in Allen (1984), but is referred to as 'an important relationship' in Allen and Ferguson (1997). It is the disjoint union of :intervalStarts v :intervalDuring v :intervalFinishes . However, that is outside OWL2 expressivity, so is implemented as an explicit property, with :intervalStarts , :intervalDuring , :intervalFinishes as sub-properties"
+      "@value" : "This interval relation is not included in the 13 basic relationships defined in Allen (1984), but is referred to as 'an important relationship' in Allen and Ferguson (1997). It is the disjoint union of :intervalStarts v :intervalDuring v :intervalFinishes . However, that is outside OWL-2 expressivity, so is implemented as an explicit property, with :intervalStarts , :intervalDuring , :intervalFinishes as sub-properties"
     }, {
       "@language" : "es",
-      "@value" : "Esta relación entre intervalos no estaba incluida en las 13 relaciones básicas definidas por Allen (1984), pero se hace referencia a ella como \"una relación importante\" en Allen y Ferguson (1997). Es la unión disjunta de 'intervalo empieza', 'intervalo durante' y con 'intervalo termina'. Sin embargo, esto está fuera de la expresividad de OWL2, por tanto, se implementa como una propiedad explícita, con 'intervalo empieza', 'intervalo durante' e 'intervalo termina' como sub-propiedades."
+      "@value" : "Esta relación entre intervalos no estaba incluida en las 13 relaciones básicas definidas por Allen (1984), pero se hace referencia a ella como \"una relación importante\" en Allen y Ferguson (1997). Es la unión disjunta de 'intervalo empieza', 'intervalo durante' y con 'intervalo termina'. Sin embargo, esto está fuera de la expresividad de OWL-2, por tanto, se implementa como una propiedad explícita, con 'intervalo empieza', 'intervalo durante' e 'intervalo termina' como sub-propiedades."
     } ]
   }, {
     "@id" : "http://www.w3.org/2006/time#intervalWhollyContains",
@@ -2161,11 +2167,11 @@
     "inverseOf" : "http://www.w3.org/2006/time#intervalWhollyContainedBy",
     "definition" : {
       "@language" : "en",
-      "@value" : "If a proper interval T1 intervalWhollyContains it another proper interval T2, then the beginning of T1 is coincident with or before the beginning of T2, and the end of T1 is concident with or after the end of T2, except that end of T1 may not be coincident with the end of T2 if the beginning of T1 is coincident with the beginning of T2."
+      "@value" : "If T1 :intervalWhollyContains T2, then the beginning of T1 is coincident with or before the beginning of T2, and the end of T1 is concident with or after the end of T2, except that end of T1 may not be coincident with the end of T2 if the beginning of T1 is coincident with the beginning of T2."
     },
     "note" : {
       "@language" : "en",
-      "@value" : "This relation is the disjoint union of startedBy, contains, finshedBy. However, that is outside OWL2 expressivity, so is implemented as an explicit property, with startedBy, contains, finshedBy as sub-properties"
+      "@value" : "This relation is the disjoint union of startedBy, contains, finshedBy. However, that is outside OWL-2 expressivity, so is implemented as an explicit property, with startedBy, contains, finshedBy as sub-properties"
     }
   }, {
     "@id" : "http://www.w3.org/2006/time#minute",
@@ -2295,11 +2301,11 @@
     "range" : "http://www.w3.org/2006/time#TemporalEntity",
     "definition" : {
       "@language" : "en",
-      "@value" : "If a temporal entity T1 is notDisjoint with another temporal entity T2, then the two entities overlap or coincide in some way, but their ordering relationship is not known."
+      "@value" : "If T1 :notDisjoint T2, then the two temporal entities overlap or coincide in some way, but their ordering relationship is not known."
     },
     "note" : {
       "@language" : "en",
-      "@value" : "This relation is the complement of :disjoint and is the disjoint union of equals, whollyContains, intervalNotDisjoint. However, that is outside OWL2 expressivity, so is implemented as an explicit property, with equals, whollyContains, intervalNotDisjoint as sub-properties"
+      "@value" : "This relation is the complement of :disjoint and is the disjoint union of equals, whollyContains, intervalNotDisjoint. However, that is outside OWL-2 expressivity, so is implemented as an explicit property, with equals, whollyContains, intervalNotDisjoint as sub-properties"
     }
   }, {
     "@id" : "http://www.w3.org/2006/time#numericDuration",
@@ -2378,6 +2384,23 @@
       "@language" : "en",
       "@value" : "length of, or element of the length of, a temporal extent expressed in seconds"
     } ]
+  }, {
+    "@id" : "http://www.w3.org/2006/time#timePertainsTo",
+    "@type" : "owl:ObjectProperty",
+    "domain" : "http://www.w3.org/2006/time#TemporalEntity",
+    "label" : {
+      "@language" : "en",
+      "@value" : "time pertains to"
+    },
+    "inverseOf" : "http://www.w3.org/2006/time#hasTime",
+    "definition" : {
+      "@language" : "en",
+      "@value" : "links a temporal entity (instant or interval) to anything"
+    },
+    "editorialNote" : {
+      "@language" : "en",
+      "@value" : "Feature at risk - added in 2017 revision, and not yet widely used. "
+    }
   }, {
     "@id" : "http://www.w3.org/2006/time#timeZone",
     "@type" : "owl:ObjectProperty",
@@ -2844,7 +2867,7 @@
   }, {
     "@id" : "http://www.w3.org/2006/time#unitType",
     "@type" : "owl:ObjectProperty",
-    "domain" : "_:b59",
+    "domain" : "_:b60",
     "label" : [ {
       "@language" : "en",
       "@value" : "temporal unit type"
@@ -3024,12 +3047,12 @@
     "subPropertyOf" : "http://www.w3.org/2006/time#notDisjoint",
     "definition" : {
       "@language" : "en",
-      "@value" : "If a temporal entity T1 whollyContains it another temporal entity T2, then the beginning of T1 is coincident with or before the beginning of T2, and the end of T1 is concident with or after the end of T2, except that end of T1 may not be coincident with the end of T2 if the beginning of T1 is coincident with the beginning of T2."
+      "@value" : "If T1 :whollyContains T2, then the beginning of T1 is coincident with or before the beginning of T2, and the end of T1 is concident with or after the end of T2, except that end of T1 may not be coincident with the end of T2 if the beginning of T1 is coincident with the beginning of T2."
     },
     "example" : "\r\nex:Class :whollyContains ex:Quiz .\r\n",
     "note" : {
       "@language" : "en",
-      "@value" : "This relation is the disjoint union of inside, intervalWhollyContains. However, that is outside OWL2 expressivity, so is implemented as an explicit property, with inside, intervalWhollyContains as sub-properties"
+      "@value" : "This relation is the disjoint union of inside, intervalWhollyContains. However, that is outside OWL-2 expressivity, so is implemented as an explicit property, with inside, intervalWhollyContains as sub-properties"
     }
   }, {
     "@id" : "http://www.w3.org/2006/time#xsdDateTime",
@@ -3088,6 +3111,14 @@
     } ]
   } ],
   "@context" : {
+    "onProperty" : {
+      "@id" : "http://www.w3.org/2002/07/owl#onProperty",
+      "@type" : "@id"
+    },
+    "allValuesFrom" : {
+      "@id" : "http://www.w3.org/2002/07/owl#allValuesFrom",
+      "@type" : "@id"
+    },
     "withRestrictions" : {
       "@id" : "http://www.w3.org/2002/07/owl#withRestrictions",
       "@type" : "@id"
@@ -3158,12 +3189,15 @@
       "@id" : "http://purl.org/dc/terms/license",
       "@type" : "@id"
     },
+    "note" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#note"
+    },
     "equivalentClass" : {
       "@id" : "http://www.w3.org/2002/07/owl#equivalentClass",
       "@type" : "@id"
     },
-    "note" : {
-      "@id" : "http://www.w3.org/2004/02/skos/core#note"
+    "pattern" : {
+      "@id" : "http://www.w3.org/2001/XMLSchema#pattern"
     },
     "subPropertyOf" : {
       "@id" : "http://www.w3.org/2000/01/rdf-schema#subPropertyOf",
@@ -3181,28 +3215,28 @@
       "@id" : "http://www.w3.org/2002/07/owl#inverseOf",
       "@type" : "@id"
     },
-    "onProperty" : {
-      "@id" : "http://www.w3.org/2002/07/owl#onProperty",
-      "@type" : "@id"
-    },
     "cardinality" : {
       "@id" : "http://www.w3.org/2002/07/owl#cardinality",
       "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
     },
-    "unionOf" : {
-      "@id" : "http://www.w3.org/2002/07/owl#unionOf",
+    "rest" : {
+      "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest",
+      "@type" : "@id"
+    },
+    "first" : {
+      "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
       "@type" : "@id"
     },
     "scopeNote" : {
       "@id" : "http://www.w3.org/2004/02/skos/core#scopeNote"
     },
-    "allValuesFrom" : {
-      "@id" : "http://www.w3.org/2002/07/owl#allValuesFrom",
-      "@type" : "@id"
-    },
     "maxCardinality" : {
       "@id" : "http://www.w3.org/2002/07/owl#maxCardinality",
       "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+    },
+    "hasValue" : {
+      "@id" : "http://www.w3.org/2002/07/owl#hasValue",
+      "@type" : "@id"
     },
     "days" : {
       "@id" : "http://www.w3.org/2006/time#days",
@@ -3232,20 +3266,8 @@
       "@id" : "http://www.w3.org/2006/time#years",
       "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
     },
-    "rest" : {
-      "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#rest",
-      "@type" : "@id"
-    },
-    "first" : {
-      "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#first",
-      "@type" : "@id"
-    },
     "equivalentProperty" : {
       "@id" : "http://www.w3.org/2002/07/owl#equivalentProperty",
-      "@type" : "@id"
-    },
-    "hasValue" : {
-      "@id" : "http://www.w3.org/2002/07/owl#hasValue",
       "@type" : "@id"
     },
     "example" : {
@@ -3258,8 +3280,13 @@
       "@id" : "http://www.w3.org/2002/07/owl#disjointWith",
       "@type" : "@id"
     },
-    "pattern" : {
-      "@id" : "http://www.w3.org/2001/XMLSchema#pattern"
+    "propertyDisjointWith" : {
+      "@id" : "http://www.w3.org/2002/07/owl#propertyDisjointWith",
+      "@type" : "@id"
+    },
+    "unionOf" : {
+      "@id" : "http://www.w3.org/2002/07/owl#unionOf",
+      "@type" : "@id"
     },
     "@vocab" : "http://www.w3.org/2006/time#",
     "dct" : "http://purl.org/dc/terms/",
@@ -3267,8 +3294,6 @@
     "owl" : "http://www.w3.org/2002/07/owl#",
     "xsd" : "http://www.w3.org/2001/XMLSchema#",
     "skos" : "http://www.w3.org/2004/02/skos/core#",
-    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
-    "obo" : "http://purl.obolibrary.org/obo/",
-    "cco" : "https://www.commoncoreontologies.org/"
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#"
   }
 }

@@ -572,7 +572,7 @@ It is deprecated in this edition of OWL-Time. """ ;
   Day of month - formulated as a text string with a pattern constraint to reproduce the same lexical form as gDay, except that values up to 99 are permitted, in order to support calendars with more than 31 days in a month. 
   """@en ;
   skos:note """
-  the value-space is not defined, so a generic OWL2 processor cannot compute ordering relationships of values of this type.
+  the value-space is not defined, so a generic OWL-2 processor cannot compute ordering relationships of values of this type.
   """@en ;
 .
 :generalMonth
@@ -591,7 +591,7 @@ It is deprecated in this edition of OWL-Time. """ ;
   Month of year - formulated as a text string with a pattern constraint to reproduce the same lexical form as gMonth, except that values up to 20 are permitted, in order to support calendars with more than 12 months in the year. 
   """@en ;
   skos:note """
-  the value-space is not defined, so a generic OWL2 processor cannot compute ordering relationships of values of this type.
+  the value-space is not defined, so a generic OWL-2 processor cannot compute ordering relationships of values of this type.
   """@en ;
 .
 :generalYear
@@ -610,7 +610,7 @@ It is deprecated in this edition of OWL-Time. """ ;
   Year number - formulated as a text string with a pattern constraint to reproduce the same lexical form as gYear, but not restricted to values from the Gregorian calendar. 
   """@en ;
   skos:note """
-Note that the value-space is not defined, so a generic OWL2 processor cannot compute ordering relationships of values of this type.
+Note that the value-space is not defined, so a generic OWL-2 processor cannot compute ordering relationships of values of this type.
 """@en ;
 .
 
@@ -720,7 +720,7 @@ ex:SimonWeddingDay :equals ex:RichardWeddingAnniversary1999 .
   rdfs:label "interval disjoint"@en ;
   rdfs:range :ProperInterval ;
   skos:definition "If T1 :intervalDisjoint T2, then the beginning of T1 is after the end of T2, or the end of T1 is before the beginning of T2. The intervals do not overlap in any way, but their ordering relationship is not known."@en ;
-  skos:note "This interval relation is not included in the 13 basic relationships defined in Allen (1984), but is defined as the union of :intervalBefore, :intervalAfter, :intervalMeets, intervalMetBy . However, that is outside OWL2 expressivity, so is implemented as an explicit property, with :intervalBefore, :intervalAfter, :intervalMeets, intervalMetBy as sub-properties"@en ;
+  skos:note "This interval relation is not included in the 13 basic relationships defined in Allen (1984), but is defined as the union of :intervalBefore, :intervalAfter, :intervalMeets, intervalMetBy . However, that is outside OWL-2 expressivity, so is implemented as an explicit property, with :intervalBefore, :intervalAfter, :intervalMeets, intervalMetBy as sub-properties"@en ;
   skos:example """
 ex:LunchTime :intervalDisjoint ex:NapTime .
 """ ;
@@ -792,7 +792,7 @@ ex:LunchTime :intervalDisjoint ex:NapTime .
   rdfs:label "interval not disjoint" ;
   rdfs:range :ProperInterval ;
   skos:definition "If T1 :intervalNotDisjoint T2, then the two entities overlap or coincide in some way, but their ordering relationship is not known."@en ;
-  skos:note "This relation is the complement of intervalDisjoint and is the disjoint union of intervalEquals, intervalWhollyContains, intervalWhollyContainedBy, intervalOverlaps, intervalOverlappedBy. However, that is outside OWL2 expressivity, so is implemented as an explicit property, with intervalEquals, intervalWhollyContains, intervalWhollyContainedBy, intervalOverlaps, intervalOverlappedBy as sub-properties"@en ;
+  skos:note "This relation is the complement of intervalDisjoint and is the disjoint union of intervalEquals, intervalWhollyContains, intervalWhollyContainedBy, intervalOverlaps, intervalOverlappedBy. However, that is outside OWL-2 expressivity, so is implemented as an explicit property, with intervalEquals, intervalWhollyContains, intervalWhollyContainedBy, intervalOverlaps, intervalOverlappedBy as sub-properties"@en ;
 .
 :intervalOverlappedBy
   a owl:ObjectProperty ;
@@ -838,7 +838,7 @@ ex:LunchTime :intervalDisjoint ex:NapTime .
   rdfs:range :ProperInterval ;
   owl:inverseOf :intervalWhollyContains ;
   skos:definition "If T1 :intervalWhollyContainedBy T2, then the beginning of T1 is after the beginning of T2 or is coincident with the beginning of T2, and the end of T1 is before the end of T2, or is coincident with the end of T2, except that end of T1 may not be coincident with the end of T2 if the beginning of T1 is coincident with the beginning of T2."@en ;
-  skos:note "This interval relation is not included in the 13 basic relationships defined in Allen (1984), but is referred to as 'an important relationship' in Allen and Ferguson (1997). It is the disjoint union of :intervalStarts v :intervalDuring v :intervalFinishes . However, that is outside OWL2 expressivity, so is implemented as an explicit property, with :intervalStarts , :intervalDuring , :intervalFinishes as sub-properties"@en ;
+  skos:note "This interval relation is not included in the 13 basic relationships defined in Allen (1984), but is referred to as 'an important relationship' in Allen and Ferguson (1997). It is the disjoint union of :intervalStarts v :intervalDuring v :intervalFinishes . However, that is outside OWL-2 expressivity, so is implemented as an explicit property, with :intervalStarts , :intervalDuring , :intervalFinishes as sub-properties"@en ;
 .
 :intervalWhollyContains
   a owl:ObjectProperty ;
@@ -848,7 +848,7 @@ ex:LunchTime :intervalDisjoint ex:NapTime .
   rdfs:range :ProperInterval ;
   owl:inverseOf :intervalWhollyContainedBy ;
   skos:definition "If T1 :intervalWhollyContains T2, then the beginning of T1 is coincident with or before the beginning of T2, and the end of T1 is concident with or after the end of T2, except that end of T1 may not be coincident with the end of T2 if the beginning of T1 is coincident with the beginning of T2."@en ;
-  skos:note "This relation is the disjoint union of startedBy, contains, finshedBy. However, that is outside OWL2 expressivity, so is implemented as an explicit property, with startedBy, contains, finshedBy as sub-properties"@en ;
+  skos:note "This relation is the disjoint union of startedBy, contains, finshedBy. However, that is outside OWL-2 expressivity, so is implemented as an explicit property, with startedBy, contains, finshedBy as sub-properties"@en ;
 .
 :notDisjoint
   a owl:ObjectProperty ;
@@ -856,7 +856,7 @@ ex:LunchTime :intervalDisjoint ex:NapTime .
   rdfs:label "not disjoint with temporal entity" ;
   rdfs:range :TemporalEntity ;
   skos:definition "If T1 :notDisjoint T2, then the two temporal entities overlap or coincide in some way, but their ordering relationship is not known."@en ;
-  skos:note "This relation is the complement of :disjoint and is the disjoint union of equals, whollyContains, intervalNotDisjoint. However, that is outside OWL2 expressivity, so is implemented as an explicit property, with equals, whollyContains, intervalNotDisjoint as sub-properties"@en ;
+  skos:note "This relation is the complement of :disjoint and is the disjoint union of equals, whollyContains, intervalNotDisjoint. However, that is outside OWL-2 expressivity, so is implemented as an explicit property, with equals, whollyContains, intervalNotDisjoint as sub-properties"@en ;
 .
 :whollyContains
   a owl:ObjectProperty ;
@@ -865,7 +865,7 @@ ex:LunchTime :intervalDisjoint ex:NapTime .
   rdfs:label "wholly contains temporal entity" ;
   rdfs:range :TemporalEntity ;
   skos:definition "If T1 :whollyContains T2, then the beginning of T1 is coincident with or before the beginning of T2, and the end of T1 is concident with or after the end of T2, except that end of T1 may not be coincident with the end of T2 if the beginning of T1 is coincident with the beginning of T2."@en ;
-  skos:note "This relation is the disjoint union of inside, intervalWhollyContains. However, that is outside OWL2 expressivity, so is implemented as an explicit property, with inside, intervalWhollyContains as sub-properties"@en ;
+  skos:note "This relation is the disjoint union of inside, intervalWhollyContains. However, that is outside OWL-2 expressivity, so is implemented as an explicit property, with inside, intervalWhollyContains as sub-properties"@en ;
   skos:example """
 ex:Class :whollyContains ex:Quiz .
 """ ;
@@ -1586,7 +1586,7 @@ The range of this property is not specified, so can be replaced by any specific 
 :intervalWhollyContainedBy
         rdfs:label       "intervalo interior"@es ;
         skos:definition  "Si un intervalo propio T1 es un intervalo interior a otro intervalo propio T2, entonces el principio de T1 está después del principio de T2 o coincide con el principio de T2, y el final de T1 está antes que el final de T2, o coincide con el final de T2, excepto que el final de T1 puede no coincidir con el final de T2 si el principio de T1 coincide con el principio de T2."@es ;
-        skos:note        "Esta relación entre intervalos no estaba incluida en las 13 relaciones básicas definidas por Allen (1984), pero se hace referencia a ella como \"una relación importante\" en Allen y Ferguson (1997). Es la unión disjunta de 'intervalo empieza', 'intervalo durante' y con 'intervalo termina'. Sin embargo, esto está fuera de la expresividad de OWL2, por tanto, se implementa como una propiedad explícita, con 'intervalo empieza', 'intervalo durante' e 'intervalo termina' como sub-propiedades."@es .
+        skos:note        "Esta relación entre intervalos no estaba incluida en las 13 relaciones básicas definidas por Allen (1984), pero se hace referencia a ella como \"una relación importante\" en Allen y Ferguson (1997). Es la unión disjunta de 'intervalo empieza', 'intervalo durante' y con 'intervalo termina'. Sin embargo, esto está fuera de la expresividad de OWL-2, por tanto, se implementa como una propiedad explícita, con 'intervalo empieza', 'intervalo durante' e 'intervalo termina' como sub-propiedades."@es .
 
 :timeZone
         rdfs:label        "en huso horario"@es ;
@@ -1615,7 +1615,7 @@ The range of this property is not specified, so can be replaced by any specific 
 :generalMonth
         rdfs:label       "Mes generalizado"@es ;
         skos:definition  """Mes del año - formulado como una cadena de texto con una restricción patrón para reproducir la misma forma léxica que gMonth, excepto que se permiten valores hasta el 20, con el propósito de proporcionar soporte a calendarios con años con más de 12 meses.
-            Nótese que el espacio de valores no está definido, por tanto, un procesador genérico de OWL2 no puede computar relaciones de orden de valores de este tipo."""@es .
+            Nótese que el espacio de valores no está definido, por tanto, un procesador genérico de OWL-2 no puede computar relaciones de orden de valores de este tipo."""@es .
 
 :month  
         rdfs:label       "mes"@es ;
@@ -1750,7 +1750,7 @@ El rango de esta propiedad no está especificado, por tanto, se puede reemplazar
 :intervalDisjoint 
         rdfs:label       "intervalo disjunto"@es ;
         skos:definition  "Si un intervalo propio T1 es disjunto con otro intervalo propio T2, entonces el principio de T1 está después del final de T2, o el final de T1 está antes que el principio de T2, es decir, los intervalos no se solapan de ninguna forma, aunque su relación de orden no se conozca."@es ;
-        skos:note        "Esta relación entre intervalos no estaba incluida en las 13 relaciones básicas definidas por Allen (1984), pero está definida en T.3 como la unión de 'intervalo anterior' con 'intervalo posterior'. Sin embargo, esto está fuera de la expresividad de OWL2, por tanto, está implementado como una propiedad explícita, con 'intervalo anterior' e 'intervalo posterior' como sub-propiedades."@es .
+        skos:note        "Esta relación entre intervalos no estaba incluida en las 13 relaciones básicas definidas por Allen (1984), pero está definida en T.3 como la unión de 'intervalo anterior' con 'intervalo posterior'. Sin embargo, esto está fuera de la expresividad de OWL-2, por tanto, está implementado como una propiedad explícita, con 'intervalo anterior' e 'intervalo posterior' como sub-propiedades."@es .
 
 :TRS    
         rdfs:label       "sistema de referencia temporal"@es ;
@@ -1833,7 +1833,7 @@ l rango de esta propiedad no está especificado, por tanto, se puede reemplazar 
 :generalDay
         rdfs:label       "Día generalizado"@es ;
         skos:definition  """Día del mes - formulado como una cadena de texto con una restricción patrón para reproducir la misma forma léxica que gDay, excepto que se permiten valores hasta el 99, con el propósito de proporcionar soporte a calendarios con meses con más de 31 días.
-            Nótese que el espacio de valores no está definido, por tanto, un procesador genérico de OWL2 no puede computar relaciones de orden de valores de este tipo."""@es .
+            Nótese que el espacio de valores no está definido, por tanto, un procesador genérico de OWL-2 no puede computar relaciones de orden de valores de este tipo."""@es .
 
 :hasTemporalDuration
         rdfs:label       "tiene duración temporal"@es ;
@@ -1851,7 +1851,7 @@ l rango de esta propiedad no está especificado, por tanto, se puede reemplazar 
 :generalYear
         rdfs:label       "Año generalizado"@es ;
         skos:definition  """Número de año - formulado como una cadena de texto con una restricción patrón para reproducir la misma forma léxica que gYear, aunque no está restringido a valores del calendario gregoriano.
-            Nótese que el espacio de valores no está definido, por tanto, un procesador genérico de OWL2 no puede computar relaciones de orden de valores de este tipo."""@es .
+            Nótese que el espacio de valores no está definido, por tanto, un procesador genérico de OWL-2 no puede computar relaciones de orden de valores de este tipo."""@es .
 
 :hours  
         rdfs:label       "duración en horas"@es ;

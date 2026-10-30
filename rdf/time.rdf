@@ -3,9 +3,7 @@
     xmlns:dct="http://purl.org/dc/terms/"
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     xmlns="http://www.w3.org/2006/time#"
-    xmlns:obo="http://purl.obolibrary.org/obo/"
     xmlns:owl="http://www.w3.org/2002/07/owl#"
-    xmlns:cco="https://www.commoncoreontologies.org/"
     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
@@ -43,6 +41,11 @@ Ontology engineering by Simon J D Cox</skos:historyNote>
     <dct:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
   </owl:Ontology>
   <rdfs:Datatype rdf:ID="generalYear">
+    <skos:definition xml:lang="es">Número de año - formulado como una cadena de texto con una restricción patrón para reproducir la misma forma léxica que gYear, aunque no está restringido a valores del calendario gregoriano.&#xD;
+            Nótese que el espacio de valores no está definido, por tanto, un procesador genérico de OWL-2 no puede computar relaciones de orden de valores de este tipo.</skos:definition>
+    <skos:note xml:lang="en">&#xD;
+Note that the value-space is not defined, so a generic OWL-2 processor cannot compute ordering relationships of values of this type.&#xD;
+</skos:note>
     <owl:equivalentClass>
       <rdfs:Datatype>
         <owl:withRestrictions rdf:parseType="Collection">
@@ -53,18 +56,18 @@ Ontology engineering by Simon J D Cox</skos:historyNote>
         <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
       </rdfs:Datatype>
     </owl:equivalentClass>
-    <rdfs:label xml:lang="es">Año generalizado</rdfs:label>
-    <skos:note xml:lang="en">&#xD;
-Note that the value-space is not defined, so a generic OWL2 processor cannot compute ordering relationships of values of this type.&#xD;
-</skos:note>
     <skos:definition xml:lang="en">&#xD;
   Year number - formulated as a text string with a pattern constraint to reproduce the same lexical form as gYear, but not restricted to values from the Gregorian calendar. &#xD;
   </skos:definition>
-    <skos:definition xml:lang="es">Número de año - formulado como una cadena de texto con una restricción patrón para reproducir la misma forma léxica que gYear, aunque no está restringido a valores del calendario gregoriano.&#xD;
-            Nótese que el espacio de valores no está definido, por tanto, un procesador genérico de OWL2 no puede computar relaciones de orden de valores de este tipo.</skos:definition>
+    <rdfs:label xml:lang="es">Año generalizado</rdfs:label>
     <rdfs:label xml:lang="en">Generalized year</rdfs:label>
   </rdfs:Datatype>
   <rdfs:Datatype rdf:ID="generalMonth">
+    <skos:definition xml:lang="es">Mes del año - formulado como una cadena de texto con una restricción patrón para reproducir la misma forma léxica que gMonth, excepto que se permiten valores hasta el 20, con el propósito de proporcionar soporte a calendarios con años con más de 12 meses.&#xD;
+            Nótese que el espacio de valores no está definido, por tanto, un procesador genérico de OWL-2 no puede computar relaciones de orden de valores de este tipo.</skos:definition>
+    <skos:note xml:lang="en">&#xD;
+  the value-space is not defined, so a generic OWL-2 processor cannot compute ordering relationships of values of this type.&#xD;
+  </skos:note>
     <owl:equivalentClass>
       <rdfs:Datatype>
         <owl:withRestrictions rdf:parseType="Collection">
@@ -75,18 +78,18 @@ Note that the value-space is not defined, so a generic OWL2 processor cannot com
         <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
       </rdfs:Datatype>
     </owl:equivalentClass>
-    <rdfs:label xml:lang="es">Mes generalizado</rdfs:label>
-    <skos:note xml:lang="en">&#xD;
-  the value-space is not defined, so a generic OWL2 processor cannot compute ordering relationships of values of this type.&#xD;
-  </skos:note>
     <skos:definition xml:lang="en">&#xD;
   Month of year - formulated as a text string with a pattern constraint to reproduce the same lexical form as gMonth, except that values up to 20 are permitted, in order to support calendars with more than 12 months in the year. &#xD;
   </skos:definition>
-    <skos:definition xml:lang="es">Mes del año - formulado como una cadena de texto con una restricción patrón para reproducir la misma forma léxica que gMonth, excepto que se permiten valores hasta el 20, con el propósito de proporcionar soporte a calendarios con años con más de 12 meses.&#xD;
-            Nótese que el espacio de valores no está definido, por tanto, un procesador genérico de OWL2 no puede computar relaciones de orden de valores de este tipo.</skos:definition>
+    <rdfs:label xml:lang="es">Mes generalizado</rdfs:label>
     <rdfs:label xml:lang="en">Generalized month</rdfs:label>
   </rdfs:Datatype>
   <rdfs:Datatype rdf:ID="generalDay">
+    <skos:definition xml:lang="es">Día del mes - formulado como una cadena de texto con una restricción patrón para reproducir la misma forma léxica que gDay, excepto que se permiten valores hasta el 99, con el propósito de proporcionar soporte a calendarios con meses con más de 31 días.&#xD;
+            Nótese que el espacio de valores no está definido, por tanto, un procesador genérico de OWL-2 no puede computar relaciones de orden de valores de este tipo.</skos:definition>
+    <skos:note xml:lang="en">&#xD;
+  the value-space is not defined, so a generic OWL-2 processor cannot compute ordering relationships of values of this type.&#xD;
+  </skos:note>
     <owl:equivalentClass>
       <rdfs:Datatype>
         <owl:withRestrictions rdf:parseType="Collection">
@@ -97,15 +100,10 @@ Note that the value-space is not defined, so a generic OWL2 processor cannot com
         <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
       </rdfs:Datatype>
     </owl:equivalentClass>
-    <rdfs:label xml:lang="es">Día generalizado</rdfs:label>
-    <skos:note xml:lang="en">&#xD;
-  the value-space is not defined, so a generic OWL2 processor cannot compute ordering relationships of values of this type.&#xD;
-  </skos:note>
     <skos:definition xml:lang="en">&#xD;
   Day of month - formulated as a text string with a pattern constraint to reproduce the same lexical form as gDay, except that values up to 99 are permitted, in order to support calendars with more than 31 days in a month. &#xD;
   </skos:definition>
-    <skos:definition xml:lang="es">Día del mes - formulado como una cadena de texto con una restricción patrón para reproducir la misma forma léxica que gDay, excepto que se permiten valores hasta el 99, con el propósito de proporcionar soporte a calendarios con meses con más de 31 días.&#xD;
-            Nótese que el espacio de valores no está definido, por tanto, un procesador genérico de OWL2 no puede computar relaciones de orden de valores de este tipo.</skos:definition>
+    <rdfs:label xml:lang="es">Día generalizado</rdfs:label>
     <rdfs:label xml:lang="en">Generalized day</rdfs:label>
   </rdfs:Datatype>
   <owl:Class rdf:ID="DayOfWeek">
@@ -113,7 +111,7 @@ Note that the value-space is not defined, so a generic OWL2 processor cannot com
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="week"/>
+          <owl:DatatypeProperty rdf:ID="month"/>
         </owl:onProperty>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >0</owl:cardinality>
@@ -122,7 +120,26 @@ Note that the value-space is not defined, so a generic OWL2 processor cannot com
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="month"/>
+          <owl:DatatypeProperty rdf:ID="year"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >0</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="second"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >0</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <skos:note xml:lang="en">Membership of the class :DayOfWeek is open, to allow for alternative week lengths and different day names.</skos:note>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="minute"/>
         </owl:onProperty>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >0</owl:cardinality>
@@ -137,7 +154,41 @@ Note that the value-space is not defined, so a generic OWL2 processor cannot com
         >1</owl:cardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <skos:note xml:lang="en">Membership of the class :DayOfWeek is open, to allow for alternative week lengths and different day names.</skos:note>
+    <skos:changeNote xml:lang="en">Remove enumeration from definition, in order to allow other days to be used when required in other calendars. &#xD;
+NOTE: existing days are still present as members of the class, but the class membership is now open. &#xD;
+&#xD;
+In the original OWL-Time the following constraint appeared: &#xD;
+  owl:oneOf (&#xD;
+      time:Monday&#xD;
+      time:Tuesday&#xD;
+      time:Wednesday&#xD;
+      time:Thursday&#xD;
+      time:Friday&#xD;
+      time:Saturday&#xD;
+      time:Sunday&#xD;
+    ) ;</skos:changeNote>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="hour"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >0</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="week"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >0</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <skos:note xml:lang="es">La pertenencia a la clase 'día de la semana' está abierta, para permitir longitudes de semana alternativas y diferentes nombres de días.</skos:note>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="DateTimeDescription"/>
+    </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -176,61 +227,8 @@ Note that the value-space is not defined, so a generic OWL2 processor cannot com
         </owl:hasValue>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <skos:changeNote xml:lang="en">Remove enumeration from definition, in order to allow other days to be used when required in other calendars. &#xD;
-NOTE: existing days are still present as members of the class, but the class membership is now open. &#xD;
-&#xD;
-In the original OWL-Time the following constraint appeared: &#xD;
-  owl:oneOf (&#xD;
-      time:Monday&#xD;
-      time:Tuesday&#xD;
-      time:Wednesday&#xD;
-      time:Thursday&#xD;
-      time:Friday&#xD;
-      time:Saturday&#xD;
-      time:Sunday&#xD;
-    ) ;</skos:changeNote>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="second"/>
-        </owl:onProperty>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >0</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <skos:note xml:lang="es">La pertenencia a la clase 'día de la semana' está abierta, para permitir longitudes de semana alternativas y diferentes nombres de días.</skos:note>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="minute"/>
-        </owl:onProperty>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >0</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Class rdf:ID="DateTimeDescription"/>
-    </rdfs:subClassOf>
     <rdfs:label xml:lang="es">día de la semana</rdfs:label>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="hour"/>
-        </owl:onProperty>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >0</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
     <skos:definition xml:lang="es">El día de la semana</skos:definition>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="year"/>
-        </owl:onProperty>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >0</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
     <rdfs:label xml:lang="en">Day of week</rdfs:label>
   </owl:Class>
   <owl:Class rdf:ID="Duration">
@@ -238,15 +236,6 @@ In the original OWL-Time the following constraint appeared: &#xD;
       <owl:Class rdf:ID="TemporalDuration"/>
     </rdfs:subClassOf>
     <skos:definition xml:lang="en">temporal duration expressed as a number scaled by a temporal unit</skos:definition>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="numericDuration"/>
-        </owl:onProperty>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -261,6 +250,15 @@ In the original OWL-Time the following constraint appeared: &#xD;
     <skos:note xml:lang="es">Alternativa a 'descripción de tiempo' para proporcionar descripción soporte a una duración temporal diferente a utilizar un sistema de calendario/reloj.</skos:note>
     <rdfs:label xml:lang="en">Time duration</rdfs:label>
     <skos:definition xml:lang="es">Duración de una extensión temporal expresada como un número escalado por una unidad temporal.</skos:definition>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="numericDuration"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:ID="DateTimeInterval">
     <skos:note xml:lang="es">'intervalo de fecha-hora' se puede utilizar sólo para un intervalo cuyos límites coinciden con un elemento de fecha-hora alineados con el calendario y la zona horaria indicados. Por ejemplo, aunque ambos tienen una duración de un día, el intervalo de 24 horas que empieza en la media noche del comienzo del 8 mayo en Europa Central se puede expresar como un 'intervalo de fecha-hora', el intervalo de 24 horas que empieza a las 1:30pm no.</skos:note>
@@ -306,12 +304,12 @@ Detailed guidance about working with time zones is given in http://www.w3.org/TR
     <rdfs:label xml:lang="es">huso horario</rdfs:label>
   </owl:Class>
   <owl:Class rdf:about="#ProperInterval">
+    <skos:definition xml:lang="en">interval whose beginning and end are not coincident</skos:definition>
     <rdfs:label xml:lang="es">intervalo propio</rdfs:label>
-    <skos:definition xml:lang="en">interval whose beginning and end are not identical</skos:definition>
+    <skos:definition xml:lang="es">Una entidad temporal con extensión o duración distinta de cero, es decir, para la cual los valores de principio y fin del intervalo son diferentes.</skos:definition>
     <owl:disjointWith>
       <owl:Class rdf:ID="Instant"/>
     </owl:disjointWith>
-    <skos:definition xml:lang="es">Una entidad temporal con extensión o duración distinta de cero, es decir, para la cual los valores de principio y fin del intervalo son diferentes.</skos:definition>
     <rdfs:subClassOf>
       <owl:Class rdf:ID="Interval"/>
     </rdfs:subClassOf>
@@ -319,33 +317,15 @@ Detailed guidance about working with time zones is given in http://www.w3.org/TR
   </owl:Class>
   <owl:Class rdf:ID="MonthOfYear">
     <skos:editorialNote xml:lang="es">Característica en riesgo - añadida en la revisión de 2017, y no utilizada todavía de forma amplia.</skos:editorialNote>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#minute"/>
-        </owl:onProperty>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >0</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
     <skos:note xml:lang="en">Membership of the class :MonthOfYear is open, to allow for alternative annual calendars and different month names.</skos:note>
     <rdfs:label xml:lang="en">Month of year</rdfs:label>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#week"/>
+          <owl:DatatypeProperty rdf:about="#day"/>
         </owl:onProperty>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >0</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#month"/>
-        </owl:onProperty>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
@@ -390,6 +370,42 @@ Detailed guidance about working with time zones is given in http://www.w3.org/TR
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#year"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >0</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#minute"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >0</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#week"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >0</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#month"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
           <owl:DatatypeProperty rdf:about="#hour"/>
         </owl:onProperty>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
@@ -407,33 +423,15 @@ Detailed guidance about working with time zones is given in http://www.w3.org/TR
       </owl:Restriction>
     </rdfs:subClassOf>
     <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#day"/>
-        </owl:onProperty>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >0</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
       <owl:Class rdf:about="#DateTimeDescription"/>
     </rdfs:subClassOf>
     <skos:definition xml:lang="en">date-time description specifying a month of a year</skos:definition>
     <rdfs:label xml:lang="es">mes del año</rdfs:label>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#year"/>
-        </owl:onProperty>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >0</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
     <skos:note xml:lang="es">La pertenencia a la clase 'mes del año' está abierta, a permitir calendarios anuales alternativos y diferentes nombres de meses.</skos:note>
   </owl:Class>
   <owl:Class rdf:about="#Instant">
+    <skos:definition xml:lang="en">temporal entity with zero extent (duration)</skos:definition>
     <rdfs:label xml:lang="es">instante de tiempo.</rdfs:label>
-    <skos:definition xml:lang="en">temporal entity with zero extent or duration</skos:definition>
     <skos:definition xml:lang="es">Una entidad temporal con una extensión o duración cero.</skos:definition>
     <rdfs:subClassOf>
       <owl:Class rdf:ID="TemporalEntity"/>
@@ -441,9 +439,16 @@ Detailed guidance about working with time zones is given in http://www.w3.org/TR
     <rdfs:label xml:lang="en">Time instant</rdfs:label>
   </owl:Class>
   <owl:Class rdf:about="#DateTimeDescription">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#day"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#gDay"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
     <rdfs:label xml:lang="es">descripción de fecha-tiempo</rdfs:label>
     <rdfs:label xml:lang="en">Date-Time description</rdfs:label>
-    <skos:note xml:lang="en">An individual :DateTimeDescription is a description of an interval whose duration is its :unitType.</skos:note>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -452,8 +457,7 @@ Detailed guidance about working with time zones is given in http://www.w3.org/TR
         <owl:hasValue rdf:resource="http://www.opengis.net/def/uom/ISO-8601/0/Gregorian"/>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <skos:definition xml:lang="en">date and time expressed as a structure with separate values for the various elements of a calendar-clock system. The temporal reference system is fixed to Gregorian Calendar, and the range of year, month, day properties are restricted to the corresponding XML Schema types xsd:gYear, xsd:gMonth and xsd:gDay, respectively.</skos:definition>
-    <skos:definition xml:lang="es">Descripción de fecha y tiempo estructurada con valores separados para los diferentes elementos de un sistema calendario-reloj. El sistema de referencia temporal está fijado al calendario gregoriano, y el rango de las propiedades año, mes, día restringidas a los correspondientes tipos del XML Schema xsd:gYear, xsd:gMonth y xsd:gDay respectivamente.</skos:definition>
+    <skos:note xml:lang="en">An individual :DateTimeDescription is a description of an interval whose duration is its :unitType.</skos:note>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -462,6 +466,8 @@ Detailed guidance about working with time zones is given in http://www.w3.org/TR
         <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#gYear"/>
       </owl:Restriction>
     </rdfs:subClassOf>
+    <skos:definition xml:lang="en">date and time expressed as a structure with separate values for the various elements of a calendar-clock system. The temporal reference system is fixed to Gregorian Calendar, and the range of year, month, day properties are restricted to the corresponding XML Schema types xsd:gYear, xsd:gMonth and xsd:gDay, respectively.</skos:definition>
+    <skos:definition xml:lang="es">Descripción de fecha y tiempo estructurada con valores separados para los diferentes elementos de un sistema calendario-reloj. El sistema de referencia temporal está fijado al calendario gregoriano, y el rango de las propiedades año, mes, día restringidas a los correspondientes tipos del XML Schema xsd:gYear, xsd:gMonth y xsd:gDay respectivamente.</skos:definition>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -472,14 +478,6 @@ Detailed guidance about working with time zones is given in http://www.w3.org/TR
     </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Class rdf:ID="GeneralDateTimeDescription"/>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#day"/>
-        </owl:onProperty>
-        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#gDay"/>
-      </owl:Restriction>
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:about="#TemporalEntity">
@@ -494,55 +492,6 @@ Detailed guidance about working with time zones is given in http://www.w3.org/TR
     <rdfs:label xml:lang="en">Temporal entity</rdfs:label>
   </owl:Class>
   <owl:Class rdf:ID="DurationDescription">
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="months"/>
-        </owl:onProperty>
-        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <skos:definition xml:lang="en">temporal duration expressed as a structure with separate values for the various elements of a calendar-clock system. The temporal reference system is fixed to Gregorian Calendar, and the range of each of the numeric properties is restricted to xsd:decimal</skos:definition>
-    <rdfs:label xml:lang="es">descripción de duración</rdfs:label>
-    <skos:note xml:lang="en">In the Gregorian calendar the length of the month is not fixed. Therefore, a value like "2.5 months" cannot be exactly compared with a similar duration expressed in terms of weeks or days.</skos:note>
-    <rdfs:subClassOf>
-      <owl:Class rdf:ID="GeneralDurationDescription"/>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="days"/>
-        </owl:onProperty>
-        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <skos:note xml:lang="es">En el calendario gregoriano la longitud de los meses no es fija. Por lo tanto, un valor como "2,5 meses" no se puede comparar exactamente con una duración similar expresada en términos de semanas o días.</skos:note>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="seconds"/>
-        </owl:onProperty>
-        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <skos:definition xml:lang="es">Descripción de extensión temporal estructurada con valores separados para los distintos elementos de un sistema de horario-calendario. El sistema de referencia temporal se fija al calendario gregoriano, y el intervalo de cada una de las propiedades numéricas se restringe a xsd:decimal.</skos:definition>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasTRS"/>
-        </owl:onProperty>
-        <owl:hasValue rdf:resource="http://www.opengis.net/def/uom/ISO-8601/0/Gregorian"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="en">Duration description</rdfs:label>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="years"/>
-        </owl:onProperty>
-        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-      </owl:Restriction>
-    </rdfs:subClassOf>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -562,79 +511,66 @@ Detailed guidance about working with time zones is given in http://www.w3.org/TR
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="months"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <skos:definition xml:lang="en">temporal duration expressed as a structure with separate values for the various elements of a calendar-clock system. The temporal reference system is fixed to Gregorian Calendar, and the range of each of the numeric properties is restricted to xsd:decimal</skos:definition>
+    <rdfs:label xml:lang="es">descripción de duración</rdfs:label>
+    <skos:note xml:lang="en">In the Gregorian calendar the length of the month is not fixed. Therefore, a value like "2.5 months" cannot be exactly compared with a similar duration expressed in terms of weeks or days.</skos:note>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
           <owl:DatatypeProperty rdf:ID="hours"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="GeneralDurationDescription"/>
+    </rdfs:subClassOf>
+    <skos:note xml:lang="es">En el calendario gregoriano la longitud de los meses no es fija. Por lo tanto, un valor como "2,5 meses" no se puede comparar exactamente con una duración similar expresada en términos de semanas o días.</skos:note>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="years"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <skos:definition xml:lang="es">Descripción de extensión temporal estructurada con valores separados para los distintos elementos de un sistema de horario-calendario. El sistema de referencia temporal se fija al calendario gregoriano, y el intervalo de cada una de las propiedades numéricas se restringe a xsd:decimal.</skos:definition>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="days"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Duration description</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasTRS"/>
+        </owl:onProperty>
+        <owl:hasValue rdf:resource="http://www.opengis.net/def/uom/ISO-8601/0/Gregorian"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="seconds"/>
         </owl:onProperty>
         <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
       </owl:Restriction>
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:about="#GeneralDurationDescription">
-    <skos:note xml:lang="es">La extensión de una duración de tiempo expresada como una 'descripción de duración general' depende del Sistema de Referencia Temporal. En algunos calendarios la longitud de la semana o del mes no es constante a lo largo del año. Por tanto, un valor como "25 meses" puede no ser necesariamente ser comparado con un duración similar expresada en términos de semanas o días. Cuando se consideran calendarios que no están basados en el movimiento de la Tierra, se deben tomar incluso más precauciones en la comparación de duraciones.</skos:note>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#months"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#hasTRS"/>
-        </owl:onProperty>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#days"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <skos:definition xml:lang="es">Descripción de extensión temporal estructurada con valores separados para los distintos elementos de un sistema de horario-calendario.</skos:definition>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
           <owl:DatatypeProperty rdf:about="#hours"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Class rdf:about="#TemporalDuration"/>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#weeks"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#years"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="es">descripción de duración generalizada</rdfs:label>
-    <skos:note xml:lang="en">The extent of a time duration expressed as a GeneralDurationDescription depends on the Temporal Reference System. In some calendars the length of the week or month is not constant within the year. Therefore, a value like "2.5 months" may not necessarily be exactly compared with a similar duration expressed in terms of weeks or days. When non-earth-based calendars are considered even more care must be taken in comparing durations.</skos:note>
-    <rdfs:label xml:lang="en">Generalized duration description</rdfs:label>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#seconds"/>
         </owl:onProperty>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:maxCardinality>
@@ -649,19 +585,72 @@ Detailed guidance about working with time zones is given in http://www.w3.org/TR
         >1</owl:maxCardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <skos:definition xml:lang="en">temporal duration expressed as a structure with separate values for the various elements of a calendar-clock system.</skos:definition>
-  </owl:Class>
-  <owl:Class rdf:about="#GeneralDateTimeDescription">
-    <skos:note xml:lang="es">Algunas combinaciones de propiedades son redundantes - por ejemplo, dentro de un 'año' especificado si se proporciona 'día del año' entonces 'día' y 'mes' se pueden computar, y viceversa. Los valores individuales deberían ser consistentes entre ellos y con el calendario, indicado a través del valor de la propiedad 'tiene TRS'.</skos:note>
+    <skos:note xml:lang="es">La extensión de una duración de tiempo expresada como una 'descripción de duración general' depende del Sistema de Referencia Temporal. En algunos calendarios la longitud de la semana o del mes no es constante a lo largo del año. Por tanto, un valor como "25 meses" puede no ser necesariamente ser comparado con un duración similar expresada en términos de semanas o días. Cuando se consideran calendarios que no están basados en el movimiento de la Tierra, se deben tomar incluso más precauciones en la comparación de duraciones.</skos:note>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
-          <owl:ObjectProperty rdf:about="#unitType"/>
+          <owl:DatatypeProperty rdf:about="#years"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#seconds"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#months"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <skos:definition xml:lang="es">Descripción de extensión temporal estructurada con valores separados para los distintos elementos de un sistema de horario-calendario.</skos:definition>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#TemporalDuration"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="es">descripción de duración generalizada</rdfs:label>
+    <skos:note xml:lang="en">The extent of a time duration expressed as a GeneralDurationDescription depends on the Temporal Reference System. In some calendars the length of the week or month is not constant within the year. Therefore, a value like "2.5 months" may not necessarily be exactly compared with a similar duration expressed in terms of weeks or days. When non-earth-based calendars are considered even more care must be taken in comparing durations.</skos:note>
+    <rdfs:label xml:lang="en">Generalized duration description</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#hasTRS"/>
         </owl:onProperty>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:cardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
+    <skos:definition xml:lang="en">temporal duration expressed as a structure with separate values for the various elements of a calendar-clock system.</skos:definition>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#weeks"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#days"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#GeneralDateTimeDescription">
+    <skos:note xml:lang="es">Algunas combinaciones de propiedades son redundantes - por ejemplo, dentro de un 'año' especificado si se proporciona 'día del año' entonces 'día' y 'mes' se pueden computar, y viceversa. Los valores individuales deberían ser consistentes entre ellos y con el calendario, indicado a través del valor de la propiedad 'tiene TRS'.</skos:note>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -674,50 +663,16 @@ Detailed guidance about working with time zones is given in http://www.w3.org/TR
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#hour"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#second"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Class rdf:ID="TemporalPosition"/>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:ID="dayOfYear"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:label xml:lang="es">descripción de fecha-hora generalizada</rdfs:label>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#year"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <skos:note>Some combinations of properties are redundant - for example, within a specified :year if :dayOfYear is provided then :day and :month can be computed, and vice versa. Individual values should be consistent with each other and the calendar, indicated through the value of the :hasTRS property.</skos:note>
-    <rdfs:label xml:lang="en">Generalized date-time description</rdfs:label>
-    <skos:definition>Descripción de fecha y hora estructurada con valores separados para los distintos elementos de un sistema calendario-reloj.</skos:definition>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
           <owl:ObjectProperty rdf:ID="monthOfYear"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="timeZone"/>
         </owl:onProperty>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:maxCardinality>
@@ -735,7 +690,16 @@ Detailed guidance about working with time zones is given in http://www.w3.org/TR
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
-          <owl:DatatypeProperty rdf:about="#day"/>
+          <owl:DatatypeProperty rdf:about="#second"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:ID="dayOfYear"/>
         </owl:onProperty>
         <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >1</owl:maxCardinality>
@@ -750,7 +714,48 @@ Detailed guidance about working with time zones is given in http://www.w3.org/TR
         >1</owl:maxCardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <skos:definition xml:lang="en">temporal position expressed as a structure with separate values for the various elements of a calendar-clock system. An individual :GeneralDateTimeDescription defines an interval whose duration is its :unitType</skos:definition>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#year"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="TemporalPosition"/>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="es">descripción de fecha-hora generalizada</rdfs:label>
+    <skos:note>Some combinations of properties are redundant - for example, within a specified :year if :dayOfYear is provided then :day and :month can be computed, and vice versa. Individual values should be consistent with each other and the calendar, indicated through the value of the :hasTRS property.</skos:note>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#day"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#hour"/>
+        </owl:onProperty>
+        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:maxCardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="#unitType"/>
+        </owl:onProperty>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:label xml:lang="en">Generalized date-time description</rdfs:label>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty>
@@ -760,15 +765,8 @@ Detailed guidance about working with time zones is given in http://www.w3.org/TR
         >1</owl:maxCardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty>
-          <owl:ObjectProperty rdf:ID="timeZone"/>
-        </owl:onProperty>
-        <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >1</owl:maxCardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
+    <skos:definition>Descripción de fecha y hora estructurada con valores separados para los distintos elementos de un sistema calendario-reloj.</skos:definition>
+    <skos:definition xml:lang="en">temporal position expressed as a structure with separate values for the various elements of a calendar-clock system. An individual :GeneralDateTimeDescription defines an interval whose duration is its :unitType</skos:definition>
   </owl:Class>
   <owl:Class rdf:ID="TRS">
     <skos:note xml:lang="es">En el ISO 19108:2002 [ISO19108] se proporciona una taxonomía de sistemas de referencia temporal, incluyendo (a) sistemas de calendario + reloj; (b) sistemas de coordenadas temporales (es decir, desplazamiento numérico a partir de una época); (c) sistemas de referencia ordinales temporales (es decir, secuencia ordenada de intervalos nombrados, no necesariamente de igual duración).</skos:note>
@@ -826,9 +824,9 @@ This is a stub class, representing the set of all temporal reference systems.</s
     <rdfs:label xml:lang="en">Temporal position</rdfs:label>
   </owl:Class>
   <owl:Class rdf:about="#Interval">
-    <skos:definition xml:lang="es">Una entidad temporal con una extensión o duración.</skos:definition>
+    <skos:definition xml:lang="en">temporal entity with a non-zero extent (duration)</skos:definition>
     <rdfs:label xml:lang="es">intervalo de tiempo</rdfs:label>
-    <skos:definition xml:lang="en">temporal entity with a non-zero extent or duration</skos:definition>
+    <skos:definition xml:lang="es">Una entidad temporal con una extensión o duración.</skos:definition>
     <rdfs:subClassOf rdf:resource="#TemporalEntity"/>
     <rdfs:label xml:lang="en">Time interval</rdfs:label>
   </owl:Class>
@@ -870,43 +868,44 @@ In the original OWL-Time the following constraint appeared: &#xD;
     <rdfs:domain rdf:resource="#DateTimeInterval"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="notDisjoint">
-    <skos:definition xml:lang="en">If a temporal entity T1 is notDisjoint with another temporal entity T2, then the two entities overlap or coincide in some way, but their ordering relationship is not known.</skos:definition>
-    <skos:note xml:lang="en">This relation is the complement of :disjoint and is the disjoint union of equals, whollyContains, intervalNotDisjoint. However, that is outside OWL2 expressivity, so is implemented as an explicit property, with equals, whollyContains, intervalNotDisjoint as sub-properties</skos:note>
+    <skos:note xml:lang="en">This relation is the complement of :disjoint and is the disjoint union of equals, whollyContains, intervalNotDisjoint. However, that is outside OWL-2 expressivity, so is implemented as an explicit property, with equals, whollyContains, intervalNotDisjoint as sub-properties</skos:note>
+    <skos:definition xml:lang="en">If T1 :notDisjoint T2, then the two temporal entities overlap or coincide in some way, but their ordering relationship is not known.</skos:definition>
     <rdfs:range rdf:resource="#TemporalEntity"/>
     <rdfs:label>not disjoint with temporal entity</rdfs:label>
     <rdfs:domain rdf:resource="#TemporalEntity"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="intervalMeets">
-    <skos:definition xml:lang="en">If a proper interval T1 is intervalMeets another proper interval T2, then the end of T1 is coincident with the beginning of T2.</skos:definition>
+    <skos:definition xml:lang="en">If T1 :intervalMeets T2, then the end of T1 is coincident with the beginning of T2.</skos:definition>
+    <rdfs:label xml:lang="es">intervalo se encuentra</rdfs:label>
+    <skos:definition xml:lang="es">Si un intervalo propio T1 se encuentra con otro intervalo propio T2, entonces el final de T1 coincide con el principio de T2.</skos:definition>
     <owl:inverseOf>
       <owl:ObjectProperty rdf:ID="intervalMetBy"/>
     </owl:inverseOf>
     <rdfs:range rdf:resource="#ProperInterval"/>
+    <rdfs:label xml:lang="en">interval meets</rdfs:label>
     <rdfs:domain rdf:resource="#ProperInterval"/>
     <rdfs:subPropertyOf>
       <owl:ObjectProperty rdf:ID="intervalDisjoint"/>
     </rdfs:subPropertyOf>
-    <rdfs:label xml:lang="es">intervalo se encuentra</rdfs:label>
-    <rdfs:label xml:lang="en">interval meets</rdfs:label>
-    <skos:definition xml:lang="es">Si un intervalo propio T1 se encuentra con otro intervalo propio T2, entonces el final de T1 coincide con el principio de T2.</skos:definition>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="intervalWhollyContainedBy">
     <skos:definition xml:lang="es">Si un intervalo propio T1 es un intervalo interior a otro intervalo propio T2, entonces el principio de T1 está después del principio de T2 o coincide con el principio de T2, y el final de T1 está antes que el final de T2, o coincide con el final de T2, excepto que el final de T1 puede no coincidir con el final de T2 si el principio de T1 coincide con el principio de T2.</skos:definition>
-    <skos:note xml:lang="en">This interval relation is not included in the 13 basic relationships defined in Allen (1984), but is referred to as 'an important relationship' in Allen and Ferguson (1997). It is the disjoint union of :intervalStarts v :intervalDuring v :intervalFinishes . However, that is outside OWL2 expressivity, so is implemented as an explicit property, with :intervalStarts , :intervalDuring , :intervalFinishes as sub-properties</skos:note>
     <owl:inverseOf>
       <owl:ObjectProperty rdf:ID="intervalWhollyContains"/>
     </owl:inverseOf>
+    <skos:note xml:lang="en">This interval relation is not included in the 13 basic relationships defined in Allen (1984), but is referred to as 'an important relationship' in Allen and Ferguson (1997). It is the disjoint union of :intervalStarts v :intervalDuring v :intervalFinishes . However, that is outside OWL-2 expressivity, so is implemented as an explicit property, with :intervalStarts , :intervalDuring , :intervalFinishes as sub-properties</skos:note>
     <rdfs:subPropertyOf>
       <owl:ObjectProperty rdf:ID="intervalNotDisjoint"/>
     </rdfs:subPropertyOf>
+    <skos:definition xml:lang="en">If T1 :intervalWhollyContainedBy T2, then the beginning of T1 is after the beginning of T2 or is coincident with the beginning of T2, and the end of T1 is before the end of T2, or is coincident with the end of T2, except that end of T1 may not be coincident with the end of T2 if the beginning of T1 is coincident with the beginning of T2.</skos:definition>
+    <skos:note xml:lang="es">Esta relación entre intervalos no estaba incluida en las 13 relaciones básicas definidas por Allen (1984), pero se hace referencia a ella como "una relación importante" en Allen y Ferguson (1997). Es la unión disjunta de 'intervalo empieza', 'intervalo durante' y con 'intervalo termina'. Sin embargo, esto está fuera de la expresividad de OWL-2, por tanto, se implementa como una propiedad explícita, con 'intervalo empieza', 'intervalo durante' e 'intervalo termina' como sub-propiedades.</skos:note>
     <rdfs:label xml:lang="es">intervalo interior</rdfs:label>
     <rdfs:range rdf:resource="#ProperInterval"/>
     <rdfs:label xml:lang="en">interval wholly contained by</rdfs:label>
-    <skos:note xml:lang="es">Esta relación entre intervalos no estaba incluida en las 13 relaciones básicas definidas por Allen (1984), pero se hace referencia a ella como "una relación importante" en Allen y Ferguson (1997). Es la unión disjunta de 'intervalo empieza', 'intervalo durante' y con 'intervalo termina'. Sin embargo, esto está fuera de la expresividad de OWL2, por tanto, se implementa como una propiedad explícita, con 'intervalo empieza', 'intervalo durante' e 'intervalo termina' como sub-propiedades.</skos:note>
     <rdfs:domain rdf:resource="#ProperInterval"/>
-    <skos:definition xml:lang="en">If a proper interval T1 is intervalWhollyContainedBy another proper interval T2, then the beginning of T1 is after the beginning of T2 or is coincident with the beginning of T2, and the end of T1 is before the end of T2, or is coincident with the end of T2, except that end of T1 may not be coincident with the end of T2 if the beginning of T1 is coincident with the beginning of T2.</skos:definition>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="intervalBefore">
+    <skos:definition xml:lang="en">If T1 :intervalBefore T2, then the end of T1 is before the beginning of T2.</skos:definition>
     <rdfs:label xml:lang="en">interval before</rdfs:label>
     <rdfs:subPropertyOf>
       <owl:ObjectProperty rdf:about="#intervalDisjoint"/>
@@ -914,7 +913,6 @@ In the original OWL-Time the following constraint appeared: &#xD;
     <skos:definition xml:lang="es">Si un intervalo propio T1 está antes que otro intervalo propio T2, entonces el final de T1 está antes que el principio de T2.</skos:definition>
     <rdfs:range rdf:resource="#ProperInterval"/>
     <rdfs:domain rdf:resource="#ProperInterval"/>
-    <skos:definition xml:lang="en">If a proper interval T1 is intervalBefore another proper interval T2, then the end of T1 is before the beginning of T2.</skos:definition>
     <rdfs:subPropertyOf>
       <owl:TransitiveProperty rdf:ID="before"/>
     </rdfs:subPropertyOf>
@@ -932,44 +930,44 @@ In the original OWL-Time the following constraint appeared: &#xD;
     <rdfs:domain rdf:resource="#TemporalEntity"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#intervalWhollyContains">
-    <rdfs:domain rdf:resource="#ProperInterval"/>
-    <skos:note xml:lang="en">This relation is the disjoint union of startedBy, contains, finshedBy. However, that is outside OWL2 expressivity, so is implemented as an explicit property, with startedBy, contains, finshedBy as sub-properties</skos:note>
+    <skos:note xml:lang="en">This relation is the disjoint union of startedBy, contains, finshedBy. However, that is outside OWL-2 expressivity, so is implemented as an explicit property, with startedBy, contains, finshedBy as sub-properties</skos:note>
+    <skos:definition xml:lang="en">If T1 :intervalWhollyContains T2, then the beginning of T1 is coincident with or before the beginning of T2, and the end of T1 is concident with or after the end of T2, except that end of T1 may not be coincident with the end of T2 if the beginning of T1 is coincident with the beginning of T2.</skos:definition>
+    <owl:inverseOf rdf:resource="#intervalWhollyContainedBy"/>
     <rdfs:range rdf:resource="#ProperInterval"/>
+    <rdfs:label>interval wholly contains</rdfs:label>
+    <rdfs:domain rdf:resource="#ProperInterval"/>
     <rdfs:subPropertyOf>
       <owl:ObjectProperty rdf:about="#intervalNotDisjoint"/>
     </rdfs:subPropertyOf>
     <rdfs:subPropertyOf>
       <owl:ObjectProperty rdf:ID="whollyContains"/>
     </rdfs:subPropertyOf>
-    <owl:inverseOf rdf:resource="#intervalWhollyContainedBy"/>
-    <rdfs:label>interval wholly contains</rdfs:label>
-    <skos:definition xml:lang="en">If a proper interval T1 intervalWhollyContains it another proper interval T2, then the beginning of T1 is coincident with or before the beginning of T2, and the end of T1 is concident with or after the end of T2, except that end of T1 may not be coincident with the end of T2 if the beginning of T1 is coincident with the beginning of T2.</skos:definition>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="intervalDuring">
+    <skos:definition xml:lang="en">If T1 :intervalDuring T2, then the beginning of T1 is after the beginning of T2, and the end of T1 is before the end of T2.</skos:definition>
     <rdfs:label xml:lang="es">intervalo durante</rdfs:label>
+    <skos:definition xml:lang="es">Si un intervalo propio T1 está durante otro intervalo propio T2, entonces del principio de T1 está después del principio de T2, y el final de T1 está antes que el final de T2.</skos:definition>
     <owl:inverseOf>
       <owl:ObjectProperty rdf:ID="intervalContains"/>
     </owl:inverseOf>
-    <skos:definition xml:lang="es">Si un intervalo propio T1 está durante otro intervalo propio T2, entonces del principio de T1 está después del principio de T2, y el final de T1 está antes que el final de T2.</skos:definition>
-    <rdfs:label xml:lang="en">interval during</rdfs:label>
-    <rdfs:subPropertyOf rdf:resource="#intervalWhollyContainedBy"/>
     <rdfs:range rdf:resource="#ProperInterval"/>
-    <skos:definition xml:lang="en">If a proper interval T1 is intervalDuring another proper interval T2, then the beginning of T1 is after the beginning of T2, and the end of T1 is before the end of T2.</skos:definition>
+    <rdfs:label xml:lang="en">interval during</rdfs:label>
     <rdfs:domain rdf:resource="#ProperInterval"/>
+    <rdfs:subPropertyOf rdf:resource="#intervalWhollyContainedBy"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="intervalEquals">
+    <skos:definition xml:lang="en">If T1 :intervalEquals T2, then the beginning of T1 is coincident with the beginning of T2, and the end of T1 is coincident with the end of T2, and the beginning of T1 is not concident with the end of T1.</skos:definition>
     <rdfs:label xml:lang="es">intervalo igual</rdfs:label>
-    <skos:definition xml:lang="en">If a proper interval T1 is intervalEquals another proper interval T2, then the beginning of T1 is coincident with the beginning of T2, and the end of T1 is coincident with the end of T2.</skos:definition>
+    <skos:definition xml:lang="es">Si un intervalo propio T1 es igual a otro intervalo propio T2, entonces el principio de T1 coincide con el principio de T2, y el final de T1 coincide con el final de T2.</skos:definition>
+    <rdfs:range rdf:resource="#ProperInterval"/>
+    <rdfs:label xml:lang="en">interval equals</rdfs:label>
+    <rdfs:domain rdf:resource="#ProperInterval"/>
     <rdfs:subPropertyOf>
       <owl:ObjectProperty rdf:about="#intervalNotDisjoint"/>
     </rdfs:subPropertyOf>
-    <rdfs:range rdf:resource="#ProperInterval"/>
     <rdfs:subPropertyOf>
       <owl:ObjectProperty rdf:ID="equals"/>
     </rdfs:subPropertyOf>
-    <rdfs:label xml:lang="en">interval equals</rdfs:label>
-    <skos:definition xml:lang="es">Si un intervalo propio T1 es igual a otro intervalo propio T2, entonces el principio de T1 coincide con el principio de T2, y el final de T1 coincide con el final de T2.</skos:definition>
-    <rdfs:domain rdf:resource="#ProperInterval"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#timeZone">
     <skos:note xml:lang="es">IANA mantiene una base de datos de husos horarios. Éstas están bien mantenidas y generalmente se consideran autorizadas, pero los ítems individuales no están disponibles en URIs individuales, por tanto, no se pueden utilizar directamente en datos expresados utilizando OWL-Time.&#xD;
@@ -1004,56 +1002,57 @@ DBPedia provides a set of resources corresponding to the IANA timezones, with a 
     <rdfs:label xml:lang="es">tipo de unidad temporal</rdfs:label>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="hasBeginning">
+    <skos:definition xml:lang="es">Comienzo de una entidad temporal.</skos:definition>
+    <rdfs:label xml:lang="es">tiene principio</rdfs:label>
+    <skos:definition xml:lang="en">First instant of a temporal entity.</skos:definition>
+    <rdfs:range rdf:resource="#Instant"/>
+    <rdfs:label xml:lang="en">has beginning</rdfs:label>
+    <rdfs:domain rdf:resource="#TemporalEntity"/>
     <rdfs:subPropertyOf>
       <owl:ObjectProperty rdf:ID="hasTime"/>
     </rdfs:subPropertyOf>
-    <rdfs:label xml:lang="en">has beginning</rdfs:label>
     <rdfs:subPropertyOf>
       <owl:ObjectProperty rdf:ID="disjoint"/>
     </rdfs:subPropertyOf>
-    <rdfs:label xml:lang="es">tiene principio</rdfs:label>
-    <rdfs:range rdf:resource="#Instant"/>
-    <rdfs:domain rdf:resource="#TemporalEntity"/>
-    <skos:definition xml:lang="es">Comienzo de una entidad temporal.</skos:definition>
-    <skos:definition xml:lang="en">First instant of a temporal entity.</skos:definition>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#intervalDisjoint">
     <rdfs:domain rdf:resource="#ProperInterval"/>
     <rdfs:range rdf:resource="#ProperInterval"/>
-    <skos:definition xml:lang="en">If a proper interval T1 is intervalDisjoint another proper interval T2, then the beginning of T1 is after the end of T2, or the end of T1 is before the beginning of T2, i.e., the intervals do not overlap in any way, but their ordering relationship is not known.</skos:definition>
     <rdfs:subPropertyOf>
       <owl:ObjectProperty rdf:about="#disjoint"/>
     </rdfs:subPropertyOf>
-    <skos:note xml:lang="en">This interval relation is not included in the 13 basic relationships defined in Allen (1984), but is defined as the union of :intervalBefore, :intervalAfter, :intervalMeets, intervalMetBy . However, that is outside OWL2 expressivity, so is implemented as an explicit property, with :intervalBefore, :intervalAfter, :intervalMeets, intervalMetBy as sub-properties</skos:note>
+    <skos:note xml:lang="en">This interval relation is not included in the 13 basic relationships defined in Allen (1984), but is defined as the union of :intervalBefore, :intervalAfter, :intervalMeets, intervalMetBy . However, that is outside OWL-2 expressivity, so is implemented as an explicit property, with :intervalBefore, :intervalAfter, :intervalMeets, intervalMetBy as sub-properties</skos:note>
+    <skos:note xml:lang="es">Esta relación entre intervalos no estaba incluida en las 13 relaciones básicas definidas por Allen (1984), pero está definida en T.3 como la unión de 'intervalo anterior' con 'intervalo posterior'. Sin embargo, esto está fuera de la expresividad de OWL-2, por tanto, está implementado como una propiedad explícita, con 'intervalo anterior' e 'intervalo posterior' como sub-propiedades.</skos:note>
+    <skos:definition xml:lang="en">If T1 :intervalDisjoint T2, then the beginning of T1 is after the end of T2, or the end of T1 is before the beginning of T2. The intervals do not overlap in any way, but their ordering relationship is not known.</skos:definition>
     <rdfs:label xml:lang="en">interval disjoint</rdfs:label>
     <skos:example>&#xD;
 ex:LunchTime :intervalDisjoint ex:NapTime .&#xD;
 </skos:example>
     <skos:definition xml:lang="es">Si un intervalo propio T1 es disjunto con otro intervalo propio T2, entonces el principio de T1 está después del final de T2, o el final de T1 está antes que el principio de T2, es decir, los intervalos no se solapan de ninguna forma, aunque su relación de orden no se conozca.</skos:definition>
     <rdfs:label xml:lang="es">intervalo disjunto</rdfs:label>
-    <skos:note xml:lang="es">Esta relación entre intervalos no estaba incluida en las 13 relaciones básicas definidas por Allen (1984), pero está definida en T.3 como la unión de 'intervalo anterior' con 'intervalo posterior'. Sin embargo, esto está fuera de la expresividad de OWL2, por tanto, está implementado como una propiedad explícita, con 'intervalo anterior' e 'intervalo posterior' como sub-propiedades.</skos:note>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#intervalContains">
-    <rdfs:subPropertyOf rdf:resource="#intervalWhollyContains"/>
+    <skos:definition xml:lang="en">If T1 :intervalContains T2, then the beginning of T1 is before the beginning of T2, and the end of T1 is after the end of T2.</skos:definition>
     <rdfs:label xml:lang="es">intervalo contiene</rdfs:label>
     <skos:definition xml:lang="es">Si un intervalo propio T1 contiene otro intervalo propio T2, entonces el principio de T1 está antes que el principio de T2, y el final de T1 está después del final de T2.</skos:definition>
-    <rdfs:domain rdf:resource="#ProperInterval"/>
-    <rdfs:label xml:lang="en">interval contains</rdfs:label>
-    <rdfs:range rdf:resource="#ProperInterval"/>
     <owl:inverseOf rdf:resource="#intervalDuring"/>
-    <skos:definition xml:lang="en">If a proper interval T1 is intervalContains another proper interval T2, then the beginning of T1 is before the beginning of T2, and the end of T1 is after the end of T2.</skos:definition>
+    <rdfs:range rdf:resource="#ProperInterval"/>
+    <rdfs:label xml:lang="en">interval contains</rdfs:label>
+    <rdfs:domain rdf:resource="#ProperInterval"/>
+    <rdfs:subPropertyOf rdf:resource="#intervalWhollyContains"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#equals">
+    <skos:definition xml:lang="en">If T1 :equals T2, then the beginning of T1 is coincident with the beginning of T2, and the end of T1 is coincident with the end of T2, and the beginning of T1 may be coincident with the end of T1.</skos:definition>
     <skos:example>&#xD;
 ex:SimonWeddingDay :equals ex:RichardWeddingAnniversary1999 .&#xD;
 </skos:example>
-    <skos:definition xml:lang="en">If a temporal entity T1 equals another temporal entity T2, then the beginning of T1 is coincident with the beginning of T2, and the end of T1 is coincident with the end of T2, and the beginning of T1 may be coincident with the end of T1.</skos:definition>
     <rdfs:range rdf:resource="#TemporalEntity"/>
     <rdfs:label>equal time entity</rdfs:label>
     <rdfs:domain rdf:resource="#TemporalEntity"/>
     <rdfs:subPropertyOf rdf:resource="#notDisjoint"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="after">
+    <skos:definition xml:lang="en">The subject is a temporal entity that occurs after the object. If T1 :after T2, then the beginning of T1 is after the end of T2.</skos:definition>
     <owl:inverseOf>
       <owl:TransitiveProperty rdf:about="#before"/>
     </owl:inverseOf>
@@ -1064,7 +1063,7 @@ ex:SimonWeddingDay :equals ex:RichardWeddingAnniversary1999 .&#xD;
     <rdfs:label xml:lang="es">después</rdfs:label>
     <rdfs:domain rdf:resource="#TemporalEntity"/>
     <skos:definition xml:lang="es">Asume una dirección en el tiempo. Si una entidad temporal T1 está después de otra entidad temporal T2, entonces el principio de T1 está después del final de T2.</skos:definition>
-    <skos:definition xml:lang="en">Gives directionality to time. If a temporal entity T1 is after another temporal entity T2, then the beginning of T1 is after the end of T2.</skos:definition>
+    <skos:definition xml:lang="es">Asume una dirección en el tiempo. Si T1 :after T2, entonces el principio de T1 está después del final de T2.</skos:definition>
     <rdfs:label xml:lang="en">is after</rdfs:label>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
   </owl:ObjectProperty>
@@ -1078,6 +1077,15 @@ ex:SimonWeddingDay :equals ex:RichardWeddingAnniversary1999 .&#xD;
     <rdfs:range rdf:resource="#TimePosition"/>
     <rdfs:label xml:lang="en">Time position</rdfs:label>
     <rdfs:domain rdf:resource="#Instant"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="timePertainsTo">
+    <skos:editorialNote xml:lang="en">Feature at risk - added in 2017 revision, and not yet widely used. </skos:editorialNote>
+    <skos:definition xml:lang="en">links a temporal entity (instant or interval) to anything</skos:definition>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="#hasTime"/>
+    </owl:inverseOf>
+    <rdfs:domain rdf:resource="#TemporalEntity"/>
+    <rdfs:label xml:lang="en">time pertains to</rdfs:label>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#hasTRS">
     <rdfs:domain>
@@ -1096,18 +1104,23 @@ ex:SimonWeddingDay :equals ex:RichardWeddingAnniversary1999 .&#xD;
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="inside">
+    <skos:definition xml:lang="en">If T1 :inside T2, then T1 is after the beginning of T2 and before the end of T2.</skos:definition>
     <rdfs:label xml:lang="es">tiene instante de tiempo dentro</rdfs:label>
-    <skos:definition xml:lang="en">If an instant T1 is inside an interval T2, then T1 is after the beginning of T2 and before the end of T2.</skos:definition>
+    <skos:definition xml:lang="es">Un instante que cae dentro del intervalo. Se asume que no es ni el principio ni el final de ningún intervalo.</skos:definition>
     <rdfs:range rdf:resource="#Instant"/>
     <rdfs:label xml:lang="en">has time instant inside</rdfs:label>
+    <owl:propertyDisjointWith>
+      <owl:ObjectProperty rdf:ID="hasEnd"/>
+    </owl:propertyDisjointWith>
     <rdfs:domain rdf:resource="#Interval"/>
-    <skos:definition xml:lang="es">Un instante que cae dentro del intervalo. Se asume que no es ni el principio ni el final de ningún intervalo.</skos:definition>
     <rdfs:subPropertyOf>
       <owl:ObjectProperty rdf:about="#whollyContains"/>
     </rdfs:subPropertyOf>
+    <owl:propertyDisjointWith rdf:resource="#hasBeginning"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#hasTime">
-    <skos:definition xml:lang="en">Supports the association of a temporal entity (instant or interval) to any thing</skos:definition>
+    <skos:definition xml:lang="en">links anything to a temporal entity (instant or interval)</skos:definition>
+    <owl:inverseOf rdf:resource="#timePertainsTo"/>
     <skos:definition xml:lang="es">Proporciona soporte a la asociación de una entidad temporal (instante o intervalo) a cualquier cosa.</skos:definition>
     <rdfs:label xml:lang="es">tiene tiempo</rdfs:label>
     <skos:editorialNote xml:lang="en">Feature at risk - added in 2017 revision, and not yet widely used. </skos:editorialNote>
@@ -1116,19 +1129,19 @@ ex:SimonWeddingDay :equals ex:RichardWeddingAnniversary1999 .&#xD;
     <rdfs:label xml:lang="en">has time</rdfs:label>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="intervalStartedBy">
-    <skos:definition xml:lang="en">If a proper interval T1 is intervalStarted another proper interval T2, then the beginning of T1 is coincident with the beginning of T2, and the end of T1 is after the end of T2.</skos:definition>
+    <skos:definition xml:lang="en">If T1 :intervalStarted T2, then the beginning of T1 is coincident with the beginning of T2, and the end of T1 is after the end of T2.</skos:definition>
+    <skos:definition xml:lang="es">Si un intervalo propio T1 es empezado por otro intervalo propio T2, entonces el principio de T1 coincide con el principio de T2, y el final de T1 es posterior al final de T2.</skos:definition>
     <owl:inverseOf>
       <owl:ObjectProperty rdf:ID="intervalStarts"/>
     </owl:inverseOf>
     <rdfs:range rdf:resource="#ProperInterval"/>
     <rdfs:label xml:lang="en">interval started by</rdfs:label>
     <rdfs:domain rdf:resource="#ProperInterval"/>
-    <skos:definition xml:lang="es">Si un intervalo propio T1 es empezado por otro intervalo propio T2, entonces el principio de T1 coincide con el principio de T2, y el final de T1 es posterior al final de T2.</skos:definition>
     <rdfs:subPropertyOf rdf:resource="#intervalWhollyContains"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#intervalNotDisjoint">
-    <skos:definition xml:lang="en">If a proper interval T1 is intervalNotDisjoint with another proper interval T2, then the two entities  overlap or coincide in some way, but their ordering relationship is not known.</skos:definition>
-    <skos:note xml:lang="en">This relation is the complement of intervalDisjoint and is the disjoint union of intervalEquals, intervalWhollyContains, intervalWhollyContainedBy, intervalOverlaps, intervalOverlappedBy. However, that is outside OWL2 expressivity, so is implemented as an explicit property, with intervalEquals, intervalWhollyContains, intervalWhollyContainedBy, intervalOverlaps, intervalOverlappedBy as sub-properties</skos:note>
+    <skos:note xml:lang="en">This relation is the complement of intervalDisjoint and is the disjoint union of intervalEquals, intervalWhollyContains, intervalWhollyContainedBy, intervalOverlaps, intervalOverlappedBy. However, that is outside OWL-2 expressivity, so is implemented as an explicit property, with intervalEquals, intervalWhollyContains, intervalWhollyContainedBy, intervalOverlaps, intervalOverlappedBy as sub-properties</skos:note>
+    <skos:definition xml:lang="en">If T1 :intervalNotDisjoint T2, then the two entities overlap or coincide in some way, but their ordering relationship is not known.</skos:definition>
     <rdfs:range rdf:resource="#ProperInterval"/>
     <rdfs:label>interval not disjoint</rdfs:label>
     <rdfs:domain rdf:resource="#ProperInterval"/>
@@ -1151,9 +1164,9 @@ ex:SimonWeddingDay :equals ex:RichardWeddingAnniversary1999 .&#xD;
     <rdfs:label xml:lang="en">has duration description</rdfs:label>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#intervalAfter">
+    <skos:definition xml:lang="en">If T1 :intervalAfter another proper interval T2, then the beginning of T1 is after the end of T2.</skos:definition>
     <owl:inverseOf rdf:resource="#intervalBefore"/>
     <rdfs:subPropertyOf rdf:resource="#after"/>
-    <skos:definition xml:lang="en">If a proper interval T1 is intervalAfter another proper interval T2, then the beginning of T1 is after the end of T2.</skos:definition>
     <rdfs:domain rdf:resource="#ProperInterval"/>
     <rdfs:subPropertyOf rdf:resource="#intervalDisjoint"/>
     <rdfs:label xml:lang="en">interval after</rdfs:label>
@@ -1170,46 +1183,46 @@ ex:SimonWeddingDay :equals ex:RichardWeddingAnniversary1999 .&#xD;
     <rdfs:label xml:lang="en">has duration</rdfs:label>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#intervalStarts">
+    <skos:definition xml:lang="en">If T1 :intervalStarts T2, then the beginning of T1 is coincident with the beginning of T2, and the end of T1 is before the end of T2.</skos:definition>
+    <rdfs:label xml:lang="es">intervalo empieza</rdfs:label>
+    <skos:definition xml:lang="es">Si un intervalo propio T1 empieza otro intervalo propio T2, entonces del principio de T1 con el final de T2, y el final de T1 es anterior al final de T2.</skos:definition>
+    <owl:inverseOf rdf:resource="#intervalStartedBy"/>
+    <rdfs:range rdf:resource="#ProperInterval"/>
     <rdfs:label xml:lang="en">interval starts</rdfs:label>
     <rdfs:domain rdf:resource="#ProperInterval"/>
-    <rdfs:range rdf:resource="#ProperInterval"/>
-    <skos:definition xml:lang="en">If a proper interval T1 is intervalStarts another proper interval T2, then the beginning of T1 is coincident with the beginning of T2, and the end of T1 is before the end of T2.</skos:definition>
-    <skos:definition xml:lang="es">Si un intervalo propio T1 empieza otro intervalo propio T2, entonces del principio de T1 con el final de T2, y el final de T1 es anterior al final de T2.</skos:definition>
     <rdfs:subPropertyOf rdf:resource="#intervalWhollyContainedBy"/>
-    <owl:inverseOf rdf:resource="#intervalStartedBy"/>
-    <rdfs:label xml:lang="es">intervalo empieza</rdfs:label>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#intervalMetBy">
-    <rdfs:subPropertyOf rdf:resource="#intervalDisjoint"/>
-    <skos:definition xml:lang="en">If a proper interval T1 is intervalMetBy another proper interval T2, then the beginning of T1 is coincident with the end of T2.</skos:definition>
+    <skos:definition xml:lang="en">If T1 :intervalMetBy T2, then the beginning of T1 is coincident with the end of T2.</skos:definition>
     <rdfs:label xml:lang="es">intervalo encontrado por</rdfs:label>
+    <skos:definition xml:lang="es">Si un intervalo propio T1 es 'intervalo encontrado por' otro intervalo propio T2, entonces el principio de T1 coincide con el final de T2.</skos:definition>
+    <owl:inverseOf rdf:resource="#intervalMeets"/>
     <rdfs:range rdf:resource="#ProperInterval"/>
     <rdfs:label xml:lang="en">interval met by</rdfs:label>
     <rdfs:domain rdf:resource="#ProperInterval"/>
-    <owl:inverseOf rdf:resource="#intervalMeets"/>
-    <skos:definition xml:lang="es">Si un intervalo propio T1 es 'intervalo encontrado por' otro intervalo propio T2, entonces el principio de T1 coincide con el final de T2.</skos:definition>
+    <rdfs:subPropertyOf rdf:resource="#intervalDisjoint"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="intervalOverlaps">
-    <rdfs:label xml:lang="en">interval overlaps</rdfs:label>
-    <rdfs:subPropertyOf rdf:resource="#intervalNotDisjoint"/>
+    <skos:definition xml:lang="en">If T1 :intervalOverlaps T2, then the beginning of T1 is before the beginning of T2, the end of T1 is after the beginning of T2, and the end of T1 is before the end of T2.</skos:definition>
+    <rdfs:label xml:lang="es">intervalo se solapa</rdfs:label>
+    <skos:definition xml:lang="es">Si un intervalo propio T1 se solapa con otro intervalo propio T2, entonces el principio de T1 es anterior al principio de T2, el final de T1 es posterior al principio de T2, y el final de T1 es anterior al final de T2.</skos:definition>
     <owl:inverseOf>
       <owl:ObjectProperty rdf:ID="intervalOverlappedBy"/>
     </owl:inverseOf>
-    <rdfs:label xml:lang="es">intervalo se solapa</rdfs:label>
-    <skos:definition xml:lang="en">If a proper interval T1 is intervalOverlaps another proper interval T2, then the beginning of T1 is before the beginning of T2, the end of T1 is after the beginning of T2, and the end of T1 is before the end of T2.</skos:definition>
     <rdfs:range rdf:resource="#ProperInterval"/>
-    <skos:definition xml:lang="es">Si un intervalo propio T1 se solapa con otro intervalo propio T2, entonces el principio de T1 es anterior al principio de T2, el final de T1 es posterior al principio de T2, y el final de T1 es anterior al final de T2.</skos:definition>
+    <rdfs:label xml:lang="en">interval overlaps</rdfs:label>
     <rdfs:domain rdf:resource="#ProperInterval"/>
+    <rdfs:subPropertyOf rdf:resource="#intervalNotDisjoint"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#disjoint">
-    <skos:definition xml:lang="en">If a temporal entity T1 is disjoint with another temporal entity T2, then the beginning of T1 is after the end of T2, or the end of T1 is before the beginning of T2, i.e. the two entities do not overlap or coincide in any way, but their ordering relationship is not known.</skos:definition>
+    <skos:definition xml:lang="en">If a T1 :disjoint T2, then the beginning of T1 is after the end of T2, or the end of T1 is before the beginning of T2. The temporal entities do not overlap or coincide in any way, but their ordering relationship is not known.</skos:definition>
     <rdfs:range rdf:resource="#TemporalEntity"/>
     <rdfs:label>disjoint time entity</rdfs:label>
     <rdfs:domain rdf:resource="#TemporalEntity"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#whollyContains">
-    <skos:note xml:lang="en">This relation is the disjoint union of inside, intervalWhollyContains. However, that is outside OWL2 expressivity, so is implemented as an explicit property, with inside, intervalWhollyContains as sub-properties</skos:note>
-    <skos:definition xml:lang="en">If a temporal entity T1 whollyContains it another temporal entity T2, then the beginning of T1 is coincident with or before the beginning of T2, and the end of T1 is concident with or after the end of T2, except that end of T1 may not be coincident with the end of T2 if the beginning of T1 is coincident with the beginning of T2.</skos:definition>
+    <skos:note xml:lang="en">This relation is the disjoint union of inside, intervalWhollyContains. However, that is outside OWL-2 expressivity, so is implemented as an explicit property, with inside, intervalWhollyContains as sub-properties</skos:note>
+    <skos:definition xml:lang="en">If T1 :whollyContains T2, then the beginning of T1 is coincident with or before the beginning of T2, and the end of T1 is concident with or after the end of T2, except that end of T1 may not be coincident with the end of T2 if the beginning of T1 is coincident with the beginning of T2.</skos:definition>
     <skos:example>&#xD;
 ex:Class :whollyContains ex:Quiz .&#xD;
 </skos:example>
@@ -1227,47 +1240,47 @@ ex:Class :whollyContains ex:Quiz .&#xD;
     <rdfs:label xml:lang="en">in date-time description</rdfs:label>
     <rdfs:domain rdf:resource="#Instant"/>
   </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:ID="hasEnd">
+  <owl:ObjectProperty rdf:about="#hasEnd">
     <skos:definition xml:lang="es">Final de una entidad temporal.</skos:definition>
     <rdfs:label xml:lang="es">tiene fin</rdfs:label>
-    <rdfs:range rdf:resource="#Instant"/>
     <skos:definition xml:lang="en">Last instant of a temporal entity.</skos:definition>
+    <rdfs:range rdf:resource="#Instant"/>
     <rdfs:label xml:lang="en">has end</rdfs:label>
-    <rdfs:subPropertyOf rdf:resource="#disjoint"/>
     <rdfs:domain rdf:resource="#TemporalEntity"/>
     <rdfs:subPropertyOf rdf:resource="#hasTime"/>
+    <rdfs:subPropertyOf rdf:resource="#disjoint"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#intervalOverlappedBy">
-    <rdfs:subPropertyOf rdf:resource="#intervalNotDisjoint"/>
+    <skos:definition xml:lang="en">If T1 :intervalOverlappedBy T2, then the beginning of T1 is after the beginning of T2, the beginning of T1 is before the end of T2, and the end of T1 is after the end of T2.</skos:definition>
     <rdfs:label xml:lang="es">intervalo solapado por</rdfs:label>
-    <rdfs:domain rdf:resource="#ProperInterval"/>
+    <skos:definition xml:lang="es">Si un intervalo propio T1 es 'intervalo solapado por' otro intervalo propio T2, entonces el principio de T1 es posterior al principio de T2, y el principio de T1 es anterior al final de T2, y el final de T1 es posterior al final de T2.</skos:definition>
     <owl:inverseOf rdf:resource="#intervalOverlaps"/>
-    <skos:definition xml:lang="en">If a proper interval T1 is intervalOverlappedBy another proper interval T2, then the beginning of T1 is after the beginning of T2, the beginning of T1 is before the end of T2, and the end of T1 is after the end of T2.</skos:definition>
     <rdfs:range rdf:resource="#ProperInterval"/>
     <rdfs:label xml:lang="en">interval overlapped by</rdfs:label>
-    <skos:definition xml:lang="es">Si un intervalo propio T1 es 'intervalo solapado por' otro intervalo propio T2, entonces el principio de T1 es posterior al principio de T2, y el principio de T1 es anterior al final de T2, y el final de T1 es posterior al final de T2.</skos:definition>
+    <rdfs:domain rdf:resource="#ProperInterval"/>
+    <rdfs:subPropertyOf rdf:resource="#intervalNotDisjoint"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:ID="intervalFinishedBy">
+    <skos:definition xml:lang="en">If T1 :intervalFinishedBy T2, then the beginning of T1 is before the beginning of T2, and the end of T1 is coincident with the end of T2.</skos:definition>
     <rdfs:label xml:lang="es">intervalo terminado por</rdfs:label>
-    <rdfs:label xml:lang="en">interval finished by</rdfs:label>
-    <rdfs:range rdf:resource="#ProperInterval"/>
-    <rdfs:subPropertyOf rdf:resource="#intervalWhollyContains"/>
+    <skos:definition xml:lang="es">Si un intervalo propio T1 está terminado por otro intervalo propio T2, entonces el principio de T1 está antes que el principio de T2, y el final de T1 coincide con el final de T2.</skos:definition>
     <owl:inverseOf>
       <owl:ObjectProperty rdf:ID="intervalFinishes"/>
     </owl:inverseOf>
-    <skos:definition xml:lang="es">Si un intervalo propio T1 está terminado por otro intervalo propio T2, entonces el principio de T1 está antes que el principio de T2, y el final de T1 coincide con el final de T2.</skos:definition>
-    <skos:definition xml:lang="en">If a proper interval T1 is intervalFinishedBy another proper interval T2, then the beginning of T1 is before the beginning of T2, and the end of T1 is coincident with the end of T2.</skos:definition>
+    <rdfs:range rdf:resource="#ProperInterval"/>
+    <rdfs:label xml:lang="en">interval finished by</rdfs:label>
     <rdfs:domain rdf:resource="#ProperInterval"/>
+    <rdfs:subPropertyOf rdf:resource="#intervalWhollyContains"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#intervalFinishes">
+    <skos:definition xml:lang="en">If T1 :intervalFinishes T2, then the beginning of T1 is after the beginning of T2, and the end of T1 is coincident with the end of T2.</skos:definition>
     <rdfs:label xml:lang="es">intervalo termina</rdfs:label>
-    <skos:definition xml:lang="en">If a proper interval T1 is intervalFinishes another proper interval T2, then the beginning of T1 is after the beginning of T2, and the end of T1 is coincident with the end of T2.</skos:definition>
-    <rdfs:subPropertyOf rdf:resource="#intervalWhollyContainedBy"/>
-    <rdfs:label xml:lang="en">interval finishes</rdfs:label>
-    <rdfs:range rdf:resource="#ProperInterval"/>
-    <owl:inverseOf rdf:resource="#intervalFinishedBy"/>
-    <rdfs:domain rdf:resource="#ProperInterval"/>
     <skos:definition xml:lang="es">Si un intervalo propio T1 termina otro intervalo propio T2, entonces del principio de T1 está después del principio de T2, y el final de T1 coincide con el final de T2.</skos:definition>
+    <owl:inverseOf rdf:resource="#intervalFinishedBy"/>
+    <rdfs:range rdf:resource="#ProperInterval"/>
+    <rdfs:label xml:lang="en">interval finishes</rdfs:label>
+    <rdfs:domain rdf:resource="#ProperInterval"/>
+    <rdfs:subPropertyOf rdf:resource="#intervalWhollyContainedBy"/>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#monthOfYear">
     <skos:editorialNote xml:lang="es">Característica arriesgada - añadida en la revisión de 2017, y todavía no ampliamente utilizada.</skos:editorialNote>
@@ -1489,14 +1502,15 @@ The range of this property is not specified, so can be replaced by any specific 
   </owl:DatatypeProperty>
   <owl:TransitiveProperty rdf:about="#before">
     <rdfs:label xml:lang="es">antes</rdfs:label>
-    <skos:definition xml:lang="en">Gives directionality to time. If a temporal entity T1 is before another temporal entity T2, then the end of T1 is before the beginning of T2. Thus, "before" can be considered to be basic to instants and derived for intervals.</skos:definition>
     <owl:inverseOf rdf:resource="#after"/>
     <rdfs:subPropertyOf rdf:resource="#disjoint"/>
     <rdfs:range rdf:resource="#TemporalEntity"/>
+    <skos:note>"before" can be considered to be basic to instants and derived for intervals.</skos:note>
     <rdfs:label xml:lang="en">is before</rdfs:label>
     <rdfs:domain rdf:resource="#TemporalEntity"/>
     <skos:definition xml:lang="es">Asume una dirección en el tiempo. Si una entidad temporal T1 está antes que otra entidad temporal T2, entonces el final de T1 está antes que el principio de T2. Así, "antes" se puede considerar básica para instantes y derivada para intervalos.</skos:definition>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <skos:definition xml:lang="en">The subject is a temporal entity that occurs before the object. If T1 :before T2, then the end of T1 is before the beginning of T2.</skos:definition>
   </owl:TransitiveProperty>
   <DayOfWeek rdf:ID="Wednesday">
     <skos:prefLabel xml:lang="it">Mercoledì</skos:prefLabel>
@@ -1649,28 +1663,8 @@ The range of this property is not specified, so can be replaced by any specific 
     <skos:prefLabel xml:lang="pt">Ano</skos:prefLabel>
     <owl:deprecated rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
     >true</owl:deprecated>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="#months"/>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >0</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="#weeks"/>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >0</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
-    <rdfs:subClassOf>
-      <owl:Restriction>
-        <owl:onProperty rdf:resource="#days"/>
-        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
-        >0</owl:cardinality>
-      </owl:Restriction>
-    </rdfs:subClassOf>
     <skos:prefLabel xml:lang="it">Anno</skos:prefLabel>
+    <skos:prefLabel xml:lang="ar">سنة</skos:prefLabel>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty rdf:resource="#years"/>
@@ -1678,12 +1672,11 @@ The range of this property is not specified, so can be replaced by any specific 
         >1</owl:cardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
-    <skos:prefLabel xml:lang="ar">سنة</skos:prefLabel>
     <skos:prefLabel xml:lang="pl">Rok</skos:prefLabel>
     <rdfs:label xml:lang="en">Year</rdfs:label>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:onProperty rdf:resource="#seconds"/>
+        <owl:onProperty rdf:resource="#months"/>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >0</owl:cardinality>
       </owl:Restriction>
@@ -1691,10 +1684,14 @@ The range of this property is not specified, so can be replaced by any specific 
     <skos:prefLabel xml:lang="nl">Jaar</skos:prefLabel>
     <rdfs:subClassOf rdf:resource="#DurationDescription"/>
     <skos:definition>Year duration</skos:definition>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="#weeks"/>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >0</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
     <skos:prefLabel xml:lang="es">Año</skos:prefLabel>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <skos:prefLabel xml:lang="de">Jahr</skos:prefLabel>
-    <skos:prefLabel xml:lang="fr">Année (calendrier)</skos:prefLabel>
     <rdfs:subClassOf>
       <owl:Restriction>
         <owl:onProperty rdf:resource="#minutes"/>
@@ -1702,16 +1699,33 @@ The range of this property is not specified, so can be replaced by any specific 
         >0</owl:cardinality>
       </owl:Restriction>
     </rdfs:subClassOf>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <skos:prefLabel xml:lang="de">Jahr</skos:prefLabel>
+    <skos:prefLabel xml:lang="fr">Année (calendrier)</skos:prefLabel>
     <skos:prefLabel xml:lang="en">Year</skos:prefLabel>
     <skos:historyNote>Year was proposed in the 2006 version of OWL-Time as an example of how DurationDescription could be specialized to allow for a duration to be restricted to a number of years. &#xD;
 &#xD;
 It is deprecated in this edition of OWL-Time. </skos:historyNote>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="#hours"/>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >0</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
     <skos:prefLabel xml:lang="ru">Год</skos:prefLabel>
     <skos:prefLabel xml:lang="zh">年</skos:prefLabel>
     <skos:prefLabel xml:lang="ja">年</skos:prefLabel>
     <rdfs:subClassOf>
       <owl:Restriction>
-        <owl:onProperty rdf:resource="#hours"/>
+        <owl:onProperty rdf:resource="#seconds"/>
+        <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >0</owl:cardinality>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="#days"/>
         <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
         >0</owl:cardinality>
       </owl:Restriction>
