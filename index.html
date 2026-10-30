@@ -132,9 +132,9 @@
         <a>:MonthOfYear (class)</a> and <a>:monthOfYear</a> complement :DayOfWeek and :dayOfWeek to support vernacular names for months as well as days.
       </li>
       <li>
-        <a>:hasTime</a> is a completely generic predicate for associating a temporal entity with anything.
+        the inverse pair <a>:hasTime</a> and <a>:timePertainsTo</a> are generic predicates for associating a temporal entity with anything.
         A number of generic predicates suitable for use directly in applications were requested, but in general were deemed undesirable in an ontology dealing with the description of time elements rather than their use.
-        This one only was included for users unwilling or unable to define their own semantics.
+        These two predicates only were included for users unwilling or unable to define their own semantics.
       </li>
     </ol>
   </section>
@@ -216,7 +216,10 @@
     <h3>2026 update</h3>
     <ul>
       <li>
-        Add temporal relations extensions <a>:whollyContains</a>, <a>:intervalWhollyContains</a>, <a>:intervalWhollyContainedBy</a> (renamed from intervalIn), <a>:equals</a>, <a>:intervalNotDisjoint</a>, <a>:notDisjoint</a>, <a>:intervalDisjoint</a>, <a>:disjoint</a>
+        Add temporal relations extensions <a>:whollyContains</a>, <a>:intervalWhollyContains</a>, <a>:intervalWhollyContainedBy</a> (renamed from intervalIn), <a>:equals</a>, <a>:intervalNotDisjoint</a>, <a>:notDisjoint</a>, <a>:intervalDisjoint</a>, <a>:disjoint</a> and hierarchy of object-properties
+      </li>
+      <li>
+        add <a>:timePertainsTo</a> inverse of <a>:hasTime</a>
       </li>
       <li>
         Re-draft key diagrams using SVG

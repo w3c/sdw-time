@@ -921,7 +921,8 @@ ex:Class :whollyContains ex:Quiz .
   a owl:ObjectProperty ;
   rdfs:label "has time"@en ;
   rdfs:range :TemporalEntity ;
-  skos:definition "Supports the association of a temporal entity (instant or interval) to any thing"@en ;
+  owl:inverseOf :timePertainsTo ;
+  skos:definition "links anything to a temporal entity (instant or interval)"@en ;
   skos:editorialNote "Feature at risk - added in 2017 revision, and not yet widely used. "@en ;
 .
 :inDateTime
@@ -953,6 +954,14 @@ ex:Class :whollyContains ex:Quiz .
   rdfs:label "month of year"@en ;
   rdfs:range :MonthOfYear ;
   skos:definition "The month of the year, whose value is a member of the class time:MonthOfYear"@en ;
+  skos:editorialNote "Feature at risk - added in 2017 revision, and not yet widely used. "@en ;
+.
+:timePertainsTo
+  a owl:ObjectProperty ;
+  rdfs:label "time pertains to"@en ;
+  rdfs:domain :TemporalEntity ;
+  owl:inverseOf :hasTime ;
+  skos:definition "links a temporal entity (instant or interval) to anything"@en ;
   skos:editorialNote "Feature at risk - added in 2017 revision, and not yet widely used. "@en ;
 .
 :timeZone
