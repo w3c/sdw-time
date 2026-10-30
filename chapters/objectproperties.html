@@ -53,7 +53,7 @@
     <dt>Definition:</dt>
     <dd>
       The subject is a temporal entity that occurs after the object.
-      If a temporal entity T<sub>1</sub> is <em>after</em> another temporal entity T<sub>2</sub>,
+      If T<sub>1</sub> <em>after</em> T<sub>2</sub>,
       then the beginning of T<sub>1</sub> is after the end of T<sub>2</sub>.
     </dd>
     <dt>Instance of:</dt>
@@ -79,9 +79,12 @@
     <dt>Definition:</dt>
     <dd>
       The subject is a temporal entity that occurs before the object.
-      If a temporal entity T<sub>1</sub> is <em>before</em> another temporal entity T<sub>2</sub>,
+      If T<sub>1</sub> <em>before</em> T<sub>2</sub>,
       then the end of T<sub>1</sub> is before the beginning of T<sub>2</sub>.
-      Thus, <em>before</em> can be considered to be basic to instants and derived for intervals.
+    </dd>
+    <dt>Note:</dt>
+    <dd>
+      <em>before</em> can be considered to be basic to instants and derived for intervals.
     </dd>
     <dt>Instance of:</dt>
     <dd><code>owl:ObjectProperty</code></dd>
@@ -125,10 +128,10 @@
     <dd>http://www.w3.org/2006/time#disjoint</dd>
     <dt>Definition:</dt>
     <dd>
-      If a temporal entity T<sub>1</sub> is disjoint with another temporal entity T<sub>2</sub>,
+      If T<sub>1</sub> <em>disjoint</em> T<sub>2</sub>,
       then the beginning of T<sub>1</sub> is after the end of T<sub>2</sub>,
-      or the end of T<sub>1</sub> is before the beginning of T<sub>2</sub>,
-      i.e., the two entities do not overlap or coincide in any way, but their ordering relationship is not known.
+      or the end of T<sub>1</sub> is before the beginning of T<sub>2</sub>.
+      The two entities do not overlap or coincide in any way, but their ordering relationship is not known.
     </dd>
     <dt>Note:</dt>
     <dd>
@@ -153,7 +156,7 @@
     <dd>http://www.w3.org/2006/time#equals</dd>
     <dt>Definition:</dt>
     <dd>
-      If a temporal entity T<sub>1</sub> equals another temporal entity T<sub>2</sub>,
+      If T<sub>1</sub> <em>equals</em> T<sub>2</sub>,
       then the beginning of T<sub>1</sub> is coincident with the beginning of T<sub>2</sub>,
       and the end of T<sub>1</sub> is coincident with the end of T<sub>2</sub>,
       and the beginning of T<sub>1</sub> may be coincident with the end of T<sub>1</sub>.
@@ -177,7 +180,7 @@
     <dd>http://www.w3.org/2006/time#hasBeginning</dd>
     <dt>Definition:</dt>
     <dd>
-      Beginning of a temporal entity.
+      First instant of a temporal entity.
     </dd>
     <dt>Instance of:</dt>
     <dd><code>owl:ObjectProperty</code></dd>
@@ -260,7 +263,7 @@
     <dd>http://www.w3.org/2006/time#hasEnd</dd>
     <dt>Definition:</dt>
     <dd>
-      End of a temporal entity.
+      Last instant of a temporal entity.
     </dd>
     <dt>Instance of:</dt>
     <dd><code>owl:ObjectProperty</code></dd>
@@ -368,9 +371,7 @@
     <dd>http://www.w3.org/2006/time#inside</dd>
     <dt>Definition:</dt>
     <dd>
-      instant that falls inside the interval.
-      It does not include beginnings and ends of intervals.
-    </dd>
+      If T<sub>1</sub> <em>inside</em> T<sub>2</sub>, then T<sub>1</sub> is after the beginning of T<sub>2</sub> and before the end of T<sub>2</sub>. </dd>
     <dt>Instance of:</dt>
     <dd><code>owl:ObjectProperty</code></dd>
     <dt>Sub-property of: </dt>
@@ -379,8 +380,8 @@
     <dd><a>:Interval</a></dd>
     <dt>Range:</dt>
     <dd><a>:Instant</a></dd>
-    <dt>Disjoint with:</dt>
-    <dd><a>:hasBegining</a>, <a>:hasEnd</a></dd>
+    <dt>Disjoint:</dt>
+    <dd><a>:hasBeginning</a> , <a>:hasEnd</a></dd>
   </dl>
 </section>
 
@@ -413,7 +414,7 @@
     <dd>http://www.w3.org/2006/time#intervalAfter</dd>
     <dt>Definition:</dt>
     <dd>
-      If a proper interval T<sub>1</sub> is <em>intervalAfter </em>another proper interval T<sub>2</sub>,
+      If T<sub>1</sub> <em>intervalAfter</em> T<sub>2</sub>,
       then the beginning of T<sub>1</sub> is after the end of T<sub>2</sub>.
     </dd>
     <dt>Instance of:</dt>
@@ -438,7 +439,7 @@
     <dd>http://www.w3.org/2006/time#intervalBefore</dd>
     <dt>Definition:</dt>
     <dd>
-      If a proper interval T<sub>1</sub> is <em>intervalBefore </em>another proper interval T<sub>2</sub>,
+      If T<sub>1</sub> <em>intervalBefore</em> T<sub>2</sub>,
       then the end of T<sub>1</sub> is before the beginning of T<sub>2</sub>.
     </dd>
     <dt>Instance of:</dt>
@@ -463,7 +464,7 @@
     <dd>http://www.w3.org/2006/time#intervalContains</dd>
     <dt>Definition:</dt>
     <dd>
-      If a proper interval T<sub>1</sub> is <em>intervalContains</em> another proper interval T<sub>2</sub>,
+      If T<sub>1</sub> <em>intervalContains</em> T<sub>2</sub>,
       then the beginning of T<sub>1</sub> is before the beginning of T<sub>2</sub>,
       and the end of T<sub>1</sub> is after the end of T<sub>2</sub>.
     </dd>
@@ -489,14 +490,10 @@
     <dd>http://www.w3.org/2006/time#intervalDisjoint</dd>
     <dt>Definition:</dt>
     <dd>
-      If a proper interval T<sub>1</sub> is <em>intervalDisjoint</em> another proper interval T<sub>2</sub>,
+      If T<sub>1</sub> <em>intervalDisjoint</em> T<sub>2</sub>,
       then the beginning of T<sub>1</sub> is after the end of T<sub>2</sub>,
-      or the end of T<sub>1</sub> is before the beginning of T<sub>2</sub>,
-      i.e., the intervals do not overlap in any way, but their ordering relationship is not known.
-    </dd>
-    <dd>
-      This relation is the disjoint union of
-      <code>intervalBefore, intervalMeets, intervalMetBy, intervalAfter</code>.
+      or the end of T<sub>1</sub> is before the beginning of T<sub>2</sub>.
+      The intervals do not overlap in any way, but their ordering relationship is not known.
     </dd>
     <dt>Instance of:</dt>
     <dd><code>owl:ObjectProperty</code></dd>
@@ -518,7 +515,7 @@
     <dd>http://www.w3.org/2006/time#intervalDuring</dd>
     <dt>Definition:</dt>
     <dd>
-      If a proper interval T<sub>1</sub> is <em>intervalDuring</em> another proper interval T<sub>2</sub>,
+      If T<sub>1</sub> <em>intervalDuring</em> T<sub>2</sub>,
       then the beginning of T<sub>1</sub> is after the beginning of T<sub>2</sub>,
       and the end of T<sub>1</sub> is before the end of T<sub>2</sub>.
     </dd>
@@ -546,7 +543,8 @@
     <dd>
       If a proper interval T<sub>1</sub> is <em>intervalEquals</em> another proper interval T<sub>2</sub>,
       then the beginning of T<sub>1</sub> is coincident with the beginning of T<sub>2</sub>,
-      and the end of T<sub>1</sub> is coincident with the end of T<sub>2</sub>.
+      and the end of T<sub>1</sub> is coincident with the end of T<sub>2</sub>, 
+      and the beginning of T<sub>1</sub> is not coincident with the end of T<sub>1</sub>.
     </dd>
     <dt>Instance of:</dt>
     <dd><code>owl:ObjectProperty</code></dd>
@@ -568,7 +566,7 @@
     <dd>http://www.w3.org/2006/time#intervalFinishedBy</dd>
     <dt>Definition:</dt>
     <dd>
-      If a proper interval T<sub>1</sub> is <em>intervalFinishedBy</em> another proper interval T<sub>2</sub>,
+      If T<sub>1</sub> <em>intervalFinishedBy</em> T<sub>2</sub>,
       then the beginning of T<sub>1</sub> is before the beginning of T<sub>2</sub>,
       and the end of T<sub>1</sub> is coincident with the end of T<sub>2</sub>.
     </dd>
@@ -594,7 +592,7 @@
     <dd>http://www.w3.org/2006/time#intervalFinishes</dd>
     <dt>Definition:</dt>
     <dd>
-      If a proper interval T<sub>1</sub> is <em>intervalFinishes</em> another proper interval T<sub>2</sub>,
+      If T<sub>1</sub> <em>intervalFinishes</em> T<sub>2</sub>,
       then the beginning of T<sub>1</sub> is after the beginning of T<sub>2</sub>,
       and the end of T<sub>1</sub> is coincident with the end of T<sub>2</sub>.
     </dd>
@@ -620,7 +618,7 @@
     <dd>http://www.w3.org/2006/time#intervalMeets</dd>
     <dt>Definition:</dt>
     <dd>
-      If a proper interval T<sub>1</sub> is <em>intervalMeets</em> another proper interval T<sub>2</sub>,
+      If T<sub>1</sub> <em>intervalMeets</em> T<sub>2</sub>,
       then the end of T<sub>1</sub> is coincident with the beginning of T<sub>2</sub>.
     </dd>
     <dt>Instance of:</dt>
@@ -645,7 +643,7 @@
     <dd>http://www.w3.org/2006/time#intervalMetBy</dd>
     <dt>Definition:</dt>
     <dd>
-      If a proper interval T<sub>1</sub> is <em>intervalMetBy</em> another proper interval T<sub>2</sub>,
+      If T<sub>1</sub> <em>intervalMetBy</em> T<sub>2</sub>,
       then the beginning of T<sub>1</sub> is coincident with the end of T<sub>2</sub>.
     </dd>
     <dt>Instance of:</dt>
@@ -670,13 +668,8 @@
     <dd>http://www.w3.org/2006/time#intervalNotDisjoint</dd>
     <dt>Definition:</dt>
     <dd>
-      If a proper interval T<sub>1</sub> is intervalNotDisjoint with another proper interval T<sub>2</sub>,
+      If T<sub>1</sub> <em>intervalNotDisjoint</em> T<sub>2</sub>,
       then the the two intervals overlap or coincide in some way, but their ordering relationship is not known.
-    </dd>
-    <dt>Note:</dt>
-    <dd>
-      This relation is the disjoint union of
-      <code>intervalEquals, intervalWhollyContains, intervalWhollyContainedBy, overlaps, overlappedBy</code>.
     </dd>
     <dt>Instance of:</dt>
     <dd><code>owl:ObjectProperty</code> </dd>
@@ -698,7 +691,7 @@
     <dd>http://www.w3.org/2006/time#intervalOverlappedBy</dd>
     <dt>Definition:</dt>
     <dd>
-      If a proper interval T<sub>1</sub> is <em>intervalOverlappedBy</em> another proper interval T<sub>2</sub>,
+      If T<sub>1</sub> <em>intervalOverlappedBy</em> T<sub>2</sub>,
       then the beginning of T<sub>1</sub> is after the beginning of T<sub>2</sub>,
       the beginning of T<sub>1</sub> is before the end of T<sub>2</sub>,
       and the end of T<sub>1</sub> is after the end of T<sub>2</sub>.
@@ -725,7 +718,7 @@
     <dd>http://www.w3.org/2006/time#intervalOverlaps</dd>
     <dt>Definition:</dt>
     <dd>
-      If a proper interval T<sub>1</sub> is <em>intervalOverlaps</em> another proper interval T<sub>2</sub>,
+      If T<sub>1</sub> <em>intervalOverlaps</em> T<sub>2</sub>,
       then the beginning of T<sub>1</sub> is before the beginning of T<sub>2</sub>, the end of T<sub>1</sub>
       is after the beginning of T<sub>2</sub>, and the end of T<sub>1</sub> is before the end of T<sub>2</sub>.
     </dd>
@@ -751,7 +744,7 @@
     <dd>http://www.w3.org/2006/time#intervalStartedBy</dd>
     <dt>Definition:</dt>
     <dd>
-      If a proper interval T<sub>1</sub> is <em>intervalStartedBy</em> another proper interval T<sub>2</sub>,
+      If T<sub>1</sub> <em>intervalStartedBy</em> T<sub>2</sub>,
       then the beginning of T<sub>1</sub> is coincident with the beginning of T<sub>2</sub>,
       and the end of T<sub>1</sub> is after the end of T<sub>2</sub>.
     </dd>
@@ -777,7 +770,7 @@
     <dd>http://www.w3.org/2006/time#intervalStarts</dd>
     <dt>Definition:</dt>
     <dd>
-      If a proper interval T<sub>1</sub> is <em>intervalStarts</em> another proper interval T<sub>2</sub>,
+      If T<sub>1</sub> <em>intervalStarts</em> T<sub>2</sub>,
       then the beginning of T<sub>1</sub> is coincident with the beginning of T<sub>2</sub>,
       and the end of T<sub>1</sub> is before the end of T<sub>2</sub>.
     </dd>
@@ -795,7 +788,7 @@
 </section>
 
 <section id="intervalWhollyContainedBy" class="specterm">
-  <h4>interval in</h4>
+  <h4>interval wholly contained by</h4>
   <dl>
     <dt>Term:</dt>
     <dd><dfn>:intervalWhollyContainedBy</dfn></dd>
@@ -803,17 +796,13 @@
     <dd>http://www.w3.org/2006/time#intervalWhollyContainedBy</dd>
     <dt>Definition:</dt>
     <dd>
-      If a proper interval T<sub>1</sub> is <em>intervalWhollyContainedBy</em> another proper interval T<sub>2</sub>,
+      If T<sub>1</sub> <em>intervalWhollyContainedBy</em> T<sub>2</sub>,
       then the beginning of T<sub>1</sub> is after the beginning of T<sub>2</sub>
       or is coincident with the beginning of T<sub>2</sub>,
       and the end of T<sub>1</sub> is before the end of T<sub>2</sub>
       or is coincident with the end of T<sub>2</sub>,
       except that end of T<sub>1</sub> may not be coincident with the end of T<sub>2</sub>
       if the beginning of T<sub>1</sub> is coincident with the beginning of T<sub>2</sub>.
-    </dd>
-    <dd>
-      This relation is the disjoint union of
-      <code>intervalStarts, intervalFinishes, intervalDuring</code>.
     </dd>
     <dt>Instance of:</dt>
     <dd><code>owl:ObjectProperty</code></dd>
@@ -827,7 +816,7 @@
 </section>
 
 <section id="intervalWhollyContains" class="specterm">
-  <h4>interval has inside</h4>
+  <h4>interval wholly contains</h4>
   <dl>
     <dt>Term:</dt>
     <dd><dfn>:intervalWhollyContains</dfn></dd>
