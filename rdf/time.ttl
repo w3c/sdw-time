@@ -316,13 +316,13 @@ In the original OWL-Time the following constraint appeared:
   a owl:Class ;
   rdfs:label "Time instant"@en ;
   rdfs:subClassOf :TemporalEntity ;
-  skos:definition "temporal entity with zero extent or duration"@en ;
+  skos:definition "temporal entity with zero extent (duration)"@en ;
 .
 :Interval
   a owl:Class ;
   rdfs:label "Time interval"@en ;
   rdfs:subClassOf :TemporalEntity ;
-  skos:definition "temporal entity with a non-zero extent or duration"@en ;
+  skos:definition "temporal entity with a non-zero extent (duration)"@en ;
 .
 :January
   a owl:Class ;
@@ -395,7 +395,7 @@ In the original OWL-Time the following constraint appeared:
   rdfs:label "Proper interval"@en ;
   rdfs:subClassOf :Interval ;
   owl:disjointWith :Instant ;
-  skos:definition "interval whose beginning and end are not identical"@en ;
+  skos:definition "interval whose beginning and end are not coincident"@en ;
 .
 :TRS
   a owl:Class ;
@@ -626,8 +626,8 @@ Note that the value-space is not defined, so a generic OWL2 processor cannot com
   rdfs:label "is after"@en ;
   rdfs:range :TemporalEntity ;
   owl:inverseOf :before ;
-  skos:definition "Asume una dirección en el tiempo. Si una entidad temporal T1 está después de otra entidad temporal T2, entonces el principio de T1 está después del final de T2."@es ;
-  skos:definition "Gives directionality to time. If a temporal entity T1 is after another temporal entity T2, then the beginning of T1 is after the end of T2."@en ;
+  skos:definition "Asume una dirección en el tiempo. Si T1 :after T2, entonces el principio de T1 está después del final de T2."@es ;
+  skos:definition "The subject is a temporal entity that occurs after the object. If T1 :after T2, then the beginning of T1 is after the end of T2."@en ;
 .
 :before
   a owl:ObjectProperty ;
@@ -637,14 +637,15 @@ Note that the value-space is not defined, so a generic OWL2 processor cannot com
   rdfs:label "is before"@en ;
   rdfs:range :TemporalEntity ;
   owl:inverseOf :after ;
-  skos:definition "Gives directionality to time. If a temporal entity T1 is before another temporal entity T2, then the end of T1 is before the beginning of T2. Thus, \"before\" can be considered to be basic to instants and derived for intervals."@en ;
+  skos:definition "The subject is a temporal entity that occurs before the object. If T1 :before T2, then the end of T1 is before the beginning of T2."@en ;
+  skos:note "\"before\" can be considered to be basic to instants and derived for intervals.";
 .
 :disjoint
   a owl:ObjectProperty ;
   rdfs:domain :TemporalEntity ;
   rdfs:label "disjoint time entity" ;
   rdfs:range :TemporalEntity ;
-  skos:definition "If a temporal entity T1 is disjoint with another temporal entity T2, then the beginning of T1 is after the end of T2, or the end of T1 is before the beginning of T2, i.e. the two entities do not overlap or coincide in any way, but their ordering relationship is not known."@en ;
+  skos:definition "If a T1 :disjoint T2, then the beginning of T1 is after the end of T2, or the end of T1 is before the beginning of T2. The temporal entities do not overlap or coincide in any way, but their ordering relationship is not known."@en ;
 .
 :equals
   a owl:ObjectProperty ;
@@ -652,7 +653,7 @@ Note that the value-space is not defined, so a generic OWL2 processor cannot com
   rdfs:domain :TemporalEntity ;
   rdfs:label "equal time entity" ;
   rdfs:range :TemporalEntity ;
-  skos:definition "If a temporal entity T1 equals another temporal entity T2, then the beginning of T1 is coincident with the beginning of T2, and the end of T1 is coincident with the end of T2, and the beginning of T1 may be coincident with the end of T1."@en ;
+  skos:definition "If T1 :equals T2, then the beginning of T1 is coincident with the beginning of T2, and the end of T1 is coincident with the end of T2, and the beginning of T1 may be coincident with the end of T1."@en ;
   skos:example """
 ex:SimonWeddingDay :equals ex:RichardWeddingAnniversary1999 .
 """ ;
@@ -679,7 +680,11 @@ ex:SimonWeddingDay :equals ex:RichardWeddingAnniversary1999 .
   rdfs:domain :Interval ;
   rdfs:label "has time instant inside"@en ;
   rdfs:range :Instant ;
-  skos:definition "If an instant T1 is inside an interval T2, then T1 is after the beginning of T2 and before the end of T2."@en ;
+  skos:definition "If T1 :inside T2, then T1 is after the beginning of T2 and before the end of T2."@en ;
+  owl:propertyDisjointWith
+    :hasBeginning ,
+    :hasEnd
+    ;
 .
 :intervalAfter
   a owl:ObjectProperty ;
@@ -688,7 +693,7 @@ ex:SimonWeddingDay :equals ex:RichardWeddingAnniversary1999 .
   rdfs:label "interval after"@en ;
   rdfs:range :ProperInterval ;
   owl:inverseOf :intervalBefore ;
-  skos:definition "If a proper interval T1 is intervalAfter another proper interval T2, then the beginning of T1 is after the end of T2."@en ;
+  skos:definition "If T1 :intervalAfter another proper interval T2, then the beginning of T1 is after the end of T2."@en ;
 .
 :intervalBefore
   a owl:ObjectProperty ;
@@ -697,7 +702,7 @@ ex:SimonWeddingDay :equals ex:RichardWeddingAnniversary1999 .
   rdfs:label "interval before"@en ;
   rdfs:range :ProperInterval ;
   owl:inverseOf :intervalAfter ;
-  skos:definition "If a proper interval T1 is intervalBefore another proper interval T2, then the end of T1 is before the beginning of T2."@en ;
+  skos:definition "If T1 :intervalBefore T2, then the end of T1 is before the beginning of T2."@en ;
 .
 :intervalContains
   a owl:ObjectProperty ;
@@ -706,7 +711,7 @@ ex:SimonWeddingDay :equals ex:RichardWeddingAnniversary1999 .
   rdfs:label "interval contains"@en ;
   rdfs:range :ProperInterval ;
   owl:inverseOf :intervalDuring ;
-  skos:definition "If a proper interval T1 is intervalContains another proper interval T2, then the beginning of T1 is before the beginning of T2, and the end of T1 is after the end of T2."@en ;
+  skos:definition "If T1 :intervalContains T2, then the beginning of T1 is before the beginning of T2, and the end of T1 is after the end of T2."@en ;
 .
 :intervalDisjoint
   a owl:ObjectProperty ;
@@ -714,7 +719,7 @@ ex:SimonWeddingDay :equals ex:RichardWeddingAnniversary1999 .
   rdfs:domain :ProperInterval ;
   rdfs:label "interval disjoint"@en ;
   rdfs:range :ProperInterval ;
-  skos:definition "If a proper interval T1 is intervalDisjoint another proper interval T2, then the beginning of T1 is after the end of T2, or the end of T1 is before the beginning of T2, i.e., the intervals do not overlap in any way, but their ordering relationship is not known."@en ;
+  skos:definition "If T1 :intervalDisjoint T2, then the beginning of T1 is after the end of T2, or the end of T1 is before the beginning of T2. The intervals do not overlap in any way, but their ordering relationship is not known."@en ;
   skos:note "This interval relation is not included in the 13 basic relationships defined in Allen (1984), but is defined as the union of :intervalBefore, :intervalAfter, :intervalMeets, intervalMetBy . However, that is outside OWL2 expressivity, so is implemented as an explicit property, with :intervalBefore, :intervalAfter, :intervalMeets, intervalMetBy as sub-properties"@en ;
   skos:example """
 ex:LunchTime :intervalDisjoint ex:NapTime .
@@ -727,7 +732,7 @@ ex:LunchTime :intervalDisjoint ex:NapTime .
   rdfs:label "interval during"@en ;
   rdfs:range :ProperInterval ;
   owl:inverseOf :intervalContains ;
-  skos:definition "If a proper interval T1 is intervalDuring another proper interval T2, then the beginning of T1 is after the beginning of T2, and the end of T1 is before the end of T2."@en ;
+  skos:definition "If T1 :intervalDuring T2, then the beginning of T1 is after the beginning of T2, and the end of T1 is before the end of T2."@en ;
 .
 :intervalEquals
   a owl:ObjectProperty ;
@@ -735,7 +740,7 @@ ex:LunchTime :intervalDisjoint ex:NapTime .
   rdfs:domain :ProperInterval ;
   rdfs:label "interval equals"@en ;
   rdfs:range :ProperInterval ;
-  skos:definition "If a proper interval T1 is intervalEquals another proper interval T2, then the beginning of T1 is coincident with the beginning of T2, and the end of T1 is coincident with the end of T2."@en ;
+  skos:definition "If T1 :intervalEquals T2, then the beginning of T1 is coincident with the beginning of T2, and the end of T1 is coincident with the end of T2, and the beginning of T1 is not concident with the end of T1."@en ;
 .
 :intervalFinishedBy
   a owl:ObjectProperty ;
@@ -744,7 +749,7 @@ ex:LunchTime :intervalDisjoint ex:NapTime .
   rdfs:label "interval finished by"@en ;
   rdfs:range :ProperInterval ;
   owl:inverseOf :intervalFinishes ;
-  skos:definition "If a proper interval T1 is intervalFinishedBy another proper interval T2, then the beginning of T1 is before the beginning of T2, and the end of T1 is coincident with the end of T2."@en ;
+  skos:definition "If T1 :intervalFinishedBy T2, then the beginning of T1 is before the beginning of T2, and the end of T1 is coincident with the end of T2."@en ;
 .
 :intervalFinishes
   a owl:ObjectProperty ;
@@ -753,12 +758,12 @@ ex:LunchTime :intervalDisjoint ex:NapTime .
   rdfs:label "interval finishes"@en ;
   rdfs:range :ProperInterval ;
   owl:inverseOf :intervalFinishedBy ;
-  skos:definition "If a proper interval T1 is intervalFinishes another proper interval T2, then the beginning of T1 is after the beginning of T2, and the end of T1 is coincident with the end of T2."@en ;
+  skos:definition "If T1 :intervalFinishes T2, then the beginning of T1 is after the beginning of T2, and the end of T1 is coincident with the end of T2."@en ;
 .
 :intervalIn 
   a owl:ObjectProperty ;
   a owl:DeprecatedProperty ;
-  owl:equivalentProperty :intervalWhollyContainedBy ; # deprecated
+  owl:equivalentProperty :intervalWhollyContainedBy ; 
   owl:deprecated "true"^^xsd:boolean ;
   skos:changeNote "2026-10-12 - Renamed to intervalWhollyContainedBy"@en ;
 .
@@ -769,7 +774,7 @@ ex:LunchTime :intervalDisjoint ex:NapTime .
   rdfs:label "interval meets"@en ;
   rdfs:range :ProperInterval ;
   owl:inverseOf :intervalMetBy ;
-  skos:definition "If a proper interval T1 is intervalMeets another proper interval T2, then the end of T1 is coincident with the beginning of T2."@en ;
+  skos:definition "If T1 :intervalMeets T2, then the end of T1 is coincident with the beginning of T2."@en ;
 .
 :intervalMetBy
   a owl:ObjectProperty ;
@@ -778,7 +783,7 @@ ex:LunchTime :intervalDisjoint ex:NapTime .
   rdfs:label "interval met by"@en ;
   rdfs:range :ProperInterval ;
   owl:inverseOf :intervalMeets ;
-  skos:definition "If a proper interval T1 is intervalMetBy another proper interval T2, then the beginning of T1 is coincident with the end of T2."@en ;
+  skos:definition "If T1 :intervalMetBy T2, then the beginning of T1 is coincident with the end of T2."@en ;
 .
 :intervalNotDisjoint
   a owl:ObjectProperty ;
@@ -786,7 +791,7 @@ ex:LunchTime :intervalDisjoint ex:NapTime .
   rdfs:domain :ProperInterval ;
   rdfs:label "interval not disjoint" ;
   rdfs:range :ProperInterval ;
-  skos:definition "If a proper interval T1 is intervalNotDisjoint with another proper interval T2, then the two entities  overlap or coincide in some way, but their ordering relationship is not known."@en ;
+  skos:definition "If T1 :intervalNotDisjoint T2, then the two entities overlap or coincide in some way, but their ordering relationship is not known."@en ;
   skos:note "This relation is the complement of intervalDisjoint and is the disjoint union of intervalEquals, intervalWhollyContains, intervalWhollyContainedBy, intervalOverlaps, intervalOverlappedBy. However, that is outside OWL2 expressivity, so is implemented as an explicit property, with intervalEquals, intervalWhollyContains, intervalWhollyContainedBy, intervalOverlaps, intervalOverlappedBy as sub-properties"@en ;
 .
 :intervalOverlappedBy
@@ -796,7 +801,7 @@ ex:LunchTime :intervalDisjoint ex:NapTime .
   rdfs:label "interval overlapped by"@en ;
   rdfs:range :ProperInterval ;
   owl:inverseOf :intervalOverlaps ;
-  skos:definition "If a proper interval T1 is intervalOverlappedBy another proper interval T2, then the beginning of T1 is after the beginning of T2, the beginning of T1 is before the end of T2, and the end of T1 is after the end of T2."@en ;
+  skos:definition "If T1 :intervalOverlappedBy T2, then the beginning of T1 is after the beginning of T2, the beginning of T1 is before the end of T2, and the end of T1 is after the end of T2."@en ;
 .
 :intervalOverlaps
   a owl:ObjectProperty ;
@@ -805,7 +810,7 @@ ex:LunchTime :intervalDisjoint ex:NapTime .
   rdfs:label "interval overlaps"@en ;
   rdfs:range :ProperInterval ;
   owl:inverseOf :intervalOverlappedBy ;
-  skos:definition "If a proper interval T1 is intervalOverlaps another proper interval T2, then the beginning of T1 is before the beginning of T2, the end of T1 is after the beginning of T2, and the end of T1 is before the end of T2."@en ;
+  skos:definition "If T1 :intervalOverlaps T2, then the beginning of T1 is before the beginning of T2, the end of T1 is after the beginning of T2, and the end of T1 is before the end of T2."@en ;
 .
 :intervalStartedBy
   a owl:ObjectProperty ;
@@ -814,7 +819,7 @@ ex:LunchTime :intervalDisjoint ex:NapTime .
   rdfs:label "interval started by"@en ;
   rdfs:range :ProperInterval ;
   owl:inverseOf :intervalStarts ;
-  skos:definition "If a proper interval T1 is intervalStarted another proper interval T2, then the beginning of T1 is coincident with the beginning of T2, and the end of T1 is after the end of T2."@en ;
+  skos:definition "If T1 :intervalStarted T2, then the beginning of T1 is coincident with the beginning of T2, and the end of T1 is after the end of T2."@en ;
 .
 :intervalStarts
   a owl:ObjectProperty ;
@@ -823,7 +828,7 @@ ex:LunchTime :intervalDisjoint ex:NapTime .
   rdfs:label "interval starts"@en ;
   rdfs:range :ProperInterval ;
   owl:inverseOf :intervalStartedBy ;
-  skos:definition "If a proper interval T1 is intervalStarts another proper interval T2, then the beginning of T1 is coincident with the beginning of T2, and the end of T1 is before the end of T2."@en ;
+  skos:definition "If T1 :intervalStarts T2, then the beginning of T1 is coincident with the beginning of T2, and the end of T1 is before the end of T2."@en ;
 .
 :intervalWhollyContainedBy
   a owl:ObjectProperty ;
@@ -832,7 +837,7 @@ ex:LunchTime :intervalDisjoint ex:NapTime .
   rdfs:label "interval wholly contained by"@en ;
   rdfs:range :ProperInterval ;
   owl:inverseOf :intervalWhollyContains ;
-  skos:definition "If a proper interval T1 is intervalWhollyContainedBy another proper interval T2, then the beginning of T1 is after the beginning of T2 or is coincident with the beginning of T2, and the end of T1 is before the end of T2, or is coincident with the end of T2, except that end of T1 may not be coincident with the end of T2 if the beginning of T1 is coincident with the beginning of T2."@en ;
+  skos:definition "If T1 :intervalWhollyContainedBy T2, then the beginning of T1 is after the beginning of T2 or is coincident with the beginning of T2, and the end of T1 is before the end of T2, or is coincident with the end of T2, except that end of T1 may not be coincident with the end of T2 if the beginning of T1 is coincident with the beginning of T2."@en ;
   skos:note "This interval relation is not included in the 13 basic relationships defined in Allen (1984), but is referred to as 'an important relationship' in Allen and Ferguson (1997). It is the disjoint union of :intervalStarts v :intervalDuring v :intervalFinishes . However, that is outside OWL2 expressivity, so is implemented as an explicit property, with :intervalStarts , :intervalDuring , :intervalFinishes as sub-properties"@en ;
 .
 :intervalWhollyContains
@@ -842,7 +847,7 @@ ex:LunchTime :intervalDisjoint ex:NapTime .
   rdfs:label "interval wholly contains" ;
   rdfs:range :ProperInterval ;
   owl:inverseOf :intervalWhollyContainedBy ;
-  skos:definition "If a proper interval T1 intervalWhollyContains it another proper interval T2, then the beginning of T1 is coincident with or before the beginning of T2, and the end of T1 is concident with or after the end of T2, except that end of T1 may not be coincident with the end of T2 if the beginning of T1 is coincident with the beginning of T2."@en ;
+  skos:definition "If T1 :intervalWhollyContains T2, then the beginning of T1 is coincident with or before the beginning of T2, and the end of T1 is concident with or after the end of T2, except that end of T1 may not be coincident with the end of T2 if the beginning of T1 is coincident with the beginning of T2."@en ;
   skos:note "This relation is the disjoint union of startedBy, contains, finshedBy. However, that is outside OWL2 expressivity, so is implemented as an explicit property, with startedBy, contains, finshedBy as sub-properties"@en ;
 .
 :notDisjoint
@@ -850,7 +855,7 @@ ex:LunchTime :intervalDisjoint ex:NapTime .
   rdfs:domain :TemporalEntity ;
   rdfs:label "not disjoint with temporal entity" ;
   rdfs:range :TemporalEntity ;
-  skos:definition "If a temporal entity T1 is notDisjoint with another temporal entity T2, then the two entities overlap or coincide in some way, but their ordering relationship is not known."@en ;
+  skos:definition "If T1 :notDisjoint T2, then the two temporal entities overlap or coincide in some way, but their ordering relationship is not known."@en ;
   skos:note "This relation is the complement of :disjoint and is the disjoint union of equals, whollyContains, intervalNotDisjoint. However, that is outside OWL2 expressivity, so is implemented as an explicit property, with equals, whollyContains, intervalNotDisjoint as sub-properties"@en ;
 .
 :whollyContains
@@ -859,7 +864,7 @@ ex:LunchTime :intervalDisjoint ex:NapTime .
   rdfs:domain :TemporalEntity ;
   rdfs:label "wholly contains temporal entity" ;
   rdfs:range :TemporalEntity ;
-  skos:definition "If a temporal entity T1 whollyContains it another temporal entity T2, then the beginning of T1 is coincident with or before the beginning of T2, and the end of T1 is concident with or after the end of T2, except that end of T1 may not be coincident with the end of T2 if the beginning of T1 is coincident with the beginning of T2."@en ;
+  skos:definition "If T1 :whollyContains T2, then the beginning of T1 is coincident with or before the beginning of T2, and the end of T1 is concident with or after the end of T2, except that end of T1 may not be coincident with the end of T2 if the beginning of T1 is coincident with the beginning of T2."@en ;
   skos:note "This relation is the disjoint union of inside, intervalWhollyContains. However, that is outside OWL2 expressivity, so is implemented as an explicit property, with inside, intervalWhollyContains as sub-properties"@en ;
   skos:example """
 ex:Class :whollyContains ex:Quiz .
