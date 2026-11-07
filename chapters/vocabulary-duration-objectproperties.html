@@ -1,0 +1,90 @@
+<h4>Object Properties</h4>
+
+<p class="azlist">
+  <a>:hasDuration</a> |
+  <a>:hasDurationDescription</a> |
+  <a>:hasTemporalDuration</a> |
+  <a>:unitType</a> |
+</p>
+
+<section id="hasDuration" class="specterm">
+  <h5>has duration</h5>
+  <dl>
+    <dt>Term:</dt>
+    <dd><dfn>:hasDuration</dfn></dd>
+    <dt>IRI:</dt>
+    <dd>http://www.w3.org/2006/time#hasDuration</dd>
+    <dt>Definition:</dt>
+    <dd>
+      extent of a temporal entity, expressed as a scaled value or nominal value
+    </dd>
+    <dt>Instance of:</dt>
+    <dd><code>owl:ObjectProperty</code></dd>
+    <dt>Subproperty of:</dt>
+    <dd><a>:hasTemporalDuration</a></dd>
+    <dt>Range:</dt>
+    <dd><a>:Duration</a></dd>
+  </dl>
+</section>
+
+<section id="hasDurationDescription" class="specterm">
+  <h5>has duration description</h5>
+  <dl>
+    <dt>Term:</dt>
+    <dd><dfn>:hasDurationDescription</dfn></dd>
+    <dt>IRI:</dt>
+    <dd>http://www.w3.org/2006/time#hasDurationDescription</dd>
+    <dt>Definition:</dt>
+    <dd>
+      extent of a temporal entity, expressed using a structured description
+    </dd>
+    <dt>Instance of:</dt>
+    <dd><code>owl:ObjectProperty</code></dd>
+    <dt>Subproperty of:</dt>
+    <dd><a>:hasTemporalDuration</a></dd>
+    <dt>Range:</dt>
+    <dd><a>:DurationDescription</a></dd>
+  </dl>
+</section>
+
+<section id="hasTemporalDuration" class="specterm">
+  <h5>has temporal duration</h5>
+  <dl>
+    <dt>Term:</dt>
+    <dd><dfn>:hasTemporalDuration</dfn></dd>
+    <dt>IRI:</dt>
+    <dd>http://www.w3.org/2006/time#hasTemporalDuration</dd>
+    <dt>Definition:</dt>
+    <dd>
+      extent of a temporal entity
+    </dd>
+    <dt>Instance of:</dt>
+    <dd><code>owl:ObjectProperty</code></dd>
+    <dt>Domain:</dt>
+    <dd><a>:TemporalEntity</a></dd>
+    <dt>Range:</dt>
+    <dd><a>:TemporalDuration</a></dd>
+  </dl>
+</section>
+
+<section id="unitType" class="specterm">
+  <h5>temporal unit type</h5>
+  <dl>
+    <dt>Term:</dt>
+    <dd><dfn>:unitType</dfn></dd>
+    <dt>IRI:</dt>
+    <dd>http://www.w3.org/2006/time#unitType</dd>
+    <dt>Definition:</dt>
+    <dd>
+      The temporal unit which provides the precision of a date-time value or scale of a temporal extent
+    </dd>
+    <dt>Instance of:</dt>
+    <dd><code>owl:ObjectProperty</code></dd>
+    <dt>Domain:</dt>
+    <dd>
+      <a>:GeneralDateTimeDescription</a> OR <a>:Duration</a>
+    </dd>
+    <dt>Range:</dt>
+    <dd><a>:TemporalUnit</a></dd>
+  </dl>
+</section>

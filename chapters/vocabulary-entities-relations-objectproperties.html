@@ -1,22 +1,14 @@
-<h3>Object Properties</h3>
+<h4>Object Properties</h4>
 
 <p class="azlist">
   <a>:after</a> |
   <a>:before</a> |
-  <a>:dayOfWeek</a> |
   <a>:disjoint</a> |
   <a>:equals</a> |
   <a>:hasBeginning</a> |
-  <a>:hasDateTimeDescription</a> |
-  <a>:hasDuration</a> |
-  <a>:hasDurationDescription</a> |
   <a>:hasEnd</a> |
-  <a>:hasTemporalDuration</a> |
   <a>:hasTime</a> |
-  <a>:hasTRS</a> |
-  <a>:inDateTime</a> |
   <a>:inside</a> |
-  <a>:inTemporalPosition</a> |
   <a>:intervalAfter</a> |
   <a>:intervalBefore</a> |
   <a>:intervalContains</a> |
@@ -34,17 +26,13 @@
   <a>:intervalStarts</a> |
   <a>:intervalWhollyContainedBy</a> |
   <a>:intervalWhollyContains</a> |
-  <a>:inTimePosition</a> |
-  <a>:monthOfYear</a> |
   <a>:notDisjoint</a> |
   <a>:timePertainsTo</a> |
-  <a>:timeZone</a> |
-  <a>:unitType</a> |
   <a>:whollyContains</a> 
 </p>
 
 <section id="after" class="specterm">
-  <h4>is after</h4>
+  <h5>is after</h5>
   <dl>
     <dt>Term:</dt>
     <dd><dfn>:after</dfn></dd>
@@ -70,7 +58,7 @@
 </section>
 
 <section id="before" class="specterm">
-  <h4>is before</h4>
+  <h5>is before</h5>
   <dl>
     <dt>Term:</dt>
     <dd><dfn>:before</dfn></dd>
@@ -99,28 +87,8 @@
   </dl>
 </section>
 
-<section id="dayOfWeek" class="specterm">
-  <h4>day of week</h4>
-  <dl>
-    <dt>Term:</dt>
-    <dd><dfn>:dayOfWeek</dfn></dd>
-    <dt>IRI:</dt>
-    <dd>http://www.w3.org/2006/time#dayOfWeek</dd>
-    <dt>Definition:</dt>
-    <dd>
-      The day of week, whose value is a member of the class <a>:DayOfWeek (class)</a>
-    </dd>
-    <dt>Instance of:</dt>
-    <dd><code>owl:ObjectProperty</code></dd>
-    <dt>Domain:</dt>
-    <dd><a>:GeneralDateTimeDescription</a></dd>
-    <dt>Range:</dt>
-    <dd><a>:DayOfWeek (class)</a></dd>
-  </dl>
-</section>
-
 <section id="disjoint" class="specterm">
-  <h4>disjoint time entity</h4>
+  <h5>disjoint time entity</h5>
   <dl>
     <dt>Term:</dt>
     <dd><dfn>:disjoint</dfn></dd>
@@ -148,7 +116,7 @@
 </section>
 
 <section id="equals" class="specterm">
-  <h4>equal time entity</h4>
+  <h5>equal time entity</h5>
   <dl>
     <dt>Term:</dt>
     <dd><dfn>:equals</dfn></dd>
@@ -172,7 +140,7 @@
 </section>
 
 <section id="hasBeginning" class="specterm">
-  <h4>has beginning</h4>
+  <h5>has beginning</h5>
   <dl>
     <dt>Term:</dt>
     <dd><dfn>:hasBeginning</dfn></dd>
@@ -193,69 +161,8 @@
   </dl>
 </section>
 
-<section id="hasDateTimeDescription" class="specterm">
-  <h4>has date-time description</h4>
-  <dl>
-    <dt>Term:</dt>
-    <dd><dfn>:hasDateTimeDescription</dfn></dd>
-    <dt>IRI:</dt>
-    <dd>http://www.w3.org/2006/time#hasDateTimeDescription</dd>
-    <dt>Definition:</dt>
-    <dd>
-      Position and extent of <a>:DateTimeInterval</a> expressed as a structured value.
-      The beginning and end of the interval coincide with the limits of the shortest element in the description.
-    </dd>
-    <dt>Instance of:</dt>
-    <dd><code>owl:ObjectProperty</code></dd>
-    <dt>Domain:</dt>
-    <dd><a>:DateTimeInterval</a></dd>
-    <dt>Range:</dt>
-    <dd><a>:GeneralDateTimeDescription</a></dd>
-  </dl>
-</section>
-
-<section id="hasDuration" class="specterm">
-  <h4>has duration</h4>
-  <dl>
-    <dt>Term:</dt>
-    <dd><dfn>:hasDuration</dfn></dd>
-    <dt>IRI:</dt>
-    <dd>http://www.w3.org/2006/time#hasDuration</dd>
-    <dt>Definition:</dt>
-    <dd>
-      extent of a temporal entity, expressed as a scaled value or nominal value
-    </dd>
-    <dt>Instance of:</dt>
-    <dd><code>owl:ObjectProperty</code></dd>
-    <dt>Subproperty of:</dt>
-    <dd><a>:hasTemporalDuration</a></dd>
-    <dt>Range:</dt>
-    <dd><a>:Duration</a></dd>
-  </dl>
-</section>
-
-<section id="hasDurationDescription" class="specterm">
-  <h4>has duration description</h4>
-  <dl>
-    <dt>Term:</dt>
-    <dd><dfn>:hasDurationDescription</dfn></dd>
-    <dt>IRI:</dt>
-    <dd>http://www.w3.org/2006/time#hasDurationDescription</dd>
-    <dt>Definition:</dt>
-    <dd>
-      extent of a temporal entity, expressed using a structured description
-    </dd>
-    <dt>Instance of:</dt>
-    <dd><code>owl:ObjectProperty</code></dd>
-    <dt>Subproperty of:</dt>
-    <dd><a>:hasTemporalDuration</a></dd>
-    <dt>Range:</dt>
-    <dd><a>:DurationDescription</a></dd>
-  </dl>
-</section>
-
 <section id="hasEnd" class="specterm">
-  <h4>has end</h4>
+  <h5>has end</h5>
   <dl>
     <dt>Term:</dt>
     <dd><dfn>:hasEnd</dfn></dd>
@@ -276,28 +183,8 @@
   </dl>
 </section>
 
-<section id="hasTemporalDuration" class="specterm">
-  <h4>has temporal duration</h4>
-  <dl>
-    <dt>Term:</dt>
-    <dd><dfn>:hasTemporalDuration</dfn></dd>
-    <dt>IRI:</dt>
-    <dd>http://www.w3.org/2006/time#hasTemporalDuration</dd>
-    <dt>Definition:</dt>
-    <dd>
-      extent of a temporal entity
-    </dd>
-    <dt>Instance of:</dt>
-    <dd><code>owl:ObjectProperty</code></dd>
-    <dt>Domain:</dt>
-    <dd><a>:TemporalEntity</a></dd>
-    <dt>Range:</dt>
-    <dd><a>:TemporalDuration</a></dd>
-  </dl>
-</section>
-
 <section id="hasTime" class="specterm">
-  <h4>has time</h4>
+  <h5>has time</h5>
   <dl>
     <dt>Term:</dt>
     <dd><dfn>:hasTime</dfn></dd>
@@ -316,54 +203,8 @@
   </dl>
 </section>
 
-<section id="hasTRS" class="specterm">
-  <h4>temporal reference system used</h4>
-  <dl>
-    <dt>Term:</dt>
-    <dd><dfn>:hasTRS</dfn></dd>
-    <dt>IRI:</dt>
-    <dd>http://www.w3.org/2006/time#hasTRS</dd>
-    <dt>Definition:</dt>
-    <dd>
-      reference system used by a temporal position or extent description.
-    </dd>
-    <dt>Instance of:</dt>
-    <dd><code>owl:ObjectProperty</code></dd>
-    <dt>Instance of:</dt>
-    <dd><code>owl:FunctionalProperty</code></dd>
-    <dt>Domain:</dt>
-    <dd>
-      <a>:TemporalPosition</a> OR <a>:GeneralDurationDescription</a>
-    </dd>
-    <dt>Range:</dt>
-    <dd><a>:TRS</a></dd>
-  </dl>
-</section>
-
-<section id="inDateTime" class="specterm">
-  <h4>in date-time description</h4>
-  <dl>
-    <dt>Term:</dt>
-    <dd><dfn>:inDateTime</dfn></dd>
-    <dt>IRI:</dt>
-    <dd>http://www.w3.org/2006/time#inDateTime</dd>
-    <dt>Definition:</dt>
-    <dd>
-      Position of an instant, expressed using a structured description
-    </dd>
-    <dt>Instance of:</dt>
-    <dd><code>owl:ObjectProperty</code></dd>
-    <dt>Subproperty of:</dt>
-    <dd><a>:inTemporalPosition</a></dd>
-    <dt>Domain:</dt>
-    <dd><a>:Instant</a></dd>
-    <dt>Range:</dt>
-    <dd><a>:GeneralDateTimeDescription</a></dd>
-  </dl>
-</section>
-
 <section id="inside" class="specterm">
-  <h4>has time instant inside</h4>
+  <h5>has time instant inside</h5>
   <dl>
     <dt>Term:</dt>
     <dd><dfn>:inside</dfn></dd>
@@ -385,28 +226,8 @@
   </dl>
 </section>
 
-<section id="inTemporalPosition" class="specterm">
-  <h4>temporal position</h4>
-  <dl>
-    <dt>Term:</dt>
-    <dd><dfn>:inTemporalPosition</dfn></dd>
-    <dt>IRI:</dt>
-    <dd>http://www.w3.org/2006/time#inTemporalPosition</dd>
-    <dt>Definition:</dt>
-    <dd>
-      Position of a time instant
-    </dd>
-    <dt>Instance of:</dt>
-    <dd><code>owl:ObjectProperty</code></dd>
-    <dt>Domain:</dt>
-    <dd><a>:Instant</a></dd>
-    <dt>Range:</dt>
-    <dd><a>:TemporalPosition</a></dd>
-  </dl>
-</section>
-
 <section id="intervalAfter" class="specterm">
-  <h4>interval after</h4>
+  <h5>interval after</h5>
   <dl>
     <dt>Term:</dt>
     <dd><dfn>:intervalAfter</dfn></dd>
@@ -431,7 +252,7 @@
 </section>
 
 <section id="intervalBefore" class="specterm">
-  <h4>interval before</h4>
+  <h5>interval before</h5>
   <dl>
     <dt>Term:</dt>
     <dd><dfn>:intervalBefore</dfn></dd>
@@ -456,7 +277,7 @@
 </section>
 
 <section id="intervalContains" class="specterm">
-  <h4>interval contains</h4>
+  <h5>interval contains</h5>
   <dl>
     <dt>Term:</dt>
     <dd><dfn>:intervalContains</dfn></dd>
@@ -482,7 +303,7 @@
 </section>
 
 <section id="intervalDisjoint" class="specterm">
-  <h4>interval disjoint</h4>
+  <h5>interval disjoint</h5>
   <dl>
     <dt>Term:</dt>
     <dd><dfn>:intervalDisjoint</dfn></dd>
@@ -507,7 +328,7 @@
 </section>
 
 <section id="intervalDuring" class="specterm">
-  <h4>interval during</h4>
+  <h5>interval during</h5>
   <dl>
     <dt>Term:</dt>
     <dd><dfn>:intervalDuring</dfn></dd>
@@ -533,7 +354,7 @@
 </section>
 
 <section id="intervalEquals" class="specterm">
-  <h4>interval equals</h4>
+  <h5>interval equals</h5>
   <dl>
     <dt>Term:</dt>
     <dd><dfn>:intervalEquals</dfn></dd>
@@ -558,7 +379,7 @@
 </section>
 
 <section id="intervalFinishedBy" class="specterm">
-  <h4>interval finished by</h4>
+  <h5>interval finished by</h5>
   <dl>
     <dt>Term:</dt>
     <dd><dfn>:intervalFinishedBy</dfn></dd>
@@ -584,7 +405,7 @@
 </section>
 
 <section id="intervalFinishes" class="specterm">
-  <h4>interval finishes</h4>
+  <h5>interval finishes</h5>
   <dl>
     <dt>Term:</dt>
     <dd><dfn>:intervalFinishes</dfn></dd>
@@ -610,7 +431,7 @@
 </section>
 
 <section id="intervalMeets" class="specterm">
-  <h4>interval meets</h4>
+  <h5>interval meets</h5>
   <dl>
     <dt>Term:</dt>
     <dd><dfn>:intervalMeets</dfn></dd>
@@ -635,7 +456,7 @@
 </section>
 
 <section id="intervalMetBy" class="specterm">
-  <h4>interval met by</h4>
+  <h5>interval met by</h5>
   <dl>
     <dt>Term:</dt>
     <dd><dfn>:intervalMetBy</dfn></dd>
@@ -660,7 +481,7 @@
 </section>
 
 <section id="intervalNotDisjoint" class="specterm">
-  <h4>interval not disjoint </h4>
+  <h5>interval not disjoint </h5>
   <dl>
     <dt>Term:</dt>
     <dd><dfn>:intervalNotDisjoint</dfn></dd>
@@ -683,7 +504,7 @@
 </section>
 
 <section id="intervalOverlappedBy" class="specterm">
-  <h4>interval overlapped by</h4>
+  <h5>interval overlapped by</h5>
   <dl>
     <dt>Term:</dt>
     <dd><dfn>:intervalOverlappedBy</dfn></dd>
@@ -710,7 +531,7 @@
 </section>
 
 <section id="intervalOverlaps" class="specterm">
-  <h4>interval overlaps</h4>
+  <h5>interval overlaps</h5>
   <dl>
     <dt>Term:</dt>
     <dd><dfn>:intervalOverlaps</dfn></dd>
@@ -736,7 +557,7 @@
 </section>
 
 <section id="intervalStartedBy" class="specterm">
-  <h4>interval started by</h4>
+  <h5>interval started by</h5>
   <dl>
     <dt>Term:</dt>
     <dd><dfn>:intervalStartedBy</dfn></dd>
@@ -762,7 +583,7 @@
 </section>
 
 <section id="intervalStarts" class="specterm">
-  <h4>interval starts</h4>
+  <h5>interval starts</h5>
   <dl>
     <dt>Term:</dt>
     <dd><dfn>:intervalStarts</dfn></dd>
@@ -788,7 +609,7 @@
 </section>
 
 <section id="intervalWhollyContainedBy" class="specterm">
-  <h4>interval wholly contained by</h4>
+  <h5>interval wholly contained by</h5>
   <dl>
     <dt>Term:</dt>
     <dd><dfn>:intervalWhollyContainedBy</dfn></dd>
@@ -816,7 +637,7 @@
 </section>
 
 <section id="intervalWhollyContains" class="specterm">
-  <h4>interval wholly contains</h4>
+  <h5>interval wholly contains</h5>
   <dl>
     <dt>Term:</dt>
     <dd><dfn>:intervalWhollyContains</dfn></dd>
@@ -847,50 +668,8 @@
   </dl>
 </section>
 
-<section id="inTimePosition" class="specterm">
-  <h4>time position</h4>
-  <dl>
-    <dt>Term:</dt>
-    <dd><dfn>:inTimePosition</dfn></dd>
-    <dt>IRI:</dt>
-    <dd>http://www.w3.org/2006/time#inTimePosition</dd>
-    <dt>Definition:</dt>
-    <dd>
-      Position of an instant, expressed as a temporal coordinate or nominal value
-    </dd>
-    <dt>Instance of:</dt>
-    <dd><code>owl:ObjectProperty</code></dd>
-    <dt>Subproperty of:</dt>
-    <dd><a>:inTemporalPosition</a></dd>
-    <dt>Domain:</dt>
-    <dd><a>:Instant</a></dd>
-    <dt>Range:</dt>
-    <dd><a>:TimePosition</a></dd>
-  </dl>
-</section>
-
-<section id="monthOfYear" class="specterm">
-  <h4>month of year</h4>
-  <dl>
-    <dt>Term:</dt>
-    <dd><dfn>:monthOfYear</dfn></dd>
-    <dt>IRI:</dt>
-    <dd>http://www.w3.org/2006/time#monthOfYear</dd>
-    <dt>Definition:</dt>
-    <dd>
-      The month of the year, whose value is a member of the class <a>:MonthOfYear (class)</a>
-    </dd>
-    <dt>Instance of:</dt>
-    <dd><code>owl:ObjectProperty</code></dd>
-    <dt>Domain:</dt>
-    <dd><a>:GeneralDateTimeDescription</a></dd>
-    <dt>Range:</dt>
-    <dd><a>:MonthOfYear (class)</a></dd>
-  </dl>
-</section>
-
 <section id="notDisjoint" class="specterm">
-  <h4>not disjoint time entity</h4>
+  <h5>not disjoint time entity</h5>
   <dl>
     <dt>Term:</dt>
     <dd><dfn>:notDisjoint</dfn></dd>
@@ -916,7 +695,7 @@
 </section>
 
 <section id="timePertainsTo" class="specterm">
-  <h4>time pertains to</h4>
+  <h5>time pertains to</h5>
   <dl>
     <dt>Term:</dt>
     <dd><dfn>:timePertainsTo</dfn></dd>
@@ -935,64 +714,8 @@
   </dl>
 </section>
 
-<section id="timeZone" class="specterm">
-  <h4>in time zone</h4>
-  <dl>
-    <dt>Term:</dt>
-    <dd><dfn>:timeZone</dfn></dd>
-    <dt>IRI:</dt>
-    <dd>http://www.w3.org/2006/time#timeZone</dd>
-    <dt>Definition:</dt>
-    <dd>
-      The time zone for clock elements in the temporal position
-    </dd>
-    <dt>Instance of:</dt>
-    <dd><code>owl:ObjectProperty</code></dd>
-    <dt>Domain:</dt>
-    <dd><a>:GeneralDateTimeDescription</a></dd>
-    <dt>Range:</dt>
-    <dd><a>:TimeZone (class)</a></dd>
-  </dl>
-  <div class="note">
-    <p>
-      IANA maintains a <a href="http://www.iana.org/time-zones">database of timezones</a>.
-      These are well maintained and generally considered authoritative, but individual items are not available at individual URIs, so cannot be used directly within data expressed using OWL-Time.
-    </p>
-    <p>
-      DBPedia provides a <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">set of resources corresponding to the IANA timezones</a>,
-      with a URI for each (e.g. <a href="http://dbpedia.org/resource/Australia/Eucla">http://dbpedia.org/resource/Australia/Eucla</a>).
-      The World Clock service also provides a <a href="https://www.timeanddate.com/time/zones/">list of time zones</a>
-      with the description of each available as an individual webpage with a convenient individual URI
-      (e.g. <a href="https://www.timeanddate.com/time/zones/acwst">https://www.timeanddate.com/time/zones/acwst</a>).
-      These or other, similar, resources might be used as a value of the <a>:timeZone</a> property.
-    </p>
-  </div>
-</section>
-
-<section id="unitType" class="specterm">
-  <h4>temporal unit type</h4>
-  <dl>
-    <dt>Term:</dt>
-    <dd><dfn>:unitType</dfn></dd>
-    <dt>IRI:</dt>
-    <dd>http://www.w3.org/2006/time#unitType</dd>
-    <dt>Definition:</dt>
-    <dd>
-      The temporal unit which provides the precision of a date-time value or scale of a temporal extent
-    </dd>
-    <dt>Instance of:</dt>
-    <dd><code>owl:ObjectProperty</code></dd>
-    <dt>Domain:</dt>
-    <dd>
-      <a>:GeneralDateTimeDescription</a> OR <a>:Duration</a>
-    </dd>
-    <dt>Range:</dt>
-    <dd><a>:TemporalUnit</a></dd>
-  </dl>
-</section>
-
 <section id="whollyContains" class="specterm">
-  <h4>wholly contains temporal entity</h4>
+  <h5>wholly contains temporal entity</h5>
   <dl>
     <dt>Term:</dt>
     <dd><dfn>:whollyContains</dfn></dd>

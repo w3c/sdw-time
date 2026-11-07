@@ -1,0 +1,48 @@
+<h4>Classes</h4>
+
+<p class="azlist">
+    <a>:TRS</a>
+</p>
+
+<section id="TRS" class="specterm">
+    <h5>Temporal reference system</h5>
+    <dl>
+        <dt>Term:</dt>
+        <dd><dfn>:TRS</dfn></dd>
+        <dt>IRI:</dt>
+        <dd>http://www.w3.org/2006/time#TRS</dd>
+        <dt>Definition:</dt>
+        <dd>
+            a temporal coordinate reference system (with an origin, direction, and scale), or a calendar-clock
+            combination, or a (potentially hierarchical) ordinal system
+        </dd>
+        <dt>Instance of:</dt>
+        <dd><code>owl:Class</code></dd>
+    </dl>
+    <p>
+        No specific properties are provided for the class <a>:TRS</a>, the definition of which is beyond the scope of
+        this ontology.
+        The class specified here is the superclass of all temporal reference system types.
+    </p>
+    <p>
+        Note that an ordinal temporal reference system, such as the geologic timescale, may be represented directly,
+        using this ontology, as a set of <a>:ProperIntervals</a>, along with enough inter-relationships to support the
+        necessary ordering relationships. See example below of <a href="#geologictimescale">Geologic Timescale</a>.
+    </p>
+    <div class="note">
+        <p>
+            A taxonomy of temporal reference systems is provided in ISO 19108:2002 [[iso-19108]], including
+            (a) calendar + clock systems;
+            (b) temporal coordinate systems (i.e., numeric offset from an epoch);
+            (c) temporal ordinal reference systems (i.e., ordered sequence of named intervals, not necessarily of equal
+            duration).
+        </p>
+        <p>
+            ISO 19111 [[iso-19111]] (also published as OGC Abstract Specification Topic 2 [[ogc-topic-2]]) provides a
+            data model structure for temporal coordinate reference systems, conceptually equivalent to the temporal
+            coordinate system of ISO 19108, in which the offset may be expressed as a dateTime, an integer or a real
+            number.
+            Annex D in that document provides examples of definitive and ambiguous calendar arithmetic.
+        </p>
+    </div>
+</section>

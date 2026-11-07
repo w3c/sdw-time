@@ -1,0 +1,195 @@
+<h4>Object Properties</h4>
+
+<p class="azlist">
+  <a>:dayOfWeek</a> |
+  <a>:hasDateTimeDescription</a> |
+  <a>:hasTRS</a> |
+  <a>:inDateTime</a> |
+  <a>:inTemporalPosition</a> |
+  <a>:inTimePosition</a> |
+  <a>:monthOfYear</a> |
+  <a>:timeZone</a> |
+</p>
+
+<section id="dayOfWeek" class="specterm">
+  <h5>day of week</h5>
+  <dl>
+    <dt>Term:</dt>
+    <dd><dfn>:dayOfWeek</dfn></dd>
+    <dt>IRI:</dt>
+    <dd>http://www.w3.org/2006/time#dayOfWeek</dd>
+    <dt>Definition:</dt>
+    <dd>
+      The day of week, whose value is a member of the class <a>:DayOfWeek (class)</a>
+    </dd>
+    <dt>Instance of:</dt>
+    <dd><code>owl:ObjectProperty</code></dd>
+    <dt>Domain:</dt>
+    <dd><a>:GeneralDateTimeDescription</a></dd>
+    <dt>Range:</dt>
+    <dd><a>:DayOfWeek (class)</a></dd>
+  </dl>
+</section>
+
+<section id="hasDateTimeDescription" class="specterm">
+  <h5>has date-time description</h5>
+  <dl>
+    <dt>Term:</dt>
+    <dd><dfn>:hasDateTimeDescription</dfn></dd>
+    <dt>IRI:</dt>
+    <dd>http://www.w3.org/2006/time#hasDateTimeDescription</dd>
+    <dt>Definition:</dt>
+    <dd>
+      Position and extent of <a>:DateTimeInterval</a> expressed as a structured value.
+      The beginning and end of the interval coincide with the limits of the shortest element in the description.
+    </dd>
+    <dt>Instance of:</dt>
+    <dd><code>owl:ObjectProperty</code></dd>
+    <dt>Domain:</dt>
+    <dd><a>:DateTimeInterval</a></dd>
+    <dt>Range:</dt>
+    <dd><a>:GeneralDateTimeDescription</a></dd>
+  </dl>
+</section>
+
+<section id="hasTRS" class="specterm">
+  <h5>temporal reference system used</h5>
+  <dl>
+    <dt>Term:</dt>
+    <dd><dfn>:hasTRS</dfn></dd>
+    <dt>IRI:</dt>
+    <dd>http://www.w3.org/2006/time#hasTRS</dd>
+    <dt>Definition:</dt>
+    <dd>
+      reference system used by a temporal position or extent description.
+    </dd>
+    <dt>Instance of:</dt>
+    <dd><code>owl:ObjectProperty</code></dd>
+    <dt>Instance of:</dt>
+    <dd><code>owl:FunctionalProperty</code></dd>
+    <dt>Domain:</dt>
+    <dd>
+      <a>:TemporalPosition</a> OR <a>:GeneralDurationDescription</a>
+    </dd>
+    <dt>Range:</dt>
+    <dd><a>:TRS</a></dd>
+  </dl>
+</section>
+
+<section id="inDateTime" class="specterm">
+  <h5>in date-time description</h5>
+  <dl>
+    <dt>Term:</dt>
+    <dd><dfn>:inDateTime</dfn></dd>
+    <dt>IRI:</dt>
+    <dd>http://www.w3.org/2006/time#inDateTime</dd>
+    <dt>Definition:</dt>
+    <dd>
+      Position of an instant, expressed using a structured description
+    </dd>
+    <dt>Instance of:</dt>
+    <dd><code>owl:ObjectProperty</code></dd>
+    <dt>Subproperty of:</dt>
+    <dd><a>:inTemporalPosition</a></dd>
+    <dt>Domain:</dt>
+    <dd><a>:Instant</a></dd>
+    <dt>Range:</dt>
+    <dd><a>:GeneralDateTimeDescription</a></dd>
+  </dl>
+</section>
+
+<section id="inTemporalPosition" class="specterm">
+  <h5>temporal position</h5>
+  <dl>
+    <dt>Term:</dt>
+    <dd><dfn>:inTemporalPosition</dfn></dd>
+    <dt>IRI:</dt>
+    <dd>http://www.w3.org/2006/time#inTemporalPosition</dd>
+    <dt>Definition:</dt>
+    <dd>
+      Position of a time instant
+    </dd>
+    <dt>Instance of:</dt>
+    <dd><code>owl:ObjectProperty</code></dd>
+    <dt>Domain:</dt>
+    <dd><a>:Instant</a></dd>
+    <dt>Range:</dt>
+    <dd><a>:TemporalPosition</a></dd>
+  </dl>
+</section>
+
+<section id="inTimePosition" class="specterm">
+  <h5>time position</h5>
+  <dl>
+    <dt>Term:</dt>
+    <dd><dfn>:inTimePosition</dfn></dd>
+    <dt>IRI:</dt>
+    <dd>http://www.w3.org/2006/time#inTimePosition</dd>
+    <dt>Definition:</dt>
+    <dd>
+      Position of an instant, expressed as a temporal coordinate or nominal value
+    </dd>
+    <dt>Instance of:</dt>
+    <dd><code>owl:ObjectProperty</code></dd>
+    <dt>Subproperty of:</dt>
+    <dd><a>:inTemporalPosition</a></dd>
+    <dt>Domain:</dt>
+    <dd><a>:Instant</a></dd>
+    <dt>Range:</dt>
+    <dd><a>:TimePosition</a></dd>
+  </dl>
+</section>
+
+<section id="monthOfYear" class="specterm">
+  <h5>month of year</h5>
+  <dl>
+    <dt>Term:</dt>
+    <dd><dfn>:monthOfYear</dfn></dd>
+    <dt>IRI:</dt>
+    <dd>http://www.w3.org/2006/time#monthOfYear</dd>
+    <dt>Definition:</dt>
+    <dd>
+      The month of the year, whose value is a member of the class <a>:MonthOfYear (class)</a>
+    </dd>
+    <dt>Instance of:</dt>
+    <dd><code>owl:ObjectProperty</code></dd>
+    <dt>Domain:</dt>
+    <dd><a>:GeneralDateTimeDescription</a></dd>
+    <dt>Range:</dt>
+    <dd><a>:MonthOfYear (class)</a></dd>
+  </dl>
+</section>
+
+<section id="timeZone" class="specterm">
+  <h5>in time zone</h5>
+  <dl>
+    <dt>Term:</dt>
+    <dd><dfn>:timeZone</dfn></dd>
+    <dt>IRI:</dt>
+    <dd>http://www.w3.org/2006/time#timeZone</dd>
+    <dt>Definition:</dt>
+    <dd>
+      The time zone for clock elements in the temporal position
+    </dd>
+    <dt>Instance of:</dt>
+    <dd><code>owl:ObjectProperty</code></dd>
+    <dt>Domain:</dt>
+    <dd><a>:GeneralDateTimeDescription</a></dd>
+    <dt>Range:</dt>
+    <dd><a>:TimeZone (class)</a></dd>
+  </dl>
+  <div class="note">
+    <p>
+      IANA maintains a <a href="http://www.iana.org/time-zones">database of timezones</a>.
+      These are well maintained and generally considered authoritative, but individual items are not available at individual URIs, so cannot be used directly within data expressed using OWL-Time.
+    </p>
+    <p>
+      DBPedia provides a <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">set of resources corresponding to the IANA timezones</a>,
+      with a URI for each (e.g. <a href="http://dbpedia.org/resource/Australia/Eucla">http://dbpedia.org/resource/Australia/Eucla</a>).
+      The World Clock service also provides a <a href="https://www.timeanddate.com/time/zones/">list of time zones</a>
+      with the description of each available as an individual webpage with a convenient individual URI
+      (e.g. <a href="https://www.timeanddate.com/time/zones/acwst">https://www.timeanddate.com/time/zones/acwst</a>).
+      These or other, similar, resources might be used as a value of the <a>:timeZone</a> property.
+    </p>
+  </div>
+</section>

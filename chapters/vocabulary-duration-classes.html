@@ -1,0 +1,164 @@
+<h4>Classes</h4>
+
+<p class="azlist">
+    <a>:Duration</a> |
+    <a>:DurationDescription</a> |
+    <a>:GeneralDurationDescription</a> |
+    <a>:TemporalDuration</a> |
+    <a>:TemporalUnit</a> |
+</p>
+
+<section id="Duration" class="specterm">
+    <h5>Duration</h5>
+    <dl>
+        <dt>Term:</dt>
+        <dd><dfn>:Duration</dfn></dd>
+        <dt>IRI:</dt>
+        <dd>http://www.w3.org/2006/time#Duration</dd>
+        <dt>Definition:</dt>
+        <dd>
+            temporal duration expressed as a number scaled by a temporal unit
+        </dd>
+        <dt>Instance of:</dt>
+        <dd><code>owl:Class</code></dd>
+        <dt>Subclass of:</dt>
+        <dd>
+            <a>:TemporalDuration</a>
+            <br>
+            (<code><a>:numericDuration</a> exactly 1</code>)
+            <br>
+            (<code><a>:unitType</a> exactly 1</code>)
+        </dd>
+    </dl>
+</section>
+
+<section id="DurationDescription" class="specterm">
+    <h5>Duration description</h5>
+    <dl>
+        <dt>Term:</dt>
+        <dd><dfn>:DurationDescription</dfn></dd>
+        <dt>IRI:</dt>
+        <dd>http://www.w3.org/2006/time#DurationDescription</dd>
+        <dt>Definition:</dt>
+        <dd>
+            temporal duration expressed as a structure with separate values for the various elements of a calendar-clock system.
+            The temporal reference system is fixed to Gregorian Calendar, and the range of each of the numeric properties is restricted to <a href="https://www.w3.org/TR/xmlschema11-2/#decimal">xsd:decimal</a>
+        </dd>
+        <dt>Instance of:</dt>
+        <dd><code>owl:Class</code></dd>
+        <dt>Subclass of:</dt>
+        <dd>
+            <a>:GeneralDurationDescription</a>
+            <br>
+            (<code><a>:hasTRS</a> value <a href="http://www.opengis.net/def/uom/ISO-8601/0/Gregorian">http://www.opengis.net/def/uom/ISO-8601/0/Gregorian</a></code>)
+            <br>
+            (<code><a>:years</a> only xsd:decimal</code>)
+            <br>
+            (<code><a>:months</a> only xsd:decimal</code>)
+            <br>
+            (<code><a>:weeks</a> only xsd:decimal</code>)
+            <br>
+            (<code><a>:days</a> only xsd:decimal</code>)
+            <br>
+            (<code><a>:hours</a> only xsd:decimal</code>)
+            <br>
+            (<code><a>:minutes</a> only xsd:decimal</code>)
+            <br>
+            (<code><a>:seconds</a> only xsd:decimal</code>)
+        </dd>
+    </dl>
+    <p class="note">
+        In the Gregorian calendar the length of the month is not fixed.
+        Therefore, a value like "2.5 months" cannot be exactly compared with a similar duration expressed in terms of
+        weeks or days.
+    </p>
+</section>
+
+<section id="GeneralDurationDescription" class="specterm">
+    <h5>Generalized duration description</h5>
+    <dl>
+        <dt>Term:</dt>
+        <dd><dfn>:GeneralDurationDescription</dfn></dd>
+        <dt>IRI:</dt>
+        <dd>http://www.w3.org/2006/time#GeneralDurationDescription</dd>
+        <dt>Definition:</dt>
+        <dd>
+            temporal duration expressed as a structure with separate values for the various elements of a calendar-clock system.
+        </dd>
+        <dt>Instance of:</dt>
+        <dd><code>owl:Class</code></dd>
+        <dt>Subclass of:</dt>
+        <dd>
+            <a>:TemporalDuration</a>
+            <br>
+            (<code><a>:hasTRS</a> exactly 1</code>)
+            <br>
+            (<code><a>:years</a> max 1</code>)
+            <br>
+            (<code><a>:months</a> max 1</code>)
+            <br>
+            (<code><a>:weeks</a> max 1</code>)
+            <br>
+            (<code><a>:days</a> max 1</code>)
+            <br>
+            (<code><a>:hours</a> max 1</code>)
+            <br>
+            (<code><a>:minutes</a> max 1</code>)
+            <br>
+            (<code><a>:seconds</a> max 1</code>)
+        </dd>
+    </dl>
+    <p>
+        Seven datatype properties <a>:years</a>, <a>:months</a>, <a>:weeks</a>, <a>:days</a>, <a>:hours</a>, <a>:minutes</a>, and <a>:seconds</a> support the description of components of a temporal extent in a calendar-clock system.
+    </p>
+    <p>
+        The property <a>:hasTRS</a> indicates the temporal reference system applicable for the duration components.
+    </p>
+    <p class="note">
+        The extent of a time duration expressed as a GeneralDurationDescription depends on the Temporal Reference System.
+        In some calendars the length of the week or month is not constant within the year.
+        Therefore, a value like "2.5 months" may not necessarily be exactly compared with a similar duration expressed in terms of weeks or days.
+        When non-earth-based calendars are considered even more care must be taken in comparing durations.
+    </p>
+</section>
+
+<section id="TemporalDuration" class="specterm">
+    <h5>Temporal duration</h5>
+    <dl>
+        <dt>Term:</dt>
+        <dd><dfn>:TemporalDuration</dfn></dd>
+        <dt>IRI:</dt>
+        <dd>http://www.w3.org/2006/time#TemporalDuration</dd>
+        <dt>Definition:</dt>
+        <dd>
+            extent of a time interval
+        </dd>
+        <dt>Note:</dt>
+        <dd>
+            Duration may be computed as the difference between the end and beginning of an interval
+        </dd>
+    </dl>
+</section>
+
+<section id="TemporalUnit" class="specterm">
+    <h5>Temporal unit</h5>
+    <dl>
+        <dt>Term:</dt>
+        <dd><dfn>:TemporalUnit</dfn></dd>
+        <dt>IRI:</dt>
+        <dd>http://www.w3.org/2006/time#TemporalUnit</dd>
+        <dt>Definition:</dt>
+        <dd>
+            a standard temporal duration, which provides the scale factor for a time extent, or the granularity or precision for
+            a time position
+        </dd>
+        <dt>Instance of:</dt>
+        <dd><code>owl:Class</code></dd>
+        <dt>Subclass of:</dt>
+        <dd><a>:TemporalDuration</a></dd>
+    </dl>
+    <p>
+        Ten individual members of <a>:TemporalUnit</a> are included in the ontology, corresponding to the elements of the standard calendar-clock: <a>:unitYear</a>, <a>:unitMonth</a>, <a>:unitWeek</a>, <a>:unitDay</a>, <a>:unitHour</a>, <a>:unitMinute</a> and <a>:unitSecond</a>, as well as <a>:unitDecade</a>, <a>:unitCentury</a>, and <a>:unitMillenium</a> to support historical and archeological applications. </p>
+    <p class="note">Membership of the class TemporalUnit is open, to allow for other temporal units used in some technical applications (e.g., millions of years, Baha'i month).
+    </p>
+</section>
